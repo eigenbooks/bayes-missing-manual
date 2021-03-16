@@ -1,0 +1,29 @@
+#############################
+# jupyter-book
+
+# venv
+bayes-venv
+
+# build directory
+book/_build
+
+# notebook cache
+.ipynb_checkpoints
+
+# deploy script
+deploy.sh
+
+# lighthouse results
+lighthouse
+
+# vscode config
+.vscode
+
+###############################
+# old R markdown files
+_book
+_bookdown_files
+.Rproj.user
+Rproj.user
+.Rhistory
+.Rdata

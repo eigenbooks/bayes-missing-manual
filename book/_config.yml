@@ -1,0 +1,86 @@
+#######################################################################################
+# Book settings
+title : Bayes Theorem - The Missing Manual # The title of the book. Will be placed in the left navbar.
+author: Ryan Lowe    # The author of the book
+# logo: 'qe-logo-large.png'
+# copyright                   : 2021  # Copyright year to be placed in the footer
+
+# Information about where the book exists on the web
+description: >-
+  A manual for using Bayes theorem to think with probabilities in everyday life.
+
+#######################################################################################
+# Execution settings
+execute:
+  execute_notebooks           : cache
+
+#######################################################################################
+# HTML-specific settings
+html:
+  home_page_in_navbar       : true
+  # use_edit_page_button      : false # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
+  # use_repository_button     : true  # Whether to add a link to your repository button
+  # use_issues_button         : true  # Whether to add an "open an issue" button
+  extra_navbar              : "" #Powered by <a href="https://jupyterbook.org">Jupyter Book</a>  # Will be displayed underneath the left navbar.
+  extra_footer              : <p><i>Bayes Theorem - The Missing Manual</i> is licensed under a creative commons licence (<a href="http://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>).</p> # Will be displayed underneath the footer.
+  google_analytics_id       : ""  # A GA id that can be used to track book views.
+  # baseurl                   : https://skyrockmoon.github.io/jb-kick-tires  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
+  favicon                   : img/favicon.ico  # A path to a favicon image
+  comments:
+    hypothesis              : false
+    # utterances:
+    #   repo: "SkyRockMoon/jb-kick-tires"
+
+
+# #######################################################################################
+# Interact link settings
+notebook_interface            : "notebook"
+
+#######################################################################################
+# Launch button settings
+# repository:
+#   url                         : https://github.com/SkyRockMoon/jb-kick-tires
+#   path_to_book                : "book"
+
+# # binder:
+# #   binderhub_url               : "https://mybinder.org"
+# #   text                        : "Launch binder"
+
+latex:
+  latex_engine                : "xelatex"
+  latex_documents:
+    targetname: book.tex
+
+#######################################################################################
+# Parse settings
+# For more information on each option see: https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html with some additional insight on jupyter-book specific use cases at https://jupyterbook.org/content/content-blocks.html?highlight=admonition#myst-syntax-extensions
+
+parse:
+  myst_enable_extensions: 
+    - amsmath         # enable direct parsing of amsmath LaTeX equations 
+    - colon_fence     # use ::: delimiters to denote code fences, instead of ```. [1]
+    - deflist         # alternative to nested bullet-lists
+    - dollarmath      # enable support for `$$` and `$` syntax for math blocks
+    - html_admonition # Notes, warnings, and other admonitions. [2]
+    - html_image      # MyST allows for directives to be used such as {image} and {figure}
+    - linkify         # automatically identify “bare” web URLs and add hyperlinks
+    - replacements    # automatically convert some common typographic texts (e.g (tm), (c) )
+    - smartquotes     # automatically convert standard quotations to their opening/closing variants:
+    - substitution    # will allow you to add substitutions (variables) in markdown
+
+# [1] Using colons instead of back-ticks has the benefit of allowing the content to be rendered correctly, when you are working in any standard Markdown editor. 
+#
+# [2] See https://jupyterbook.org/content/content-blocks.html?highlight=admonition#notes-warnings-and-other-admonitions
+# 
+#######################################################################################
+# Spinx configuration
+sphinx:
+  config:
+    language: en # assists screen readers
+    html_extra_path: ['assets']
+    html_show_copyright: false  
+
+#######################################################################################
+# Bibliography
+# bibtex_bibfiles:
+#    - references.bib

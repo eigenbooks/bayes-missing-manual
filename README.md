@@ -1,0 +1,1 @@
+This is a user manual for using Bayes theorem on practical day-to-day problems.
