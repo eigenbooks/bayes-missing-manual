@@ -18,7 +18,8 @@
 - [x] Check all links
 - [x] Scrub the text to make sure there are as many cross references as possible, and that they all work 
 - [later] Sitemap.xml and robots.txt [sitemap generator](https://timestampgenerator.com/xml-sitemap-from-list), [sitemap validator](https://www.xml-sitemaps.com/validate-xml-sitemap.html), [crawler simulator](https://www.xml-sitemaps.com/se-bot-simulator.html)
-- [x] Jacobs example from the paper he sent me
+- [] Update meta data on each page??
+- [later] Jacobs example from the paper he sent me
 - [x] Add more references, including links to PDFs when chapter previews are available
 - [-] Should there be a section on gambling?
 - [-] Should there be a visual introduction like [Dan Roam's salesforce talk describe anything in 5 images](https://www.salesforce.com/video/3620187/)? I was thinking of using the four candles example.
