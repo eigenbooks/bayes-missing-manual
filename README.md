@@ -1,1 +1,3 @@
-This is a user manual for using Bayes theorem on practical day-to-day problems.
+# Bayes Theorem - The Missing Manual
+
+Welcome to the missing manual for Bayes theorem users. This manual is designed to provide documentation for people who use - or want to use - Bayes theorem on a day-to-day basis. It covers a small subset of Bayesian statistics that the author feels are disproportionately helpful for solving real world problems quickly with mental math in your head. This manual only covers the absolute simplest formulation of Bayes theorem and then uses a large number of examples to help solidify your understanding and intuition of the topic. Read the manual at [bayesmanual.com](https://bayesmanual.com).
