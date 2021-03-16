@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Motivating example &#8212; Bayes Theorem - The Missing Manual</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Mathematical prerequisites" href="math-prereq.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Bayes Theorem - The Missing Manual</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Motivating example
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="math-prereq.html">
+   Mathematical prerequisites
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="solution-process.html">
+   Bayes theorem solution process
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="worked-examples.html">
+   Worked examples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="conclusion.html">
+   Conclusion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="appendix-theory.html">
+   Appendix: Theory
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/motivating-example.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mmmm-worcestershire-cola">
+   Mmmm…Worcestershire Cola
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-bayesian-inference-is-so-useful">
+   Why Bayesian inference is so useful
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="motivating-example">
+<span id="example"></span><h1>Motivating example<a class="headerlink" href="#motivating-example" title="Permalink to this headline">¶</a></h1>
+<p>In the foreword of <a class="reference external" href="http://jim-stone.staff.shef.ac.uk/BookBayes2012/bookbayesch01.pdf">Bayes’ Rule - A tutorial introduction to Bayesian Analysis</a> James Stone Writes:</p>
+<blockquote>
+<div><p>Lecturers (and authors) like to teach using a top-down approach, so they usually begin with abstract general principles, and then move on to more concrete examples.  In contrast, students usually like to learn using a bottom-up approach, so they like to begin with examples, from which abstract general principles can then be derived. As this book is not designed to teach lecturers or authors, it has been written using a bottom-up approach. Accordingly, the first chapter contains several accessible examples of how Bayes’ rule can be useful in everyday situations, and these examples are examined in more detail in later chapters.</p>
+</div></blockquote>
+<p>Amen to that! Here is a full example to set the stage for the rest of the manual. This example is provided in narrative form to introduce the idea of Bayes theorem. Later in the manual the <a class="reference internal" href="worked-examples.html#examples"><span class="std std-ref">worked examples</span></a> chapter shows how to apply Bayes theorem to 20+ problems using the <a class="reference internal" href="solution-process.html#process"><span class="std std-ref">standard solution process</span></a>.</p>
+<div class="section" id="mmmm-worcestershire-cola">
+<h2>Mmmm…Worcestershire Cola<a class="headerlink" href="#mmmm-worcestershire-cola" title="Permalink to this headline">¶</a></h2>
+<p>Say that you open up your Facebook app one morning and see a headline that says “Study shows Worcestershire sauce cola taken in moderation reduces risk of heart disease” <a class="footnote-reference brackets" href="#simpsons" id="id1">1</a>. After spitting your morning coffee all over the passenger next to you on the train in response to this headline you resort to Bayes theorem to decide how you interpret this so-called news. Your hypothesis is that the news headline is fake news. We will represent our beliefs in terms of relative odds that the headline is fake/real. Your gut tells you this headline is complete bull shit and you estimate the odds conservatively at 100 to 1 against the hypothesis. Note that we will use shorthand to denote the 100 to 1 odds as “100:1”. You believe that headline is 100 times more likely to be fake news than real news. Before you even read the news story you realize that it will take very strong evidence to change your mind. To your dismay the news story describes how a prestigious team of researchers at the Harvard medical school conducted a randomized trial at 17 hospitals over the course of 10 years encompassing 14,129 patients. The resulting decrease in heart disease for Worcestershire sauce cola drinkers was on average 13%! This checks all the major elements of a good medical study, so you prescribe the likelihood of the observed effect occurring if the story is fake to be 1:64 in favor of the news being real. We will go into <a class="reference internal" href="worked-examples.html#medical-heuristic"><span class="std std-ref">much more detail</span></a> about where the 1:64 odds came from later on - just run with it for now.</p>
+<p>Bayes theorem is a math formula that quantifies a thought process that you likely use multiple times per day without noticing:</p>
+<ol class="simple">
+<li><p>You have opinions or beliefs about how the world around you works</p></li>
+<li><p>You observe something happen (latter we will call this data or evidence to be formal)</p></li>
+<li><p>You may, or may not, revise your beliefs about how the world around you works based on this new observation. Any change in how you think depends on both the strength of your prior beliefs - are you certain, or just ambivalent - and how convincing your observation was - are you shocked, or was it a mundane observation.</p></li>
+</ol>
+<p>Mathematically the <a class="reference internal" href="appendix-theory.html#odds-form"><span class="std std-ref">odds form</span></a> of Bayes theorem can be stated as:</p>
+<div class="math notranslate nohighlight" id="equation-eq-bayes-odds-verbal">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-bayes-odds-verbal" title="Permalink to this equation">¶</a></span>\[
+(prior \space odds) \times (relative \space likelihoods) = (posterior \space odds)
+\]</div>
+<p>Those funny names are so ubiquitously standard in the literature on Bayes theorem that I felt they had to be used even if it will take some time to understand what they mean. Let’s break the equation down:</p>
+<p><strong>Prior odds</strong> - This term represents what you would have thought prior to making any observations. For example, if you have a loving and healthy relationship with your partner your prior odds that they would cheat on you would be very low. In our Worcestershire cola example, before we read the article, we were very skeptical of the headline and assigned our prior odds as very strongly in favor of fake news.</p>
+<p><strong>Relative likelihoods</strong> - This term can be considered the strength of the evidence/data/research/argument. If your best friend in the world tells you your goldfish is dead then there is probably a strong likelihood that the goldfish is in fact dead. If a supermarket tabloid tells you that the president is a cross dressing martian, you might find it <em>unlikely</em> evidence given the source. While the prior odds are often based on your gut feeling, the relative likelihood is based on any additional information you are able to collect.</p>
+<p><strong>Posterior odds</strong> <a class="footnote-reference brackets" href="#buttox" id="id2">2</a> - This term is the output of Bayes theorem. This represents the odds of an event occurring given some observation. The posterior odds are a combination of our original belief and any insights gained from the research we performed after initially reading the headline. The posterior odds show how our original beliefs might change given everything we now know about the potentially fake news story.</p>
+<p>The math here is alarmingly simple, just multiplication. The trick is identifying that you can use Bayes Theorem and establishing ‘good’ priors and relative likelihoods. Like most things in life you won’t be given all the information you need, you will have to learn how to find or accurately estimate the missing pieces. Luckily as long as you can estimate values to the correct order of magnitude Bayes theorem is usually robust to small errors <a class="footnote-reference brackets" href="#small" id="id3">3</a>.</p>
+<p>Going back to our example. We want to evaluate: “Is the Worcestershire sauce cola news story fake or real”. This is a binary outcome. Either the news story is fake or it is real. Bayes theorem is going to provide us with the odds that the story is fake/real. Our gut feeling is that the story is fake (Worcestershire sauce cola, is that even a real thing?!). We set our prior odds at 100:1 in favor of fake. We are not so hard headed that we refuse to believe the hypothesis could never be true, no matter what else we learn about it, but we firmly believe that the story is complete malarkey. After actually reading the news story we are quite surprised at the rigorous science used to justify the claim of reducing heart disease. As will be discussed later we use a <a class="reference internal" href="worked-examples.html#medical-heuristic"><span class="std std-ref">heuristic</span></a> method to assign a relative likelihood of 1:64 in favor of the news being real. This implies that the evidence for the story being true is certainly compelling. Multiply the odds term-by-term to arrive at the posterior odds the news story is fake. In our example term-by-term means <span class="math notranslate nohighlight">\(100 \times 1 = 100\)</span> and <span class="math notranslate nohighlight">\(1 \times 64 = 64\)</span>. See below.</p>
+<table class="colwidths-auto table" id="worcestershire-sauce-initial">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Odds of Worcestershire sauce cola news story being fake or real</span><a class="headerlink" href="#worcestershire-sauce-initial" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Fake news</p></th>
+<th class="head"><p>Real news</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>100</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>1</p></td>
+<td><p>64</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p>100</p></td>
+<td><p>64</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simplified posterior</p></td>
+<td><p>25</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-even"><td><p>Probability</p></td>
+<td><p>0.61</p></td>
+<td><p>0.39</p></td>
+</tr>
+</tbody>
+</table>
+<p>The posterior odds of the news story being fake/real, according to Bayes Theorem, are 100:64. This simplifies to odds of 25:16. The story is <span class="math notranslate nohighlight">\(25/16=1.56\)</span> times more likely to be fake than real. This represents a probability of about 0.61 that the story is fake. Even after all of the impressive evidence, our initial skepticism prevents us from believing that the news story is real. Granted we now admit that we are sufficiently uncertain about the credence of the story, pegging our beliefs in only slightly stronger odds than a fair coin flip.</p>
+<p>This however is not where the Worcestershire cola story ends. Using Bayes theorem does not eliminate our need to think critically. Initially you were incredibly sure Worcestershire cola was fake news, and then you saw compelling evidence to change your mind. Rarely are we so sure and so wrong at the same time, so you keep digging for additional pieces of evidence. In this second phase of the investigation your posterior odds are now used as your prior odds as you collect more evidence (25:16 for fake:real). First you review the actual paper quoted by the story. The news story was approximately correct, but upon closer inspection of the original journal paper there are some details that slightly diminish your faith in the method used to evaluate the clinical trial. Make your new likelihood 2:1 for fake:real. The journal the article was published in is not a top tier journal like the New England Journal of Medicine, but rather a second tier journal, so we revise our new likelihood again to 4:1. The lead author <em>was</em> at the Harvard medical school, but no longer works there - likelihood becomes 8:1 in favor of fake. A bit more digging upends a news story describing how the lead author on the paper resigned under a cloud of controversy from the university - revise the likelihood to 16:1. Finally you discover that the lead author of the paper now works for the Worcestershire cola company as head of R&amp;D - likelihood becomes 32:1 in favor of fake. At this point your intuition should tell you what is going to happen, the odds of your hypothesis being true are going to plummet, but let’s do the math for the sake of practice:</p>
+<table class="colwidths-auto table" id="worcestershire-sauce-updated">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Updated odds of fake news</span><a class="headerlink" href="#worcestershire-sauce-updated" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Fake news</p></th>
+<th class="head"><p>Real news</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds (from <a class="reference internal" href="#worcestershire-sauce-initial"><span class="std std-ref">above</span></a>)</p></td>
+<td><p>25</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>32</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds (with more evidence)</p></td>
+<td><p>800</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simplified posterior</p></td>
+<td><p>50</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Probability</p></td>
+<td><p>0.98</p></td>
+<td><p>0.02</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You have a couple options with how you process multiple pieces of evidence. In this second part of the example we lumped all the evidence (trial details, second tier journal, employment scandal, conflict of interest, etc…) together and used Bayes theorem once. You could have also processed each piece of information separately with successive applications of Bayes theorem. In the end, you will get the same answer, so choose the method that is most convenient for your workflow.</p>
+</div>
+<p>Bayes theorem revises your belief to 800:16 in favor of fake news. This simplifies to 50:1 for the odds of fake to real. Fifty times more likely to be fake than real, or a 0.98 probability that the news is fake. Again the numbers don’t matter all that much as long as you are not grossly incorrect - they were all subjective estimates anyways. The key takeaway here is the intuition about your initial belief, the surprise at the strength of the initial evidence, and the impetus to not take things at face value when the prior odds and the likelihood are in stark disagreement.</p>
+<p>The above was a narrative for introducing Bayes theorem, but there was a lot of hand waving and “just trust me” going on. In the <a class="reference internal" href="math-prereq.html#prereqs"><span class="std std-ref">next chapter</span></a> we will lay out the two mathematical prerequisites needed to ensure everyone has consistent success, then the one and only method used in this document for <a class="reference internal" href="solution-process.html#process"><span class="std std-ref">solving</span></a> all the <a class="reference internal" href="worked-examples.html#examples"><span class="std std-ref">example problems</span></a> will be presented.</p>
+</div>
+<div class="section" id="why-bayesian-inference-is-so-useful">
+<h2>Why Bayesian inference is so useful<a class="headerlink" href="#why-bayesian-inference-is-so-useful" title="Permalink to this headline">¶</a></h2>
+<p>Despite the long list of caveats and constraints that I have placed on Bayes theorem to keep the calculations simple it is still a very useful formula. Uncertainty is inherently handled by the use of probabilities/odds. Even in its simplest form, probabilities are a wildly powerful and practical tool.</p>
+<p>As you learn more about your problem you can incrementally update your beliefs. There is no difference in the end result if all your data arrives in one batch at once, or if you slowly over the course of a decade collect data. If the data points are the same then the final result will ultimately be the same. As an added bonus you don’t have to wait until all observations arrive to reason about your world. In fact if the first few data points that you observe surprise you, it would be smart to generate new hypotheses that better describe the data instead of waiting for your original hypothesis to be fully rejected as highly improbable.</p>
+<p>For observations made outside of a laboratory, it is very common for the data to be observed before any hypotheses are generated. It would be foolish to only incorporate information after designing an experiment to test your hypothesis. There is no notion of <a class="reference internal" href="appendix-theory.html#temporal-constraints"><span class="std std-ref">temporal constraints</span></a> in Bayes theorem, so developing your priors after seeing the data is not wrong as long as you don’t pick your probabilities to reinforce your beliefs instead of revising your beliefs based on the probabilities.</p>
+<p>Finally the intuition of Bayes theorem can be more helpful than running the actual numbers. If your understanding of Bayes theorem conditions you to be aware of situations where solid reasoning is not being applied, for what ever reason, you may not need to actually plug in the numbers.</p>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>This chapter used a motivating problem to introduce the ideas of Bayes theorem. The remainder of the manual will attempt to set you up for success and make the application of Bayes theorem straight forward. The <a class="reference internal" href="math-prereq.html#prereqs"><span class="std std-ref">next chapter</span></a> will introduce two concept that you need to know to be successful with this manual. Don’t be alarmed by the title <em>mathematical prerequisites</em>, nothing is more complicated than multiplication you can do in your head. Mostly the next chapter introduces application specific vocabulary.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="simpsons"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>This is a pop culture reference to the Simpsons television show. See season 19 episode 13, or view <a class="reference external" href="https://www.youtube.com/watch?v=NdIAmpbXR34">this clip</a>. The medical claim and statistics are of course purely fictional.</p>
+</dd>
+<dt class="label" id="buttox"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Making a buttocks jokes when discussing Bayes theorem is a major no no in the eyes of serious mathematicians. Please stop giggling every time I say ‘posterior’.</p>
+</dd>
+<dt class="label" id="small"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>In this context an error of 200 - 300% is considered small! If you can keep your errors less than 500% things will still probably work out for you mathematically.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="introduction.html" title="previous page">Introduction</a>
+    <a class='right-next' id="next-link" href="math-prereq.html" title="next page">Mathematical prerequisites</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan Lowe<br/>
+        
+          <div class="extra_footer">
+            <p><i>Bayes Theorem - The Missing Manual</i> is licensed under a creative commons licence (<a href="http://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>).</p>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

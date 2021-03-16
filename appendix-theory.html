@@ -1,0 +1,1732 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appendix: Theory &#8212; Bayes Theorem - The Missing Manual</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Conclusion" href="conclusion.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Bayes Theorem - The Missing Manual</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="motivating-example.html">
+   Motivating example
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="math-prereq.html">
+   Mathematical prerequisites
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="solution-process.html">
+   Bayes theorem solution process
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="worked-examples.html">
+   Worked examples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="conclusion.html">
+   Conclusion
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Appendix: Theory
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/appendix-theory.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#disambiguation-of-the-language-we-use-for-probability-and-statistics">
+   Disambiguation of the language we use for probability and statistics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#derivation-of-bayes-theorem">
+   Derivation of Bayes Theorem
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probability-notation">
+     Probability notation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#basic-notation">
+       Basic notation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#product-rule-of-probability">
+       Product rule of probability
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#marginal-probability">
+       Marginal probability
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mutually-exclusive-and-exhaustive-propositions">
+       Mutually exclusive and exhaustive propositions
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-special-case-of-binary-events">
+       The special case of binary events
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probability-form-of-bayes-theorem">
+     Probability form of Bayes theorem
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#application-specific-notation">
+       Application specific notation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#probability-of-the-evidence">
+       Probability of the evidence
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#temporal-sequencing">
+       Temporal sequencing
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#odds-notation">
+     Odds notation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-very-brief-history-of-odds-and-gambling">
+       A very brief history of odds and gambling
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#relative-odds">
+       Relative odds
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#odds-form-of-bayes-theorem">
+     Odds form of Bayes theorem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#revisiting-the-mystic-seer-example">
+     Revisiting the mystic seer example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#log-odds-form">
+     Log odds form
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-interplay-between-the-prior-and-the-relative-likelihood">
+   The interplay between the prior and the relative likelihood
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extreme-relative-likelihoods">
+     Extreme relative likelihoods
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extreme-priors">
+     Extreme priors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples-of-alternative-forms-of-bayes-theorem">
+   Examples of alternative forms of Bayes theorem
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pink-shirts">
+     Pink shirts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-boys-in-the-family-example">
+     Two boys in the family example
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#three-hypothesis-and-the-probability-form-of-bayes-theorem">
+       Three hypothesis and the probability form of Bayes theorem
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#three-hypothesis-and-a-normalization-factor">
+       Three hypothesis and a normalization factor
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#three-hypothesis-and-the-odds-form-of-bayes-theorem">
+       Three hypothesis and the odds form of Bayes theorem
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#one-hypothesis-and-the-probability-form-of-bayes-theorem">
+       One hypothesis and the probability form of Bayes theorem
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#comparison-of-results-for-the-two-boys-problem">
+       Comparison of results for the two boys problem
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-applications">
+   Other applications
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#beta-distribution">
+     Beta distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-b-testing">
+     A/B testing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#casting-model-comparison-as-parameter-estimation">
+     Casting model comparison as parameter estimation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="appendix-theory">
+<span id="theory"></span><h1>Appendix: Theory<a class="headerlink" href="#appendix-theory" title="Permalink to this headline">¶</a></h1>
+<p>This section was not written for general readers. This is not intended as part of the curriculum for learning (or teaching) Bayes Theorem for day-to-day problems. The manual can be used in its entirety without reading this section. If there is any doubt in your mind, you should stop reading at this point.</p>
+<p>This section was written for the author’s sake, to make sure I had all the details correct. It might also be helpful for technical reviewers. A few very detail oriented readers may want to peruse this section to provide some rigor for the methods shown in the rest of the manual.</p>
+<div class="section" id="disambiguation-of-the-language-we-use-for-probability-and-statistics">
+<h2>Disambiguation of the language we use for probability and statistics<a class="headerlink" href="#disambiguation-of-the-language-we-use-for-probability-and-statistics" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="introduction.html#intro"><span class="std std-ref">introduction</span></a> to this manual described how probability and statistics differ in this manual. Descriptive statistics are a description of observed data and probability is a belief. Statistical inference allows us to reason about the data that we are observing to try and explain our world.</p>
+<p>There are many classic examples (rolling dice, drawing cards, flipping coins) where you can count all the possible outcomes and interpret probability as a frequency of occurrence as the most useful way to think about the problem. These are known as frequentest probabilities. The uncertainty in these situations is a result of the process that generates the data. Given enough observations of these types of processes (say 100 coin flips) the probabilities start to converge. There might be a run of 7 heads at some point, which is curious, but eventually the ratio of heads to tails will converge.</p>
+<p>This manual mainly uses subjective probabilities instead of frequentest probabilities. Subjective probabilities are simply opinions. Hopefully you back your opinions up with some sort of evidence/data/logic/experience, but there is no mathematical constraint on how you derive your opinions. This lack of rigor makes subjective probabilities very helpful or very dangerous based on your level of skill. The onus is on you to generate probabilities that are useful to you. Bayes theorem does not care where your probabilities come from, so using either frequentest or subjective probabilities is valid. If you choose to use subjective probabilities - which we do repeatedly in this manual - you have to acknowledge that the results are personal. Someone else looking at the same data may start with a very different opinion/belief/probability and arrive at a much different result than you. This of course is perfectly acceptable as long as you realize there is no guarantee that your world view is correct in an absolute sense. Even with the dangers of subjective probabilities, using Bayes theorem to think about your problem means you are attempting to think critically.</p>
+<p>For me the more interesting set of problems is the case where the uncertainty is not in the process, but rather due to our lack of understanding. We are uncertain which candidate will win a future election, but there is no randomness in how votes are counted. Just because we lack an understanding of who will vote in any given election and how they will cast their vote doesn’t mean that elections have an element of randomness. This second type of problem can benefit from the use of Bayesian probability and is the focus of this manual.</p>
+<p>It’s not always easy to identify what someone is talking about without context because percentages can be used for both statistics and probability. In practical cases you need to use both statistics and probability to solve problems so being as explicit as possible with your language is important. In this manual probabilities are represented as a decimal and never a percentage.</p>
+<p>To further complicate the nomenclature that is being discussed is my goal of “thinking in probabilities”. This is my way of saying that I think we should use statistical inference when thinking about everyday problems. The goals of statistical inference can include statistical significance, parameter estimation, prediction of data values, and model comparison. This book focuses solely on model comparison because there are many practical applications. I often cast competing models as a hypothesis, but there is no relation to the null hypothesis testing which is commonly used in controlled experiments.</p>
+<p>What we call things matters because it influences how we teach and describe concepts. In this book statistics are descriptive, probabilities are beliefs, and hypotheses are models of how something works. We use Bayes theorem for inference with the goal of identifying the most likely hypothesis given the data that we have observed.</p>
+</div>
+<div class="section" id="derivation-of-bayes-theorem">
+<span id="bayes-derivation"></span><h2>Derivation of Bayes Theorem<a class="headerlink" href="#derivation-of-bayes-theorem" title="Permalink to this headline">¶</a></h2>
+<p>Recall that we are investigating a very small piece of the wide world of Bayesian statistics. The derivation shown here will be limited to just the application in this manual. The end goal is to derive the odds form of Bayes theorem. To achieve the end goal we have to settle on the notation and basic concepts for probability and odds. The basic laws of probability are taken as givens without proof in this manual. I would suggest <a class="reference internal" href="introduction.html#additional-refs"><span class="std std-ref">[Kurt]</span></a> as an excellent reference that derives the laws of probability from basic concepts using visual diagrams. The probability form of Bayes theorem is derived first so it can be used to derive the odds form. The odds form of Bayes theorem is used throughout the manual, see the <a class="reference internal" href="solution-process.html#process"><span class="std std-ref">standard solution method</span></a> for details on its use. The probability form is the most common form of Bayes theorem shown in other texts, so deriving it also serves to form a baseline with other reference sources.</p>
+<p>The log-odds form of Bayes theorem is trivial to derive from the odds form so it is included here because it has some very useful characteristics. I seriously considered using the log odds form as the basis for this manual, but ultimately didn’t because calculating logarithms in your head is not intuitive for most people.</p>
+<p>These derivations rely on frequentest statistics! I admit that this is a bit hypocritical. I rail against the use of frequentest statistics when teaching Bayes theorem because there are not, in my opinion, many practical problems to which frequentest methods apply. I defend this decision because this is not intended to be part of the manuals curriculum and most readers will not read this section. Still, I wish I could find a more intuitive way to derive these equations without a loss of rigor.</p>
+<div class="section" id="probability-notation">
+<h3>Probability notation<a class="headerlink" href="#probability-notation" title="Permalink to this headline">¶</a></h3>
+<p>Bayes theorem is easy to derive assuming that you have a ubiquitous notation for Bayesian probability.</p>
+<div class="section" id="basic-notation">
+<span id="basic-probability-notation"></span><h4>Basic notation<a class="headerlink" href="#basic-notation" title="Permalink to this headline">¶</a></h4>
+<p>Assume that you have <a class="reference external" href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw">three blue and one brown marble</a> in a bag. Say that you are interested in the probability that you will draw a blue marble at random from the bag. Using mathematical notation we can write the probability of drawing a blue marble as <span class="math notranslate nohighlight">\(p(marble \space = \space blue)\)</span>, or more simply <span class="math notranslate nohighlight">\(p(blue)\)</span>. The <span class="math notranslate nohighlight">\(p(a)\)</span> notation is shorthand for saying the probability of ‘a’ occurring. In this context ‘a’ is an event or a proposition that can occur.</p>
+<p>Next assume that we wanted to know the probability of drawing both a blue and brown marble with two successive draws from the bag (replace the marbles after drawing them). The mathematical notation for this is <span class="math notranslate nohighlight">\(p(blue,brown)\)</span>. The <span class="math notranslate nohighlight">\(p(a,b)\)</span> notation is shorthand for saying the probability of ‘a’ and ‘b’ both occurring. This is also called a joint probability.</p>
+<p>Finally imagine that you draw a blue marble from the bag. Assume that you now want to know what the probability of drawing a brown marble without placing the blue marble back into the bag. This can be denoted as <span class="math notranslate nohighlight">\(p(brown|blue)\)</span>. The probability <span class="math notranslate nohighlight">\(p(b|a)\)</span> notation is shorthand for saying the probability of ‘b’ occurring given that ‘a’ occurs. In English this allows you to say “what is the probability of an event occurring now that I have some information”.</p>
+<p>Essentially in probability notation the comma (,) represents the word ‘and’, while the pipe (|) represents the word ‘given’. A complex example of this notation might be something like this: <span class="math notranslate nohighlight">\(p(brown|blue,rain,monday)\)</span> - meaning the probability of drawing a brown marble given that an earlier draw showed a blue marble, it is raining outside, and it is a Monday. In our example the weather and the day of the week have no influence on the color of the marble that is drawn. So <span class="math notranslate nohighlight">\(p(brown|blue,rain,monday)\)</span> simplifies to <span class="math notranslate nohighlight">\(p(brown|blue)\)</span> because the color of marble is independent of the other (nonsense) variables.</p>
+<p>Because it is used frequently, there is a special symbol in probability notation to represent an event not happening. The negation symbol (<span class="math notranslate nohighlight">\(\neg\)</span>) can be placed in front of a variable to indicate that the event did not occur. For example <span class="math notranslate nohighlight">\(p(\neg a)\)</span> is read as the probability of event ‘a’ not occurring. Sometimes negation refers to a single event, like the opposite of a basketball team winning a  game is loosing the game. At other times it can refer to any other event, such as any of the other 29 basketball teams winning the championship.</p>
+</div>
+<div class="section" id="product-rule-of-probability">
+<span id="product-rule"></span><h4>Product rule of probability<a class="headerlink" href="#product-rule-of-probability" title="Permalink to this headline">¶</a></h4>
+<p>The product rule of probability states that:</p>
+<div class="math notranslate nohighlight">
+\[p(a,b) = p(a)p(b|a)\]</div>
+<p>This combines the three concepts described in the <a class="reference internal" href="#basic-probability-notation"><span class="std std-ref">basic notation</span></a> section into a single relationship. The trivial case of the product rule occurs when the two events (a and b) are totally independent - like when rolling two fair six sided dice. The number showing on one die has no bearing on the other die. In this special case of rolling two dice the product rule reduces to <span class="math notranslate nohighlight">\(p(a,b) = p(a)p(b)\)</span>. The probability of rolling a one on each die is 1/6. So the probability of rolling two ones is <span class="math notranslate nohighlight">\(1/6 \times 1/6 = 1/36\)</span>. In the case where marbles are drawn from the bag, and not replaced, the conditional form of the product rule is required:</p>
+<div class="math notranslate nohighlight">
+\[p(blue,brown) = p(blue)p(brown|blue)\]</div>
+<p>With initially three blue and one brown marble in the bag <span class="math notranslate nohighlight">\(p(blue) = 3/4\)</span>. After drawing a blue marble out of the bag - and not replacing it - <span class="math notranslate nohighlight">\(p(brown|blue)\)</span> is now <span class="math notranslate nohighlight">\(1/3\)</span>. Putting it all together:</p>
+<div class="math notranslate nohighlight">
+\[p(blue,brown) = p(blue)p(brown|blue) = 3/4  \times 1/3 = 3/12 = 1/4\]</div>
+<p>For the sake of illustration, let’s assume that the brown marble was drawn first and then the blue marble. Repeating the calculation shows that on the first draw <span class="math notranslate nohighlight">\(p(brown) = 1/4\)</span> and then subsequently <span class="math notranslate nohighlight">\(p(blue|brown) = 3/3 = 1\)</span>. Then <span class="math notranslate nohighlight">\(p(brown,blue) = 1/4 \times 1 = 1/4\)</span> is the same result even though the order that the marbles were drawn was different.</p>
+</div>
+<div class="section" id="marginal-probability">
+<span id="id1"></span><h4>Marginal probability<a class="headerlink" href="#marginal-probability" title="Permalink to this headline">¶</a></h4>
+<p>The concept of marginal probability is complimentary to the product rule of probability. The product rule is used to calculate a joint probability such as <span class="math notranslate nohighlight">\(p(a,b)\)</span>. The marginal probability is used to calculate the probability of just one event, say <span class="math notranslate nohighlight">\(p(b)\)</span> across all of the other possible outcomes of <span class="math notranslate nohighlight">\(a\)</span>. The marginal probability of a joint probability is:</p>
+<div class="math notranslate nohighlight" id="equation-eq-marginal-prob">
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq-marginal-prob" title="Permalink to this equation">¶</a></span>\[
+p(b) = \sum_a p(a,b) = \sum_a p(a)p(b|a)
+\]</div>
+<p>The <a class="reference internal" href="#product-rule"><span class="std std-ref">product rule</span></a> was used to expand the joint probability into an easier to use form. The easiest case occurs when <span class="math notranslate nohighlight">\(a\)</span> is a binary event. In this simple case:</p>
+<div class="math notranslate nohighlight">
+\[p(b) = p(a)p(b|a) + p(\neg a)p(b|\neg a)\]</div>
+<p>A slightly more complex example is when <span class="math notranslate nohighlight">\(a\)</span> is a finite set of outcomes. For example if <span class="math notranslate nohighlight">\(a=\{a_1,a_2,a_3\}\)</span> then:</p>
+<div class="math notranslate nohighlight">
+\[p(b) = p(a_1)p(b|a_1) + p(a_2)p(b|a_2) + p(a_3)p(b|a_3)\]</div>
+</div>
+<div class="section" id="mutually-exclusive-and-exhaustive-propositions">
+<span id="exclusive-and-exhaustive"></span><h4>Mutually exclusive and exhaustive propositions<a class="headerlink" href="#mutually-exclusive-and-exhaustive-propositions" title="Permalink to this headline">¶</a></h4>
+<p>The next two concepts - a set of mutually exclusive and exhaustive propositions - by itself seem academic. In the <a class="reference internal" href="#prob-evidence"><span class="std std-ref">next section</span></a> however these concepts will be critical in understanding what the denominator in Bayes theorem means.</p>
+<p>In probability notation a set of propositions (or outcomes) are mutually exclusive if only one proposition can be true. For example in a game maybe you can either win or loose, but never have a draw. A more complex example is the NFL draft where there are 224 total selections from a pool of <a class="reference external" href="https://operations.nfl.com/the-players/the-nfl-draft/the-rules-of-the-draft/">approximately 3000 players</a>. A player is either drafted to a single team or they are not. There are no other possible outcomes during the draft.</p>
+<p>A set of propositions is exhaustive if they cover every possible outcome. Again a win/loose game where there can be no draws is an exhaustive set. Similarly only people who posses a lottery ticket are eligible to win the lottery.</p>
+<p>Taken together a set of propositions are mutually exclusive and exhaustive if you can explicitly write down all the possible outcomes and be sure that only one of those outcomes will occur. In practice this can be difficult to achieve. For example consider your typical murder mystery. The suspects might be Mr. Green, Col. Mustard, and Ms. Scarlet. In real life it is hard to fully eliminate the tiny possibility that some other seemingly random person, like a secret agent, didn’t commit the murder.</p>
+<p>In summary for a set <span class="math notranslate nohighlight">\(X = \{X_1,X_2,...X_n\}\)</span> of propositions:</p>
+<ul class="simple">
+<li><p>Mutually exclusive means that the probability of any two events both occurring will be zero: <span class="math notranslate nohighlight">\(p(X_i,X_j) = 0\)</span>.</p></li>
+<li><p>Exhaustive means the union of all propositions is one: <span class="math notranslate nohighlight">\(p(X_1 \lor X_2 \lor...\lor X_n) =1\)</span>. This implies that at least one of the propositions has a probability of one.</p></li>
+<li><p>Propositions are mutually exclusive and exhaustive if the total probability of all propositions represents all possible outcomes: <span class="math notranslate nohighlight">\(\sum_{i=1}^{n}p(X_i)=1\)</span>.</p></li>
+</ul>
+</div>
+<div class="section" id="the-special-case-of-binary-events">
+<h4>The special case of binary events<a class="headerlink" href="#the-special-case-of-binary-events" title="Permalink to this headline">¶</a></h4>
+<p>Binary events, where there are only two possible outcomes, are a special case in probability theory. This manual uses this special case extensively because the math is easier when you constrain the solution process to binary events. There are plenty of other ways to apply Bayes theorem when not analyzing a binary event, but those methods are beyond the scope of this manual.</p>
+<p>True/false, fake/real, success/failure, win/lose, honest/corrupt, etc. are examples of binary events. If you can say that some proposition, a, is a binary event, then <span class="math notranslate nohighlight">\(p(a) + p(\neg a) = 1\)</span>. This also implies that the set <span class="math notranslate nohighlight">\(\{a,\neg a\}\)</span> is mutually exclusive and exhaustive.  In this special case <span class="math notranslate nohighlight">\(\neg a\)</span> is a mutually exclusive event instead of a catch all for ‘everything else that could happen’.</p>
+</div>
+</div>
+<div class="section" id="probability-form-of-bayes-theorem">
+<span id="probability-form-of-bayes"></span><h3>Probability form of Bayes theorem<a class="headerlink" href="#probability-form-of-bayes-theorem" title="Permalink to this headline">¶</a></h3>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Recall for this derivation that the product rule of probability is: <span class="math notranslate nohighlight">\(p(a,b) = p(a)p(b|a)\)</span></p>
+</div>
+</div>
+<p>Bayes theorem is derived by using the product rule of probability. If <span class="math notranslate nohighlight">\(p(a,b)\)</span> is stating the probability that both events ‘a’ and ‘b’ occur, then the order the variables are written in should not matter.</p>
+<div class="math notranslate nohighlight">
+\[p(a,b) = p(b,a)\]</div>
+<p>This expands via the product rule to:</p>
+<div class="math notranslate nohighlight">
+\[p(a)p(b|a) = p(b)p(a|b)\]</div>
+<p>Dividing through by <span class="math notranslate nohighlight">\(p(b)\)</span> results in the commonly shown form of:</p>
+<div class="math notranslate nohighlight" id="equation-eq-bayes-general">
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq-bayes-general" title="Permalink to this equation">¶</a></span>\[
+p(a|b) = \frac{p(a)p(b|a)}{p(b)}
+\]</div>
+<p>As far as I can tell <span class="math notranslate nohighlight">\(p(a|b) = p(a)p(b|a)/p(b)\)</span> is the most general form of Bayes theorem, but also not directly applicable to many real world problems. To actually use the formula you have to make an assumption and expand (or neglect!) the denominator. Also you usually have to assume how many possible states of the world you are willing to consider. Some of the common situations that I have seen are:</p>
+<ul class="simple">
+<li><p>One hypothesis, two possible outcomes</p></li>
+<li><p>Multiple hypothesis, two possible outcomes</p></li>
+<li><p>Multiple hypothesis, multiple possible states</p></li>
+<li><p>Continuous range of hypotheses and states</p></li>
+</ul>
+<p>In this manual we primarily concern ourselves with the first two situations. The math is much simpler when you constrain the problem to a binary outcome (true/false, success/fail, etc.). In practice many problems can be cast as a binary outcome so in practice this is not a significant constraint. If your problem can’t be cast as a binary event then you can always use a more complex form of Bayes theorem, see <a class="reference internal" href="#other-applications"><span class="std std-ref">parameter estimation</span></a> for a glimpse of how this works.</p>
+<div class="section" id="application-specific-notation">
+<h4>Application specific notation<a class="headerlink" href="#application-specific-notation" title="Permalink to this headline">¶</a></h4>
+<p>The form used through much of this manual is the odds form of Bayes theorem. It is derived from the above general form using a couple of simplifying assumptions. The first assumption is that we are choosing to use Bayes theorem for hypothesis testing or model comparison. What is shown here won’t work for parameter estimation problems. To break away from the general case to a more specific case let’s substitute in more meaningful variable names. Recast the theorem derived above in terms of the variable names hypothesis (H) and evidence (e):</p>
+<div class="math notranslate nohighlight" id="equation-eq-bayes-simple">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq-bayes-simple" title="Permalink to this equation">¶</a></span>\[ 
+p(H|e) =  \frac{ p(H)p(e|H)}{p(e)} 
+\]</div>
+<p>I like to use the notation <em>hypothesis</em> instead of <em>model</em> because a model tends to be a formal thing - like a weather model. By comparison a hypothesis can be very informal, like ‘I believe Mr Green is the murderer’, or ‘I believe that an acquaintance is jealous’. If you have a complex and rigorous hypothesis that is great, but less rigorous hypotheses will work as well.</p>
+<p>In the new notation, evidence is a general term for anything that is known because of observation. Similar to a hypothesis, evidence can come in many forms ranging from cold hard data to gossip at the water cooler. Evidence can be generated in many ways, for example:</p>
+<ul class="simple">
+<li><p>Totally unplanned observations that you just happened to be lucky enough to see</p></li>
+<li><p>The result of research into existing data sets</p></li>
+<li><p>The outcome of a controlled experiment</p></li>
+<li><p>Purchasing advice from a expert</p></li>
+</ul>
+<p>Bayes theorem will help us weigh the <em>strength of the evidence</em> so we can modify our beliefs. Evidence with little to no strength will have have little to no impact on our beliefs.</p>
+<p>By convention the terms in Bayes theorem are given names. I don’t like these names, but they are ubiquitous in the literature on Bayes theorem. The descriptions presented here are tailored to using the theorem for a binary event. There can be other interpretations.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p(H)\)</span>: The probability of the hypothesis being true. This is known as the <em>prior probability</em>. Before you observed the evidence, this is what you would have believed.</p></li>
+<li><p><span class="math notranslate nohighlight">\(p(e|H)\)</span>: The likelihood of the hypothesis generating the evidence. Known simply as the <em>likelihood</em>. This term quantifies the strength of the evidence. This is a conditional probability that is the inverse of what we are trying to figure out.</p></li>
+<li><p><span class="math notranslate nohighlight">\(p(H|e)\)</span>: The probability of the hypothesis given the evidence. This is known as the <em>posterior probability</em> and is also a conditional probability. It is usually not possible to calculate this probability from the evidence unless you use Bayes theorem.</p></li>
+</ul>
+<p>Tellingly <span class="math notranslate nohighlight">\(p(e)\)</span>, the denominator in the theorem, is not given a standard name by convention. The <em>probability of the evidence</em> is not a very intuitive concept and warrants its <a class="reference internal" href="#prob-evidence"><span class="std std-ref">own section</span></a> for discussion.</p>
+</div>
+<div class="section" id="probability-of-the-evidence">
+<span id="prob-evidence"></span><h4>Probability of the evidence<a class="headerlink" href="#probability-of-the-evidence" title="Permalink to this headline">¶</a></h4>
+<p>The derivation of the probability form of Bayes theorem is trivial if you understand the notation used. Understanding the meaning of the denominator in the theorem is where most of the complexity arises and makes the application of Bayes theorem rather tricky in my opinion. The odds form of Bayes theorem sidesteps this complication which is why it is used through out this manual. To motivate why the odds form is easier to work with we will describe some of the aspects of the denominator in the probability form of Bayes theorem.</p>
+<p>The probability of the evidence in the denominator of Bayes theorem can be recast in terms of probabilities that we know using the <a class="reference internal" href="#marginal-probability"><span class="std std-ref">marginal probability</span></a> of a <a class="reference internal" href="#basic-probability-notation"><span class="std std-ref">joint probability</span></a>. Equation <a class="reference internal" href="#equation-eq-marginal-prob-evidence">(5)</a> shows equation <a class="reference internal" href="#equation-eq-marginal-prob">(2)</a> in terms of the variable names hypothesis (H) and evidence (e):.</p>
+<div class="math notranslate nohighlight" id="equation-eq-marginal-prob-evidence">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq-marginal-prob-evidence" title="Permalink to this equation">¶</a></span>\[
+p(e) = \sum_H p(H,e) = \sum_H p(H)p(e|H)
+\]</div>
+<p>Therefore Bayes theorem can be written as:</p>
+<div class="math notranslate nohighlight">
+\[ p(H|e) = \frac{p(H)p(e|H)}{p(e)} = \frac{p(H)p(e|H)}{\sum_H{p(H)p(e|H)}} \]</div>
+<p>By recasting the denominator in this way we get to work with familiar terms, but it still can be very difficult to figure out the probability for each element in the sum found in the denominator.</p>
+<p>We avoid continuous random variables like the plague in this manual. But if you were to consider such situations the sum becomes an integral and the probabilities become distributions.</p>
+<div class="math notranslate nohighlight" id="equation-eq-calculus-probability-evidence">
+<span class="eqno">(6)<a class="headerlink" href="#equation-eq-calculus-probability-evidence" title="Permalink to this equation">¶</a></span>\[ 
+p(H|e) = \frac{p(H)p(e|H)}{\int{p(H)p(e|H)}dH} 
+\]</div>
+<p>This is the most general formulation of Bayes theorem and soon after it is presented there is usually a note saying that the calculation of the integral is impossible in practical real world situations. This always lead me to wonder why if you can’t calculate the integral, would you show the result in the first place? Most books on Bayes theorem - including this one - focus on how to exploit a loop hole of some kind so you don’t have to calculate the <em>impossible</em> integral.</p>
+</div>
+<div class="section" id="temporal-sequencing">
+<span id="temporal-constraints"></span><h4>Temporal sequencing<a class="headerlink" href="#temporal-sequencing" title="Permalink to this headline">¶</a></h4>
+<p>It is important to point out that the derivation assumes no temporal sequencing of any kind. It is totally valid to observe data first and then generate a hypothesis. I believe that this is quite common in practice and makes Bayes theorem very useful. For example evidence occurs before the hypothesis in these types of situations:</p>
+<ul class="simple">
+<li><p>Your playing a game of chance at a casino and you loose 5 times in row, what are the odds that the casino is cheating you given your loosing streak?</p></li>
+<li><p>You find an pair of underwear that is not yours in your bedroom, what are the odds that you your partner is not being faithful?</p></li>
+<li><p>You observe an unidentified flying object (UFO), what are the odds of the vehicle was extraterrestrial life?</p></li>
+<li><p>Late October polling results show a political candidate leading in key battle ground states, what are the odds that candidate wins an early November election?</p></li>
+<li><p>You hear a customer ask if you have “fork handles”, what are the odds they are really asking for “four candles”?</p></li>
+</ul>
+<p>For those familiar with the scientific method this may sound sacrilege. Many of us are taught that good science necessitates the creation of a hypothesis first, then you test that hypothesis. If your goal is to prove something scientifically, then I couldn’t agree more with the hypothesis-then-test approach. You most often see this approach in a controlled laboratory setting. Bayes theorem is useful in a controlled laboratory setting. However, traditional null hypothesis significance testing is also useful in a controlled laboratory setting. Applying Bayes theorem for controlled laboratory settings requires some nuance that is beyond the scope of this book.</p>
+<p>If your goal is to simply draw a reasonable explanation for the evidence you are observing when you are more or less naive to the underlying mechanisms then the evidence-then-hypothesis approach is perfectly acceptable.</p>
+<p>The point is that we apply temporal constraints to Bayes theorem to fit our needs, there is nothing in the derivation that restricts the use of Bayes theorem in other ways. The use of prior and posterior makes it seem like there is a temporal order, but that is just a convention separate from the actual derivation. It is unusual, but it is even possible to <a class="reference internal" href="worked-examples.html#mystic-seer"><span class="std std-ref">work backwards</span></a> from a posterior probability to identify the implied prior probability.</p>
+<p>I personally feel that in the past I have relied too heavily on the scientific method and controlled experiments and failed to incorporate “free” evidence that happened outside the confines of the laboratory. I strongly suggest not excluding either the hypothesis-then-test or evidence-then-hypothesis approach, but rather using them together.</p>
+</div>
+</div>
+<div class="section" id="odds-notation">
+<span id="id2"></span><h3>Odds notation<a class="headerlink" href="#odds-notation" title="Permalink to this headline">¶</a></h3>
+<p>The odds form of Bayes theorem is also easy to derive assuming that you have a ubiquitous notation for for the concept of relative odds and understand how they relate to probability.</p>
+<div class="section" id="a-very-brief-history-of-odds-and-gambling">
+<h4>A very brief history of odds and gambling<a class="headerlink" href="#a-very-brief-history-of-odds-and-gambling" title="Permalink to this headline">¶</a></h4>
+<p>The concept of odds predates the concept of probability. It will be shown that odds are typically a more user friendly way to quantify a belief, and that probability is a mathematical construct that makes derivations and proofs easier.</p>
+<p>Given its long history, and association with gambling, the word odds is commonly used in popular speech. Specifically, exclaiming “what are the odds of that happening!” when you are surprised by something is common. <a class="reference external" href="https://www.johndcook.com/blog/2017/10/19/common-words-that-have-a-technical-meaning-in-math/">Math uses common words as technical terms</a>, so the sentence above abuses the mathematical definition used in this manual in multiple ways.</p>
+<p>Odds in the betting world come in many forms - British, European, American moneyline - that vary across the type of game played and where in the world the betting house is located. The various betting notations are not used in this manual. Odds are a convenient way to quantify belief because it is easy to calculate the payout on a bet.</p>
+<p>If you know the odds, you can calculate the implied probability. If you add up the implied probabilities from a bookmaker for an event you will discover that they don’t quite sum to 1. This is of course how bookies make their money. I fear that many people commonly bet without knowledge of the implied probability, but that is a topic for a different book…</p>
+<p>Probability theory is intricately linked to gambling. Initially probability theory was considered a dirty science due to its initial association with gambling. Only later when applications in the financial and insurance industries demonstrated its utility did it become a serious topic that professional mathematicians would study.</p>
+<p>To avoid confusion with the historical meaning of odds, this manual uses the term ‘relative odds’ to denote a belief.</p>
+</div>
+<div class="section" id="relative-odds">
+<h4>Relative odds<a class="headerlink" href="#relative-odds" title="Permalink to this headline">¶</a></h4>
+<p>Relative odds are defined as a ratio, where probabilities are defined as a fraction of the whole.</p>
+<p>In the simple case shown in <a class="reference internal" href="#prob-vs-odds"><span class="std std-numref">Fig. 6</span></a>, probability and odds are compared. <a class="reference internal" href="#prob-vs-odds"><span class="std std-numref">Fig. 6</span></a> shows a binary example which is a special case that makes the math easier. Colon notation (:) is used to represent the relative odds, and is pronounced as ‘to’. For example the odds in favor of an event occurring are 3:2 or ‘three to two’. For consistency colon notation will be used in this manual. Equivalent notations represent odds as ratios or decimals. For example, <span class="math notranslate nohighlight">\(3:2 \Rightarrow 3/2 = 1.5\)</span>. For brevity relative odds will often be shortened to just odds in this manual.</p>
+<p>Relative odds tell you how many times more likely one event is than another. If the odds for an event are 3:2, then the event is <span class="math notranslate nohighlight">\(3/2 = 1.5\)</span> times more likely to occur than its compliment. For example if the New Hampshire Pineapples <a class="footnote-reference brackets" href="#pineapples" id="id3">1</a> are favored 3:2 to beat the Baltimore Nordiques, then the Pineapples are 1.5 times more likely to win.</p>
+<div class="figure align-default" id="prob-vs-odds">
+<a class="reference internal image-reference" href="_images/500px-Probability_vs_odds.png"><img alt="_images/500px-Probability_vs_odds.png" src="_images/500px-Probability_vs_odds.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Comparison of odds to probability. <a class="reference external" href="https://en.wikipedia.org/wiki/Odds#/media/File:Probability_vs_odds.svg">Source</a> (CC-BY-SA-4.0).</span><a class="headerlink" href="#prob-vs-odds" title="Permalink to this image">¶</a></p>
+</div>
+<p>In the more general case relative odds can be used to define the relative belief that a set of propositions will occur. For example a list of murder suspects can be assigned relative odds. The odds of suspects <a class="footnote-reference brackets" href="#clue" id="id4">2</a> Mr. Green, Col. Mustard, and Ms. Scarlet being the murderer might be 1:3:5 respectively. In this case Col. Mustard is <span class="math notranslate nohighlight">\(3/1=3\)</span>  times as likely to be the murderer as Mr. Green and <span class="math notranslate nohighlight">\(3/5 = 0.6\)</span> times as likely as Ms. Scarlet to be the murderer. Similar statements could be made comparing the other suspects.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The odds function <span class="math notranslate nohighlight">\(O()\)</span> is not the same as big O notation, such as <span class="math notranslate nohighlight">\(\mathcal{O}(n\log{}n)\)</span>, which describes how complex an algorithm is.</p>
+</div>
+</div>
+<p>Formally a set of propositions (or possible outcomes to an event) can be explicitly listed as <span class="math notranslate nohighlight">\(X = \{X_1,X_2,...,X_n\}\)</span>. The relative odds of those propositions occurring are then <span class="math notranslate nohighlight">\(x = \{x_1,x_2,...,x_n\}\)</span>. Odds are ratios, so scaling a set of odds does not change its meaning. For example if <span class="math notranslate nohighlight">\(\beta\)</span> is a constant then for all <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(y_n = \beta x_n\)</span>, then <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> would be equivalent sets of odds. Let the odds function, <span class="math notranslate nohighlight">\(O()\)</span>, map a set of propositions into a set of odds: <span class="math notranslate nohighlight">\(O(X) = x\)</span>. Because odds can be scaled without changing their meaning, we can only go so far as to say that odds are proportional to their respective probability:</p>
+<div class="math notranslate nohighlight">
+\[O(X) \propto p(X)\]</div>
+<p>For example if the probability of Mr. Green, Col. Mustard, and Ms. Scarlet being the murder is <span class="math notranslate nohighlight">\(X = \{0.1,0.3,0.5\}\)</span> respectively, then we can calculate the relative odds. Note that the probability does not sum to one in this example. This implies that we do not have an exhaustive set of propositions. Based on the given probabilities the relative odds of each suspect being the murderer are <span class="math notranslate nohighlight">\( x_n = \{0.1,0.3,0.5\}\)</span> which can be scaled to the friendlier form of <span class="math notranslate nohighlight">\(\{1,3,5\}\)</span>. If we were not being formal we could also write this with colon notation as <span class="math notranslate nohighlight">\(1:3:5\)</span>. Because odds can be scaled we could have also started with probabilities of <span class="math notranslate nohighlight">\(\{0.05,0.15,0.25\}\)</span>. This second variation is quite a different situations. The total probability that one of suspects is the murderer is only 0.45. There is a lot of probability reserved for other, yet to be named, suspects. Still the odds are the same in both cases.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Unless you have a <a class="reference internal" href="#exclusive-and-exhaustive"><span class="std std-ref">mutually exclusive and exhaustive</span></a> set of propositions, you can not calculate probabilities from the relative odds.</p>
+</div>
+<p>If, and only if, you have a mutually exclusive and exhaustive set of propositions, then probabilities can be calculated from the odds by normalizing each element like this:</p>
+<div class="math notranslate nohighlight">
+\[
+\Bigg\{\frac{x_1}{\sum_{n=1}^{i}x_i},\frac{x_2}{\sum_{n=1}^{i}x_i},...,\frac{x_n}{\sum_{n=1}^{i} x_i}\Bigg\} = \{p(X_1),p(X_2),...,p(X_n)\} = p(X)
+\]</div>
+<p>For the special case of binary events, which are used often in this manual, there are some simple relations to convert between odds and probability. For example a binary event might be true/false, win/lose, real/fake, success/failure, etc. If we let <span class="math notranslate nohighlight">\(H_1\)</span> and <span class="math notranslate nohighlight">\(H_2\)</span> be complementary events such that <span class="math notranslate nohighlight">\(H=\{H_1,H_2\}\)</span> then we can state that <span class="math notranslate nohighlight">\(p(H_1) = 1 - p(H_2)\)</span>. This allows us to easily switch back and forth between the odds and probability forms:</p>
+<p>If <span class="math notranslate nohighlight">\(p(H_n) = p \Rightarrow O(H_n) = \frac{p}{1-p}\)</span></p>
+<p>If <span class="math notranslate nohighlight">\(O(H_n) = q  \Rightarrow p(H_n) = \frac{q}{1+q}\)</span></p>
+<p>Unlike probability which is defined on the range <span class="math notranslate nohighlight">\([0,1]\)</span>, odds are defined on the range <span class="math notranslate nohighlight">\([0,+\infty]\)</span>, which can make interpretation more difficult. <a class="reference internal" href="#tab-strength-of-evidence"><span class="std std-numref">Table 29</span></a> provides rough guidance on how to interpret odds, which was taken from <a class="reference internal" href="introduction.html#additional-refs"><span class="std std-ref">[Kurt]</span></a>. Colon notation (<span class="math notranslate nohighlight">\(a:b\)</span>) doesn’t work well when showing ranges of values in a chart, so the equivalent odds ratio (<span class="math notranslate nohighlight">\(a/b\)</span>) can be used instead.</p>
+<table class="colwidths-auto table" id="tab-strength-of-evidence">
+<caption><span class="caption-number">Table 29 </span><span class="caption-text">Guidance for interpreting odds</span><a class="headerlink" href="#tab-strength-of-evidence" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Odds ratio (<span class="math notranslate nohighlight">\(a:b \Rightarrow a/b\)</span>)</p></th>
+<th class="head"><p>Strength of evidence</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1 - 3</p></td>
+<td><p>Interesting, but not conclusive</p></td>
+</tr>
+<tr class="row-odd"><td><p>3 - 20</p></td>
+<td><p>Looks like we are on to something</p></td>
+</tr>
+<tr class="row-even"><td><p>20 - 150</p></td>
+<td><p>Strong evidence</p></td>
+</tr>
+<tr class="row-odd"><td><p>&gt;150</p></td>
+<td><p>Overwhelming evidence</p></td>
+</tr>
+</tbody>
+</table>
+<p>Multiplication of sets of odds is very straight forward. Multiplication is element wise. For example if you have two separate sets of odds denoted as <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, then <span class="math notranslate nohighlight">\(xy=\{x_1y_1,x_2y_2,...,x_ny_n\}\)</span>. This result will be used extensively in the odds form of Bayes theorem.</p>
+</div>
+</div>
+<div class="section" id="odds-form-of-bayes-theorem">
+<span id="odds-form"></span><h3>Odds form of Bayes theorem<a class="headerlink" href="#odds-form-of-bayes-theorem" title="Permalink to this headline">¶</a></h3>
+<p>After the hard work of narrowly defining the nomenclature that we use for Bayes theorem, the derivation of the odds form is again relatively easy. Assume that you have two competing hypothesis, <span class="math notranslate nohighlight">\(H_1\)</span> and <span class="math notranslate nohighlight">\(H_2\)</span>, and you observe a single piece of evidence, <span class="math notranslate nohighlight">\(e\)</span>. In this manual the competing hypothesis are most likely a binary outcome such as <span class="math notranslate nohighlight">\(H_1\)</span> represents true and <span class="math notranslate nohighlight">\(H_2\)</span> represents false. Other combinations include fake/real, win/lose, honest/corrupt, etc. It will be shown later how to extended this method to three or more hypothesis. Using the probability form of Bayes theorem from equation <a class="reference internal" href="#equation-eq-bayes-simple">(4)</a>, the probability of a hypothesis being true can be written for each hypothesis.</p>
+<div class="math notranslate nohighlight">
+\[ p(H_1|e) = p(H_1)p(e|H_1)/p(e) \]</div>
+<div class="math notranslate nohighlight">
+\[ p(H_2|e) = p(H_2)p(e|H_2)/p(e) \]</div>
+<p>Dividing the two equations by each other eliminates <span class="math notranslate nohighlight">\(p(e)\)</span> because the same evidence is being observed for both hypothesis:</p>
+<div class="math notranslate nohighlight">
+\[\frac{p(H_1|e)}{p(H_2|e)} = \frac{p(H_1)p(e|H_1)/p(e)}{p(H_2)p(e|H_2)/p(e)} = \frac{p(H_1)p(e|H_1)}{p(H_2)p(e|H_2)}\]</div>
+<p>Separate the terms to make the result more readable</p>
+<div class="math notranslate nohighlight" id="equation-eq-bayes-proportional">
+<span class="eqno">(7)<a class="headerlink" href="#equation-eq-bayes-proportional" title="Permalink to this equation">¶</a></span>\[
+\frac{p(H_1|e)}{p(H_2|e)} = \frac{p(H_1)}{p(H_2)}\times\frac{p(e|H_1)}{p(e|H_2)}
+\]</div>
+<p>This intermediate step is known as the proportional form of Bayes theorem. In English this means that the ratio of the posterior probabilities are equal to the ratio of the prior probabilities times the ratio of the likelihoods. Ratios of probabilities are relative odds. If we use the notation <span class="math notranslate nohighlight">\(H=\{H_1,H_2\}\)</span> and the odds function, <span class="math notranslate nohighlight">\(O()\)</span>, then the result can be cast like this</p>
+<div class="math notranslate nohighlight" id="equation-eq-bayes-odds">
+<span class="eqno">(8)<a class="headerlink" href="#equation-eq-bayes-odds" title="Permalink to this equation">¶</a></span>\[
+O(H|e) = O(H) \times L(e)
+\]</div>
+<p>Note that <span class="math notranslate nohighlight">\(L(e)\)</span> gives a special designation given to the term <span class="math notranslate nohighlight">\(p(e|H_1)/p(e|H_2)\)</span>, known as the relative likelihood. Without mathematical notation this result can be stated verbally as:</p>
+<div class="math notranslate nohighlight">
+\[posterior \space odds = prior \space odds \times relative \space likelihood\]</div>
+<p>Expanding each term into its respective set shows how simple a calculation with the odds form of Bayes theorem can be</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+H &amp;= \{H_1,H_2\}\\
+O(H) &amp;= \{h_1,h_2\}\\
+L(e) &amp;= \{l_1,l_2\}\\
+O(H|e) &amp;= \{h_1l_1,h_2l_2\}
+\end{align*}
+\end{split}\]</div>
+<p>Again, following convention, each term is assigned a name in Bayes theorem. The mapping of the terms from the probability to odds form are not exactly one to one, so they are shown again for odds notation.</p>
+<p><strong>Prior odds</strong>: <span class="math notranslate nohighlight">\(O(H)\)</span> - This term represents what you would have thought prior to making any observations. For example, if you have a loving and healthy relationship with your partner your prior odds that they would cheat on you would be very low. In our <a class="reference internal" href="motivating-example.html#example"><span class="std std-ref">Worcestershire cola</span></a> example, before we read the article, we were very skeptical of the headline and assigned our prior odds as very strongly in favor of fake news. In most cases your prior odds are not an exhaustive set.</p>
+<p><strong>Relative likelihoods</strong>: <span class="math notranslate nohighlight">\(L(e)\)</span> - This term can be considered the strength of the evidence/data/research/argument. If your best friend in the world tells you your goldfish is dead then there is a strong likelihood that the goldfish is in fact dead. If a supermarket tabloid tells you that the president is a cross dressing martian, you might find it <em>unlikely</em> evidence given the source. While the prior odds are often based on your gut feeling, the relative likelihood is based on any additional information you are able to collect and the strength of the evidence.</p>
+<p><strong>Posterior odds</strong>: <span class="math notranslate nohighlight">\(O(H|e)\)</span> - This term is the output of Bayes theorem. This represents the odds of an event occurring given the available evidence. The posterior odds are a combination of our original belief and the strength of the evidence. The strength of your revised beliefs after observing the evidence can be evaluated using <a class="reference internal" href="#tab-strength-of-evidence"><span class="std std-numref">Table 29</span></a>.</p>
+<p>Because the odds form of Bayes theorem uses element wise multiplication it can easily be extended to accommodate a finite number of competing hypothesis simply by expanding the set of hypothesis like <span class="math notranslate nohighlight">\(H=\{H_1,H_2,...,H_n\}\)</span>.</p>
+</div>
+<div class="section" id="revisiting-the-mystic-seer-example">
+<h3>Revisiting the mystic seer example<a class="headerlink" href="#revisiting-the-mystic-seer-example" title="Permalink to this headline">¶</a></h3>
+<p>I find the explanation for the likelihood in the <a class="reference internal" href="worked-examples.html#mystic-seer"><span class="std std-ref">mystic seer</span></a> example to be unsatisfying because it relies on probabilities and not relative odds. Recall the that evidence in this case is seven consecutive observations of a correct answer where the probability of a correct answer is 0.5. Therefore the likelihood using probabilities is calculated as <span class="math notranslate nohighlight">\((0.5)^7 = 1/128 = 0.0078125\)</span>.</p>
+<p>Here is another way to think about the likelihood that highlights the power of sequential Bayesian updating (aka multiple belief revision <a class="footnote-reference brackets" href="#revision" id="id5">3</a>).</p>
+<p>Assume that you are one of the characters in the mystic seer example and that you are revising your beliefs after the mystic seer answers each question instead of waiting until all seven answers are provided. New evidence is generated after each answer, so to help differentiate the pieces of evidence label each observation as <span class="math notranslate nohighlight">\(e_n\)</span>. So <span class="math notranslate nohighlight">\(e_1\)</span> is the first correct answer, <span class="math notranslate nohighlight">\(e_2\)</span> is the next correct answer, and so on until, until seventh correct answer which will be <span class="math notranslate nohighlight">\(e_7\)</span>.</p>
+<p>After the first correct answer from the seer you could ask yourself, given each hypothesis what is the probability of observing this data. <span class="math notranslate nohighlight">\(H_1\)</span> represents the mystic seer being a perfect fortune teller, so you would expect the answer to be correct every time, or a probability of 1. <span class="math notranslate nohighlight">\(H_2\)</span> represents the hypothesis that the mystic seer is randomly guessing at the answerers. In this case the probability of a correct answer would be 0.5. Your relative likelihood would be:</p>
+<div class="math notranslate nohighlight">
+\[\frac{p(H_1|e_1)}{p(H_2|e_1)} = \frac{1}{\frac{1}{2}}=2\]</div>
+<p>Similarly after observing the second correct answer the relative likelihood of just that observation would be:</p>
+<div class="math notranslate nohighlight">
+\[\frac{p(H_1|e_2)}{p(H_2|e_2)} = \frac{1}{\frac{1}{2}}=2\]</div>
+<p>Taking both of the observations together results in just multiplying the likelihoods from each respective observation.</p>
+<div class="math notranslate nohighlight">
+\[\frac{p(H_1|e_1, e_2)}{p(H_2|e_1, e_2)} = \frac{p(H_1|e_1)}{p(H_2|e_1)} \times \frac{p(H_1|e_2)}{p(H_2|e_2)} = \frac{1}{\frac{1}{2}} \times \frac{1}{\frac{1}{2}} = 4\]</div>
+<p>Continuing this argument in a similar way for each of the seven observations leads to the relative likelihood of:</p>
+<div class="math notranslate nohighlight">
+\[\frac{p(H_1|e_1,e_2,e_3,...,e_7)}{p(H_2|e_1,e_2,e_3,...,e_7)} = 2 \times 2 \times 2 \times 2 \times 2 \times 2 \times 2 = 2^7 = 128\]</div>
+<p>Previously the relative likelihood using probabilities was given as <span class="math notranslate nohighlight">\(1:(0.5)^7 = 1:0.0078125 = 1/0.0078125 = 128\)</span>, so the results are equivalent. I personally just like thinking with odds rather than probability. This also highlights how the strength of evidence is just multiplied together when using the odds form of Bayes theorem.</p>
+</div>
+<div class="section" id="log-odds-form">
+<h3>Log odds form<a class="headerlink" href="#log-odds-form" title="Permalink to this headline">¶</a></h3>
+<p>The log-odds form of Bayes theorem is a simple transformation of the odds form of Bayes theorem shown in equation <a class="reference internal" href="#equation-eq-bayes-odds">(8)</a>. Before we start the derivation recall the property of logarithms that states:</p>
+<div class="math notranslate nohighlight">
+\[log(xy)=log(x)+log(y)\]</div>
+<p>Taking the base 2 logarithm of each side of the odds form of Bayes theorem, shown in equation <a class="reference internal" href="#equation-eq-bayes-odds">(8)</a>, results in evidence updating the prior beliefs via addition instead of multiplication.</p>
+<div class="math notranslate nohighlight" id="equation-eq-bayes-log-odds">
+<span class="eqno">(9)<a class="headerlink" href="#equation-eq-bayes-log-odds" title="Permalink to this equation">¶</a></span>\[
+log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
+\]</div>
+<p>In the remainder of this section relative odds and odds ratios will be used interchangeably so that the logarithms can be calculated. Recall that relative odds of <span class="math notranslate nohighlight">\(a:b\)</span> have an odds ratio of <span class="math notranslate nohighlight">\(a/b\)</span>.</p>
+<p>For example if you set your prior odds that a medical news story is real:fake at 1:128, then you then observe the following evidence (see the <a class="reference internal" href="worked-examples.html#medical-heuristic"><span class="std std-ref">medical heuristic</span></a> example):</p>
+<ul class="simple">
+<li><p>Study results are published in a journal article</p></li>
+<li><p>The study used a large number of participants</p></li>
+<li><p>Multiple hospitals/doctors participated</p></li>
+<li><p>The study lasted multiple years</p></li>
+<li><p>The authors are from a well known medical school</p></li>
+<li><p>The effect was large and statistically significant</p></li>
+</ul>
+<p>Use a heuristic, <a class="reference external" href="https://fivethirtyeight.com/features/a-formula-for-decoding-health-news/">originally suggested</a> by Jeff Leek, where each <em>bit</em> of evidence doubles the likelihood that the story is real. Every <em>bit</em> of evidence that refutes the story haves the likelihood. All our evidence supports the news story being real, so in this case the heuristic is <span class="math notranslate nohighlight">\(2 \times 2 \times 2 \times 2 \times 2 \times 2 \times = 2^6 = 64\)</span>, or 64:1 in support of the story being real. Note that <span class="math notranslate nohighlight">\(log_2(2)=1\)</span>, so each bit of evidence adds one to the log of the posterior odds. In our example <span class="math notranslate nohighlight">\(log_2(64) = 6\)</span>. By virtue of how we set up the problem positive bits imply a belief that the news story is real and negative bits imply a belief that the story is fake. Putting it all together, a summary of the problem is shown in <a class="reference internal" href="#tab-log-odds-medical"><span class="std std-numref">Table 30</span></a>:</p>
+<table class="colwidths-auto table" id="tab-log-odds-medical">
+<caption><span class="caption-number">Table 30 </span><span class="caption-text">A summary of the medical heuristic example using log odds.</span><a class="headerlink" href="#tab-log-odds-medical" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Real</p></th>
+<th class="head"><p>Fake</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(log_2(\frac{Real}{Fake})\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>1</p></td>
+<td><p>128</p></td>
+<td><p>-7</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>64</p></td>
+<td><p>1</p></td>
+<td><p>+6</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p>64</p></td>
+<td><p>128</p></td>
+<td><p>-1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simplified posterior odds</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>-1</p></td>
+</tr>
+</tbody>
+</table>
+<p>The log of the posterior odds is calculated as <span class="math notranslate nohighlight">\(-7+6=-1\)</span>. Because of the way we set up the problem, with odds as real:fake, this implies that you should believe that the story is fake with log-odds of -1 bit, or equivalently odds of 1:2. Initially you believed very strongly that the story was fake. After updating you still believe the story is fake, just with much less certainty than you initially had.</p>
+<p>Log-odds is defined on the interval <span class="math notranslate nohighlight">\([-\infty, +\infty]\)</span>. By comparison the intervals for the other forms are, probability <span class="math notranslate nohighlight">\([0,1]\)</span>, odds <span class="math notranslate nohighlight">\([0,+\infty]\)</span>, and odds ratio <span class="math notranslate nohighlight">\([0,+\infty]\)</span>. The <span class="math notranslate nohighlight">\([-\infty, +\infty]\)</span> interval has the desirable characteristic that high or low probabilities don’t get smashed at the ends of the interval. Unlike the other forms, doubling your belief in the log-odds always results in a change of 1 bit. Take for example revising your beliefs from 2:1 to 128:1 in increments based on increasingly convincing evidence. <a class="reference internal" href="#tab-convincing-beliefs-log"><span class="std std-numref">Table 31</span></a> compares the numerical values for the different forms of quantifying belief.</p>
+<table class="colwidths-auto table" id="tab-convincing-beliefs-log">
+<caption><span class="caption-number">Table 31 </span><span class="caption-text">Comparison of increasingly convincing beliefs on different intervals</span><a class="headerlink" href="#tab-convincing-beliefs-log" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Odds</p></th>
+<th class="head"><p>Probability</p></th>
+<th class="head"><p>Odds Ratio</p></th>
+<th class="head"><p>Log Odds</p></th>
+<th class="head"><p>Strength of Evidence</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2:1</p></td>
+<td><p>0.67</p></td>
+<td><p>2</p></td>
+<td><p>+1</p></td>
+<td><p>Interesting, but not conclusive</p></td>
+</tr>
+<tr class="row-odd"><td><p>8:1</p></td>
+<td><p>0.89</p></td>
+<td><p>8</p></td>
+<td><p>+3</p></td>
+<td><p>Looks like we are on to something</p></td>
+</tr>
+<tr class="row-even"><td><p>32:1</p></td>
+<td><p>0.97</p></td>
+<td><p>32</p></td>
+<td><p>+5</p></td>
+<td><p>Strong evidence</p></td>
+</tr>
+<tr class="row-odd"><td><p>128:1</p></td>
+<td><p>0.99</p></td>
+<td><p>128</p></td>
+<td><p>+7</p></td>
+<td><p>Almost overwhelming evidence</p></td>
+</tr>
+</tbody>
+</table>
+<p>As a belief becomes increasingly convincing the change in the probability interval becomes very small. For example, as a belief goes from 32:1 to 128:1 the probability index only changes by <span class="math notranslate nohighlight">\(128/129 - 32/33 = 0.02\)</span>. By comparison as a belief goes from 2:1 to 8:1 the probability index changed by <span class="math notranslate nohighlight">\(8/9-2/3 = 0.22\)</span>. The probability index is non-linear, the impact of this is most extreme at the ends of the index near zero or one. Long shot, and near certain, probabilities are common in settings where risk is being evaluated. So the difference between risky and really risky might be only a small change in the probability index.</p>
+<p>The odds, and therefore odds ratio, simply increase linearly as the odds change. This avoids the non linearity at the ends of the intervals near zero and one. The infinite index can make interpretation difficult because all the values are now relative. Heuristics like <a class="reference internal" href="#tab-strength-of-evidence"><span class="std std-numref">Table 29</span></a>, describing the strength of evidence, is a result of the shortcoming of an infinite index. Reasoning with very small odds is still not great because the numbers become very small. The index is linear with small odds, but humans don’t naturally deal with multiple decimal places well. When odds are small the ratio can be turned around to get a feel for the magnitude of the belief, but then you have to remember to revert the odds back which is problematic.</p>
+<p>The log-odds index, not surprisingly, is linear. Each change in belief listed in <a class="reference internal" href="#tab-log-strength"><span class="std std-numref">Table 32</span></a> changes the belief by 2 bits. This can be a very intuitive way to think about the strength of evidence. Manipulating bits with mental math is similarly easy, its just requires addition. There are however two issues with using bits:</p>
+<ul class="simple">
+<li><p>The practical issue with bits and the log scale is the need to take the inverse of the logarithm to get back to a traditional index. In theory you could calibrate yourself to reason with bits. I however still find value with sometimes using, or communicating, with the probability or odds index.</p></li>
+<li><p>Bits are good when you constrain your likelihoods to multiples of two (…4,2,1/2,1/4…). The mental math gets more complex when you need to use a likelihood such as <span class="math notranslate nohighlight">\(2:3 \Rightarrow log_2(2/3)=-0.58\)</span>. The context of the problem dictates if using <em>easy</em> likelihoods will impact the accuracy of your reasoning in a meaningful way.</p></li>
+</ul>
+<p>In summary all of the indexes used to describe a belief have pros and cons. The odds index defined on <span class="math notranslate nohighlight">\([0,+\infty]\)</span> was chosen for this manual because it seems to represent a middle ground and involves manipulating whole numbers. Obviously your mileage will vary with each index, and its accompanying form of Bayes theorem. The good news is that all three forms are valid if your use case warrants it.</p>
+<p>For reference, <a class="reference internal" href="#tab-log-strength"><span class="std std-numref">Table 32</span></a> is <a class="reference internal" href="#tab-strength-of-evidence"><span class="std std-numref">Table 29</span></a> updated with the equivalent bits of evidence for comparison.</p>
+<table class="colwidths-auto table" id="tab-log-strength">
+<caption><span class="caption-number">Table 32 </span><span class="caption-text">Guidance for interpreting log odds</span><a class="headerlink" href="#tab-log-strength" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Odds ratio</p></th>
+<th class="head"><p>Bits</p></th>
+<th class="head"><p>Strength of evidence</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1 - 3</p></td>
+<td><p>0 - 1.6</p></td>
+<td><p>Interesting, but not conclusive</p></td>
+</tr>
+<tr class="row-odd"><td><p>3 - 20</p></td>
+<td><p>1.6 - 4.3</p></td>
+<td><p>Looks like we are on to something</p></td>
+</tr>
+<tr class="row-even"><td><p>20 - 150</p></td>
+<td><p>4.3 - 7.2</p></td>
+<td><p>Strong evidence</p></td>
+</tr>
+<tr class="row-odd"><td><p>&gt;150</p></td>
+<td><p>&gt;7.2</p></td>
+<td><p>Overwhelming evidence</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="the-interplay-between-the-prior-and-the-relative-likelihood">
+<span id="extreme-evidence"></span><h2>The interplay between the prior and the relative likelihood<a class="headerlink" href="#the-interplay-between-the-prior-and-the-relative-likelihood" title="Permalink to this headline">¶</a></h2>
+<p>The odds form of Bayes theorem is very simple with the only two inputs being the prior odds and relative likelihoods. If we classify these inputs as normal or extreme <a class="footnote-reference brackets" href="#extreme" id="id6">4</a>, then we can intuitively guess what the posterior odds will be, or more importantly what the inputs need to be to modify our beliefs in a meaningful way. For this section normal means the prior odds ratio, or the relative likelihood ratio, is less than or equal to 150. Extreme odds/likelihoods have ratios greater than 150. The inverse, anything smaller than <span class="math notranslate nohighlight">\(\frac{1}{150} \approx 0.0067\)</span>, is also considered extreme.</p>
+<div class="section" id="extreme-relative-likelihoods">
+<h3>Extreme relative likelihoods<a class="headerlink" href="#extreme-relative-likelihoods" title="Permalink to this headline">¶</a></h3>
+<p>If you have extreme odds, this implies that you strongly support one hypothesis over the other. You can then ask how strong the evidence would have to be to support the other hypothesis. Is it even possible to see evidence strong enough to switch your support to the other hypothesis?</p>
+<p>For example, if you believe a claim is false with odds of 1:199, then how strong will the evidence be to switch your belief to the true hypothesis? If the odds are denoted as true:false, then the question is asking what relative likelihood would be needed to make the odds greater than 1:1 in favor of the ‘true’ hypothesis. In this case the relative likelihood would have to be greater than 199:1.</p>
+<p>Typically we are evaluating what the odds of seeing evidence is given that each hypothesis is true. To achieve the relative likelihood greater than 199:1 very strong evidence for the ‘true’ hypothesis, as well as strong evidence against the ‘false’ hypothesis would be needed. The relative likelihood would need to have:</p>
+<ul class="simple">
+<li><p>The probability of ‘true’ greater than 0.995</p></li>
+<li><p>The probability of ‘false’ less than 0.005.</p></li>
+</ul>
+<p>In cases of extreme evidence, like this example, the value of the denominator has more influence on the likelihood ratio than the denominator.  Put another way, extreme likelihood ratios are most sensitive to changes in the denominator. For example the likelihood ratio for 0.996/0.005 is 199.2, but the ratio for 0.995/0.004 is 248.8. Reducing the probability in the denominator by 0.001 is more influential on the strength of evidence than increasing the probability in the numerator by 0.001.</p>
+<p>When you choose to write your odds in the opposite order the same effect occurs, it is just harder to visualize because the values are so small. <a class="reference internal" href="#tab-extreme-evidence-small"><span class="std std-numref">Table 33</span></a> shows the same example shown above when odds are written as false:true. Improving the probability for the ‘true’ hypothesis by 0.001 changes the likelihood ratio in the fifth decimal place. Reducing the probability for the ‘false’ hypothesis by 0.001 has an effect that is 100 times more significant and changes the likelihood ratio in the third decimal place. While mathematically equivalent <a class="footnote-reference brackets" href="#equivilant" id="id7">5</a> the effect is hard to see when the likelihood ratio is such a small number.</p>
+<table class="colwidths-auto table" id="tab-extreme-evidence-small">
+<caption><span class="caption-number">Table 33 </span><span class="caption-text">An alternative representation of the relative likelihood.</span><a class="headerlink" href="#tab-extreme-evidence-small" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>False</p></th>
+<th class="head"><p>True</p></th>
+<th class="head"><p>Likelihood Ratio</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0.005</p></td>
+<td><p>0.995</p></td>
+<td><p>0.00503</p></td>
+</tr>
+<tr class="row-odd"><td><p>0.005</p></td>
+<td><p>0.996</p></td>
+<td><p>0.00502</p></td>
+</tr>
+<tr class="row-even"><td><p>0.004</p></td>
+<td><p>0.995</p></td>
+<td><p>0.00402</p></td>
+</tr>
+</tbody>
+</table>
+<p>Further compounding the difficulty of obtaining an extreme relative likelihood to counter an extreme prior is the accuracy of subjective probabilities. In our running example it is shown that the results are highly sensitive to changes in the probability as small as 0.001. I am skeptical that a human who is estimating probabilities can meaningfully distinguish between subjective probabilities of with such small resolutions. In my experience a well calibrated estimator can only meaningfully distinguish probabilities that are two orders of magnitude larger, something on the order of 0.1. If you are naive about a particular subject, the resolution of the probabilities you can meaningfully distinguish between will be even larger, say 0.2 or more.</p>
+<p>The methods described in this manual are meant for quick calculations in your head and developing intuition about problems. When extreme odds are involved the intuition of Bayes theorem still holds, but extra care is needed to reason with any certainty about the situation because of the mathematical sensitivities in the odds form of Bayes theorem.</p>
+</div>
+<div class="section" id="extreme-priors">
+<h3>Extreme priors<a class="headerlink" href="#extreme-priors" title="Permalink to this headline">¶</a></h3>
+<p>Another interesting calculation when dealing with extreme odds, that was introduced in the <a class="reference internal" href="worked-examples.html#mystic-seer"><span class="std std-ref">mystic seer</span></a> example, is to work backwards from the posterior odds to the implied prior. This assumes that unlike the example above the relative likelihood of observing the data is quantitative, not qualitative in nature. Examples where this occurs are found when one of the hypothesis assumes that the results are random luck. Things like hot and cold streaks when flipping coins, rolling dice, slot machines, or winning/loosing are typical examples.</p>
+<p>By manipulating the usual definition of Bayes theorem first shown in equation <a class="reference internal" href="motivating-example.html#equation-eq-bayes-odds-verbal">(1)</a> to solve for the prior odds gives the result of:</p>
+<div class="math notranslate nohighlight">
+\[ prior \space odds = \frac{posterior \space odds}{relative \space likelihood} \]</div>
+<p>This allows you to critic if the prior odds were reasonable. If the posterior odds are disproportional strong compared to the strength of the evidence then it can be argued that the prior odds may have been too extreme initially.</p>
+<p>While there is no ‘correct’ answer to this kind of situation one benefit of using Bayes theorem is that is allows you to clearly articulate why you have the beliefs that you do in a way that others can examine to understand your logic.</p>
+</div>
+</div>
+<div class="section" id="examples-of-alternative-forms-of-bayes-theorem">
+<h2>Examples of alternative forms of Bayes theorem<a class="headerlink" href="#examples-of-alternative-forms-of-bayes-theorem" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="worked-examples.html#examples"><span class="std std-ref">examples chapter</span></a> includes a copious number of examples for applying the odds form of Bayes theorem to practical problems. This section contains just a few examples of using the alternative forms of Bayes theorem. In the <a class="reference internal" href="worked-examples.html#examples"><span class="std std-ref">practical examples</span></a> I tried to incorporate real world problems, this section is more theoretical and the examples are less applicable to real life problems in my opinion.</p>
+<div class="section" id="pink-shirts">
+<h3>Pink shirts<a class="headerlink" href="#pink-shirts" title="Permalink to this headline">¶</a></h3>
+<p>Imagine at a party you see someone’s shoulder wearing a pink shirt drop some money. You can’t see their face or any other distinguishing features. What are the odds they are a man? Somehow, no matter how unrealistic, assume that you know everything about everyone who attended the party. You have knowledge of the number of men, total number of attendees, and if each person’s shirt was pink. By extension you also know the number of attendees that were not men, and if a shirt was not pink. These quantities are denoted as <span class="math notranslate nohighlight">\(\neg man\)</span> and <span class="math notranslate nohighlight">\(\neg pink\)</span> respectively. The collection of our knowledge about the party is shown in <a class="reference internal" href="#tab-pink-shirt"><span class="std std-numref">Table 34</span></a>. This problem is solved first using the probability form of Bayes theorem, and then again using the odds form of Bayes theorem.</p>
+<table class="colwidths-auto table" id="tab-pink-shirt">
+<caption><span class="caption-number">Table 34 </span><span class="caption-text">A summary of the information provided in the pink shirts example.</span><a class="headerlink" href="#tab-pink-shirt" title="Permalink to this table">¶</a></caption>
+<tbody>
+<tr class="row-odd"><td></td>
+<td><p>Pink</p></td>
+<td><p><span class="math notranslate nohighlight">\(\neg\)</span>Pink</p></td>
+<td><p>Sum</p></td>
+</tr>
+<tr class="row-even"><td><p>Man</p></td>
+<td><p>5</p></td>
+<td><p>35</p></td>
+<td><p>40</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\neg\)</span>Man</p></td>
+<td><p>20</p></td>
+<td><p>40</p></td>
+<td><p>60</p></td>
+</tr>
+<tr class="row-even"><td><p>Sum</p></td>
+<td><p>25</p></td>
+<td><p>75</p></td>
+<td><p>100</p></td>
+</tr>
+</tbody>
+</table>
+<p>As a reminder the probability form of Bayes theorem is <span class="math notranslate nohighlight">\(p(H|e) = p(H)p(e|H)/p(e)\)</span>. We take the evidence to be our observation of a pink shirt. The hypothesis is the probability of the attendee being a man. We observe the evidence and want to infer the probability of the hypothesis using the information in <a class="reference internal" href="#tab-pink-shirt"><span class="std std-numref">Table 34</span></a>.</p>
+<div class="math notranslate nohighlight">
+\[p(man) = \frac{40}{100} = 0.4\]</div>
+<div class="math notranslate nohighlight">
+\[p(pink) = \frac{25}{100} = 0.25\]</div>
+<div class="math notranslate nohighlight">
+\[p(pink|man) = \frac{5}{40} = 0.125\]</div>
+<p>Therefore the quantity that we desire is</p>
+<div class="math notranslate nohighlight">
+\[p(H|e) = \frac{p(H)p(e|H)}{p(e)} = \frac{p(man)p(pink|man)}{p(pink)}= \frac{0.4 \times 0.125}{0.25} = 0.20\]</div>
+<p>This is one of the few examples I know of where the probability of the evidence, <span class="math notranslate nohighlight">\(p(e)\)</span>, can be taken directly from the problem statement, <a class="reference internal" href="worked-examples.html#two-production-lines"><span class="std std-ref">defective part from two production lines</span></a> is another example.</p>
+<p>Repeating the problem using the odds form of Bayes theorem is shown in <a class="reference internal" href="#tab-pink-shirts-odds-form"><span class="std std-numref">Table 35</span></a>. The prior of <span class="math notranslate nohighlight">\(man:\neg man\)</span> is 40:60 or 2:3. The probability of a man wearing a pink shirt is 5/40, while the probability of a <span class="math notranslate nohighlight">\(\neg man\)</span> wearing a pink shirt is 20/60. Therefore the relative likelihood is <span class="math notranslate nohighlight">\((5/40):(20/60) = \frac{1}{8}:\frac{1}{3}\)</span>.</p>
+<table class="colwidths-auto table" id="tab-pink-shirts-odds-form">
+<caption><span class="caption-number">Table 35 </span><span class="caption-text">A possible solution to the bookcase alien problem</span><a class="headerlink" href="#tab-pink-shirts-odds-form" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Man</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\neg\)</span>Man</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(3\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{8}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{3}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1}{4}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Simplified posterior odds</p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(4\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Probability</p></td>
+<td><p><span class="math notranslate nohighlight">\(0.2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.8\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Odds of 1:4 for being a man are equivalent to a probability of <span class="math notranslate nohighlight">\(1/(1+4) = 0.20\)</span> calculated above using the probability form of Bayes theorem.</p>
+</div>
+<div class="section" id="two-boys-in-the-family-example">
+<h3>Two boys in the family example<a class="headerlink" href="#two-boys-in-the-family-example" title="Permalink to this headline">¶</a></h3>
+<p>This example, adapted from <a class="reference external" href="https://neilkakkar.com/Bayes-Theorem-Framework-for-Critical-Thinking.html#probability-is-a-map-of-your-understanding-of-the-world">Neil Kakkar</a> and <a class="reference external" href="https://www.lesswrong.com/s/p3TndjYbdYaiWwm9x/p/f6ZLxEWaankRZ2Crv"> lesswrong</a>, shows multiple ways to structure a solution to the same problem by assuming different hypothesis. Both the probability and odds form of Bayes theorem will be used.</p>
+<p>You meet a random mathematician on the street. She tells you she has two children. You ask if one of them is a boy and she says ‘yes’. What is the probability she has two boys knowing that at least one child is a boy.</p>
+<div class="section" id="three-hypothesis-and-the-probability-form-of-bayes-theorem">
+<h4>Three hypothesis and the probability form of Bayes theorem<a class="headerlink" href="#three-hypothesis-and-the-probability-form-of-bayes-theorem" title="Permalink to this headline">¶</a></h4>
+<p>The possible combinations of sexes in two children are: BB, BG, GB, GG</p>
+<p>Assume three hypothesis:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span> = all boys, i.e. BB</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_2\)</span> = mix, i.e. BG or GB</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_3\)</span> = all girls, i.e. GG</p></li>
+</ul>
+<p>The priors are:</p>
+<div class="math notranslate nohighlight">
+\[p(H_1) = \frac{1}{4}\]</div>
+<div class="math notranslate nohighlight">
+\[p(H_2) = \frac{1}{2}\]</div>
+<div class="math notranslate nohighlight">
+\[p(H_3) = \frac{1}{4}\]</div>
+<p>Given the observation that one child is a boy we can use Bayes theorem to calculate the probability of two boys</p>
+<div class="math notranslate nohighlight">
+\[ p(H|e) = \frac{p(H)p(e|H)}{p(e)} = \frac{p(H)p(e|H)}{\sum_H{p(H)p(e|H)}} \]</div>
+<p>We have three hypotheses, so the denominator becomes:</p>
+<div class="math notranslate nohighlight">
+\[ \sum_H p(H)p(e|H) = p(H_1)p(boy|H_1) + p(H_2)p(boy|H_2) + p(H_2)p(boy|H_2)  \]</div>
+<p>Where,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p(boy|H_1) = 1\)</span> because in this hypothesis every child is a boy</p></li>
+<li><p><span class="math notranslate nohighlight">\(p(boy|H_2) = 1\)</span> because in this hypothesis there is always at least one boy</p></li>
+<li><p><span class="math notranslate nohighlight">\(p(boy|H_3) = 0\)</span> because there is never a boy in this hypothesis</p></li>
+</ul>
+<p>Plugging all of this into Bayes theorem gives:</p>
+<div class="math notranslate nohighlight">
+\[ p(H_1|boy) = \frac{p(H_1)p(boy|H_1)}{p(H_1)p(boy|H_1) + p(H_2)p(boy|H_2) + p(H_3)p(boy|H_3)}\]</div>
+<div class="math notranslate nohighlight">
+\[ p(H_1|boy) = \frac{(\frac{1}{4})(1)}{(\frac{1}{4})(1) + (\frac{1}{2})(1) +(\frac{1}{4})(0) }\]</div>
+<div class="math notranslate nohighlight">
+\[ p(H_1|boy) = \frac{1}{3} \]</div>
+<p>Because it will be used in later sections, you can also calculate the probability of <span class="math notranslate nohighlight">\(H_2\)</span> and <span class="math notranslate nohighlight">\(H_3\)</span></p>
+<div class="math notranslate nohighlight">
+\[p(H_2|boy) = \frac{(\frac{1}{2})(1)}{(\frac{1}{4})(1) + (\frac{1}{2})(1) + (\frac{1}{4})(0)} = \frac{2}{3}\]</div>
+<div class="math notranslate nohighlight">
+\[p(H_3|boy) = \frac{(\frac{1}{4})(0)}{(\frac{1}{4})(1) + (\frac{1}{2})(1) + (\frac{1}{4})(0)} = 0\]</div>
+</div>
+<div class="section" id="three-hypothesis-and-a-normalization-factor">
+<h4>Three hypothesis and a normalization factor<a class="headerlink" href="#three-hypothesis-and-a-normalization-factor" title="Permalink to this headline">¶</a></h4>
+<p>Assume the same three hypothesis as in the last section. This time however don’t bother to figure out <span class="math notranslate nohighlight">\(p(e)\)</span>, just normalize the results so the posterior probability sums to one. This implicitly assumes that our set of hypothesis is mutually exclusive and exhaustive, which is true in this example. There are other cases where this is practically true, but not literally true. For example if a plane crashes in the ocean it technically can be <em>anywhere</em> in the ocean, but in practice you can limit the search area to a circle defined by how much fuel the airplane was carrying.</p>
+<p>Here are the priors again:</p>
+<div class="math notranslate nohighlight">
+\[p(H_1) = \frac{1}{4}\]</div>
+<div class="math notranslate nohighlight">
+\[p(H_2) = \frac{1}{2}\]</div>
+<div class="math notranslate nohighlight">
+\[p(H_3) = \frac{1}{4}\]</div>
+<p>Observing that at least one child is a boy eliminates <span class="math notranslate nohighlight">\(H_3\)</span> as a possibility. The updated probabilities are:</p>
+<div class="math notranslate nohighlight">
+\[p(H_1) = \frac{1}{4}\]</div>
+<div class="math notranslate nohighlight">
+\[p(H_2) = \frac{1}{2}\]</div>
+<div class="math notranslate nohighlight">
+\[p(H_3) = 0\]</div>
+<p>The total probability of all three models is now <span class="math notranslate nohighlight">\(p(H1) + p(H2) + p(H3) = \frac{3}{4}\)</span>. Using this as our normalization factor gives.</p>
+<div class="math notranslate nohighlight">
+\[p(H_1) = \frac{1/4}{3/4} = \frac{1}{3}\]</div>
+<div class="math notranslate nohighlight">
+\[p(H_2) = \frac{2/4}{3/4} = \frac{2}{3}\]</div>
+<div class="math notranslate nohighlight">
+\[p(H_3) = 0\]</div>
+<p>This is the same result that we obtained in the previous section when we explicitly calculated <span class="math notranslate nohighlight">\(p(e)\)</span>.</p>
+</div>
+<div class="section" id="three-hypothesis-and-the-odds-form-of-bayes-theorem">
+<h4>Three hypothesis and the odds form of Bayes theorem<a class="headerlink" href="#three-hypothesis-and-the-odds-form-of-bayes-theorem" title="Permalink to this headline">¶</a></h4>
+<p>Using the odds form of Bayes theorem eliminates the need to calculate <span class="math notranslate nohighlight">\(p(e)\)</span>. Using the same prior probabilities the relative odds for ‘all boys’:’mixed’:’all girls’ is</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{4}:\frac{1}{2}:\frac{1}{4} = 1:2:1\]</div>
+<p>Similarly using the <span class="math notranslate nohighlight">\(p(e|H)\)</span> from earlier sections the likelihood for <span class="math notranslate nohighlight">\(H_1:H_2:H_3\)</span> is 1:1:0.</p>
+<p>Multiplying through term by term gives posterior odds of 1:2:0. Because our models completely cover the space of probabilities we can calculator probabilities from these odds and obtain the same result as in previous sections:</p>
+<div class="math notranslate nohighlight">
+\[p(H_1|boy) = \frac{1}{3}\]</div>
+<div class="math notranslate nohighlight">
+\[p(H_2|boy) = \frac{2}{3}\]</div>
+<div class="math notranslate nohighlight">
+\[p(H_3|boy) = 0\]</div>
+</div>
+<div class="section" id="one-hypothesis-and-the-probability-form-of-bayes-theorem">
+<h4>One hypothesis and the probability form of Bayes theorem<a class="headerlink" href="#one-hypothesis-and-the-probability-form-of-bayes-theorem" title="Permalink to this headline">¶</a></h4>
+<p>All we really care about is if there are two boys in the family, so we can get away with only having one hypothesis for the case of boy-boy (BB). The priors are now:</p>
+<div class="math notranslate nohighlight">
+\[p(BB) = \frac{1}{4}\]</div>
+<div class="math notranslate nohighlight">
+\[p(\neg BB) = \frac{3}{4}\]</div>
+<p>The <span class="math notranslate nohighlight">\(p(e|H)\)</span> becomes:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p(boy|BB) = 1\)</span> because boy is the only option in this model</p></li>
+<li><p><span class="math notranslate nohighlight">\(p(boy|BB) = 2/6\)</span> because in all the other combinations that remain (BG, GB, GG) there are only two boys out of a total of 6 possible children.</p></li>
+</ul>
+<p>Plugging into Bayes theorem:</p>
+<div class="math notranslate nohighlight">
+\[ p(BB|boy) = \frac{p(BB)p(boy|BB)}{p(BB)p(boy|BB) + p(\neg BB)p(boy|\neg BB)}\]</div>
+<div class="math notranslate nohighlight">
+\[P(BB|boy) = \frac{(\frac{1}{4})(1)}{(\frac{1}{4})(1)+(\frac{3}{4})(\frac{2}{6})}\]</div>
+<div class="math notranslate nohighlight">
+\[P(BB|boy) = \frac{1}{2}\]</div>
+<p>This result is fundamentally different from the previous examples becuse the possible hypotheses were structured differently.</p>
+</div>
+<div class="section" id="comparison-of-results-for-the-two-boys-problem">
+<h4>Comparison of results for the two boys problem<a class="headerlink" href="#comparison-of-results-for-the-two-boys-problem" title="Permalink to this headline">¶</a></h4>
+<p>The same result was arrived at in three different ways for the case of the three models. In the last section the simplest possible formulation was given to show that it too was valid and possible (even if the probability mass was distributed differently). The only difference in the methods was if and how <span class="math notranslate nohighlight">\(p(e)\)</span> was calculated. Ultimately how you handle the denominator in Bayes theorem depends on the form of the theorem you are using and if you are considering a set of mutually exclusive and exhaustive propositions. In practice you may lack the knowledge to define <span class="math notranslate nohighlight">\(p(e)\)</span> and therefore prefer one of the formulations that does not require calculating the denominator in Bayes theorem.</p>
+</div>
+</div>
+</div>
+<div class="section" id="other-applications">
+<span id="id8"></span><h2>Other applications<a class="headerlink" href="#other-applications" title="Permalink to this headline">¶</a></h2>
+<p>Bayesian statistics is a large field of study. What has bee presented in this manual focuses on a special case of Bayes theorem - model comparison using the odds form of the theorem. In an effort to help broaden the readers mind to the other possible uses of Bayes theorem a couple of different applications will be quickly reviewed. Interested readers should seek out the <a class="reference internal" href="introduction.html#additional-refs"><span class="std std-ref">additional references</span></a> for more rigorous treatment of these topics. Admittedly these examples are still very biased towards model comparison and don’t offer a well rounded view of the larger field of Bayesian statistics.</p>
+<p>This section introduces a couple of concepts that are very commonly used in Bayesian statistics:</p>
+<ol class="simple">
+<li><p>The use of <a class="reference internal" href="#beta"><span class="std std-ref">probability distributions</span></a>, or probability density functions, to describe a belief. Describing a range of our beliefs is a very useful way to quantify uncertainty</p></li>
+<li><p><a class="reference internal" href="#a-b-testing"><span class="std std-ref">Cumulative distribution functions</span></a>. Closely related to the probability density function, these allows a very powerful way to reason about the spread in our data and results</p></li>
+<li><p><a class="reference internal" href="#grid"><span class="std std-ref">Numerical methods</span></a> are very briefly introduced. Most applications of Bayes theorem require numerical methods as part of the solution process. Per the usual trend with this manual, the method described here are very rudimentary and only works on a few select special cases.</p></li>
+</ol>
+<p>While not critical to applying Bayes theorem to the practical problems described in the <a class="reference internal" href="worked-examples.html#examples"><span class="std std-ref">examples</span></a> chapter, it could be helpful to an advanced user to at least know that these alternative applications exist.</p>
+<div class="section" id="beta-distribution">
+<span id="beta"></span><h3>Beta distribution<a class="headerlink" href="#beta-distribution" title="Permalink to this headline">¶</a></h3>
+<p>It is almost criminal to introduce Bayes theorem without mentioning probability distributions. A discussion of probability distributions was avoided in the main sections of the manual because they add an additional layer of complication and are hard to handle numerically in a general sense. The Beta distribution discussed here is an edge case, the math is not usually this easy. Most of the intuition that Bayes theorem can provide can be explored by using point estimates of uncertainty, so that is the <a class="reference internal" href="solution-process.html#process"><span class="std std-ref">method</span></a> this manual uses. If you want or need a better way of quantifying the uncertainly of your beliefs using, a probability distribution is very convenient, just be aware of the additional computational overhead that may be involved.</p>
+<p>A probability distribution is a way to quantify your belief in something. Probability distributions are very convenient because they allow you to quantify your beliefs as a range of values each with an associated probability. If you are highly uncertain your distribution can be very <em>wide</em>. If you are very certain you can make your probability distribution very <em>narrow</em>. You are not limited to mathematically continuous functions for your distributions. Shapes that resemble triangles, rectangles, urban sky lines, and lumpy piles can all be used as distributions. Again, you are only limited by your imagination, so establishing your distributions based on some sort of evidence/data/logic/experience is preferred. There is no mathematical constraint on how you derive your prior distributions because ultimately they are just opinions.</p>
+<p>For example I could say that I am 95% sure that the weight of a new loaf of bread at the store is between 0.8 and 2 lbs. This is shown visually in <a class="reference internal" href="#fig-bread-weight-pdf"><span class="std std-numref">Fig. 7</span></a>. The shape of the distribution shown is the very commonly used (and abused) normal distribution, but you could assign probability on a range given any function you like. My choice of this distribution implies that I think the probability of the weight being at the edges of my estimated range are low and the probability of the actual weight being in the middle of my estimated range are higher.</p>
+<div class="figure align-default" id="fig-bread-weight-pdf">
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_1_0.png" src="_images/theory-notebook_1_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Estimated distribution of bread weight with a 95% confidence interval, assumes a normal distribution of <span class="math notranslate nohighlight">\(\mu=\)</span> <span class="pasted-text">1.4</span> and <span class="math notranslate nohighlight">\(\sigma=\)</span> <span class="pasted-text">0.3</span>.</span><a class="headerlink" href="#fig-bread-weight-pdf" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition-wait-where-is-the-y-axis admonition">
+<p class="admonition-title">Wait! Where is the y-axis??</p>
+<p>You might have noticed that <a class="reference internal" href="#fig-bread-weight-pdf"><span class="std std-numref">Fig. 7</span></a> has no y-axis. This is intentional, and is common when showing probability distributions. A <em>probability density function (PDF)</em> like the one shown above is a continuous function. Reasoning about a PDF requires calculus. Luckily for those of us allergic to calculus there is a discrete alternative, the <em>probability mass function (PMF)</em>. Everything beyond this point will be a PMF. When using a PMF each discrete point is assigned a bit of probability mass. The more mass a point has, the more likely the outcome that it represents will occur. Taking the normal distribution from <a class="reference internal" href="#fig-bread-weight-pdf"><span class="std std-numref">Fig. 7</span></a>, it can be converted into a PMF in <a class="reference internal" href="#fig-pmf-sm-lg"><span class="std std-numref">Fig. 8</span></a> using a few discrete points in the range of <span class="math notranslate nohighlight">\([0.8,2.0]\)</span>. The first panel uses <span class="pasted-text">7</span> discrete points spread across the range of <span class="math notranslate nohighlight">\([0.8,2.0]\)</span> to represent (roughly approximate) the normal distribution, while the second panel uses <span class="pasted-text">15</span> discrete points to represent the same distribution. In each panel the sum of the probability mass for all probability points sums to 1.0. So the more discrete points you use, the less mass any one probability point will have. This is why both panels represent the same distribution, but the distribution on the left is ‘taller’. The <a class="reference internal" href="solution-process.html#process"><span class="std std-ref">standard solution process</span></a> was designed to skirt around the problem of <a class="reference internal" href="#prob-evidence"><span class="std std-ref">normalizing distributions</span></a> to have a total probability mass of 1.0, so this is more than a nuance of using distributions and Bayes theorem.</p>
+<p>When comparing two PMF’s it helps if you use the same number of points. In general you are just interested in the shape of the distribution and what range of possible values the distribution is over. If you use a <a class="reference internal" href="#grid"><span class="std std-ref">grid</span></a> method, then the probability mass values become more meaningful because they are used in our calculations.</p>
+<div class="figure align-default" id="fig-pmf-sm-lg">
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_2_0.png" src="_images/theory-notebook_2_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Two approximations of the PDF shown in <a class="reference internal" href="#fig-bread-weight-pdf"><span class="std std-numref">Fig. 7</span></a>. Both panels are discrete approximations - or PMF’s - of a normal distribution with <span class="math notranslate nohighlight">\(\mu=\)</span> <span class="pasted-text">1.4</span> and <span class="math notranslate nohighlight">\(\sigma=\)</span> <span class="pasted-text">0.3</span>. The only differnce between the panels is on the left <span class="pasted-text">7</span> discrete points were used, while on the right <span class="pasted-text">15</span> points were used.</span><a class="headerlink" href="#fig-pmf-sm-lg" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<p>A special case of a probability distribution is the probability of a probability. For example instead of saying you believe the probability of making a sale to a customer that visits your website is 0.1, you could instead give a range of values to the probability of making a sale, in this case using the beta distribution as shown in <a class="reference internal" href="#fig-beta-dist"><span class="std std-numref">Fig. 9</span></a>. It turns out that the beta distribution is a special case where the math works out easily when using Bayes theorem, which is why we use it here.</p>
+<div class="figure align-default" id="fig-beta-dist">
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_3_0.png" src="_images/theory-notebook_3_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Example of a beta distribution with <span class="math notranslate nohighlight">\(\alpha=\)</span> <span class="pasted-text">2</span> and <span class="math notranslate nohighlight">\(\beta=\)</span> <span class="pasted-text">9</span>.</span><a class="headerlink" href="#fig-beta-dist" title="Permalink to this image">¶</a></p>
+</div>
+<p>The Beta distribution is defined as:</p>
+<div class="math notranslate nohighlight">
+\[Beta(p;\alpha,\beta) = \frac{p^{\alpha-1}(1-p)^{\beta-1}}{beta(\alpha,\beta)}\]</div>
+<p>In this definition:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p\)</span> is the random variable, or in our example the probability of a probability</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are parameters that define the shape of the distribution. These are analogs to the mean and standard deviation for a normal distribution. See <a class="reference internal" href="#fig-beta-dist-shapes"><span class="std std-numref">Fig. 10</span></a> for the many different shapes that the beta distribution can generate when utilizing different combinations of <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>.</p></li>
+<li><p>In the denominator <span class="math notranslate nohighlight">\(beta(\alpha,\beta)\)</span>, with a lowercase ‘b’, is the beta function. Confusingly <span class="math notranslate nohighlight">\(Beta(p;\alpha,\beta)\)</span>, with an upper case ‘B’, is the Beta distribution. I highly suggest you always use a computer to generate your Beta distributions because the beta functions is not easy to understand and itself is defined with even more complex functions. Intuitively you can consider the beta <em>function</em> as a normalizing factor for the Beta <em>distribution</em>.</p></li>
+</ul>
+<p>Keeping all the big ‘B’ betas, little ‘b’ betas, and the greek ‘<span class="math notranslate nohighlight">\(\beta\)</span>’ parameter straight in the Beta distribution is a mess <a class="footnote-reference brackets" href="#mess" id="id9">6</a>. In practice you just need to know what your <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> parameters are, then you plug them into a computer to get your distribution. The beta distribution is a very versatile distribution. <a class="reference internal" href="#fig-beta-dist-shapes"><span class="std std-numref">Fig. 10</span></a> shows some of the common shapes of the distribution.</p>
+<div class="figure align-default" id="fig-beta-dist-shapes">
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_4_0.png" src="_images/theory-notebook_4_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Example of different shapes the beta distribution can have given different values of <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span>.</span><a class="headerlink" href="#fig-beta-dist-shapes" title="Permalink to this image">¶</a></p>
+</div>
+<p>Without any kind of proof <a class="footnote-reference brackets" href="#proof" id="id10">7</a> I will state that Bayes theorem can be applied to the Beta distribution in the following manner:</p>
+<div class="math notranslate nohighlight" id="equation-eq-bayes-beta">
+<span class="eqno">(10)<a class="headerlink" href="#equation-eq-bayes-beta" title="Permalink to this equation">¶</a></span>\[
+Beta(p; \alpha_{post},\beta_{post}) = Beta(p;\alpha_{prior} + \alpha_{like},\beta_{prior} + \beta_{like} )
+\]</div>
+<p>Again the simplicity is astounding. By simply using addition you can use Bayes theorem when your uncertainty is described with a beta distribution. The drawback is that the beta distribution only applies in the range of <span class="math notranslate nohighlight">\([0,1]\)</span>. So the beta distribution is a good choice for the probability of success or rates. It might be a bad choice for discrete quantities, like your estimate of the circumference of the earth in kilometers <a class="footnote-reference brackets" href="#kilometers" id="id11">8</a>.</p>
+<p>Pretend for example that you write a book about Bayes theorem and open an online store to sell your book. After the first ten visitors to your online store you sell one book! This is an outstanding visitor to customer conversion rate for an online product, and you begin to think that you might be headed for an early retirement. Set your priors to be <span class="math notranslate nohighlight">\(\alpha_{prior} =\)</span> <span class="pasted-text">1</span> and <span class="math notranslate nohighlight">\(\beta_{prior}=\)</span> <span class="pasted-text">9</span> to represent one sale and nine visitors that left the site without a purchase respectively. It turns out that your initial sale was to your mother. While she is very proud of you, she goes on to use your book to raise up her computer monitors. Out of your next 100 visitors you only sell <span class="pasted-text">3</span> books. Your likelihoods are <span class="math notranslate nohighlight">\(\alpha_{like} =\)</span> <span class="pasted-text">3</span> and <span class="math notranslate nohighlight">\(\beta_{like}=\)</span> <span class="pasted-text">97</span>. Update your parameters using equation <a class="reference internal" href="#equation-eq-bayes-beta">(10)</a> with this new information by adding the prior and likelihood parameters. Therefore <span class="math notranslate nohighlight">\(\alpha_{post} =\)</span> <span class="pasted-text">1</span> <span class="math notranslate nohighlight">\(+\)</span> <span class="pasted-text">3</span> <span class="math notranslate nohighlight">\(=\)</span> <span class="pasted-text">4</span> and <span class="math notranslate nohighlight">\(\beta_{post}=\)</span> <span class="pasted-text">9</span> <span class="math notranslate nohighlight">\(+\)</span> <span class="pasted-text">97</span> <span class="math notranslate nohighlight">\(=\)</span> <span class="pasted-text">106</span>. <a class="reference internal" href="#fig-book-prior-like-post"><span class="std std-numref">Fig. 11</span></a> shows the prior, likelihood, and posterior distributions. For the sake of comparison all three distributions are shown together in one plot in <a class="reference internal" href="#fig-book-together"><span class="std std-numref">Fig. 12</span></a>. The likelihood and posterior distributions are very narrow, so <a class="reference internal" href="#fig-book-together"><span class="std std-numref">Fig. 12</span></a> has a truncated x-axis that makes seeing the distributions easier.</p>
+<div class="figure align-default" id="fig-book-prior-like-post">
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_8_0.png" src="_images/theory-notebook_8_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Prior, likelihood, and posterior distributions for the customer conversion rate problem.</span><a class="headerlink" href="#fig-book-prior-like-post" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="fig-book-together">
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_9_0.png" src="_images/theory-notebook_9_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Prior, likelihood, and posterior distributions plotted together for comparison. Note that the x-axis has been truncated to make the spread of the distributions easier to visualize.</span><a class="headerlink" href="#fig-book-together" title="Permalink to this image">¶</a></p>
+</div>
+<p>Distributions provide lots of advantages when quantifying uncertainty, but they can be hard to compare and analyze when either:</p>
+<ul class="simple">
+<li><p>The shapes of the distributions are very different</p></li>
+<li><p>The distributions are very similar to each other</p></li>
+</ul>
+<p>The mean, <span class="math notranslate nohighlight">\(\mu\)</span>, of the beta distributions is not a complete description of the distribution, but is convenient for quickly comparing two distributions.</p>
+<div class="math notranslate nohighlight">
+\[ \mu = \frac{\alpha}{\alpha+\beta}\]</div>
+<p><a class="reference internal" href="#book-distribution-mean"><span class="std std-numref">Table 36</span></a> compares the means of the distributions shown in <a class="reference internal" href="#fig-book-together"><span class="std std-numref">Fig. 12</span></a> so you can get a feel for what the posterior distribution implies about your customer conversion rate at your online book store.</p>
+<table class="colwidths-auto table" id="book-distribution-mean">
+<caption><span class="caption-number">Table 36 </span><span class="caption-text">A comparison of the means of the prior, likelihood, and posterior distribution.</span><a class="headerlink" href="#book-distribution-mean" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Distribution</p></th>
+<th class="head"><p>Mean (<span class="math notranslate nohighlight">\(\mu\)</span>)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior</p></td>
+<td><p><span class="pasted-text">0.10</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p><span class="pasted-text">0.03</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior</p></td>
+<td><p><span class="pasted-text">0.04</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>This new data seriously downgrades your expectations for profit. Maybe there are not as many readers interested in Bayes theorem as you initially thought, better not quit your day job yet…However, you can see Bayes theorem in action. The prior was overly generous. The likelihood showed that in truth the conversion rate was much lower. Finally the posterior is a compromise between the prior and the likelihood. The likelihood had many more data points than the prior, so the strength of evidence made the posterior distribution much closer to the likelihood than the prior.</p>
+<p>The beta distribution is an example of parameter estimation with Bayes theorem. Like most things in this manual this is a special case where the math is much easier than the general case. In this case “easy” is defined as “easy if you have a good scientific computing environment setup”. Some examples of such an environment are <a class="reference external" href="https://www.python.org/">python</a> <a class="footnote-reference brackets" href="#python" id="id12">9</a>, <a class="reference external" href="https://www.r-project.org/">R-project</a> <a class="footnote-reference brackets" href="#r-proj" id="id13">10</a>, or <a class="reference external" href="https://www.mathworks.com/products/matlab.html">Matlab</a>.</p>
+</div>
+<div class="section" id="a-b-testing">
+<span id="id14"></span><h3>A/B testing<a class="headerlink" href="#a-b-testing" title="Permalink to this headline">¶</a></h3>
+<p>Most introductory statistics classes teach <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5635437/#:~:text=The%20Null%20Hypothesis%20Significance%20Testing,based%20on%20a%20given%20observation.">null hypothesis significance testing</a> where you can state things like “drug A increases survival compared to the control group, p &lt; 0.05, n = 30”. The goal of significance testing is to not trick yourself because you happened to observe a few lucky observations.</p>
+<p>Getting null hypothesis testing correct can be onerous. Thankfully there is not a direct analogy in Bayesian statistics for null hypothesis significance test. However, running an A/B test can answer similar questions when using Bayesian statistics.</p>
+<p>Back to the example of the online store. Your conversion rate is rather low. To make more money you would like to increase your conversion of site visitors to paying customers. Writing a better book is difficult and time consuming. Instead you surmise that readers interested in Bayes theorem are likely nerdy and lonely individuals, so you update the cover of your book to include an attractive couple in swim suits (sex sells!).</p>
+<p>After updating your book cover art you observe how many sales you make and how many site visitors you had. Collecting this data takes time, and you are impatient, so you wait until you have just one more sale. If the original book cover design is taken as variant A, and the new sexy design is taken as variant B, then <a class="reference internal" href="#tab-online-sales"><span class="std std-numref">Table 37</span></a> summarizes the before and after results for your book cover redesign.</p>
+<table class="colwidths-auto table" id="tab-online-sales">
+<caption><span class="caption-number">Table 37 </span><span class="caption-text">Summary of sales for the A and B versions of your book.</span><a class="headerlink" href="#tab-online-sales" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Sales</p></th>
+<th class="head"><p>Site Visitors</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A: Original</p></td>
+<td><p><span class="pasted-text">4</span></p></td>
+<td><p><span class="pasted-text">110</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>B: Sexy</p></td>
+<td><p><span class="pasted-text">1</span></p></td>
+<td><p><span class="pasted-text">21</span></p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="#fig-a-b-distributions"><span class="std std-numref">Fig. 13</span></a> shows the distributions resulting from the sales data for the two variants. Note that the x-axis has been truncated to focus on the relatively small conversion rates for both variants. A comparison between the two distributions may not be immediately obvious because the two distributions are different shapes. It is also important to note that the number of samples for each variant is very different. Variant A has <span class="pasted-text">110</span> <span class="math notranslate nohighlight">\(-\)</span> <span class="pasted-text">21</span> <span class="math notranslate nohighlight">\(=\)</span> <span class="pasted-text">89</span> more samples than variant B.</p>
+<div class="figure align-default" id="fig-a-b-distributions">
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_11_0.png" src="_images/theory-notebook_11_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Distributions for the conversion rate for both variants.</span><a class="headerlink" href="#fig-a-b-distributions" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="reference internal" href="#tab-online-sales-mean"><span class="std std-numref">Table 38</span></a> extends <a class="reference internal" href="#tab-online-sales"><span class="std std-numref">Table 37</span></a> with the mean values of each distribution. Based on the means of the distribution variant B is slightly better. If you only looked at the means you might conclude that variant B is better than variant A. The shapes of the distributions are neither similar or symmetric, so drawing any conclusions exclusively from the means ignores all the information about the uncertainty encoded in each distribution.</p>
+<table class="colwidths-auto table" id="tab-online-sales-mean">
+<caption><span class="caption-number">Table 38 </span><span class="caption-text">Summary of sales and mean values for the A and B versions of the book.</span><a class="headerlink" href="#tab-online-sales-mean" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Sales</p></th>
+<th class="head"><p>Site Visitors</p></th>
+<th class="head"><p>Mean (<span class="math notranslate nohighlight">\(\mu\)</span>)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A: Original</p></td>
+<td><p><span class="pasted-text">4</span></p></td>
+<td><p><span class="pasted-text">110</span></p></td>
+<td><p><span class="pasted-text">0.04</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>B: Sexy</p></td>
+<td><p><span class="pasted-text">1</span></p></td>
+<td><p><span class="pasted-text">21</span></p></td>
+<td><p><span class="pasted-text">0.05</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>To get more insight into the relative merits of our book cover variants we have to run a Monte Carlo simulation. The simulation goes like this:</p>
+<ol class="simple">
+<li><p>Draw a random sample from the <span class="math notranslate nohighlight">\(Beta(\alpha=\)</span> <span class="pasted-text">4</span> <span class="math notranslate nohighlight">\(,\beta=\)</span> <span class="pasted-text">106</span> <span class="math notranslate nohighlight">\()\)</span> distribution that represents variant A, call it <code class="docutils literal notranslate"><span class="pre">a.sample</span></code></p></li>
+<li><p>Draw a random sample from the <span class="math notranslate nohighlight">\(Beta(\alpha=\)</span> <span class="pasted-text">1</span> <span class="math notranslate nohighlight">\(,\beta=\)</span> <span class="pasted-text">20</span> <span class="math notranslate nohighlight">\()\)</span> distribution that represents variant B, call it <code class="docutils literal notranslate"><span class="pre">b.sample</span></code></p></li>
+<li><p>Divide <code class="docutils literal notranslate"><span class="pre">b.sample</span></code> by <code class="docutils literal notranslate"><span class="pre">a.sample</span></code> and save the result as <code class="docutils literal notranslate"><span class="pre">ratio</span></code></p></li>
+<li><p>Repeat this process thousands of times and store the results in an array</p></li>
+</ol>
+<p><a class="reference internal" href="#fig-a-b-monte-carlo"><span class="std std-numref">Fig. 14</span></a> shows the raw data from <span class="pasted-text">10,000</span> Monte Carlo trials, and <a class="reference internal" href="#fig-a-b-monte-carlo-ratio"><span class="std std-numref">Fig. 15</span></a> shows the results of the Monte Carlo simulation. Any simulation where the ratio of <code class="docutils literal notranslate"><span class="pre">b.sample</span></code> to <code class="docutils literal notranslate"><span class="pre">a.sample</span></code> is greater than one implies that the sexy book cover (variant B) is superior to the original cover (variant A). Again, it might not be obvious because of the spread of the data, but <code class="docutils literal notranslate"><span class="pre">b.sample</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">a.sample</span></code> in <span class="pasted-text">49.59</span>% of the simulations.</p>
+<div class="figure align-default" id="fig-a-b-monte-carlo">
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_13_0.png" src="_images/theory-notebook_13_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Raw data for <span class="pasted-text">10,000</span> samples drawn from each <span class="math notranslate nohighlight">\(beta(p;\alpha,\beta)\)</span> distribution for the Monte Carlo simulation. Note the approximate similarity to <a class="reference internal" href="#fig-a-b-distributions"><span class="std std-numref">Fig. 13</span></a> because the Monte Carlo simulation is an numeric approximation of those distributions.</span><a class="headerlink" href="#fig-a-b-monte-carlo" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="fig-a-b-monte-carlo-ratio">
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_15_0.png" src="_images/theory-notebook_15_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Results of the Monte Carlo simulation. For each Monte Carlo trial the ratio is calculated as <code class="docutils literal notranslate"><span class="pre">b.sample/a.sample</span></code>. Ratio’s greater than one imply that variation B is better.</span><a class="headerlink" href="#fig-a-b-monte-carlo-ratio" title="Permalink to this image">¶</a></p>
+</div>
+<p>If we desire to know how much better the B variant is than the A variant then we can calculate an empirical cumulative distribution function (ECDF) from our simulated data. To explain what an ECDF is, I need to first explain what a regular cumulative distribution function (CDF) is. If our probability density function for a random variable, <span class="math notranslate nohighlight">\(t\)</span>, is defined as a continuous function <span class="math notranslate nohighlight">\(f(t)\)</span>, then the CDF, denoted as <span class="math notranslate nohighlight">\(F(x)\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[F(x) = \int_{-\inf}^{x}f(t)dt\]</div>
+<p><span class="math notranslate nohighlight">\(F(x)\)</span> represents the probability that the random variable <span class="math notranslate nohighlight">\(t\)</span> takes on a value less than or equal to <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>The empirical CDF is simply an approximation when <span class="math notranslate nohighlight">\(F(x)\)</span> is not continuous. For a value <span class="math notranslate nohighlight">\(t_k\)</span>, which takes on <span class="math notranslate nohighlight">\(k\)</span> discrete values, the empirical cdf <span class="math notranslate nohighlight">\(\hat{F}(x)\)</span> is the sum of the values less than or equal to <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{F}(x) = \sum_{t_k \leq x} p(t_k)
+\]</div>
+<p><a class="reference internal" href="#fig-a-b-cdf-ratio"><span class="std std-numref">Fig. 16</span></a> shows the empirical CDF from the Monte Carlo simulation. This plot can make reasoning about the relative merits of each variant easier. Reading off the plot for a ratio of 1.0, the ECDF is roughly 0.5. This implies that about half of the cumulative probability mass is less than a ratio of 1.0 and the other half is above 1.0. Technically it is a <span class="pasted-text">49.59</span>% to <span class="pasted-text">50.41</span>% split, but that might change if we ran more samples in the Monte Carlo simulation. I would have been hard pressed to identify that from <a class="reference internal" href="#fig-a-b-cdf-ratio"><span class="std std-numref">Fig. 16</span></a> because the distribution is not symmetrical like a normal distribution. In practice this means that given the data that we have at this current time, there is no <em>practical</em> benefit to variant B over variant A. If we collected more data this might change, but currently changing the cover art to include sexy swimsuit models didn’t have a significant effect on our estimated conversion rate.</p>
+<div class="figure align-default" id="fig-a-b-cdf-ratio">
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_18_0.png" src="_images/theory-notebook_18_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Empirical cumulative distribution function for the ratio of <code class="docutils literal notranslate"><span class="pre">b.samples</span></code> to <code class="docutils literal notranslate"><span class="pre">a.samples</span></code> in the Monte Carlo simulation.</span><a class="headerlink" href="#fig-a-b-cdf-ratio" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="casting-model-comparison-as-parameter-estimation">
+<span id="grid"></span><h3>Casting model comparison as parameter estimation<a class="headerlink" href="#casting-model-comparison-as-parameter-estimation" title="Permalink to this headline">¶</a></h3>
+<!-- All of the tables in this section were generated from a spreadsheet called bias coin parameter estimate in google drive and converted to markdown with https://tabletomarkdown.com/convert-spreadsheet-to-markdown/. Then I moved the calculation into theory-notebook.ipynb. -->
+<p>This manual focuses almost exclusively on the model comparison form of Bayes theorem. The alternative <a class="reference internal" href="introduction.html#parameter-estimation"><span class="std std-ref">parameter estimation</span></a> approach was superficially introduced with the <a class="reference internal" href="#beta"><span class="std std-ref">Beta distribution</span></a> so an advanced reader would at least know there were other ways to use the theorem. Model comparison and parameter estimation are basically two sides of the same coin. This section shows a numerical approximation that uses the familiar model comparison methods to perform a type of parameter estimation calculation. Per the usual for this manual, this is not a mainstream solution method for Bayes theorem. Instead it is intended to be instructive in how the two methods are related to each other. If you want a computationally light weight way to express your beliefs as probability distributions without having to learn more advanced numerical methods this section might also be helpful.</p>
+<p>In this manual model comparison has used point estimates to quantify uncertainty, and parameter estimation has used probability distributions. This section describes what is know as a ‘grid method’ and is a hybrid of the two paradigms.</p>
+<p>Assume that you are trying to decide if you are being cheated during a game of flip the coin <a class="footnote-reference brackets" href="#coin" id="id15">11</a>. The game goes something like this:</p>
+<ol class="simple">
+<li><p>You and a friend each place a one dollar bet at the start of each round of play</p></li>
+<li><p>Your friend flips a coin</p></li>
+<li><p>If the coin lands heads side up your friend wins the round and collect the money for that round</p></li>
+<li><p>If the coin lands tails side up you collect the money</p></li>
+<li><p>Play continues until one person decides to call it quits</p></li>
+</ol>
+<p>You are using the coin your friend brought for this game. After observing the sequence HHHHT - where ‘H’ represents the coin landing heads up and ‘T’ represents the coin landing tails up - you begin to wander if you are being cheated, or if you are just suffering an unlucky streak. So far you have lost three dollars.</p>
+<p>In mathematical terms you are wondering if the coin is biased. In this context fair implies that the coin lands on heads with a probability of 0.5. If the coin is biased the long run probability of observing heads on any toss would be some other probability - most likely a cheater would use a coin with a probability of heads significantly higher than 0.5.</p>
+<p>The simplest unfair coin would have heads on both sides of the coin. This is obviously not the case in your current game because you have observed heads to tails in a ratio of 4:1. If the goal is to separate you from your money your friend would want to choose a coin that is slightly unfair so you would not suspect the cheat and instead would think you are unlucky. Denote the long run bias of the coin with the parameter <span class="math notranslate nohighlight">\(\theta\)</span>. You don’t know what the value of <span class="math notranslate nohighlight">\(\theta\)</span> is, but you assume that for a coin it would be a constant. You think that the three most likely scenarios would be a coin that is biased towards heads, fair, or biased towards tails. Assign probabilities for each hypothesis:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p(\theta=0.25) = 0.1\)</span>, this is the hypothesis where heads occurs less frequently than a fair coin. This is the unusual case where your friend is using a coin that is not fair, but the bias is in your favor! This is just included for comparison in this example, because nobody would knowingly bring a coin biased against them to a betting game.</p></li>
+<li><p><span class="math notranslate nohighlight">\(p(\theta=0.50) = 0.6\)</span>, this is the hypothesis for the fair coin</p></li>
+<li><p><span class="math notranslate nohighlight">\(p(\theta=0.75) = 0.3\)</span>, this is the hypothesis that you are concerned about where your friend is cheating you by using a biased coin.</p></li>
+</ul>
+<p>Your choice of the levels 0.25, 0.50, 0.75 for <span class="math notranslate nohighlight">\(\theta\)</span> are arbitrary. You could choose different levels and/or a different number of levels. We chose only three values of <span class="math notranslate nohighlight">\(\theta\)</span> to keep things simple (see below for an expanded example with more levels). You figure that a bias of more than 0.75 or less than 0.25 would be overly suspicious so they are not considered. With a probability distribution your belief is quantified by both the values you assign probability to, as well as the values you <em>do not</em> assign any probability to <a class="footnote-reference brackets" href="#probability" id="id16">12</a>.</p>
+<p>The <span class="math notranslate nohighlight">\(\theta\)</span> parameter represents the probability of observing heads on any flip. The probability of observing tails is therefore <span class="math notranslate nohighlight">\(1-\theta\)</span>. The probability of observing the sequence HHHHT is:</p>
+<div class="math notranslate nohighlight" id="equation-eq-likelihood-bias-coin">
+<span class="eqno">(11)<a class="headerlink" href="#equation-eq-likelihood-bias-coin" title="Permalink to this equation">¶</a></span>\[
+p(H,H,H,H,T:\theta) = \theta \times \theta \times \theta \times \theta \times (1-\theta)
+\]</div>
+<p>The colon ‘:’ in equation <a class="reference internal" href="#equation-eq-likelihood-bias-coin">(11)</a> indicates that <span class="math notranslate nohighlight">\(\theta\)</span> is a parameter whose value can vary. In our case <span class="math notranslate nohighlight">\(\theta\)</span> is restricted to the range [0,1]. The computation of the prior and posterior for each value of <span class="math notranslate nohighlight">\(\theta\)</span> occurs just like in the <a class="reference internal" href="solution-process.html#process"><span class="std std-ref">standard solution process</span></a>, with an added step to ensure the posterior distribution is a proper distribution where the probability of all possible outcomes sums to 1.0.</p>
+<p>The likelihood for each <span class="math notranslate nohighlight">\(\theta\)</span> is calculated by plugging the respective bias into equation <a class="reference internal" href="#equation-eq-likelihood-bias-coin">(11)</a>. For example <span class="math notranslate nohighlight">\(p(H,H,H,H,T|\theta=0.25) = 0.25 \times 0.25 \times 0.25 \times 0.25 \times 0.75 =\)</span> <span class="pasted-text">2.93e-03</span>. <a class="reference internal" href="#tab-bias-coin-calc"><span class="std std-numref">Table 39</span></a> shows the calculation for each value of <span class="math notranslate nohighlight">\(\theta\)</span>, and the distributions are shown in <a class="reference internal" href="#fig-small-theta-first"><span class="std std-numref">Fig. 17</span></a>. In practice I would suggest using a spreadsheet to help keep the calculation organized.</p>
+<table class="colwidths-auto table" id="tab-bias-coin-calc">
+<caption><span class="caption-number">Table 39 </span><span class="caption-text">A summary of the calculation for the posterior probability distribution of the biased coin after observing HHHHT.</span><a class="headerlink" href="#tab-bias-coin-calc" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\theta\)</span></p></th>
+<th class="head"><p>0.25</p></th>
+<th class="head"><p>0.5</p></th>
+<th class="head"><p>0.75</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior</p></td>
+<td><p>0.10</p></td>
+<td><p>0.60</p></td>
+<td><p>0.30</p></td>
+<td><p>1.00</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>2.93e-03</p></td>
+<td><p>3.12e-02</p></td>
+<td><p>7.91e-02</p></td>
+<td><p>1.13e-01</p></td>
+</tr>
+<tr class="row-even"><td><p>Prior x Likelihood</p></td>
+<td><p>2.9e-04</p></td>
+<td><p>1.9e-02</p></td>
+<td><p>2.4e-02</p></td>
+<td><p>4.3e-02</p></td>
+</tr>
+<tr class="row-odd"><td><p>Posterior</p></td>
+<td><p>0.01</p></td>
+<td><p>0.44</p></td>
+<td><p>0.55</p></td>
+<td><p>1.00</p></td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-default" id="fig-small-theta-first">
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_27_1.png" src="_images/theory-notebook_27_1.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Probability distribution for the bias of a coin after seeing HHHHT.</span><a class="headerlink" href="#fig-small-theta-first" title="Permalink to this image">¶</a></p>
+</div>
+<p>As a result of this calculation your prior beliefs have been revised by the likelihood of the observed data. Your observations so far indicate that <span class="math notranslate nohighlight">\(\theta=0.75\)</span> is the most likely bias for the coin, but <span class="math notranslate nohighlight">\(\theta=0.5\)</span> still has significant probability as well. The only thing you can say definitely at this point is you do not believe the bias of the coin is in your favor.</p>
+<p>The sum of each row is included to highlight how and when normalization is required. The prior distribution sums to one, and therefore is a <em>proper</em> probability distribution. The likelihood does not sum to one. This is expected because the likelihoods only need to be accurate relative to each other. The <span class="math notranslate nohighlight">\(prior \times likelihood\)</span> step is an intermediate calculation. The sum of the <span class="math notranslate nohighlight">\(prior \times likelihood\)</span> for all values of <span class="math notranslate nohighlight">\(\theta\)</span> is used as the normalizing factor to calculate the posterior. For each value of <span class="math notranslate nohighlight">\(\theta\)</span>, the posterior is calculated as:</p>
+<div class="math notranslate nohighlight">
+\[posterior = \frac{(prior \times likelihood)}{\sum(prior \times likelihood)}\]</div>
+<p>The <em>normalizing constant</em> in the denominator makes the posterior a proper distribution that sums to one. While crude, and limited in application, this is a rudimentary way to perform parameter estimation using the methods described in this manual. The more <a class="reference internal" href="#probability-form-of-bayes"><span class="std std-ref">complex forms of Bayes theorem</span></a> include a <a class="reference internal" href="#prob-evidence"><span class="std std-ref">normalizing constant</span></a> that is more rigorously defined (using an integral, see equation <a class="reference internal" href="#equation-eq-calculus-probability-evidence">(6)</a>). In the <a class="reference internal" href="solution-process.html#process"><span class="std std-ref">standard solution process</span></a> we sidestep the calculation of the normalizing constant by using relative odds.</p>
+<p>The grid method is an approximate numerical method. Using a finer grid may be beneficial in some use cases. For example the same problem above can be refined by using a finer grid. <a class="reference internal" href="#tab-bias-coin-calc-fine"><span class="std std-numref">Table 40</span></a> shows the same calculation using a finer grid, and the distributions are shown in <a class="reference internal" href="#fig-large-theta-first"><span class="std std-numref">Fig. 18</span></a>. As the grid starts to contain more points it would be customary, but not strictly required, to set your prior distribution with a commonly used distribution, such as the normal or beta distributions. Note how in the previous example shown in <a class="reference internal" href="#tab-bias-coin-calc"><span class="std std-numref">Table 39</span></a> the prior was neither symmetric or taken from a distribution of any kind. Mathematically any distribution is valid, but when you start using a finer grid it might become more convenient to use a known distribution so each prior does not have to be set manually.</p>
+<table class="colwidths-auto table" id="tab-bias-coin-calc-fine">
+<caption><span class="caption-number">Table 40 </span><span class="caption-text">A summary of the calculation for the posterior probability distribution of the biased coin after observing HHHHT on a finer grid than previously shown in <a class="reference internal" href="#tab-bias-coin-calc"><span class="std std-numref">Table 39</span></a> / <a class="reference internal" href="#fig-small-theta-first"><span class="std std-numref">Fig. 17</span></a>.</span><a class="headerlink" href="#tab-bias-coin-calc-fine" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\theta\)</span></p></th>
+<th class="head"><p>0.1</p></th>
+<th class="head"><p>0.2</p></th>
+<th class="head"><p>0.3</p></th>
+<th class="head"><p>0.4</p></th>
+<th class="head"><p>0.5</p></th>
+<th class="head"><p>0.6</p></th>
+<th class="head"><p>0.7</p></th>
+<th class="head"><p>0.8</p></th>
+<th class="head"><p>0.9</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior</p></td>
+<td><p>0.05</p></td>
+<td><p>0.08</p></td>
+<td><p>0.12</p></td>
+<td><p>0.16</p></td>
+<td><p>0.17</p></td>
+<td><p>0.16</p></td>
+<td><p>0.12</p></td>
+<td><p>0.08</p></td>
+<td><p>0.05</p></td>
+<td><p>1.00</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>9.0E-05</p></td>
+<td><p>1.3E-03</p></td>
+<td><p>0.01</p></td>
+<td><p>0.02</p></td>
+<td><p>0.03</p></td>
+<td><p>0.05</p></td>
+<td><p>0.07</p></td>
+<td><p>0.08</p></td>
+<td><p>0.07</p></td>
+<td><p>0.33</p></td>
+</tr>
+<tr class="row-even"><td><p>Prior x Likelihood</p></td>
+<td><p>4.3E-06</p></td>
+<td><p>1.1E-04</p></td>
+<td><p>7.1E-04</p></td>
+<td><p>2.4E-03</p></td>
+<td><p>0.01</p></td>
+<td><p>0.01</p></td>
+<td><p>0.01</p></td>
+<td><p>0.01</p></td>
+<td><p>3.1E-03</p></td>
+<td><p>0.04</p></td>
+</tr>
+<tr class="row-odd"><td><p>Posterior</p></td>
+<td><p>1.2E-04</p></td>
+<td><p>3.0E-03</p></td>
+<td><p>0.02</p></td>
+<td><p>0.07</p></td>
+<td><p>0.15</p></td>
+<td><p>0.23</p></td>
+<td><p>0.25</p></td>
+<td><p>0.19</p></td>
+<td><p>0.09</p></td>
+<td><p>1.00</p></td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-default" id="fig-large-theta-first">
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_30_1.png" src="_images/theory-notebook_30_1.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Probability distribution with a finer grid for the bias of a coin after seeing HHHHT.</span><a class="headerlink" href="#fig-large-theta-first" title="Permalink to this image">¶</a></p>
+</div>
+<p>Using a finer grid reveals a couple of different things. The probabilities for all the values of <span class="math notranslate nohighlight">\(\theta\)</span> have been reduced because you are considering more possible states of the coin. Also, the prior has been changed so the results can not be directly compared to <a class="reference internal" href="#tab-bias-coin-calc"><span class="std std-numref">Table 39</span></a>. Lastly it seems more likely that the coin is biased. The cumulative probability that <span class="math notranslate nohighlight">\(\theta&gt;0.5\)</span> is now <span class="pasted-text">0.65</span>.</p>
+<p>While concerned about the fairness of the coin based on the results in <a class="reference internal" href="#tab-bias-coin-calc-fine"><span class="std std-numref">Table 40</span></a> the risk of accusing your friend of cheating is too great, so you continue with five additional rounds which results in the sequence HHTHH. Your total loss at this point is six dollars. The results of updating your beliefs with this new sequence is shown in Table <a class="reference internal" href="#tab-bias-coin-calc-fine-extra"><span class="std std-numref">Table 41</span></a>, and the distributions are visualized in <a class="reference internal" href="#fig-large-theta-extra"><span class="std std-numref">Fig. 19</span></a>.</p>
+<table class="colwidths-auto table" id="tab-bias-coin-calc-fine-extra">
+<caption><span class="caption-number">Table 41 </span><span class="caption-text">An update to the posterior probability distribution using Bayes theorem shown in <a class="reference internal" href="#tab-bias-coin-calc-fine"><span class="std std-numref">Table 40</span></a> / <a class="reference internal" href="#fig-large-theta-first"><span class="std std-numref">Fig. 18</span></a> after observing a new sequence of HHTHH.</span><a class="headerlink" href="#tab-bias-coin-calc-fine-extra" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\theta\)</span></p></th>
+<th class="head"><p>0.1</p></th>
+<th class="head"><p>0.2</p></th>
+<th class="head"><p>0.3</p></th>
+<th class="head"><p>0.4</p></th>
+<th class="head"><p>0.5</p></th>
+<th class="head"><p>0.6</p></th>
+<th class="head"><p>0.7</p></th>
+<th class="head"><p>0.8</p></th>
+<th class="head"><p>0.9</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>0.02</p></td>
+<td><p>0.09</p></td>
+<td><p>0.24</p></td>
+<td><p>0.32</p></td>
+<td><p>0.23</p></td>
+<td><p>0.09</p></td>
+<td><p>0.01</p></td>
+<td><p>1.00</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>9.00e-05</p></td>
+<td><p>1.28e-03</p></td>
+<td><p>5.67e-03</p></td>
+<td><p>1.54e-02</p></td>
+<td><p>3.12e-02</p></td>
+<td><p>5.18e-02</p></td>
+<td><p>7.20e-02</p></td>
+<td><p>8.19e-02</p></td>
+<td><p>6.56e-02</p></td>
+<td><p>3.25e-01</p></td>
+</tr>
+<tr class="row-even"><td><p>Prior x Likelihood</p></td>
+<td><p>1.8e-09</p></td>
+<td><p>1.7e-06</p></td>
+<td><p>1.0e-04</p></td>
+<td><p>1.5e-03</p></td>
+<td><p>7.5e-03</p></td>
+<td><p>1.7e-02</p></td>
+<td><p>1.6e-02</p></td>
+<td><p>7.0e-03</p></td>
+<td><p>9.4e-04</p></td>
+<td><p>5.0e-02</p></td>
+</tr>
+<tr class="row-odd"><td><p>Posterior</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>0.03</p></td>
+<td><p>0.15</p></td>
+<td><p>0.33</p></td>
+<td><p>0.33</p></td>
+<td><p>0.14</p></td>
+<td><p>0.02</p></td>
+<td><p>1.00</p></td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-default" id="fig-large-theta-extra">
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_32_1.png" src="_images/theory-notebook_32_1.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">Probability distribution with a finer grid for the bias of the coin after seeing an additional HHTHH.</span><a class="headerlink" href="#fig-large-theta-extra" title="Permalink to this image">¶</a></p>
+</div>
+<p>After this update the peak of the probability distribution is clearly not centered over <span class="math notranslate nohighlight">\(\theta=0.5\)</span> anymore, but instead at a value of <span class="math notranslate nohighlight">\(\theta\)</span> that biases the coin in favor of your friend. The cumulative probability of <span class="math notranslate nohighlight">\(\theta&gt;0.5\)</span> is now <span class="pasted-text">0.82</span>.</p>
+<p>The math is indicating that you are being cheated, but decision making is more complex than just looking at the output of Bayes theorem. You will potentially loose a friend and start a fight if you declare based on 10 flips of a coin that he is cheating. The field of <a class="reference external" href="https://en.wikipedia.org/wiki/Decision_theory">decision theory</a> considers the penalty of making an incorrect decision and helps you optimize your choices. Decision theory is beyond the scope of this manual, but the principle of <a class="reference internal" href="worked-examples.html#humble-uncertainty"><span class="std std-ref">being humble with your uncertainty</span></a> applies here. The output of Bayes theorem depends heavily on the prior. What if you had chosen a different prior? Table <a class="reference internal" href="#tab-bias-coin-calc-fine-uniform"><span class="std std-numref">Table 42</span></a> assumes a <em>uniform prior</em> where each value of <span class="math notranslate nohighlight">\(\theta\)</span> is given an equal probability. In plain English this states that every value is equally likely - or you have absolutely no opinion about the possible outcomes in advance. Having absolutely no opinion seems doubtful, but this is considered the most naive prior you can set. Unfortunately for your friend the results when using a uniform prior are more damming than your initial calculation (see <a class="reference internal" href="#tab-bias-coin-calc-fine-extra"><span class="std std-numref">Table 41</span></a> for comparison). Your chose of a prior has potentially impacted your decision making.</p>
+<table class="colwidths-auto table" id="tab-bias-coin-calc-fine-uniform">
+<caption><span class="caption-number">Table 42 </span><span class="caption-text">A repeat of the calculation in <a class="reference internal" href="#tab-bias-coin-calc-fine-extra"><span class="std std-numref">Table 41</span></a> / <a class="reference internal" href="#fig-large-theta-extra"><span class="std std-numref">Fig. 19</span></a> using Bayes theorem with a uniform prior. This calculation reflects observing 8 heads and 2 tails.</span><a class="headerlink" href="#tab-bias-coin-calc-fine-uniform" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\theta\)</span></p></th>
+<th class="head"><p>0.1</p></th>
+<th class="head"><p>0.2</p></th>
+<th class="head"><p>0.3</p></th>
+<th class="head"><p>0.4</p></th>
+<th class="head"><p>0.5</p></th>
+<th class="head"><p>0.6</p></th>
+<th class="head"><p>0.7</p></th>
+<th class="head"><p>0.8</p></th>
+<th class="head"><p>0.9</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior</p></td>
+<td><p>0.11</p></td>
+<td><p>0.11</p></td>
+<td><p>0.11</p></td>
+<td><p>0.11</p></td>
+<td><p>0.11</p></td>
+<td><p>0.11</p></td>
+<td><p>0.11</p></td>
+<td><p>0.11</p></td>
+<td><p>0.11</p></td>
+<td><p>1.00</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>0.01</p></td>
+<td><p>0.01</p></td>
+<td><p>0.00</p></td>
+<td><p>0.02</p></td>
+</tr>
+<tr class="row-even"><td><p>Prior x Likelihood</p></td>
+<td><p>9.0e-10</p></td>
+<td><p>1.8e-07</p></td>
+<td><p>3.6e-06</p></td>
+<td><p>2.6e-05</p></td>
+<td><p>1.1e-04</p></td>
+<td><p>3.0e-04</p></td>
+<td><p>5.8e-04</p></td>
+<td><p>7.5e-04</p></td>
+<td><p>4.8e-04</p></td>
+<td><p>2.2e-03</p></td>
+</tr>
+<tr class="row-odd"><td><p>Posterior</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>0.01</p></td>
+<td><p>0.05</p></td>
+<td><p>0.13</p></td>
+<td><p>0.26</p></td>
+<td><p>0.33</p></td>
+<td><p>0.21</p></td>
+<td><p>1.00</p></td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-default" id="fig-large-theta-uniform">
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_33_1.png" src="_images/theory-notebook_33_1.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Probability distributions with a uniform prior after seeing HHHHT.</span><a class="headerlink" href="#fig-large-theta-uniform" title="Permalink to this image">¶</a></p>
+</div>
+<p>Of course a prior can be chosen that would make your friend look less guilty of cheating. Manufacturing a biased coin that looks indistinguishable from a standard coin would be very difficult to achieve. Maybe your prior should place a higher probability on <span class="math notranslate nohighlight">\(\theta=0.5\)</span> and assign minimal probability to the other values of <span class="math notranslate nohighlight">\(\theta\)</span>? <a class="reference internal" href="#tab-bias-coin-calc-fine-skeptical"><span class="std std-numref">Table 43</span></a> and <a class="reference internal" href="#fig-large-theta-skeptical"><span class="std std-numref">Fig. 21</span></a> shows a result that is gives significant probability to the coin being fair and potentially saves your friendship.</p>
+<table class="colwidths-auto table" id="tab-bias-coin-calc-fine-skeptical">
+<caption><span class="caption-number">Table 43 </span><span class="caption-text">A repeat of the calculation in Table <a class="reference internal" href="#tab-bias-coin-calc-fine-extra"><span class="std std-numref">Table 41</span></a> with a normal distribution (<span class="math notranslate nohighlight">\(\mu=0.5\)</span>, <span class="math notranslate nohighlight">\(\sigma=0.05\)</span>). This calculation reflects observing 8 heads and 2 tails.</span><a class="headerlink" href="#tab-bias-coin-calc-fine-skeptical" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\theta\)</span></p></th>
+<th class="head"><p>0.1</p></th>
+<th class="head"><p>0.2</p></th>
+<th class="head"><p>0.3</p></th>
+<th class="head"><p>0.4</p></th>
+<th class="head"><p>0.5</p></th>
+<th class="head"><p>0.6</p></th>
+<th class="head"><p>0.7</p></th>
+<th class="head"><p>0.8</p></th>
+<th class="head"><p>0.9</p></th>
+<th class="head"><p>Sum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>0.11</p></td>
+<td><p>0.79</p></td>
+<td><p>0.11</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>1.00</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>0.01</p></td>
+<td><p>0.01</p></td>
+<td><p>0.00</p></td>
+<td><p>0.02</p></td>
+</tr>
+<tr class="row-even"><td><p>Prior x Likelihood</p></td>
+<td><p>8.1e-23</p></td>
+<td><p>2.0e-14</p></td>
+<td><p>8.5e-09</p></td>
+<td><p>2.5e-05</p></td>
+<td><p>7.7e-04</p></td>
+<td><p>2.9e-04</p></td>
+<td><p>1.4e-06</p></td>
+<td><p>8.0e-11</p></td>
+<td><p>4.3e-17</p></td>
+<td><p>1.1e-03</p></td>
+</tr>
+<tr class="row-odd"><td><p>Posterior</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>0.02</p></td>
+<td><p>0.71</p></td>
+<td><p>0.26</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>0.00</p></td>
+<td><p>1.00</p></td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-default" id="fig-large-theta-skeptical">
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_34_1.png" src="_images/theory-notebook_34_1.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Probability distribution with a finer grid for the bias of a coin after seeing HHHHT.</span><a class="headerlink" href="#fig-large-theta-skeptical" title="Permalink to this image">¶</a></p>
+</div>
+<p>Given the same data, three different results can be achieved by choosing a different prior. This begs the question, which prior is more appropriate? Well, unfortunately it depends on your specific circumstance and how/if you plan to take an action based on your beliefs. Again, when using subjective probabilities your results are personal. The data suggests that the coin is biased. Your selection of a prior determines how much influence the data should have when revising your beliefs. A tight narrow distribution around <span class="math notranslate nohighlight">\(\theta=0.5\)</span> like in <a class="reference internal" href="#fig-large-theta-skeptical"><span class="std std-numref">Fig. 21</span></a> implies that your beliefs will not be influenced by the data very much. On the other extreme a uniform prior, like <a class="reference internal" href="#fig-large-theta-uniform"><span class="std std-numref">Fig. 20</span></a>, implies that your beliefs will be only informed by the data. Setting a prior will certainly be difficult when you have a vested interest (your friendship) in the posterior belief.</p>
+<p>As a final note, if you take the resolution of the grid to be very fine your results will start looking like continuous distributions. For example <a class="reference internal" href="#fig-very-large-theta-extra"><span class="std std-numref">Fig. 22</span></a> reproduces <a class="reference internal" href="#fig-large-theta-extra"><span class="std std-numref">Fig. 19</span></a> with 10 times more points on the grid. In general more points are better, which should eventually lead to using a more powerful numerical method. The method shown here is basically a brute force method. See the <a class="reference internal" href="introduction.html#additional-refs"><span class="std std-ref">references</span></a> for more sophisticated solutions.</p>
+<div class="figure align-default" id="fig-very-large-theta-extra">
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_35_1.png" src="_images/theory-notebook_35_1.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Probability distribution with a finer grid for the bias of a coin after seeing HHHHT.</span><a class="headerlink" href="#fig-very-large-theta-extra" title="Permalink to this image">¶</a></p>
+</div>
+<p>Per the usual, with Bayes theorem your results are personal and you should be realistic about the uncertainty and bias of your reasoning. The grid method may be a way to improve your reasoning over using simple point estimates, but comes with the penalty of increased computational complexity. Grid methods show how model comparison and parameter estimation seem different, but are actually related methods.</p>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>This appendix sampled a number of unique or complex techniques associated with Bayes theorem that were not included in the main text of the manual. The manual aims to be self contained for a very narrow, but generally useful, application of Bayes theorem. This appendix aims to be the opposite, general and vague, to provide a jumping off point for further investigation elsewhere.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="pineapples"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
+<dd><p>The Pineapples and Nordiques are pop culture references to the mid 90’s television series <a class="reference external" href="https://en.wikipedia.org/wiki/Pinky_and_the_Brain">Pinky and the Brain</a>.</p>
+</dd>
+<dt class="label" id="clue"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
+<dd><p>Theses are characters from the board game <a class="reference external" href="https://en.wikipedia.org/wiki/Cluedo">Clue</a></p>
+</dd>
+<dt class="label" id="revision"><span class="brackets"><a class="fn-backref" href="#id5">3</a></span></dt>
+<dd><p>See also: <a class="reference internal" href="motivating-example.html#example"><span class="std std-ref">Worchestershire cola example</span></a>, <a class="reference internal" href="worked-examples.html#spam-filter"><span class="std std-ref">Spam email filter</span></a>, <a class="reference internal" href="worked-examples.html#monty-hall"><span class="std std-ref">The Mony Hall problem</span></a>, <a class="reference internal" href="worked-examples.html#medical-heuristic"><span class="std std-ref">Heuristic for evaluating medical news</span></a> for examples of multiple belief revision.</p>
+</dd>
+<dt class="label" id="extreme"><span class="brackets"><a class="fn-backref" href="#id6">4</a></span></dt>
+<dd><p>There is an interesting discussion on the <a class="reference external" href="https://arbital.com/p/bayes_extraordinary_claims/">arbital</a> website about what constitutes extreme evidence.</p>
+</dd>
+<dt class="label" id="equivilant"><span class="brackets"><a class="fn-backref" href="#id7">5</a></span></dt>
+<dd><p>When you flip the order you write the odds in, the odds ratios are inverted as well. In our running example <span class="math notranslate nohighlight">\(0.996/0.005 = 199.2\)</span> so the inverse is <span class="math notranslate nohighlight">\(0.005/0.996 = 0.00502 = 1/199.2\)</span>.</p>
+</dd>
+<dt class="label" id="mess"><span class="brackets"><a class="fn-backref" href="#id9">6</a></span></dt>
+<dd><p>To further complicate things not all authors use consistent nomenclature. Look up the beta distribution on <a class="reference external" href="https://en.wikipedia.org/wiki/Beta_distribution">wikipedia</a> and you will see a similar, but not identical, definition compared to what is shown in this book.</p>
+</dd>
+<dt class="label" id="proof"><span class="brackets"><a class="fn-backref" href="#id10">7</a></span></dt>
+<dd><p>See <a class="reference external" href="https://www.amazon.com/Bayesian-Statistics-Fun-Will-Kurt/dp/1593279566">Kurt</a> or <a class="reference external" href="https://www.amazon.com/Doing-Bayesian-Data-Analysis-Tutorial-dp-0124058884/dp/0124058884">Kruschke</a> for a formal proof.</p>
+</dd>
+<dt class="label" id="kilometers"><span class="brackets"><a class="fn-backref" href="#id11">8</a></span></dt>
+<dd><p>The earth is not a perfect sphere, so depending on how it is measured, the circumference of the earth is reported to be in the range of 40,008 to 40,075 km (<a class="reference external" href="https://www.space.com/17638-how-big-is-earth.html">source</a>).</p>
+</dd>
+<dt class="label" id="python"><span class="brackets"><a class="fn-backref" href="#id12">9</a></span></dt>
+<dd><p>A new user should start with an installer that includes python along with a development environment and all the scientific computing libraries pre-installed. See <a class="reference external" href="http://winpython.sourceforge.net/">winPy</a> or <a class="reference external" href="https://www.anaconda.com/products/individual">anaconda</a> for good staring points.</p>
+</dd>
+<dt class="label" id="r-proj"><span class="brackets"><a class="fn-backref" href="#id13">10</a></span></dt>
+<dd><p>A new user should start with the instructions for installing the free <a class="reference external" href="https://rstudio.com/products/rstudio/download/">RStudio</a> development environment which makes using R much more user friendly.</p>
+</dd>
+<dt class="label" id="coin"><span class="brackets"><a class="fn-backref" href="#id15">11</a></span></dt>
+<dd><p>When I started writing this manual I decided to omit all card, dice, and coin examples because I believe they are not very representative of <a class="reference internal" href="introduction.html#real-world-problems"><span class="std std-ref">practical real life problems</span></a>. It is really hard to give examples of ‘probability of a probability’ scenarios without using the biased coin example described here because it is the simplest example. I justify this betrayal of my initial stated goal to myself by burying this example in the depths of a chapter that I discourage readers from using 😂.</p>
+</dd>
+<dt class="label" id="probability"><span class="brackets"><a class="fn-backref" href="#id16">12</a></span></dt>
+<dd><p>Some authors use the idea, or analogy, of probability mass to describe this process of describing your beliefs as a distribution. Imagine that you have a ball of modeling clay and are asked to quantify your beliefs about some proposition by laying clumps of mass onto a row of plates that represent a probability index. For example, will it rain today? You are given a row of plates which represent 0.1 increments of belief. The first plate is labeled 0.0, the next 0.1, and so on until the last plate which represents 1.0. To assign probability mass in accordance to your beliefs you break off chunks of modeling clay and lay them on the plates. The mass you place on any one plate indicates your belief in that value. A key point here is that you are limited to only using clay from the initial ball you were given to describe your beliefs, and can only distribute clay to the existing plates. If you use more plates, to provide finer resolution of your beliefs, you are still restricted to the one ball of clay. If all plates are given equal mass then the probability distribution is ‘uniform’. If some plates have more mass then others then you have indicated that you think some outcomes are more likely than others. Plates assigned no mass are essentially not being considered as a possible outcome. When using Bayes theorem the difference between very little probability mass and absolutely no mass is important. If your prior assigns no mass to a particular outcome then your prior will never include that outcome. Strictly speaking a probability distribution is a continuous function, while a probability mass function is a discrete function with a finite number of ‘plates’ that can have mass assigned to them.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="conclusion.html" title="previous page">Conclusion</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan Lowe<br/>
+        
+          <div class="extra_footer">
+            <p><i>Bayes Theorem - The Missing Manual</i> is licensed under a creative commons licence (<a href="http://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>).</p>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

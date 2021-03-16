@@ -1,0 +1,465 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bayes theorem solution process &#8212; Bayes Theorem - The Missing Manual</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Worked examples" href="worked-examples.html" />
+    <link rel="prev" title="Mathematical prerequisites" href="math-prereq.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Bayes Theorem - The Missing Manual</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="motivating-example.html">
+   Motivating example
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="math-prereq.html">
+   Mathematical prerequisites
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Bayes theorem solution process
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="worked-examples.html">
+   Worked examples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="conclusion.html">
+   Conclusion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="appendix-theory.html">
+   Appendix: Theory
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/solution-process.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#standardized-example">
+   Standardized example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#standard-solution-process">
+   Standard solution process
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="bayes-theorem-solution-process">
+<span id="process"></span><h1>Bayes theorem solution process<a class="headerlink" href="#bayes-theorem-solution-process" title="Permalink to this headline">¶</a></h1>
+<p>The quintessential example for introducing Bayes theorem is a medical diagnostics test. This example from Eliezer Yudkowsky is a classic and explains why the example is attention grabbing:</p>
+<blockquote>
+<div><p>1% of women at age forty who participate in routine screening have breast cancer. 80% of women with breast cancer will get positive mammographies.  9.6% of women without breast cancer will also get positive mammographies. A woman in this age group had a positive mammography in a routine screening.  What is the probability that she actually has breast cancer?</p>
+<p>Next, suppose I told you that most doctors get the same wrong answer on this problem - usually, only around 15% of doctors get it right. See Casscells, Schoenberger, and Grayboys 1978; Eddy 1982; Gigerenzer and Hoffrage 1995; and many other studies.  It’s a surprising result which is easy to replicate, so it’s been extensively replicated.</p>
+<p>—<a class="reference external" href="https://yudkowsky.net/rational/bayes/">Source</a></p>
+</div></blockquote>
+<p>We will return to the quintessential example described above later in this chapter. To illustrate the process for solving problems with Bayes theorem we will pick a problem that has convenient round looking numbers to make things easy. There are many ways to solve problems, but for the sake of consistency we will use this standard approach over and over in this manual.</p>
+<p>Let’s use a similar medical example from <a class="reference external" href="https://arbital.com/p/bayes_frequency_diagram/?l=55z&amp;pathId=65721">arbitral.com </a>:</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Diseasitis is a fictional up disease - latin for inflammation of the disease</p>
+</div>
+<blockquote>
+<div><p>“Suppose you are a nurse screening incoming freshmen for diseasitis. Last year 20% of incoming students had diseasitis. During the screening test students place a tongue depressor into their mouth. If the tongue depressor turns black, the student may have diseasitis.</p>
+<ul class="simple">
+<li><p>Among the students with diseasitis, 90% turn the tongue depressor black</p></li>
+<li><p>Because the tongue depressor test is very cheap and quick to administer, 30% of students who are healthy also turn the tongue depressor black.</p></li>
+</ul>
+<p>If you have a student that turns the tongue depressor black, what is the probability that they have diseasitis?”</p>
+<p>—<a class="reference external" href="https://arbital.com/p/bayes_frequency_diagram/?l=55z&amp;pathId=65510">Adapted slightly from arbital.com</a></p>
+</div></blockquote>
+<p>Multiple studies show that thinking about concrete numbers such as “20 out of 100 students” is more likely to produce correct spontaneous reasoning on these problems than thinking about percentages like “20% of students” <a class="footnote-reference brackets" href="#reasoning" id="id1">1</a>, so that will be our starting point. Imagine a group of 100 incoming freshmen, 20 of them would have diseasitis. See <a class="reference internal" href="#sick-80-healthy"><span class="std std-numref">Fig. 1</span></a> for a visual representation of this situation.</p>
+<div class="figure align-default" id="sick-80-healthy">
+<img alt="_images/20-sick-80-healthy.png" src="_images/20-sick-80-healthy.png" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Diagram representing 100 students. Red circles represent incoming students sick with diseasitis. Blue circles represent healthy students.</span><a class="headerlink" href="#sick-80-healthy" title="Permalink to this image">¶</a></p>
+</div>
+<p>Of the 20 students with diseasitis, the tongue depressor would turn black for 90% of them. In our example 18 out of the 20 sick students would be identified as sick. Of the healthy students, 30% of them would turn the tongue depressor black. In our example 24 of the 80 healthy students would test positive for diseasitis even though they were sick. <a class="reference internal" href="#positive-24-false-positive"><span class="std std-numref">Fig. 2</span></a> shows an updated diagram with the respective positive tests from the sick and healthy groups.</p>
+<div class="figure align-default" id="positive-24-false-positive">
+<img alt="_images/18-positive-24-false-positive.png" src="_images/18-positive-24-false-positive.png" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Positive tests in both the sick and healthy portions of the incoming students.</span><a class="headerlink" href="#positive-24-false-positive" title="Permalink to this image">¶</a></p>
+</div>
+<p>There are a total of <span class="math notranslate nohighlight">\(18+24=42\)</span> students that turn the tongue depressor black, but only 18 of them are actually sick. Therefore your odds of being sick given that you turned the tongue depressor black are 18:24 - simplifies to 3:4, or about <span class="math notranslate nohighlight">\(18/(18+24) \approx 0.43\)</span> probability of being sick. See <a class="reference internal" href="#to-24-ratio"><span class="std std-numref">Fig. 3</span></a> for a visual representation of the results. This result can be a bit counter intuitive because the test is correct 90% of the time. There were relatively few cases of diseasitis to begin with, which makes the odds of actually having the disease much lower than the 90% true positive rate reported for the test.</p>
+<div class="figure align-default" id="to-24-ratio">
+<img alt="_images/18-to-24-ratio.png" src="_images/18-to-24-ratio.png" />
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Relative odds of sick to healthy students</span><a class="headerlink" href="#to-24-ratio" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="standardized-example">
+<h2>Standardized example<a class="headerlink" href="#standardized-example" title="Permalink to this headline">¶</a></h2>
+<p>In future examples we will forgo drawing all those little circles and use a simple box to describe our proportions. Here is the same problem using the soon to become standard format:</p>
+<p><em>Evidence:</em> A student turns a tongue depressor black.</p>
+<p><em>Question:</em> What do you believe the odds are that the student is sick with diseasitis?</p>
+<p><em>Hypothesis:</em> Establish two hypothesis to describe the two possible states of the student.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span>: The student is sick with diseasitis.</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_2\)</span>: The student is healthy <a class="footnote-reference brackets" href="#healthy" id="id2">2</a></p></li>
+</ul>
+<p>For the sake of accounting represent the odds as <span class="math notranslate nohighlight">\(H_1:H_2\)</span> for sick:healthy. The opposite representation (healthy:sick) is equally as valid, just mind that you are always consistent with how you write your odds.</p>
+<p><em>Prior:</em> “Last year 20% of the incoming freshmen had diseasitis.”</p>
+<p>Out of a representative group of 100 students, 20 of them would have diseasitis and the other 80 would be healthy. Set the prior odds to 20:80 which simplifies to 1:4. Draw a square and do your best to eyeball in a line that represents 1:4 odds. Label the small area ‘sick’ and the big area ‘healthy’. See <a class="reference internal" href="#to-4-sick-box"><span class="std std-numref">Fig. 4</span></a> for a visual representation of the prior odds.</p>
+<div class="figure align-default" id="to-4-sick-box">
+<img alt="_images/1-to-4-sick-box.png" src="_images/1-to-4-sick-box.png" />
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Diagram representing prior odds of a student being sick with diseasitis. The region labeled sick represents 20 sick students, or odds of 1:4 for sick:healthy.</span><a class="headerlink" href="#to-4-sick-box" title="Permalink to this image">¶</a></p>
+</div>
+<p><em>Relative likelihood:</em> What is the likelihood that if you make the tongue depressor black you will be sick? It depends if you are in the sick or healthy box…</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(H_1\)</span> is true then you are sick and there is a 0.9 probability you will turn a tongue depressor black. Shade in 90% of the area in the ‘sick’ box.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(H_2\)</span> is true then you are healthy and there is a 0.3 probability you will turn the tongue depressor black. Shade in 30% of the area in the ‘healthy’ box</p></li>
+</ul>
+<p>The relative likelihood in our example is 0.9:0.3, or 90:30, or 3:1 when simplified (see <a class="reference internal" href="#to-1-likelihood-box"><span class="std std-numref">Fig. 5</span></a>). Note that a relative likelihood is not a probability. This example intentionally shows that the likelihood does not have to sum to 1. Much like relative odds, the relative likelihood is a ratio. If your data supports both hypotheses equally well then the relative likelihood is close to one. The relative likelihood helps you quantify the strength of your evidence. Only when the evidence strongly supports one hypothesis over another does the relative likelihood revise your prior beliefs. The best data points to collect differentiates your competing hypothesis by having a relative likelihood that is far from one.</p>
+<div class="figure align-default" id="to-1-likelihood-box">
+<img alt="_images/3-to-1-likelihood-box.png" src="_images/3-to-1-likelihood-box.png" />
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Diagram representing the relative likelihood of each group showing a positive test results. The shaded region  for the ‘sick’ group represents a 0.9 probability of testing positive. The shaded region for the ‘healthy’ group represents a 0.3 probability of testing positive. The posterior odds are represented by the ratio of the shaded areas.</span><a class="headerlink" href="#to-1-likelihood-box" title="Permalink to this image">¶</a></p>
+</div>
+<p><em>Posterior:</em></p>
+<p>At this point you can visually inspect your diagram and get a sense for what the posterior odds are. The odds that you are sick, given that you turned a tongue depressor black, is the ratio of the two shaded areas. In our example the shaded ‘sick’ rectangle is a little bit smaller than the shaded ‘healthy’ rectangle, so the odds of being sick a a bit under 1:1, or a bit less than 0.5 probability.</p>
+<p>If you need to, you can work out the math to get a more precise answer. See <a class="reference internal" href="#diseasitis-odds"><span class="std std-numref">Table 3</span></a> for the complete calculation.</p>
+<table class="colwidths-auto table" id="diseasitis-odds">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Calculating a precise answer to the “odds of diseasitis given a black tongue depressor” illustrated in <a class="reference internal" href="#to-1-likelihood-box"><span class="std std-numref">Fig. 5</span></a></span><a class="headerlink" href="#diseasitis-odds" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Sick</p></th>
+<th class="head"><p>Healthy</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>1</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>Probability</p></td>
+<td><p>0.43</p></td>
+<td><p>0.57</p></td>
+</tr>
+</tbody>
+</table>
+<p>Converted back into a probability, there is a <span class="math notranslate nohighlight">\(3/(3+4) \approx 0.43\)</span> probability of being sick if a student blackens a tongue depressor.</p>
+<p>The diseasitis example makes the math easy, but is not representative of most medical tests. If we work the breast cancer example shown above from Yudkowsky the probability of being sick given a positive test is considerably smaller than the diseasitis example. Results of applying Bayes theorem are shown in <a class="reference internal" href="#odds-mammographie"><span class="std std-numref">Table 4</span></a>.</p>
+<table class="colwidths-auto table" id="odds-mammographie">
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">Odds of breast cancer given a positive mammographie</span><a class="headerlink" href="#odds-mammographie" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Sick</p></th>
+<th class="head"><p>Healthy</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>1</p></td>
+<td><p>99</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>800</p></td>
+<td><p>96</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p>800</p></td>
+<td><p>9504</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simplified posterior (approximate)</p></td>
+<td><p>8</p></td>
+<td><p>95</p></td>
+</tr>
+<tr class="row-even"><td><p>Probability</p></td>
+<td><p>0.08</p></td>
+<td><p>0.92</p></td>
+</tr>
+</tbody>
+</table>
+<p>In the Yudkowsky example the odds of being sick given a positive test are 800:9504, roughly equivilant to 8:95, or approximately a 0.08 probability of being sick. This is shocking because medical professionals reportedly struggle to correctly calculate the probability of sickness. I will however contend that their inability to properly calculate the correct answer does not imply that they lack the proper medical intuition to provide good care. As the name implies, a screening test is the first of potentially many tests that would be administered if a diagnosis of cancer is suspected. To my knowledge there is no crisis in the medical communities treatment of cancer. Mainly this example is useful for teaching Bayes theorem, not influencing the training of doctors. In my opinion thinking with Bayes theorem is much more important than calculating a precise answer. Interestingly the accuracy of reading mammographies has increased due to algorithms based in part on Bayes theorem <a class="footnote-reference brackets" href="#ai-screening" id="id3">3</a> since the studies citing that medical professionals can’t calculate the correct answer were published.</p>
+<p>Another interesting intersection of Bayes theorem and breast cancer screening involved a controversy in 2009 when a U.S. Government task force suggested that women should start getting mammograms to screen for breast cancer at age 50, instead of at the customary age of 40 <a class="footnote-reference brackets" href="#task-force" id="id4">4</a>. It also suggested changing the rate of screenings from every two years to every three years. The argument is that the base rate of cancer in 40 year old women is so low that the cost of false positives (healthy women with a test that seemed to indicate cancer) outweighed the benefits of the testing for the population as a whole. The downsides include radiation exposure and unnecessary treatment. As the son of a breast cancer survivor and the father of daughters this recommendation certainly evokes an emotional response that highlights the difference between <em>probability theory</em> (what are the odds) and <em>decision theory</em> (how to use the odds to make decisions).</p>
+</div>
+<div class="section" id="standard-solution-process">
+<span id="id5"></span><h2>Standard solution process<a class="headerlink" href="#standard-solution-process" title="Permalink to this headline">¶</a></h2>
+<p>The standard process for using Bayes theorem throughout this article will be:</p>
+<ol class="simple">
+<li><p>Identify the problem as a candidate for Bayes theorem. Usually the data arrives prior to generating a hypothesis, and you are uncertain about the underlying mechanisms generating the data.</p></li>
+<li><p>Clearly state the question you are trying to answer in terms of a belief.</p></li>
+<li><p>Establish two or more competing hypothesis that might explain the data you are observing.</p></li>
+<li><p>For accounting purposes, decide how you will be writing the odds. For example - sick:healthy or maybe healthy:sick</p></li>
+<li><p>Identify the prior odds.</p></li>
+<li><p>Establish the relative likelihood of the data occurring <a class="footnote-reference brackets" href="#likelihood" id="id6">5</a>. It may help to follow this internal prompt to establish the relative likelihoods:</p>
+<ul class="simple">
+<li><p>If your first hypothesis is true, what would be the probability of observing this data</p></li>
+<li><p>If your second hypothesis is true, what would be the probability of observing this data</p></li>
+<li><p>Continue this questioning for each hypothesis</p></li>
+<li><p>Then, take the ratio of the probabilities as your relative likelihood. Don’t worry if they don’t sum to 1.</p></li>
+</ul>
+</li>
+<li><p>Calculate the posterior odds using term-by-term multiplication</p></li>
+</ol>
+<p>If you only have two hypothesis, you can visualize the results by drawing a diagram:</p>
+<ol class="simple">
+<li><p>Start by drawing a square to represent the entirety of the probability space</p></li>
+<li><p>Set your priors, then draw a vertical line to divide the square into two areas proportional to your prior odds. If the prior odds of <span class="math notranslate nohighlight">\(H_1:H_2\)</span> are 1:4 then imagine dividing the square into 5 equal vertical parts, then draw a line that divides the space into a segment of one and a segment of four.</p></li>
+<li><p>Set your relative likelihoods. Shade each respective part to show the likelihood of the data given the hypothesis. If your relative likelihood is 0.9:0.3 = 9:3 = 3:1 then shade 90% of the area that represents <span class="math notranslate nohighlight">\(H_1\)</span> and 30% of the area that represents <span class="math notranslate nohighlight">\(H_2\)</span></p></li>
+<li><p>The posterior odds are represented by the ratio of the shaded areas.</p></li>
+</ol>
+<p>With a mathematical form of <span class="math notranslate nohighlight">\(a \times b = c\)</span> there are only a couple different ways you can get Bayes theorem wrong. The most likely routes to failure are:</p>
+<ol class="simple">
+<li><p>Math error - simply failing to define the odds properly or making an arithmetic error</p></li>
+<li><p>Choosing inaccurate prior odds</p></li>
+<li><p>Choosing inaccurate likelihood odds</p></li>
+</ol>
+<p>Luckily Bayes theorem inherently handles uncertainty well. As long as your estimates of the prior odds and relative likelihood are accurate to an <a class="reference internal" href="math-prereq.html#rom"><span class="std std-ref">order of magnitude</span></a> then the posterior odds are useful for decision making.</p>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>The next <a class="reference internal" href="worked-examples.html#examples"><span class="std std-ref">chapter</span></a> is dedicated to solving a large number of worked problems. This includes easy word problems to give you practice with the mechanics of using the formula and then progresses in difficulty up to seemingly intractable problems. At first everything you need to work the problem will be contained in the example. After that the problems will delve into real life scenarios. Everything hinges on your ability to pick somewhat reasonable prior odds and likelihood ratios. There is often no “right” answer to these types of problems, but probably a wrong answer. Getting a <em>close enough</em> answer is usually <a class="reference internal" href="math-prereq.html#rom"><span class="std std-ref">well within your abilities</span></a> with a little practice, so don’t fret about that aspect.</p>
+<p>I contend that the real power of Bayes theorem is the intuition it gives you when making decisions. Hopefully the <a class="reference internal" href="worked-examples.html#examples"><span class="std std-ref">examples</span></a> allow you to identify in your personal life problems that are candidates for using Bayes theorem.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="reasoning"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>For example, see “Probabilistic reasoning in clinical medicine” by David M. Eddy (1982). This claim originally came from the <a class="reference external" href="https://arbital.com/p/bayes_frequency_diagram/?l=55z&amp;pathId=65510">diseasitis article</a>.</p>
+</dd>
+<dt class="label" id="healthy"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>The student is healthy, or at least NOT sick with diseasitis.</p>
+</dd>
+<dt class="label" id="ai-screening"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>See <a class="reference external" href="https://blog.google/technology/health/improving-breast-cancer-screening/">“Using AI to improve breast cancer screening”</a> and the peer reviewed <a class="reference external" href="https://www.nature.com/articles/s41586-019-1799-6.epdf?author_access_token=V_LKV2xpSv9G1dhANYeWM9RgN0jAjWel9jnR3ZoTv0M5zwPVx5jT4z_z-YkUZTBT6_1AtRXi8QouJM7xB-oSN-cVBoH7f_QTgx-yQN3UBEVfkvO1_5urNT-CZHGCEQNGlCuO69tMQYak4SmdoDqyzg%3D%3D">journal article</a>. Also see a news article about the research for <a class="reference external" href="https://time.com/5754183/google-ai-mammograms-breast-cancer/">additional context</a> with respect to other previous studies.</p>
+</dd>
+<dt class="label" id="task-force"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
+<dd><p>See <a class="reference external" href="https://time.com/4175514/mammogram-recommendations-usa/">New Clarity on Who Needs Mammograms — When</a> for a discussion of why the changes were recommended and how they could have been communicated differently.</p>
+</dd>
+<dt class="label" id="likelihood"><span class="brackets"><a class="fn-backref" href="#id6">5</a></span></dt>
+<dd><p>So far we have simply told you what the relative likelihood should be. In practice this wont usually be given to you. Many of the examples in this manual show how to <a class="reference internal" href="math-prereq.html#rom"><span class="std std-ref">estimate</span></a> the likelihood when it is not a given.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="math-prereq.html" title="previous page">Mathematical prerequisites</a>
+    <a class='right-next' id="next-link" href="worked-examples.html" title="next page">Worked examples</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan Lowe<br/>
+        
+          <div class="extra_footer">
+            <p><i>Bayes Theorem - The Missing Manual</i> is licensed under a creative commons licence (<a href="http://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>).</p>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

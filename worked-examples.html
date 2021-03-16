@@ -1,0 +1,1705 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Worked examples &#8212; Bayes Theorem - The Missing Manual</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Conclusion" href="conclusion.html" />
+    <link rel="prev" title="Bayes theorem solution process" href="solution-process.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Bayes Theorem - The Missing Manual</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="motivating-example.html">
+   Motivating example
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="math-prereq.html">
+   Mathematical prerequisites
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="solution-process.html">
+   Bayes theorem solution process
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Worked examples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="conclusion.html">
+   Conclusion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="appendix-theory.html">
+   Appendix: Theory
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/worked-examples.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#themes">
+   Themes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alien-bookcases">
+   Alien bookcases
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#art-contest">
+   Art contest
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-atheist-and-a-priest">
+   An atheist and a priest
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#defective-part-from-two-production-lines">
+   Defective part from two production lines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-failing-new-employee">
+   A failing new employee
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#smoke-from-a-fire-or-bbq">
+   Smoke from a fire or BBQ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-married-in-the-rain">
+   Getting married in the rain
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-robbed-by-a-plumber">
+   Getting robbed by a plumber
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#heuristic-for-evaluating-medical-news">
+   Heuristic for evaluating medical news
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-jealous-coworker">
+   The Jealous coworker
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#librarian-or-farmer">
+   Librarian or farmer?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-monty-hall-problem">
+   The Monty Hall problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-more-generous-slot-machine">
+   The more generous slot machine
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-mystic-seer">
+   The mystic seer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#product-adoption">
+   Product adoption
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spam-email-filter">
+   Spam email filter
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sparking-widgets">
+   Sparking widgets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strange-underwear">
+   Strange underwear
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#who-killed-mr-boddy">
+   Who killed Mr. Boddy?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#be-humble-with-your-uncertainty">
+     Be humble with your uncertainty
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimates-provide-good-enough-information">
+     Estimates provide ‘good enough’ information
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#watch-out-for-the-extreme-cases">
+     Watch out for the extreme cases
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="worked-examples">
+<span id="examples"></span><h1>Worked examples<a class="headerlink" href="#worked-examples" title="Permalink to this headline">¶</a></h1>
+<p>This section contains a number of examples, with their solutions, and commentary about the problem. The problems are listed in alphabetical order below. There are multiple <a class="reference internal" href="#themes"><span class="std std-ref">themes</span></a> worth highlighting to focus your exploration of Bayes theorem for practical real life problems.</p>
+<ol class="simple">
+<li><p><a class="reference internal" href="#alien-bookcase"><span class="std std-ref">Alien bookcases</span></a></p></li>
+<li><p><a class="reference internal" href="#art-contest"><span class="std std-ref">Art contest</span></a></p></li>
+<li><p><a class="reference internal" href="#athiest-priest"><span class="std std-ref">An atheist and a priest</span></a></p></li>
+<li><p><a class="reference internal" href="#two-production-lines"><span class="std std-ref">Defective part from two production lines</span></a></p></li>
+<li><p><a class="reference internal" href="#failing-employee"><span class="std std-ref">A Failing new employee</span></a></p></li>
+<li><p><a class="reference internal" href="#fire-bbq"><span class="std std-ref">Smoke from a fire or BBQ?</span></a></p></li>
+<li><p><a class="reference internal" href="#married-rain"><span class="std std-ref">Getting married in the rain</span></a></p></li>
+<li><p><a class="reference internal" href="#plumber"><span class="std std-ref">Getting robbed by a plumber</span></a></p></li>
+<li><p><a class="reference internal" href="#medical-heuristic"><span class="std std-ref">Heuristic for evaluating medical news</span></a></p></li>
+<li><p><a class="reference internal" href="#jealous"><span class="std std-ref">The jealous coworker</span></a></p></li>
+<li><p><a class="reference internal" href="#farmer-librarian"><span class="std std-ref">Librarian or farmer?</span></a></p></li>
+<li><p><a class="reference internal" href="#monty-hall"><span class="std std-ref">The Mony Hall problem</span></a></p></li>
+<li><p><a class="reference internal" href="#slot-machine"><span class="std std-ref">The more generous slot machine</span></a></p></li>
+<li><p><a class="reference internal" href="#mystic-seer"><span class="std std-ref">The mystic seer</span></a></p></li>
+<li><p><a class="reference internal" href="#product-adoption"><span class="std std-ref">Product adoption</span></a></p></li>
+<li><p><a class="reference internal" href="#spam-filter"><span class="std std-ref">Spam email filter</span></a></p></li>
+<li><p><a class="reference internal" href="#sparking-widgets"><span class="std std-ref">Sparking widgets</span></a></p></li>
+<li><p><a class="reference internal" href="#strange-underwear"><span class="std std-ref">Strange underwear</span></a></p></li>
+<li><p><a class="reference internal" href="#mr-boddy"><span class="std std-ref">Who killed Mr. Boddy</span></a></p></li>
+</ol>
+<div class="section" id="themes">
+<span id="id1"></span><h2>Themes<a class="headerlink" href="#themes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><em>Conditional probabilities:</em> This set of examples is the most basic and is good for practicing the mechanics of using Bayes theorem. While the examples are simplistic, there are none of the usual coin/card/dice examples you find in most textbooks. You just have to identify the relevant numbers and then plug them into Bayes theorem.</p>
+<ul>
+<li><p><a class="reference internal" href="#sparking-widgets"><span class="std std-ref">Sparking widgets</span></a></p></li>
+<li><p><a class="reference internal" href="#slot-machine"><span class="std std-ref">The more generous slot machine</span></a></p></li>
+<li><p><a class="reference internal" href="#two-production-lines"><span class="std std-ref">Defective part from two production lines</span></a></p></li>
+<li><p><a class="reference internal" href="#product-adoption"><span class="std std-ref">Product adoption</span></a></p></li>
+<li><p><a class="reference internal" href="#monty-hall"><span class="std std-ref">The Mony Hall problem</span></a></p></li>
+<li><p><a class="reference internal" href="#art-contest"><span class="std std-ref">Art contest</span></a></p></li>
+</ul>
+</li>
+<li><p><em>Base rate neglect:</em> This theme focuses on a key piece of intuition that is common with Bayes theorem. If the odds of something happening are very low to begin with, then most normal evidence is not strong enough to overcome the prior odds. Humans fail to understand this concept so often that it has been given a proper name ‘base rate neglect’. Medical screening tests, as introduced in the <a class="reference internal" href="solution-process.html#process"><span class="std std-ref">solution process</span></a> chapter, are the quintessential example of base rate neglect. These examples further expand on the base rate neglect concept outside the context of medical testing.</p>
+<ul>
+<li><p><a class="reference internal" href="#farmer-librarian"><span class="std std-ref">Librarian or farmer?</span></a></p></li>
+<li><p><a class="reference internal" href="#plumber"><span class="std std-ref">Getting robbed by a plumber</span></a></p></li>
+<li><p><a class="reference internal" href="#fire-bbq"><span class="std std-ref">Smoke from a Fire or BBQ?</span></a></p></li>
+<li><p><a class="reference internal" href="#married-rain"><span class="std std-ref">Getting married in the rain</span></a></p></li>
+<li><p><a class="reference internal" href="#alien-bookcase"><span class="std std-ref">Alien bookcases</span></a></p></li>
+</ul>
+</li>
+<li><p><em>Multiple competing hypotheses:</em> This theme highlights that the methods described in this manual can apply to situations with multiple - more than two - competing hypotheses. If you can only generate a single hypothesis for a real life problem then you might be looking at the problem through an overly simple lens.</p>
+<ul>
+<li><p><a class="reference internal" href="#art-contest"><span class="std std-ref">Art contest</span></a></p></li>
+<li><p><a class="reference internal" href="#mr-boddy"><span class="std std-ref">Who killed Mr. Boddy</span></a></p></li>
+<li><p><a class="reference internal" href="#monty-hall"><span class="std std-ref">The Mony Hall problem</span></a></p></li>
+</ul>
+</li>
+<li><p><em>Weak hypothesis/evidence, unexamined alternative hypothesis:</em> This theme was first introduced with the <a class="reference internal" href="introduction.html#model-comparison"><span class="std std-ref">pychic friend</span></a> example in the first chapter. The strength of evidence is an important concept that Bayes theorem can teach us about. It is a common logical flaw to assign more strength to evidence than we should because we are contorting the evidence to support a conclusion we want to be true. Closely related is the concept that we can only reason about hypotheses that we include in our analysis. If you omit the best hypothesis from consideration your analysis will always be sub optimal.</p>
+<ul>
+<li><p><a class="reference internal" href="#jealous"><span class="std std-ref">The jealous coworker</span></a></p></li>
+<li><p><a class="reference internal" href="#alien-bookcase"><span class="std std-ref">Alien bookcases</span></a></p></li>
+</ul>
+</li>
+<li><p><em>Extraordinary evidence and claims:</em> Bayes theorem can provide a lot of insight into the extreme cases where we are very certain or very skeptical about something. Caution should be used when you are at either extreme end of the probability spectrum. This theme focuses on extreme probabilities.</p>
+<ul>
+<li><p><a class="reference internal" href="#athiest-priest"><span class="std std-ref">An atheist and a priest</span></a></p></li>
+<li><p><a class="reference internal" href="#alien-bookcase"><span class="std std-ref">Alien bookcases</span></a></p></li>
+<li><p><a class="reference internal" href="#failing-employee"><span class="std std-ref">A failing new employee</span></a></p></li>
+<li><p><a class="reference internal" href="#mystic-seer"><span class="std std-ref">The mystic seer</span></a></p></li>
+</ul>
+</li>
+<li><p><em>Multiple belief revisions:</em> It is often claimed that a major benefit of Bayes theorem is the ability to incorporate new evidence incrementally as it arrives. The concept of incremental belief revision was first introduced in the <a class="reference internal" href="motivating-example.html#example"><span class="std std-ref">Worchestershire cola example</span></a>.</p>
+<ul>
+<li><p><a class="reference internal" href="#spam-filter"><span class="std std-ref">Spam email filter</span></a></p></li>
+<li><p><a class="reference internal" href="#monty-hall"><span class="std std-ref">The Mony Hall problem</span></a></p></li>
+<li><p><a class="reference internal" href="#medical-heuristic"><span class="std std-ref">Heuristic for Evaluating Medical News</span></a></p></li>
+</ul>
+</li>
+<li><p><em>Heuristic for medical news:</em> This theme relates to a technique of thinking that can be applied without any understanding of Bayes theorem. Of course it is powered by Bayes theorem, but the user doesn’t have to know that to benefit from the method. The example is medical related, but the technique is broadly applicable. Again, first introduced in the <a class="reference internal" href="motivating-example.html#example"><span class="std std-ref">Worchestershire cola example</span></a>, but useful enough that it is explicitly given its own theme.</p>
+<ul>
+<li><p><a class="reference internal" href="#medical-heuristic"><span class="std std-ref">Heuristic for Evaluating Medical News</span></a></p></li>
+</ul>
+</li>
+<li><p><em>Relative likelihoods:</em> Easy introductory problems give you all the information that you need to simply plug numbers into Bayes theorem. Practical problems however will not be so convenient. As described in <a class="reference internal" href="solution-process.html#standard-solution-process"><span class="std std-ref">step 6 of the standard solution process</span></a> there is a helpful internal prompt that you can use to estimate relative likelihoods. This theme highlights example problems that explicitly use the internal prompt:</p>
+<ul>
+<li><p><a class="reference internal" href="#monty-hall"><span class="std std-ref">The Mony Hall problem</span></a></p></li>
+<li><p><a class="reference internal" href="#slot-machine"><span class="std std-ref">The more generous slot machine</span></a></p></li>
+<li><p><a class="reference internal" href="#mystic-seer"><span class="std std-ref">The mystic seer</span></a></p></li>
+<li><p><a class="reference internal" href="#sparking-widgets"><span class="std std-ref">Sparking widgets</span></a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="alien-bookcases">
+<span id="alien-bookcase"></span><h2>Alien bookcases<a class="headerlink" href="#alien-bookcases" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>This is the quantitative argument behind the qualitative statement that “extraordinary claims require extraordinary evidence” (a claim popularized by Carl Sagan, which dates back to at least Pierre-Simon Laplace).</p>
+<p>Consider the following hypothesis: What if there are Bookcase Aliens who teleport into our houses at night and drop off bookcases?</p>
+<p>Bob offers the following evidence for this claim: “Last week, I visited my friend’s house, and there was a new bookcase there. If there were no bookcase aliens, I wouldn’t have expected that my friend would get a new bookcase. But if there are Bookcase Aliens, then the probability of my finding a new bookcase there was much higher. Therefore, my observation, ‘There is a new bookcase in my friend’s house,’ is strong evidence supporting the existence of Bookcase Aliens.”</p>
+<p>In an intuitive sense, we have a notion that Bob’s evidence “There is a new bookcase in my friend’s house” is not as extraordinary as the claim “There are bookcase aliens” - that the evidence fails to lift the claim. Bayes’s Rule makes this statement precise.</p>
+<p>—<a class="reference external" href="https://arbital.com/p/bayes_extraordinary_claims/">Original source: arbital.com </a></p>
+</div></blockquote>
+<p>Bayes theorem certainly applies here. However, given the nature of this problem, any probabilities will be quite subjective. Yet it is still helpful to run the numbers and get a feel for your beliefs.</p>
+<p>The question being asked in the problem is: Who placed the bookcase in Bob’s friends house? Establish the hypotheses as:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span>: Bookcase aliens placed a bookcase in Bob’s friends house</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_2\)</span>: There is some other human reason for the appearance of the bookcase</p></li>
+</ul>
+<p>For accounting purposes set the odds as <span class="math notranslate nohighlight">\(H_1:H_2\)</span> for bookcase aliens to ‘other reason’. In my life experience so far the existence of bookcase aliens seem very unlikely. Any statement where the odds are heavily against bookcase aliens will work as a prior. Take odds of 1:10^9 (one to a billion) against bookcase aliens being the reason why the bookcase appeared at Bob’s friends house.</p>
+<p>Next the relative likelihood needs to be established. Irregardless of the prior, lets say that bookcase aliens do exist. It is mentally challenging after setting such an extreme prior to objectively put on the “true believer” hat, but you need to work hard to ignore your preconceived notions during this step. What would the probability be if bookcase aliens existed, that they would place a bookcase in Bob’s friends house? Subjectively I set the probability at 0.5 because I’m trying to be as generous as possible. On the other hand, if there is another reason for the appearance of a bookcase I would prescribe a 0.01 probability of someone getting a new bookcase in any given year. Bookcases are big and heavy, so getting a new one is probably pretty rare. The likelihood is 0.5:0.01 or 50:1. The arguments above are summarized in <a class="reference internal" href="#alien-other"><span class="std std-numref">Table 5</span></a></p>
+<table class="colwidths-auto table" id="alien-other">
+<caption><span class="caption-number">Table 5 </span><span class="caption-text">A possible solution to the bookcase alien problem</span><a class="headerlink" href="#alien-other" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Bookcase aliens</p></th>
+<th class="head"><p>Other reason</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(10^9\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p><span class="math notranslate nohighlight">\(50\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p><span class="math notranslate nohighlight">\(50\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(10^9\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Simplified posterior odds</p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(20 \times 10^6\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Probability</p></td>
+<td><p><span class="math notranslate nohighlight">\(5 \times 10^{-8}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.99999995\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Based on these results the evidence is not strong enough to raise the posterior to the “pragmatically noticeable” odds of say 1:100. This begs the question what likelihood ratio would be need to make the posterior 1:100?</p>
+<p>Working backwards, a relative likelihood of <span class="math notranslate nohighlight">\(10^7:1\)</span> would be needed to produce posterior odds that indicate that the existence of bookcase aliens are even “pragmatically noticeable”. Table <a class="reference internal" href="#alien-other-possible"><span class="std std-numref">Table 6</span></a> summarizes what might need to happen to even consider bookcase aliens as a reason for a bookcase appearing in a house.</p>
+<table class="colwidths-auto table" id="alien-other-possible">
+<caption><span class="caption-number">Table 6 </span><span class="caption-text">Working backwards to identify the likelihood ratio needed for posterior odds of 1:100.</span><a class="headerlink" href="#alien-other-possible" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Bookcase aliens</p></th>
+<th class="head"><p>Other reason</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(10^9\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p><span class="math notranslate nohighlight">\(10^7\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p><span class="math notranslate nohighlight">\(10^7\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(10^9\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Simplified posterior odds</p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(100\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Probability</p></td>
+<td><p><span class="math notranslate nohighlight">\(0.01\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.99\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>For a likelihood ratio of <span class="math notranslate nohighlight">\(10^7:1\)</span>, you would have to have very, very, compelling evidence that the appearance of a bookshelf was the result of aliens AND there would have to be very, very, low probability of some other possible explanation. Bookcase aliens may be a silly example, but if you can think of a test that clearly supports your hypothesis while eliminating other hypothesis at the same time you have struck gold. In practice extreme likelihoods usually require lots and lots of independent observations under widely varying circumstances.</p>
+<p>The only other argument that bookcase alien believers can make to refute your results is that you prescribed an unreasonably strong prior. If for the sake of argument your prior was changed to 1:10^6 (one to a million), the relative likelihood would still have to be extremely convincing at odds of 10,000:1.</p>
+<p>In summary if the prior odds are really extreme, it will take extraordinary evidence to change your mind. Keep in mind that it may not be possible to generate such convincing evidence. See the example about the <a class="reference internal" href="#athiest-priest"><span class="std std-ref">atheist and priest</span></a> to further explore even more extreme beliefs.</p>
+</div>
+<div class="section" id="art-contest">
+<span id="id2"></span><h2>Art contest<a class="headerlink" href="#art-contest" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>An art competition has entries from three painters: Pam, Pia and Pablo</p>
+<ul class="simple">
+<li><p>Pam submitted 15 paintings to the competition, 4% of her works have won first prize in past competitions.</p></li>
+<li><p>Pia put in 5 paintings, 6% of her works have won first prize.</p></li>
+<li><p>Pablo put in 10 paintings, 3% of his works have won first prize.</p></li>
+</ul>
+<p>What are the odds that Pam will win first prize?</p>
+<p>— <a class="reference external" href="https://www.mathsisfun.com/data/bayes-theorem.html">Modified from original source at: mathsisfun.com</a></p>
+</div></blockquote>
+<p>This example is a simple illustration of how to accommodate more than two hypothesis - in this case three possible winners. Keep in mind that the result of the competition is still binary. One person will win, the rest will loose.</p>
+<p>The question being asked is: will Pam win the competition? Establish the hypotheses as:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span>: Pam will win the contest</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_2\)</span>: Pia will win the contest</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_3\)</span>: Pablo will win the contest</p></li>
+</ul>
+<p>For accounting purposes set the odds as <span class="math notranslate nohighlight">\(H_1:H_2:H_3\)</span> for Pam:Pia:Pablo. Based on the number of submissions each painter made, set the prior odds as 15:5:10. The relative skill of the painters is incorporated when establishing the relative likelihood. Based on the painters historical win rates in other past competitions the likelihood is set at 4%:6%:3% or 4:6:3. Table <a class="reference internal" href="#art"><span class="std std-numref">Table 7</span></a> summarizes the results of the given information.</p>
+<table class="colwidths-auto table" id="art">
+<caption><span class="caption-number">Table 7 </span><span class="caption-text">Data from the art contest problem statement converted into the form of the standard solution process</span><a class="headerlink" href="#art" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Pam</p></th>
+<th class="head"><p>Pia</p></th>
+<th class="head"><p>Pablo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>15</p></td>
+<td><p>5</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>4</p></td>
+<td><p>6</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p>60</p></td>
+<td><p>30</p></td>
+<td><p>30</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simplified posterior odds</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Probability</p></td>
+<td><p>0.50</p></td>
+<td><p>0.25</p></td>
+<td><p>0.25</p></td>
+</tr>
+</tbody>
+</table>
+<p>This assumes to calculate the probabilities that Pam/Pia/Pablo are the only contestants and that one of them has to win (see <a class="reference internal" href="appendix-theory.html#exclusive-and-exhaustive"><span class="std std-ref">mutually exclusive and exhaustive propositions</span></a> for more on this assumption).</p>
+<p>It would have been equally valid to assume just two competing hypotheses for who would win the contest, for example Pam:other. Because all the needed information was available to us, we could reason about more than two hypotheses. For another more involved example of reasoning about more than two hypotheses at a time see the <a class="reference internal" href="#monty-hall"><span class="std std-ref">Monty Hall problem</span></a>.</p>
+</div>
+<div class="section" id="an-atheist-and-a-priest">
+<span id="athiest-priest"></span><h2>An atheist and a priest<a class="headerlink" href="#an-atheist-and-a-priest" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>An atheist and a priest strike up a conversation. After some debate is agreed upon that the priest applies a perfect 100% probability to the existence of god, and the atheist applies a perfect 0% probability to the existence of god. How much evidence will it take to convince either one to change their belief, even slightly.</p>
+<p>Bayes’ theorem suggests that no amount of evidence can change their mind if the probabilities are truly 0 and 100 (as opposed to say 0.00001% and 99.99999%).</p>
+<p>— <a class="reference external" href="https://www.amazon.com/Signal-Noise-Many-Predictions-Fail-but/dp/0143125087">Original source: The Signal and the Noise, The Bayesian Path to Less Wrongness, pg 210</a></p>
+</div></blockquote>
+<p>Table <a class="reference internal" href="#god-atheist"><span class="std std-numref">Table 8</span></a> puts the information from the problem statement into the standard solution form. We arbitrarily take the position of the atheist, but the math works the same in reverse for the priest as well. For accounting purposes denote the odds as God to no God. For arguments sake assume that some test demonstrates to the atheist very strong evidence (million to one odds!) that God exists. No matter how strong the evidence might be, because the atheist and priest’s belief is <em>absolute</em>, nothing can can persuade them to change their mind.</p>
+<table class="colwidths-auto table" id="god-atheist">
+<caption><span class="caption-number">Table 8 </span><span class="caption-text">The example of the atheist and priest’s <em>absolute</em> belief, and why no evidence can persuade them to believe otherwise.</span><a class="headerlink" href="#god-atheist" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>God</p></th>
+<th class="head"><p>No God</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(100\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p><span class="math notranslate nohighlight">\(10^6\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(100\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Probability</p></td>
+<td><p><span class="math notranslate nohighlight">\(0.0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1.0\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>If beliefs are <em>very extreme</em> instead of <em>absolute</em> you can work backwards like the <a class="reference internal" href="#alien-bookcase"><span class="std std-ref">alien bookcase example</span></a> to determine how convincing you would need to be to change someones beliefs. This example shows that sometimes it is truly a waste of time to argue with someone who either starts with an absolute belief, or wont ever change their mind no matter how strong the evidence.</p>
+</div>
+<div class="section" id="defective-part-from-two-production-lines">
+<span id="two-production-lines"></span><h2>Defective part from two production lines<a class="headerlink" href="#defective-part-from-two-production-lines" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Two production lines produce the same part. Line 1 produces 1,000 parts per week of which 100 are defective. Line 2 produces 2,000 parts per week of which 150 are defective. If you choose a part randomly from the stock what is the probability it is defective? If it is defective what is the probability it was produced by line 1?</p>
+<p>— <a class="reference external" href="http://gtribello.github.io/mathNET/bayes-theorem-problems.html">Original source: Github user gtribello, problem 2</a></p>
+</div></blockquote>
+<p>This is a two part problem. The first question, the probability of a defective part, is not easily handled with the standard solution process shown in this manual. The second question, what is the conditional probability of a part being from line 1 given, that it is defective is a classic Bayes theorem problem.</p>
+<p>The probability of a defective part is simply <span class="math notranslate nohighlight">\(p(\mbox{defective}) = \frac{(100+150)}{(1000+2000)} = 0.083\)</span>.</p>
+<p>The second questions, which asks you to find <span class="math notranslate nohighlight">\(p(\mbox{line}_1|\mbox{defective})\)</span>, can be solved with Bayes theorem. There are two competing hypotheses:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span>: The part came from line 1</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_2\)</span>: The part came from line 2</p></li>
+</ul>
+<p>For accounting purposes take the odds as <span class="math notranslate nohighlight">\(H_1:H_2\)</span> or <span class="math notranslate nohighlight">\(\mbox{line}_1 : \mbox{line}_2\)</span>. The prior is obtained from the problem statement based on the number of defective parts produced by each line. Let the prior be 100:150 or 10:15. The lines have different historical occurrences of defective parts. If a part came from line 1, its probability of being defective is 100/1000 = 0.1. If a part came off line 2, then its probability of being defective is 150/2000 = 0.075. Line 2 produces defective parts at a lower rate than line 1, but contributes twice as many parts in a week to the total inventory. Take the relative likelihood of a line producing a defective part as 0.1:0.075, or 100:75 = 4:3. <a class="reference internal" href="#line1-line2"><span class="std std-numref">Table 9</span></a> summarizes the information provided in the problem statement and shows the application of Bayes theorem.</p>
+<table class="colwidths-auto table" id="line1-line2">
+<caption><span class="caption-number">Table 9 </span><span class="caption-text">Bayes theorem applied to the two production line problem</span><a class="headerlink" href="#line1-line2" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Line 1</p></th>
+<th class="head"><p>Line 2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p><span class="math notranslate nohighlight">\(4\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(3\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p><span class="math notranslate nohighlight">\(4\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(6\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Simplified posterior odds</p></td>
+<td><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(3\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Probability</p></td>
+<td><p><span class="math notranslate nohighlight">\(0.4\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.6\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>If a part is defective, there is a 0.4 probability that it came from line 1.</p>
+<p>For the truly rigorous reader who wants to go beyond practical real world problems, see the <a class="reference internal" href="appendix-theory.html#theory"><span class="std std-ref">theory section</span></a> on the <a class="reference internal" href="appendix-theory.html#prob-evidence"><span class="std std-ref">probability of evidence</span></a> for a discussion of how <span class="math notranslate nohighlight">\(p(\mbox{defective})\)</span> is mathematically relevant to Bayes theorem. However, skipping this diversion wont hurt your ability to use Bayes theorem.</p>
+</div>
+<div class="section" id="a-failing-new-employee">
+<span id="failing-employee"></span><h2>A failing new employee<a class="headerlink" href="#a-failing-new-employee" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>A few years back, a senior person at my workplace told me that a new employee wasn’t getting his work done on time, and that she’d had to micromanage him to get any work out of him at all. This was an unpleasant fact for a number of reasons; I’d liked the guy, and I’d advocated for hiring him to our Board of Directors just a few weeks earlier (which is why the senior manager was talking to me). I could have demanded more evidence, I could have demanded that we give him more time to work out, I could have demanded a videotape and signed affidavits… but a new employee not working out, just isn’t that improbable. Could I have named the exact prior odds of an employee not working out, could I have said how much more likely I was to hear that exact report of a long-term-bad employee than a long-term-good employee? No, but ‘somebody hires the wrong person’ happens all the time, and I’d seen it happen before. It wasn’t an extraordinary claim, and I wasn’t licensed to ask for extraordinary evidence. To put numbers on it, I thought the proportion of bad to good employees was on the order of 1:4 at the time, and the likelihood ratio for the manager’s report seemed more like 10:1.”</p>
+<p>— <a class="reference external" href="https://arbital.com/p/bayes_ordinary_claims/">Original source: arbital.com </a></p>
+</div></blockquote>
+<p>In this example the question is: Do I believe the that the employee is underperforming in his role? Cast the hypothesis as a true/false statement:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span>: True - the employee is under performing</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_2\)</span>: False - there must me another reason for the bad performance</p></li>
+</ul>
+<p>For accounting purposes write the odds as <span class="math notranslate nohighlight">\(H_1:H_2\)</span> for true:false. All of the pertinent numbers were explicitly given to us, we just have to confirm that we agree with them. I have limited experience with hiring and firing coworkers, but immediately after the emotionally draining experience of laying off a direct report following months of bad performance my manager said this to me: ‘Don’t feel bad, sometimes these things just don’t work out. I estimate that about 20% of my hires over the years did not work out for some reason or another.’ This is exactly the same as odds of bad to good employees being 1:4 in the example, so I think they are reasonable odds. The odds that the manager is telling the truth also seem reasonable to me. I find that it would be unlikely for the manager to lie in general, especially since the author of the example personally recommended the employee. <a class="reference internal" href="#failing"><span class="std std-numref">Table 10</span></a> summarizes the relevant odds for the sake of being thorough. As described above, this is probably one of those instances when you <em>don’t</em> run the numbers, the intuition of knowing how Bayes theorem works probably gives you enough insight into the situation because ‘extraordinary claims require extraordinary evidence, while ordinary claims just require ordinary evidence’.</p>
+<table class="colwidths-auto table" id="failing">
+<caption><span class="caption-number">Table 10 </span><span class="caption-text">Bayes theorem applied to the failing employee problem</span><a class="headerlink" href="#failing" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>True</p></th>
+<th class="head"><p>False</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>1</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>10</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p>10</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simplified posterior odds</p></td>
+<td><p>5</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>Probability</p></td>
+<td><p>0.71</p></td>
+<td><p>0.29</p></td>
+</tr>
+</tbody>
+</table>
+<p>There are multiple examples (<a class="reference internal" href="#alien-bookcase"><span class="std std-ref">alien bookcases</span></a>, <a class="reference internal" href="#athiest-priest"><span class="std std-ref">atheist and the preist</span></a>) highlighting examples with extreme claims or evidence. This example contrasts with those examples because extreme odds were intentionally not used. To successfully solve real world problems it is helpful to be able to identify when extraordinary evidence is required as well as when just ordinary evidence is needed to change your beliefs.</p>
+</div>
+<div class="section" id="smoke-from-a-fire-or-bbq">
+<span id="fire-bbq"></span><h2>Smoke from a fire or BBQ?<a class="headerlink" href="#smoke-from-a-fire-or-bbq" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>From your suburban home you see smoke in the distance, what is the probability that there is a structure fire?</p>
+<p>— <a class="reference external" href="https://www.mathsisfun.com/data/bayes-theorem.html">Original source: mathsisfun.com </a></p>
+</div></blockquote>
+<p>In the suburbs there are not many reasons to have a fire. There could be a structural fire, or there could could be smoke coming from some kind of bar-b-que. Due to restrictions from the home owners association and the city it is unlikely that someone is burring leaves or trash.</p>
+<p>The question being asked is: Do you believe that there is a structure fire? Cast the hypotheses as:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span>: There is a structure fire</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_2\)</span>: Some other source, maybe a BBQ, is causing the smoke</p></li>
+</ul>
+<p>For accounting purposes write the odds as <span class="math notranslate nohighlight">\(H_1:H_2\)</span> for structure fire : BBQ. I have only seen one burned out single family home in a neighborhood near me in my entire life. So set the prior odds at 1:99 against a fire.</p>
+<p>To determine the relative likelihood I ask myself what would the probability be of seeing smoke if each hypothesis was true:</p>
+<ul class="simple">
+<li><p>If there was a structure fire, I would almost certainly see smoke. Set the probability at 0.9.</p></li>
+<li><p>If there was a BBQ the probability of seeing smoke would be much less. Charcol grills only smoke for a few minutes when you first start them up. Gas grills may not smoke at all when started. Set the probability to 0.1.</p></li>
+</ul>
+<p>The probabilities just happen by coincidence to sum to 1 in this example, in general this is not a requirement. The relative likelihood is therefore the ratio of the probabilities, 0.9:0.1 = 9:1. <a class="reference internal" href="#structure-fire"><span class="std std-numref">Table 11</span></a> summarizes the reasoning used in this example.</p>
+<table class="colwidths-auto table" id="structure-fire">
+<caption><span class="caption-number">Table 11 </span><span class="caption-text">A summary of the reasoning for the structure fire problem.</span><a class="headerlink" href="#structure-fire" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Fire</p></th>
+<th class="head"><p>BBQ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>1</p></td>
+<td><p>99</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>9</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p>9</p></td>
+<td><p>99</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simplified posterior odds</p></td>
+<td><p>1</p></td>
+<td><p>11</p></td>
+</tr>
+<tr class="row-even"><td><p>Probability</p></td>
+<td><p>0.09</p></td>
+<td><p>0.91</p></td>
+</tr>
+</tbody>
+</table>
+<p>The result shows that even if you see smoke, it is unlikely that there is a structure fire.</p>
+<p>The odds of a structure fire are so low to begin with that you need better evidence than just smoke to believe that there is a structure fire. I worry that my prior was not skeptical enough. The odds in favor of a structural fire might be even smaller. Either way this example teaches that the base rate of an event occuring is important to consider. If the base rate is very small the probability of the event occuring given normal evidence is still very low.</p>
+</div>
+<div class="section" id="getting-married-in-the-rain">
+<span id="married-rain"></span><h2>Getting married in the rain<a class="headerlink" href="#getting-married-in-the-rain" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Marie is getting married tomorrow, at an outdoor ceremony in the desert. In recent years, it has rained only 5 days each year. Unfortunately, the weatherman has predicted rain for tomorrow. When it actually rains, the weatherman correctly forecasts rain 90% of the time. When it doesn’t rain, he incorrectly forecasts that it will rain 10% of the time. What is the probability that it will rain on the day of Marie’s wedding? Assume that there are no leap years.</p>
+<p>— <a class="reference external" href="http://gtribello.github.io/mathNET/bayes-theorem-problems.html">Original source: Github user gtribello, problem 3</a></p>
+</div></blockquote>
+<p>The question being asked in this example is: Do you believe that it will rain tomorrow? Cast the hypotheses as:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span>: Rain at the wedding ceremony</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_2\)</span>: Clear or simply overcast at the wedding ceremony</p></li>
+</ul>
+<p>For accounting purposes write the odds as <span class="math notranslate nohighlight">\(H_1:H_2\)</span> for rain:clear. The problem statement provides us with historical data to set our prior at 5:360 = 1:72.</p>
+<p>The book <a class="reference external" href="https://www.amazon.com/Signal-Noise-Many-Predictions-Fail-but/dp/0143125087">The Signal and the Noise</a> dedicates a chapter to how weather forecasts are made. At least one forecaster admits that per company policy when a low probability of rain is predicted they intentionally forecast the probability of rain to be higher than their models indicate. This is an example of where presentation takes precedent over accuracy, because people interpret a 0% ‘chance’ of  rain as an iron clad promise that it will not rain. Adding a little bit of wiggle room to the forecast helps protect the forecasters integrity in the eyes of a public who are not fully versed in probability theory. In the problem statement when the forecaster incorrectly predicts rain when it is clear instead 10% of the time, this is probably an intentional error.</p>
+<p>To determine the relative likelihood we can take the ratio of the provided probabilities for correctly predicting rain, 0.9:0.1 = 9:1. The probabilities just happen to sum to 1. This is not strictly required for a relative likelihood. Table <a class="reference internal" href="#rain-on-wedding-day"><span class="std std-numref">Table 12</span></a> summarizes the information provided in the problem statement.</p>
+<table class="colwidths-auto table" id="rain-on-wedding-day">
+<caption><span class="caption-number">Table 12 </span><span class="caption-text">A summary of Bayes theorem applied to the rain on the wedding day problem.</span><a class="headerlink" href="#rain-on-wedding-day" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Rain</p></th>
+<th class="head"><p>Clear</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>5</p></td>
+<td><p>360</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>9</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p>45</p></td>
+<td><p>360</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simplified posterior odds</p></td>
+<td><p>1</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-even"><td><p>Probability</p></td>
+<td><p>0.11</p></td>
+<td><p>0.89</p></td>
+</tr>
+</tbody>
+</table>
+<p>The good news for the wedding party is that the odds of rain are still very low given the forecast for rain. This is because the base rate of rain in the desert is so low to begin with that it would take stronger evidence to give significant credence to the forecast for rain.</p>
+<p>If however we could trust the forecaster to present the true probability and not hold back for the sake of presentation with a mathematically illiterate audience then the probability of a clear day occurring when the forecast is for rain is only 0.01, then the posterior odds are closer to 1:1 for rain on the wedding day.</p>
+</div>
+<div class="section" id="getting-robbed-by-a-plumber">
+<span id="plumber"></span><h2>Getting robbed by a plumber<a class="headerlink" href="#getting-robbed-by-a-plumber" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>A group of girl friends rented a house on the beach. While they were at the house they had to call a repair man to fix the stove. The repair man made the group nervous because he was seen peering (snooping) into the bedrooms of the house as he was walked from the front door to the kitchen to work on the stove. Someone in the group of friends had recently heard a story in the news of a repair man coming back to later rob a house they had recently worked on - presumably after seeing valuables in vulnerable locations and memorizing the layout of the house. What is the probability they will get robbed by the repairman?</p>
+<p>— <a class="reference external" href="https://www.youtube.com/watch?v=BrK7X_XlGB8">Original source: Julia Galef (video at 4:30)</a></p>
+</div></blockquote>
+<p>The question being asked in the problem is: Do you believe that the repairman will later rob the house? Cast the hypotheses as:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span>: The repairman is a burglar</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_2\)</span>: The repair man is honest</p></li>
+</ul>
+<p>For accounting purposes write the odds as <span class="math notranslate nohighlight">\(H_1:H_2\)</span> for burglar:honest. While I am sure that there are some criminals posing as repairmen, I would find this to be the exception to the rule. In my experience most repairmen are hard working professionals, so I put the odds at 1:100 for burglar:honest.</p>
+<p>This particular repairman however was acting strangely while in the house. To determine the relative likelihood I ask myself what would the probability be of the repairman snooping if each hypothesis was true:</p>
+<ul class="simple">
+<li><p>If the repairman was a burglar, I would almost certainly expect him to look around the house trying to spot the location of valuables. Set the probability at 0.8 because a professional burglar might know how to look around discretely.</p></li>
+<li><p>If the repairman was honest I would expect there to be a low probability of snooping. The repairman relies on his reputation to get future work, and acting strangely could negatively impact his reputation. I place a probability of an honest repairman snooping at 0.1.</p></li>
+</ul>
+<p>Therefore take the relative likelihood as 0.8:0.1 = 8:1. Table <a class="reference internal" href="#burglar-honest"><span class="std std-numref">Table 13</span></a> summarizes the reasoning described so far in this problem and the application of Bayes theorem.</p>
+<table class="colwidths-auto table" id="burglar-honest">
+<caption><span class="caption-number">Table 13 </span><span class="caption-text">A summary of using Bayes theorem for the repairman problem.</span><a class="headerlink" href="#burglar-honest" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Burglar</p></th>
+<th class="head"><p>Honest</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>1</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>8</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p>8</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simplified posterior odds</p></td>
+<td><p>2</p></td>
+<td><p>25</p></td>
+</tr>
+<tr class="row-even"><td><p>Probability</p></td>
+<td><p>0.07</p></td>
+<td><p>0.93</p></td>
+</tr>
+</tbody>
+</table>
+<p>Based on this reasoning it is unlikely that the house will later get robbed. The initial idea for the hypothesis was generated from a news story. A single news story is usually a bad way to generate a hypothesis because the newspaper focuses on negative and unlikely events to sell more papers. For more on interpreting the news with Bayes theorem, see the <a class="reference internal" href="#medical-heuristic"><span class="std std-ref">heuristic for evaluating the news</span></a>. Either way, the base rate of burglar repairmen is low, so it will take much stronger evidence than snooping to give credence to the idea that the house will be burglarized.</p>
+</div>
+<div class="section" id="heuristic-for-evaluating-medical-news">
+<span id="medical-heuristic"></span><h2>Heuristic for evaluating medical news<a class="headerlink" href="#heuristic-for-evaluating-medical-news" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>A <em>heuristic technique</em> is any approach to problem solving or self-discovery that employs a practical method that is not guaranteed to be optimal, perfect, or rational, but is nevertheless sufficient for reaching an immediate, short-term goal or approximation…Heuristics can be mental shortcuts that ease the cognitive load of making a decision. — <a class="reference external" href="https://en.wikipedia.org/wiki/Heuristic">Wikipedia</a></p>
+</div></blockquote>
+<p>I’m a big fan of heuristics for solving practical problems. When your comfortable with an approximate solution, they can be the proverbial Swiss army knife of problem solving. The following example is really a method unto itself. As I discuss <a class="reference internal" href="appendix-theory.html#bayes-derivation"><span class="std std-ref">elsewhere</span></a>, this method very nearly became the basis for this book. Other considerations ultimately made the <a class="reference internal" href="solution-process.html#process"><span class="std std-ref">standard solution process</span></a> look a bit different, but it is still a very useful way to apply Bayes theorem to practical problems. Strictly speaking this is a method for generating the relative likelihood, everything else from the standard method still applies.</p>
+<p>This heuristic, which I originally found <a class="reference external" href="https://fivethirtyeight.com/features/a-formula-for-decoding-health-news/">suggested by</a> Jeff Leek, deals with <em>bits</em> of evidence. Each bit of evidence either doubles the likelihood that your hypothesis is true, or halves the likelihood. The original description was tailored to medical news, but you could easily modify the process for any news source. Remember that a news headline is basically advertising, so you should rely on your critical thinking skills to evaluate its merit independently.</p>
+<blockquote>
+<div><p>If you see a health headline that interests you, first scan the news article and find the link to the original scientific article describing the result <a class="footnote-reference brackets" href="#result" id="id3">1</a>.</p>
+<p>Once you have the original research article in hand, you’re looking for a few key pieces of information. These are obviously not the only important characteristics of a study, but they cover a lot of ground. They are:</p>
+<ol class="simple">
+<li><p>Was the study a clinical study in humans?</p></li>
+<li><p>Was the outcome of the study something directly related to human health like longer life or less disease?</p></li>
+<li><p>Was the outcome something you care about, such as living longer or feeling better?</p></li>
+<li><p>Was the study a randomized, controlled trial (RCT)?</p></li>
+<li><p>Was it a large study — at least hundreds of patients?</p></li>
+<li><p>Did the treatment have a major impact on the outcome?</p></li>
+<li><p>Did predictions hold up in at least two separate groups of people?</p></li>
+</ol>
+<p>— <a class="reference external" href="https://fivethirtyeight.com/features/a-formula-for-decoding-health-news/">Original source: fivethirtyeight.com</a></p>
+</div></blockquote>
+<p>The original source of this example uses the proposed heuristic to evaluate a news headline that said “Hospital checklist cut infections, saved lives.”</p>
+<p>The question being implied here is: Do you believe the hospital checklists cut infections and save lives? Cast the hypotheses as:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span>: True, hospital checklists meaningfully reduce infections</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_2\)</span>: False, checklists are not effective</p></li>
+</ul>
+<p>For accounting purposes write the odds as <span class="math notranslate nohighlight">\(H_1:H_2\)</span> for true:false. The original author put the odds at 1:4 against checklists being effective. I have created and used safety checklists before, so I would set my prior in favor of checklists being effective. This is the beauty of establishing your prior odds, the original author and I could have a productive discussion over why we chose the prior odds that we did. I see the heuristic as a kind of checklist itself, but because this example is all about establishing the relative likelihood, we will just go with prior odds of 1:4.</p>
+<p>The <a class="reference external" href="https://www.nejm.org/doi/full/10.1056/nejmoa061115#t=articleResults">research article</a> cited in the news story described above was used to answer the heuristic questions:</p>
+<ol class="simple">
+<li><p>Was the study a clinical study in humans? <em>yes</em></p></li>
+<li><p>Was the outcome of the study something directly related to human health like longer life or less disease? <em>yes</em></p></li>
+<li><p>Was the outcome something you care about, such as living longer or feeling better? <em>yes</em></p></li>
+<li><p>Was the study a randomized, controlled trial (RCT)? <em>no</em></p></li>
+<li><p>Was it a large study — at least hundreds of patients? <em>yes</em></p></li>
+<li><p>Did the treatment have a major impact on the outcome? <em>yes</em></p></li>
+<li><p>Did predictions hold up in at least two separate groups of people? <em>yes</em></p></li>
+</ol>
+<p>The heuristic treats each of the seven questions as equally important. If a question is answered <em>yes</em> then the likelihood is increased by a factor of 2. If the answer is no the likelihood is decreased by a factor of 1/2. Based on these results, 6 yes answers and 1 no answer the likelihood would be calculated as:</p>
+<div class="math notranslate nohighlight">
+\[likelihood = 2 \times 2 \times 2 \times \frac{1}{2} \times 2 \times 2 \times 2 = 32\]</div>
+<p>The relative likelihood is implied from this result. If the heuristic indicates that the headline is 32 times more likely to be true than false then the relative likelihood will be 32:1. <a class="reference internal" href="#heuristic-checklist"><span class="std std-numref">Table 14</span></a> summarizes the reasoning and the results of the heuristic for the checklist headline.</p>
+<table class="colwidths-auto table" id="heuristic-checklist">
+<caption><span class="caption-number">Table 14 </span><span class="caption-text">A summary of the reasoning with Bayes theorem for and the heuristic for the checklist headline.</span><a class="headerlink" href="#heuristic-checklist" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>True</p></th>
+<th class="head"><p>False</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>1</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>32</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p>32</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simplified posterior odds</p></td>
+<td><p>8</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Probability</p></td>
+<td><p>0.89</p></td>
+<td><p>0.11</p></td>
+</tr>
+</tbody>
+</table>
+<p>Based on the additional research into the underlying study the original author revised his beliefs to indicate that the news headline was likely true.</p>
+<p>As a counter example with a second headline was considered in the original example. The headline “How using Facebook could increase your risk of cancer” did not hold up under the scrutiny of the heuristic. Based on the underlying research article it was found that only 1 of the heuristic questions could be answered yes, and the remaining six were no’s. Therefore the likelihood ratio was calculated as:</p>
+<div class="math notranslate nohighlight">
+\[likelihood = 2 \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} = \frac{1}{16}\]</div>
+<p>This implies a relative likelihood of 1:16, In conjunction with a skeptical prior, the likelihood further reinforces that the headline should not be trusted.</p>
+<p>This heuristic, or any other like it, seems to be a very practical method for systematically evaluating lots of similar events. Specifically I could see investments being evaluated with a similar heuristic. Given enough attempts, the bias of the heuristic could be identified and the heuristic revised to possibly reduce the bias in future versions.</p>
+<p>The original headline for the article that described this heuristic was <a class="reference external" href="https://fivethirtyeight.com/features/a-formula-for-decoding-health-news/">“Finally, a Formula For Decoding Health News”</a>. In this case, I agree whole heartedly that the headline is true.</p>
+</div>
+<div class="section" id="the-jealous-coworker">
+<span id="jealous"></span><h2>The Jealous coworker<a class="headerlink" href="#the-jealous-coworker" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>You believe that Bob is jealous/competitive with Alice at work. This matters because you are both of their supervisors. At a lunch with just you and Bob he is complaining about Alice not completing a project on time. This seems to support the hypothesis of jealousy. But if you asked yourself what is the likelihood that a coworker complains about someone not finishing a task on time, it could be argued that it is very fair to complain about the situation.</p>
+<p>— <a class="reference external" href="https://www.youtube.com/watch?v=BrK7X_XlGB8">Original source: Julia Galef (video at 6:30)</a></p>
+</div></blockquote>
+<p>The question being asked in the problem is: Do you believe that Bob is jealous of Alice? Cast the hypotheses as:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span>: Bob is jealous of Alice</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_2\)</span>: Bob is simply annoyed with Alice</p></li>
+</ul>
+<p>For accounting purposes write the odds as <span class="math notranslate nohighlight">\(H_1:H_2\)</span> for jealous:annoyed. The problem statement didn’t say anything about your past experience with Bob/Alice, so just assume that you believe the probability that Bob is jealous of Alice is at 0.75, or equivalently odds of 3:1.</p>
+<p>Next the relative likelihood of observing Bob complain about Alice needs to be evaluated. The point of this example is to highlight that an observation is not always strong evidence for or against a hypothesis. Sometimes the evidence is only somewhat influential in changing your beliefs. Complaining about a co-worker does suggest jealousy. But complaining about a co-worker who does not finish work on time as promised is also not that unusual. Ultimately the observation of Bob complaining about Alice <em>in this situation</em> is very weak evidence that Bob is jealous. Maybe cast the odds at just slightly better than even odds - so 9:8 in favor of Bob being jealous. You could probably stop at this point by realizing that the likelihood is very near even odds will not change your beliefs appreciably. For the sake of thoroughness <a class="reference internal" href="#jealous-annoyed"><span class="std std-numref">Table 15</span></a> summarizes the discussion so far.</p>
+<table class="colwidths-auto table" id="jealous-annoyed">
+<caption><span class="caption-number">Table 15 </span><span class="caption-text">A summary of the reasoning with Bayes theorem for the Bob vs Alice jealousy problem.</span><a class="headerlink" href="#jealous-annoyed" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Jealous</p></th>
+<th class="head"><p>Annoyed</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>9</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p>27</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-odd"><td><p>Probability</p></td>
+<td><p>0.77</p></td>
+<td><p>0.23</p></td>
+</tr>
+</tbody>
+</table>
+<p>The evidence was not very compelling for either hypothesis, so you revised your beliefs that Bob was jealous from 0.75 to 0.77. If you really need to test if Bob is jealous of Alice you will need a better test where the relative likelihood ratio is more extreme before you can noticeably modify your beliefs.</p>
+</div>
+<div class="section" id="librarian-or-farmer">
+<span id="farmer-librarian"></span><h2>Librarian or farmer?<a class="headerlink" href="#librarian-or-farmer" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Steve is very shy and withdrawn, invariably helpful but with little interest in people or in the world of reality. A meek and tidy soul, he has a need for order and structure and a passion for detail. Which of the following would you find more likely:</p>
+<ul class="simple">
+<li><p>Steve is a librarian</p></li>
+<li><p>Steve is a farmer</p></li>
+</ul>
+<p>— <a class="reference external" href="https://www.youtube.com/watch?v=HZGCoVF3YvM">Original source: 3Blue1Brown, by Grant Sanderson (video at 1:30)</a></p>
+</div></blockquote>
+<p>This example comes from a famous cognitive science journal paper by Daniel Kahneman and Amos Traversky. The only reason I mention their names is that Daniel Kahneman was awarded the 2002 Nobel Prize in Economic Sciences for his work related to the paper, so this example is well known.</p>
+<p>The question being asked in the problem is: Do you believe that Steve is a librarian, or a farmer? Cast the hypotheses as:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span>: Steve is a librarian</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_2\)</span>: Steve is a farmer</p></li>
+</ul>
+<p>In the paper they put the prior of farmers:librarians as 20:1 and the likelihood of Steve being a farmer based on the observation of his personality at 1:4 for a posterior of 20:4 = 5:1 or an 83% chance of being a farmer. Of course the paper showed that people uninitiated to Bayes theorem fell victim to the base rate fallacy and estimate that Steve is a librarian a majority of the time <a class="footnote-reference brackets" href="#kahneman" id="id4">2</a>. Labor statistics show that there are simply many more farmers in the US population that librarians. The standard solution process for this problem is shown in <a class="reference internal" href="#farmer-librarian-ex"><span class="std std-numref">Table 16</span></a>.</p>
+<table class="colwidths-auto table" id="farmer-librarian-ex">
+<caption><span class="caption-number">Table 16 </span><span class="caption-text">Solution proposed by Kahneman and Traversky using Bayes theorem to reason about the librarian or farmer problem</span><a class="headerlink" href="#farmer-librarian-ex" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Farmer</p></th>
+<th class="head"><p>Librarian</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>20</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>1</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p>20</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simplified posterior odds</p></td>
+<td><p>5</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Probability</p></td>
+<td><p>0.83</p></td>
+<td><p>0.17</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="the-monty-hall-problem">
+<span id="monty-hall"></span><h2>The Monty Hall problem<a class="headerlink" href="#the-monty-hall-problem" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>There are 3 doors, behind which are two goats and a car. You are given a chance to pick one of the three doors (call it door A). You’re hoping to pick the door with the car behind it of course.</p>
+<p>You don’t get to see what is behind your door yet. Monty Hall, the game show host, examines the other doors (B &amp; C) and opens one of the doors with a goat behind it. (If both doors have goats, he picks randomly.)</p>
+<p>Here’s the game: Do you stick with door A (original guess) after Monty opens a door with a goat, or do you switch to the unopened door? Does your strategy matter in this game?</p>
+<p>— <a class="reference external" href="https://betterexplained.com/articles/understanding-the-monty-hall-problem/">Original source: betterexplained.com</a>, <a class="reference external" href="https://towardsdatascience.com/solving-the-monty-hall-problem-with-bayes-theorem-893289953e16">plus some additional discussion on assigning likelihoods from towardsdatascience.com</a></p>
+</div></blockquote>
+<p>I will admit that I am stretching the definition of ‘real life problems’ with this example. <a class="reference external" href="https://en.wikipedia.org/wiki/Monty_Hall_problem">This problem</a> is loosely based on the 1963 television show ‘Let’s Make a Deal’ which was co-created and hosted by Monty Hall <a class="footnote-reference brackets" href="#monty" id="id5">3</a>. Contestants are selected from the audience to participate. To increase their likelihood of being picked from the crowd they wear funny and outrageous costumes. The television announcer would then instruct the selected contestant to “come on down!” to the stage. The optimal strategy for the game described here is not intuitive in my opinion, and it is a commonly used example of applying Bayes theorem.</p>
+<p>The question being asked in the problem is: Which door do you believe has a car behind it? Cast the hypotheses as:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_A\)</span>: Door A</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_B\)</span>: Door B</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_C\)</span>: Door C</p></li>
+</ul>
+<p>For accounting purposes write the odds as <span class="math notranslate nohighlight">\(H_A:H_B:H_C\)</span> for the  odds of finding a car behind doors A:B:C respectively. The car and goats are randomly placed behind the doors, so there is no reason to initially favor one door over another. Set your prior belief at 1:1:1.</p>
+<p>Let’s assume that you initially select door A, but are not shown its contents. Monty is then tasked with opening one of the unselected doors (either door B or C). Monty doesn’t arbitrarily open one of the remaining doors because that could potentially reveal the location of the car. Instead he will always show you a goat. Here is a summary of how he will pick a door to open:</p>
+<ul class="simple">
+<li><p>If the car is behind door A (your initial selection), then Monty has two choices. He can show you either of the goats which are behind doors B and C. He will choose between B and C randomly.</p></li>
+<li><p>If the car is behind door B then Monty has exactly one door that he can open, door C.</p></li>
+<li><p>If the car is behind door C, then Monty has exactly one door that he can open, door B.</p></li>
+</ul>
+<p>You initially select door A, in our example Monty opens door B to reveal a goat.</p>
+<p>To determine the relative likelihood ask yourself what would the probability be of Monty opening door B if each hypothesis was true:</p>
+<ul class="simple">
+<li><p>If the car is behind door A (the door you chose), and you know that there is a goat behind door B, then you know that Monty will choose randomly which door to show you. If this hypothesis is true you have a 0.5 probability of seeing door B opened.</p></li>
+<li><p>Monty revealed a goat behind door B, so the probability of a car being behind this door is 0.0.</p></li>
+<li><p>If the car is behind door C, then Monty can only open door B. Door A is not allowed because that was your initial choice, and door C is not allowed because it would reveal the car. If this hypothesis is true, then there is a 1.0 probability of seeing door B opened.</p></li>
+</ul>
+<p><a class="reference internal" href="#monty-hall-problem"><span class="std std-numref">Table 17</span></a> summarizes the reasoning used in the problem.</p>
+<table class="colwidths-auto table" id="monty-hall-problem">
+<caption><span class="caption-number">Table 17 </span><span class="caption-text">A summary of the reasoning for the Monty Hall problem. This assumes that initially door A was chosen and Monty opens door B to show a goat.</span><a class="headerlink" href="#monty-hall-problem" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Door A</p></th>
+<th class="head"><p>Door B</p></th>
+<th class="head"><p>Door C</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>50</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p>50</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simplified posterior odds</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>Probability</p></td>
+<td><p>0.33</p></td>
+<td><p>0.0</p></td>
+<td><p>0.67</p></td>
+</tr>
+</tbody>
+</table>
+<p>Working through the numbers shows that the odds of picking the car are not spread equally across the different doors. Because of the constraints on which door Monty can open, door C is more likely to have the car than door A.</p>
+<p>The strategy certainly does matter in this game. If a contestant chooses to switch doors after viewing a goat then they increase their probability of winning a car from <span class="math notranslate nohighlight">\(\frac{1}{3}\)</span> to <span class="math notranslate nohighlight">\(\frac{2}{3}\)</span>. I myself am not below dressing up in a funny costume to have better than even odds of winning a car!</p>
+<p>Note that our analysis applies in general, there is no stipulation that door A be the left most door. The label A simply represents the door that you initially choose. Doors B and C are assigned to the other doors regardless of how they are arranged physically.</p>
+</div>
+<div class="section" id="the-more-generous-slot-machine">
+<span id="slot-machine"></span><h2>The more generous slot machine<a class="headerlink" href="#the-more-generous-slot-machine" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>In a casino in Blackpool [England] there are two slot machines:</p>
+<ul class="simple">
+<li><p>A machine that pays out 10% of the time</p></li>
+<li><p>A machine that pays out 20% of the time</p></li>
+</ul>
+<p>Obviously, you would like to play on the machine that pays out 20% of the time but you do not know which of the two machines is the more generous. You thus adopt the following strategy:</p>
+<p>You assume initially that the two machines are equally likely to be the generous machine. You then select one of the two machines at random and put a coin into it. Given that you loose that first bet estimate the probability that the machine you selected is the more generous of the two machines.</p>
+<p>— <a class="reference external" href="http://gtribello.github.io/mathNET/bayes-theorem-problems.html">Original source: Github user gtribello, problem 5</a></p>
+</div></blockquote>
+<p>The question being asked in the problem is: Which slot machine are you playing? Cast the hypotheses as:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span>: Generous</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_2\)</span>: Stingy</p></li>
+</ul>
+<p>For accounting purposes write the odds as <span class="math notranslate nohighlight">\(H_1:H_2\)</span> for the machine you chose being generous:stingy. There is no reason initially to suspect that one machine is better than the other, so set your prior as 1:1.</p>
+<p>To determine the relative likelihood ask yourself what would the probability be of the slot machine producing a loss if each hypothesis was true:</p>
+<ul class="simple">
+<li><p>If the slot machine is generous, then the probability of loosing on any single play is <span class="math notranslate nohighlight">\(1-0.2=0.8\)</span>.</p></li>
+<li><p>If the slot machine is stingey, then the probability of loosing on any single play is <span class="math notranslate nohighlight">\(1-0.1=0.9\)</span></p></li>
+</ul>
+<p>Take the relative likelihood as 0.8:0.9 = 8:9. The discussion above is summarized in <a class="reference internal" href="#slot-machine-problem"><span class="std std-numref">Table 18</span></a>.</p>
+<table class="colwidths-auto table" id="slot-machine-problem">
+<caption><span class="caption-number">Table 18 </span><span class="caption-text">A summary of the reasoning using Bayes theorem for the more generous slot machine problem.</span><a class="headerlink" href="#slot-machine-problem" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Generous</p></th>
+<th class="head"><p>Stingy</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>8</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p>8</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p>Probability</p></td>
+<td><p>0.47</p></td>
+<td><p>0.53</p></td>
+</tr>
+</tbody>
+</table>
+<p>After collecting one data point you can say that the probability that you choose the generous slot machine is 0.47. This example is a great jumping off point for a number of statistical diversions. In the theory section there is a discussion for how to use a <a class="reference internal" href="appendix-theory.html#beta"><span class="std std-ref">different forms of Bayes theorem</span></a> to describe your beliefs about the payout rate of the chosen slot machine as a distribution instead of a point estimate. I would also suggest <a class="reference external" href="https://www.amazon.com/Conned-Again-Watson-Cautionary-Probability/dp/0738205893">Conned Again, Watson! Cautionary Tales Of Logic, Math, And Probability</a> which is a fun discussion of many of the logical fallacies that gamblers and laymen may have.</p>
+<p>A likelihood ratio of 8:9 implies that your observation will do little to modify your prior beliefs. In this example your observation are an inefficient method of changing your beliefs. It will take the collection of multiple data points before you can say with any certainty which machine you are playing on. Slot machines are an artificially process that is a poor analogy for real life problems. In real life, you can often devise a better test to increase the likelihood ratio and therefore update your beliefs more efficiently.</p>
+</div>
+<div class="section" id="the-mystic-seer">
+<span id="mystic-seer"></span><h2>The mystic seer<a class="headerlink" href="#the-mystic-seer" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>“The hand belongs to Mr. Don S. Carter, male member of a honeymoon team on route across the Ohio countryside to New York City. In one moment, they will be subjected to a gift most humans never receive in a lifetime. For one penny, they will be able to look into the future. The time is now, the place is a little diner in Ridgeview, Ohio, and what this young couple doesn’t realize is that this town happens to lie on the outskirts of the Twilight Zone.”</p>
+<p>Rod Serling spoke those words during the opening of the Second season’s seventh episode of the legendary TV show, The Twilight Zone. (Ep. 43 - Nick of Time, originally aired November 18, 1960)</p>
+<p>— <a class="reference external" href="http://www.mysticseer.com/the-mystic-seer">Source: mysticseer.com</a></p>
+</div></blockquote>
+<p>This example pays homage to my father-in-law who is a big fan of the twilight zone. This example is derived from a similar example found in <a class="reference external" href="https://www.amazon.com/Bayesian-Statistics-Fun-Will-Kurt/dp/1593279566">Bayesian Statistics the Fun Way</a>.</p>
+<p>A young William Shatner plays the highly superstitious Don Carter in this episode. His new bride Pat, played by Patricia Breslin, is more rational. When car trouble forces the honeymooning couple to wait in a rural diner while their car is repaired they find a fortune telling machine. For a penny you can ask the ‘mystic seer’ a yes or no question. Answers are given on a printed card that comes out of the machine after pulling a lever. Don asks a series of 7 questions that are shown to all be accurate predictions. Don becomes convinced that the mystic seer is an accurate fortune teller, Pat remains skeptical.</p>
+<p>Estimate Don and Pat’s prior odds that a fortune telling machine existed, before seeing 7 correct predictions. This is an example of working backwards from perceived posterior odds to someones prior odds as a way to understand what they might be thinking.</p>
+<p>The use of ‘convinced’ and ‘skeptical’ to describe someones beliefs are far from quantitative descriptions, so we have to make some brave assumptions to solve this problem.</p>
+<p>The question being asked in the problem is: Do you believe that the mystic seer is a fortune teller? Cast the hypotheses as:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span>: True</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_2\)</span>: False</p></li>
+</ul>
+<p>For accounting purposes write the odds as <span class="math notranslate nohighlight">\(H_1:H_2\)</span> for the machine being a fortune teller as true:false.</p>
+<p>For the sake of argument assume that ‘convinced’ translates into odds of 3:2 in favor of the machine being a fortune teller, and ‘skeptical’ can be taken to be odds of 1:5. Obviously if you watched the episode you might generate different quantitative interpretations of convinced and skeptical which is fine. The beauty of Bayes theorem is not what odds we pick, but how we must justify those odds to others.</p>
+<p>The relative likelihood of the mystic seer being a fortune teller requires us to look at each hypothesis and ask what the probability of observing the data would be given that the hypothesis is true:</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(H_1\)</span> is true, and the mystic seer is a fortune teller, then the probability of getting all seven predictions correct would be a perfect 1.0. Any number of correct predictions would have a probability of 1.0 because the hypothesis is that the machine is a fortune teller. A single wrong prediction at any point however would eliminate this hypothesis and make the probability exactly 0.0.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(H_2\)</span> is true, then the mystic seer simply got lucky and guessed the correct answer 7 times in a row. Because only yes or no questions are allowed, the probability of answering any one question correctly is 0.5 under this hypothesis. The  probability of randomly guessing the correct answer 7 times in a row would be <span class="math notranslate nohighlight">\(0.5 \times 0.5 \times 0.5 \times 0.5 \times 0.5 \times 0.5 \times 0.5 = (0.5)^7 = 0.0078125 \approx 0.008\)</span></p></li>
+</ul>
+<p>The evidence in favor of the mystic seer being a fortune teller is strong in this case. The relative likelihood of the seer being a fortune teller is <span class="math notranslate nohighlight">\(1:0.0078125 \Rightarrow 1/0.0078125 = 128\)</span> times more likely than the hypothesis that the machine is randomly guessing.</p>
+<p>The discussion above is summarized in <a class="reference internal" href="#mystic-seer-unknown-don"><span class="std std-numref">Table 19</span></a> for Don and <a class="reference internal" href="#mystic-seer-unknown-pat"><span class="std std-numref">Table 20</span></a> for Pat.</p>
+<table class="colwidths-auto table" id="mystic-seer-unknown-don">
+<caption><span class="caption-number">Table 19 </span><span class="caption-text">A summary of the known and assumed quantities for Don in the mystic seer example</span><a class="headerlink" href="#mystic-seer-unknown-don" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Don</p></th>
+<th class="head"><p>True</p></th>
+<th class="head"><p>False</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>128</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-auto table" id="mystic-seer-unknown-pat">
+<caption><span class="caption-number">Table 20 </span><span class="caption-text">A summary of the known and assumed quantities for Pat in the mystic seer example</span><a class="headerlink" href="#mystic-seer-unknown-pat" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pat</p></th>
+<th class="head"><p>True</p></th>
+<th class="head"><p>False</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>?</p></td>
+<td><p>?</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>128</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p>1</p></td>
+<td><p>5</p></td>
+</tr>
+</tbody>
+</table>
+<p>Transforming the usual definition of Bayes theorem first shown in equation <a class="reference internal" href="motivating-example.html#equation-eq-bayes-odds-verbal">(1)</a> to solve for the prior odds gives the result of:</p>
+<div class="math notranslate nohighlight">
+\[prior \space odds = \frac{posterior \space odds}{relative \space likelihood} \]</div>
+<p>Therefore Don’s prior odds for believing the seer was a fortune teller were <span class="math notranslate nohighlight">\(3/128:2/1 = 0.0234375:2 \approx 0.01\)</span> which is roughly <span class="math notranslate nohighlight">\(1:85\)</span> against the seer being a fortune teller initially.</p>
+<p>Pat’s prior odds were <span class="math notranslate nohighlight">\(1/128:5/1 = 0.0078125:5 \approx 0.002\)</span> which is approximately <span class="math notranslate nohighlight">\(1:640\)</span> against the seer being a fortune teller initially.</p>
+<p>I will leave the detailed analysis of what this might mean for the dynamic between Don and Pat to a licensed marriage counselor, but you can see that they each approached the belief of the seer being a fortune teller very differently.</p>
+</div>
+<div class="section" id="product-adoption">
+<span id="id6"></span><h2>Product adoption<a class="headerlink" href="#product-adoption" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>You are selling a product in an area where 30% of the people live in the city and the rest live in the suburbs. Currently 20% of the city dwellers use your product and 10% of the suburbanites use your product. You are presented with two new sales strategies the first will increase your market share in the suburbs to 15%. The second will increase your market share in the city to 25%. Which strategy should you adopt? What percentage of the people who own your product are city dwellers before your new sales drive?</p>
+<p>— <a class="reference external" href="http://gtribello.github.io/mathNET/bayes-theorem-problems.html">Original source: Github user gtribello, problem 4</a></p>
+</div></blockquote>
+<p>This problem has multiple parts, but because everything you need to solve the problems was provided in the problem statement you can plug the relevant numbers in to find the answers.</p>
+<p>The problem asks: what percent of current users are city dwellers before the sales drive? <a class="reference internal" href="#percent-city"><span class="std std-numref">Table 21</span></a> outlines the relevant quantities and calculates that about 46% of current users live in the city.</p>
+<table class="colwidths-auto table" id="percent-city">
+<caption><span class="caption-number">Table 21 </span><span class="caption-text">A summary of the reasoning for calculating the percent of current customers who are city dwellers.</span><a class="headerlink" href="#percent-city" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>City</p></th>
+<th class="head"><p>Suburbs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>30</p></td>
+<td><p>70</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>20</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p>600</p></td>
+<td><p>700</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simplified posterior odds</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-even"><td><p>Probability</p></td>
+<td><p>0.46</p></td>
+<td><p>0.54</p></td>
+</tr>
+</tbody>
+</table>
+<p>The second part of this questions asks you which strategy you should choose to increase your profits. <a class="reference internal" href="#option-a"><span class="std std-numref">Table 22</span></a> outlines the expected outcome for option A, increasing your market share in the suburbs to 15%.</p>
+<table class="colwidths-auto table" id="option-a">
+<caption><span class="caption-number">Table 22 </span><span class="caption-text">A summary of the reasoning for calculating the outcome of option A.</span><a class="headerlink" href="#option-a" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>City</p></th>
+<th class="head"><p>Suburbs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>30</p></td>
+<td><p>70</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>20</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p>600</p></td>
+<td><p>1050</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simplified posterior odds</p></td>
+<td><p>12</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-even"><td><p>Probability</p></td>
+<td><p>0.36</p></td>
+<td><p>0.64</p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="#option-b"><span class="std std-numref">Table 23</span></a> outlines the expected outcome for option B, increasing your market share in the city to 25%.</p>
+<table class="colwidths-auto table" id="option-b">
+<caption><span class="caption-number">Table 23 </span><span class="caption-text">A summary of the reasoning for calculating the outcome of option B.</span><a class="headerlink" href="#option-b" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>City</p></th>
+<th class="head"><p>Suburbs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>30</p></td>
+<td><p>70</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>25</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p>750</p></td>
+<td><p>700</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simplified posterior odds</p></td>
+<td><p>15</p></td>
+<td><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p>Probability</p></td>
+<td><p>0.52</p></td>
+<td><p>0.48</p></td>
+</tr>
+</tbody>
+</table>
+<p>Before implementing the sales drive you could expect for every 100 people of population that 30 people would live in the city and 70 would live in the suburbs. For the baseline case (before the new sales strategy), you would expect to sell <span class="math notranslate nohighlight">\(30 \times 0.2 + 70 \times 0.10 = 13\)</span> units of your product per hundred people. Option A would be expected to sell <span class="math notranslate nohighlight">\(30 \times 0.2 + 70 \times 0.15 = 16.5\)</span> units per hundred people. Option B would be expected to sell <span class="math notranslate nohighlight">\(30 \times 0.25 + 70 \times 0.10 = 14.5\)</span> units per hundred people. Option A is your best strategy because the suburban market is much bigger than the city market.</p>
+</div>
+<div class="section" id="spam-email-filter">
+<span id="spam-filter"></span><h2>Spam email filter<a class="headerlink" href="#spam-email-filter" title="Permalink to this headline">¶</a></h2>
+<p>Back in the day spam emails were a real problem for users. Today I rarely, if ever, check my spam folder because the filtering is so precise. Bayes theorem played a major role in removing the burden of spam from email users, and email was then widely adopted as an official form of communication across most organizations. The following example describes the essence of how an email spam filter operates. More importantly for real world problems this example shows how Bayes theorem can be used when there are multiple pieces of evidence that can be used to update your beliefs.</p>
+<blockquote>
+<div><p>Assume that you collect a number of emails and manually categorize them as spam or normal emails. This is an easy task, humans tend to be very fast and accurate with this sort of classification. The problem is that humans quickly tire of such a monotonous activity, which is why teaching a computer to filter spam messages is so helpful. Within each of these collections you count how often common words appear in the messages, and compile the results below.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="text-align:center head"><p>Spam</p></th>
+<th class="text-align:center head"><p>Normal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Hello</p></td>
+<td class="text-align:center"><p>3</p></td>
+<td class="text-align:center"><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Darling</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>5</p></td>
+</tr>
+<tr class="row-even"><td><p>Buy</p></td>
+<td class="text-align:center"><p>3</p></td>
+<td class="text-align:center"><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Viagra</p></td>
+<td class="text-align:center"><p>3</p></td>
+<td class="text-align:center"><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<p>What are the odds of a message being spam that contains the phrase “hello darling”?</p>
+<p>— <a class="reference external" href="https://betterexplained.com/articles/understanding-bayes-theorem-with-ratios/">Original source: betterexplained.com</a></p>
+</div></blockquote>
+<p>The question being asked in the problem is: what is your belief that a message with the words “hello darling” is spam? Cast the hypotheses as:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span>: Spam message</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_2\)</span>: Normal message</p></li>
+</ul>
+<p>For accounting purposes write the odds as <span class="math notranslate nohighlight">\(H_1:H_2\)</span> for the odds of spam to normal messages. The statistics on how many emails are actually spam varies, but every statistic that I have seen indicates that spam emails are much more likely than normal email, possibly as high a 98% of all emails are spam. The original author of this example suggested that the odds of spam:normal emails might be 9:1, so we will take that as our prior.</p>
+<p>We have data to help generate the relative likelihood ratios. A message with the word ‘hello’ has even odds, 3:3 = 1:1, of being a spam message. Messages with the word ‘darling’ have odds of 1:5 of being spam. The word ‘hello’ will not cause us to change our beliefs, but the word ‘darling’ will move our beliefs towards the hypothesis that the message is normal. The not so hard trick is that Bayes theorem can allow us to use both pieces of evidence together. <a class="reference internal" href="#spam-normal-hello-darling"><span class="std std-numref">Table 24</span></a> summarizes the discussion from above.</p>
+<table class="colwidths-auto table" id="spam-normal-hello-darling">
+<caption><span class="caption-number">Table 24 </span><span class="caption-text">The odds of a message that contains the words ‘hello darling’ is spam.</span><a class="headerlink" href="#spam-normal-hello-darling" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Spam</p></th>
+<th class="head"><p>Normal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>9</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘Hello’ likelihood</p></td>
+<td><p>3</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>‘Darling’ likelihood</p></td>
+<td><p>1</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>Posterior odds</p></td>
+<td><p>27</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-even"><td><p>Simplified posterior odds</p></td>
+<td><p>9</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>Probability</p></td>
+<td><p>0.64</p></td>
+<td><p>0.36</p></td>
+</tr>
+</tbody>
+</table>
+<p>The total likelihood of the evidence ‘hello darling’ was calculated in two steps as <span class="math notranslate nohighlight">\(3:3 \times 1:5 = 3:15\)</span> in favor of a normal message. The odds form of Bayes theorem makes it very convenient to use multiple pieces of evidence when revising our beliefs, just keep multiplying the odds until you have considered all your evidence. Ultimately the high base rate of spam messages lead us to conclude that the message is still likely to be spam with a probability of 0.64. In this example the evidence lead us to believe that the message was less spammy than your average message.</p>
+<p>As a second related example, what are the odds of a message being spam that contains the phrase “buy viagra”? This is in my experience the quintessential spam message. Keeping the same accounting process as above for odds of spam to normal messages, start with a prior of 9:1.</p>
+<p>Based on the observed word frequencies the odds of a spam message containing the work ‘buy’ is 3:2. The word ‘viagra’ only appears in spam messages, never in a normal message. Stating the odds as 3:0 will break our mathematical framework like in the <a class="reference internal" href="#athiest-priest"><span class="std std-ref">atheist and priest</span></a> example. As a work around conservatively assume that somewhere in the history of the internet that there is a normal message with the word ‘viagra’ in it. Tweak the likelihood of ‘viagra’ to be 3:1 just to avoid breaking our mathematical framework. Intuitively we know this message will be marked as spam, but run the numbers in <a class="reference internal" href="#spam-normal-buy-viagra"><span class="std std-numref">Table 25</span></a> just to be thorough.</p>
+<table class="colwidths-auto table" id="spam-normal-buy-viagra">
+<caption><span class="caption-number">Table 25 </span><span class="caption-text">The odds of a message that contains the words ‘buy viagra’ is spam.</span><a class="headerlink" href="#spam-normal-buy-viagra" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Spam</p></th>
+<th class="head"><p>Normal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>9</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘Buy’ likelihood</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>‘Viagra’ likelihood</p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Posterior odds</p></td>
+<td><p>81</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>Probability</p></td>
+<td><p>0.98</p></td>
+<td><p>0.02</p></td>
+</tr>
+</tbody>
+</table>
+<p>After viewing the evidence ‘buy viagra’ the odds are highly in favor of spam - even after tweaking the likelihood for the word ‘viagra’.</p>
+<p>At this point the question becomes at what odds do we move a message into the spam folder. Accidentally classifying a normal message as spam has fairly serious consequences. Users would much rather see a few spam messages, than have normal messages hidden from them in their spam folder. If you find even a few normal emails in your spam folder you quickly loose confidence in the filter and start manually checking your spam folder thereby eliminate the benefit of the filter in the first place. Moving normal messages into the spam folder is known as a false positive.</p>
+<p>In the ‘buy viagra’ example odds of 81:2 implies that for every 83 emails with the words ‘buy viagra’, 2 will be falsely labeled spam when they are actually a normal email. A 0.98 probability of spam is probably too low for a typical email user. It was suggested by the original author of this example that a threshold closer to 0.999 might be more appropriate.</p>
+<p>This example described what is known a Naive Bayesian filter. The filter is naive because it ignores the very important concept of independence between observations. The odds of seeing the phrase ‘buy viagra’ together in a spam message is much higher than seeing the words ‘buy’ and ‘viagra’ separately in the message. Similarly if your spouse addresses you as ‘darling’, then the phrase ‘hello darling’ is much more likely than ‘hello’ and ‘darling’ appearing separately. In most cases ignoring independence of observations is a grave mistake that can lead to poor reasoning. For example if you are trying to estimate the number of people with blue eyes it would be misleading to check the eye color of a few families. Within a family, the odds of multiple family members having blue eyes are much higher than the odds of a random person having blue eyes. If you don’t have a large enough sample size you could easily over state the odds of having blue eyes because you got unlucky and randomly choose a family or two with blue eyes. Naive Bayesian filters unabashedly ignore the requirement for independent observations, and they still work just fine! This is the exception to the rule, yet I appreciate how well Bayes theorem works when you don’t have access to all the information you need and perfectly independent observations.</p>
+</div>
+<div class="section" id="sparking-widgets">
+<span id="id7"></span><h2>Sparking widgets<a class="headerlink" href="#sparking-widgets" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>On an assebly line 10% of widgets are defective and 90% are good. 4% of good widgets emit sparks when operating, and 12% of the defective widgets emit sparks. What percentage of sparking widgets are bad?</p>
+<p>— <a class="reference external" href="https://arbital.com/p/bayes_rule/?l=693">Original source: arbital.com</a></p>
+</div></blockquote>
+<p>The question being asked in the problem is: if you observe a sparking widget, do you believe that widget is bad? Cast the hypotheses as:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span>: Defective widget</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_2\)</span>: Good widget</p></li>
+</ul>
+<p>For accounting purposes write the odds as <span class="math notranslate nohighlight">\(H_1:H_2\)</span> for defective:good. The problem statement provides you with the information needed for your prior. 10% of widgets from the assembly line are defective, and 90% are good. Take the prior as 0.1:0.9 = 1:9.</p>
+<p>To determine the relative likelihood I ask myself what would the probability be of the widget sparking if each hypothesis was true:</p>
+<ul class="simple">
+<li><p>If the widget is defective we would expect 12% of these widgets to spark</p></li>
+<li><p>If the widget is good we would expect 4% of these widgets to spark</p></li>
+</ul>
+<p>Therefore set the relative likelihood at 0.12:0.4 = 12:4 = 3:1. <a class="reference internal" href="#sparking-widget-problem"><span class="std std-numref">Table 26</span></a> summarizes the reasoning described above.</p>
+<table class="colwidths-auto table" id="sparking-widget-problem">
+<caption><span class="caption-number">Table 26 </span><span class="caption-text">A summary of the reasoning for the sparking widget problem.</span><a class="headerlink" href="#sparking-widget-problem" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Defective</p></th>
+<th class="head"><p>Good</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>1</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p>3</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simplified posterior odds</p></td>
+<td><p>1</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>Probability</p></td>
+<td><p>0.25</p></td>
+<td><p>0.75</p></td>
+</tr>
+</tbody>
+</table>
+<p>There is a 0.25 probability that a sparking widget is defective.</p>
+</div>
+<div class="section" id="strange-underwear">
+<span id="id8"></span><h2>Strange underwear<a class="headerlink" href="#strange-underwear" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Suppose you are living with a partner and come home from a business trip to discover a strange pair of underwear in your dresser drawer. You will probably ask yourself: what is the probability that your partner is cheating on you? The condition is that you have found the underwear; the hypothesis you are interested in evaluating is the probability that you are being cheated on.</p>
+<p>— <a class="reference external" href="https://www.amazon.com/Signal-Noise-Many-Predictions-Fail-but/dp/0143125087">Original source: Signal and the Noise, pg 199 </a></p>
+</div></blockquote>
+<p>The question being asked in the problem is: Do you believe that your partner is cheating on you? Cast the hypotheses as:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span>: Cheating</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_2\)</span>: Faithful</p></li>
+</ul>
+<p>For accounting purposes write the odds as <span class="math notranslate nohighlight">\(H_1:H_2\)</span> for cheating:faithful. <a class="reference external" href="http://www.usnews.com/news/national/articles/2008/03/27/how-common-are-cheating-spouses">Studies have found</a> that about 4 percent of married partners cheat on their spouses in any given year, so we’ll set our prior prior as 4:96 = 1:24.</p>
+<p>Next ask yourself if each hypothesis was true, what would be the probability of finding strange underwear in your dresser drawer.</p>
+<ul class="simple">
+<li><p>If your partner was cheating then the odds of finding strange underwear would be fairly high. Assume that you do your laundry at your home, and not a laundromat, to make the reasoning easier. Under this hypothesis take the probability of finding strange underwear as 0.5.</p></li>
+<li><p>If you partner was faithful, the appearance of strange underwear seems unlikely. It is hard to devise a plausible explanation where are ‘friend’ would loose their underwear at your house. Take the probability as 0.05 of observing strange underwear under this hypothesis.</p></li>
+</ul>
+<p>Therefore take the relative likelihood as 0.05:0.05 = 50:5 = 10:1 in favor of cheating. <a class="reference internal" href="#cheating-faithful"><span class="std std-numref">Table 27</span></a> summarizes the reasoning described above.</p>
+<table class="colwidths-auto table" id="cheating-faithful">
+<caption><span class="caption-number">Table 27 </span><span class="caption-text">A summary of the reasoning for the strange underwear problem.</span><a class="headerlink" href="#cheating-faithful" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Cheating</p></th>
+<th class="head"><p>Faithful</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>1</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>10</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p>10</p></td>
+<td><p>24</p></td>
+</tr>
+<tr class="row-odd"><td><p>Simplified posterior odds</p></td>
+<td><p>5</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-even"><td><p>Probability</p></td>
+<td><p>0.29</p></td>
+<td><p>0.71</p></td>
+</tr>
+</tbody>
+</table>
+<p>Based on the observation of the strange underwear there would be a probability of 0.29 that your partner was cheating on you. This is a classic example of how when you need Bayes theorem the most, it will be hard to estimate meaningful probabilities.</p>
+<p>In this case setting the prior odds objectively would be very difficult. Living with someone means that you have many, many data points about their behavior. To set your prior should you naively ignore additional information and set the prior based on the general population, or should you include additional insights like ‘your partner has been acting weird recently’?</p>
+<p>Setting the relative likelihoods is similarly difficult. The observed evidence (strange underwear) was unusual evidence with very little, if any, historical or logical precedent. Subjective probabilities are the only possible way to quantify beliefs in a situation like this, but that does not mean they are easy to assign.</p>
+<p>One advantage of Bayes theorem is that it forces you to clearly lay out your reasoning. Given the emotions surrounding a cheating partner you very well may not be objectively reasoning…but at least you can clearly present your thoughts.</p>
+<p>If you have a friend who understands the <a class="reference internal" href="solution-process.html#process"><span class="std std-ref">standard solution process</span></a> they could critically evaluate your reasoning and provide feedback on the suitability of your prior and relative likelihood. There are never guarantees of good reasoning when using subjective probabilities, but at least there is a framework to productively and openly discuss your reasoning.</p>
+</div>
+<div class="section" id="who-killed-mr-boddy">
+<span id="mr-boddy"></span><h2>Who killed Mr. Boddy?<a class="headerlink" href="#who-killed-mr-boddy" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Mr. Boddy is found murdered in his study! At the time of his death there were three people visiting the home of Mr. Boddy: Reverend Green, Mrs. White, and Colonel Mustard.</p>
+<p>Based on prior knowledge of their relationship with the deceased and the circumstances that evening the respective probability for Green, White, and Mustard to be the murderer are believed to be 0.8, 0.08, and 0.04 respectively. The probabilities sum to 0.92 meaning there is some belief that another unspecified suspect not staying at the house the night of the murder commited the crime.</p>
+<p>In time it comes out that the murder weapon was a wrench. Suppose we think that Reverend Green, Mrs. White, and Colonel Mustard, if they murdered someone, would respectively be 0.6, 0.9, and 0.3 likely to use a wrench.</p>
+<p>Who is the most likely suspect for the murder?</p>
+<p>— <a class="reference external" href="https://arbital.com/p/bayes_rule_odds/">Original source: arbital.com</a></p>
+</div></blockquote>
+<p>The question being asked in the problem is: Who do you believe murdered Mr. Boddy? Cast the hypotheses as:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span>: Reverend Green</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_2\)</span>: Mrs. White</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_3\)</span>: Colonel Mustard</p></li>
+</ul>
+<p>For accounting purposes write the odds as <span class="math notranslate nohighlight">\(H_1:H_2:H_3\)</span> for Green:White:Mustard. The problem provides us with all of the information needed to reason about the problem. Set the prior as 0.8:0.08:0.04 = 80:8:4 = 20:2:1.</p>
+<p>The relative likelihoods are provided in the problem description as well, set them as 0.6:0.9:0.3 = 6:9:3 = 2:3:1. The reasoning for this problem is summarized in Table <a class="reference internal" href="#mr-boddy-murder"><span class="std std-numref">Table 28</span></a>.</p>
+<table class="colwidths-auto table" id="mr-boddy-murder">
+<caption><span class="caption-number">Table 28 </span><span class="caption-text">A summary of the reasoning using Bayes theorem for the Mr. Boddy murder problem.</span><a class="headerlink" href="#mr-boddy-murder" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Rev. Green</p></th>
+<th class="head"><p>Mrs. White</p></th>
+<th class="head"><p>Col. Mustard</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Prior odds</p></td>
+<td><p>20</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Likelihood</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>Posterior odds</p></td>
+<td><p>40</p></td>
+<td><p>6</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<p>This implies that the odds are greatest for Rev. Green as the murderer. We don’t calculate a probability in this example because we did not start with a <a class="reference internal" href="appendix-theory.html#exclusive-and-exhaustive"><span class="std std-ref">mutually exclusive and exhaustive</span></a> set of suspects. There was an 0.08 probability of another unspecified murder.</p>
+<p>There is also a murder mystery introduction to Bayes theorem in the book <a class="reference internal" href="introduction.html#additional-refs"><span class="std std-ref">Model Based Machine Learning</span></a>. <a class="reference external" href="https://mbmlbook.com/MurderMystery.html">Chapter 1</a> of that book uses a murder mystery similar to the example above to introduce probabilistic thinking. Unlike the example above, probabilities are not just arbitrarily assigned, but rather introduced along with an fun and interesting narrative. Additionally multiple pieces of evidence are introduced, which provides a good example of how relative likelihoods can be generated. It is an excellent introduction to probabilistic thinking in my opinion.</p>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>When learning a new topic I value examples, so I made an effort to include many practical and real life examples for the application of Bayes theorem in this manual. While examples are great, you can’t expect to find an example in this manual for every type of problem you will ever encounter. At some point ‘solution by analogy’ breaks down and you have  generalize the concepts so you can apply Bayes theorem to your own unique real life problems. This section is a summary of what I hope you would learn if you worked through all the example problems and the discussion that accompanies them. The main concepts include:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#humble-uncertainty"><span class="std std-ref">Be humble with your uncertainty</span></a></p></li>
+<li><p><a class="reference internal" href="#estimates-good-enough"><span class="std std-ref">Estimates provide very useful information</span></a></p></li>
+<li><p><a class="reference internal" href="#extreme-cases"><span class="std std-ref">Watch out for extreme cases</span></a></p></li>
+</ul>
+<div class="section" id="be-humble-with-your-uncertainty">
+<span id="humble-uncertainty"></span><h3>Be humble with your uncertainty<a class="headerlink" href="#be-humble-with-your-uncertainty" title="Permalink to this headline">¶</a></h3>
+<p>I feel that being humble with your assessments and interpretation of uncertainty is very important. By humble I am suggesting that you should use your results to make decisions, but not act as if you have perfect knowledge of previously unknown phenomena. A humble user of Bayes theorem trusts their results, but keeps digging for more evidence with a critical eye to ensure they are not making a logical error.</p>
+<p>There are no safeguards when using Bayes theorem, and you can go wrong at any step - defining the prior, establishing the relative likelihood, or interpreting the posterior. It is easy to trick yourself into over stating your prior beliefs, or casting evidence in a way that supports your favorite hypothesis. Luckily it is also hard to be horribly wrong - off by more than a factor of 10. Posterior estimates can suffer from the same logical fallacies as well, such as seeing your predictions as certainties instead of probabilities.</p>
+<p>In most cases the prior and likelihood were personal estimates, so there is lots of wiggle room for different results depending on the numbers input into Bayes theorem. In the techniques described in this manual, uncertainty is cast as a point estimate. When in reality many of these results could be cast as a range of values <a class="footnote-reference brackets" href="#theory" id="id9">4</a>. Your point estimate could actually be at one extreme edge of the range of possible values, so you need to treat your results with some humility.</p>
+<p>When you are dealing with extreme odds that are very large or very small extra humility is needed. Extreme odds have both <a class="reference internal" href="#extreme-cases"><span class="std std-ref">cognitive</span></a> and <a class="reference internal" href="appendix-theory.html#extreme-evidence"><span class="std std-ref">mathematical</span></a> complications that make estimates even more uncertain.</p>
+<p>If you are being humble with your uncertainty you might:</p>
+<ul class="simple">
+<li><p>Round results closer towards towards even odds to be conservative</p></li>
+<li><p>Continue to seek out additional data (use your critical thinking!)</p></li>
+<li><p>Play the what if game. What if you made your prior less extreme? What if your evidence was given less strength?</p></li>
+<li><p>Work backwards and see if your posterior beliefs have reasonable priors</p></li>
+<li><p>Discuss your results with a peer to validate your reasoning</p></li>
+<li><p>Play the devils advocate. If you were to make an error estimating the odds, where would it likely be, and what direction would the error be in?</p></li>
+</ul>
+<p>Basically, I hope that simply using Bayes theorem as described in this manual does not make you overly confident. Instead the use of Bayes theorem as described in this manual should develop intuition about a problem.</p>
+</div>
+<div class="section" id="estimates-provide-good-enough-information">
+<span id="estimates-good-enough"></span><h3>Estimates provide ‘good enough’ information<a class="headerlink" href="#estimates-provide-good-enough-information" title="Permalink to this headline">¶</a></h3>
+<p>This manual relies heavily on <em>subjective probability</em>. Another word for subjective probabilities are opinions. This might seem insufficiently rigorous to some, but hopefully it can be seen from the examples above how rough order of magnitude estimates provide pragmatic information for decision making with uncertainty. Combined with a dose of <a class="reference internal" href="#humble-uncertainty"><span class="std std-ref">humility</span></a>, otherwise intractable problems can be reliably reasoned about.</p>
+<p>For example the <a class="reference internal" href="#plumber"><span class="std std-ref">getting robbed by a plumber</span></a> problem requires some highly subjective estimates. If you were to double the prior odds of a repairman being a criminal you double the posterior odds of that specific repairman coming back to rob the house. However doubling a small number results in a number that is still small, so the reasoning remains the same even with different inputs - there is not a significant risk of getting robbed.</p>
+<p>Two friends may not be able to agree on the prior odds of a repairman being a criminal within a factor of two or three, but they can likely agree that odds of 1:10 are too high and odds of 1:1000 are too low. Any odds in the 1:50, 1:100, or 1:200 range will provide a result that is practically equivalent even if it is not mathematically equivalent.</p>
+</div>
+<div class="section" id="watch-out-for-the-extreme-cases">
+<span id="extreme-cases"></span><h3>Watch out for the extreme cases<a class="headerlink" href="#watch-out-for-the-extreme-cases" title="Permalink to this headline">¶</a></h3>
+<p>A number of the example problems deal with situations when either the prior or relative likelihood is extreme in some way <a class="footnote-reference brackets" href="#example-problems" id="id10">5</a>.</p>
+<p>The concept known as the base rate neglect fallacy is frequently encountered when reasoning with probabilities. This particular fallacy is often how Bayes theorem is first introduced, and was prominently featured in the <a class="reference internal" href="motivating-example.html#example"><span class="std std-ref">motivating example</span></a> in this manual. A base rate of occurrence is how often something you are interested in occurs in the base population. For example, serial killers are scary, but they are very rare in the general population, so that scratching sound on your window during a storm is unlikely to be a serial killer, and more likely to be a branch from an over grown tree. If you fall for the base rate fallacy you are either incorrectly ignoring that an event is very unlikely to occur, or conversely incorrectly ignoring that an event is not all that rare.</p>
+<p>When the base rate is low, you need <a class="reference internal" href="#alien-bookcase"><span class="std std-ref">lots of evidence</span></a> to overcome the low rate of occurrence. When the base rate is high, you should not demand <a class="reference internal" href="#failing-employee"><span class="std std-ref">exceedingly strong evidence</span></a> to believe something that is common.</p>
+<p>In many cases if you can identify that some of the quantities are extreme, then you don’t even need to run the numbers. You should be able to reason about the situation simply by identifying the prior or likelihood as extreme. Conversely if you identify that someone else has extreme beliefs you can avoid wasting your time arguing with them because there is no practical way to modify their beliefs short of presenting impossibly strong evidence. If they hold absolutely certain beliefs like the <a class="reference internal" href="#athiest-priest"><span class="std std-ref">atheist and priest</span></a>, then even impossibly strong evidence might not be enough to revise their beliefs!</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="result"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
+<dd><p>This footnote is taken verbatim from the <a class="reference external" href="https://fivethirtyeight.com/features/a-formula-for-decoding-health-news/">source article on fivethirtyeight.com</a> being quoted: In general, you should probably ignore any health news article without a direct link to the original research. But if you can’t find a link, another option is to run a search on <a class="reference external" href="https://scholar.google.com/">Google Scholar</a> or <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/">Pubmed</a>. You’re looking for research articles published recently and with some of the authors matching names of people quoted in the news report.</p>
+</dd>
+<dt class="label" id="kahneman"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
+<dd><p>Like most research involving humans, the interpretation of the results in this study are debated. What is important to us is that this is a famous example of using Bayes theorem.</p>
+</dd>
+<dt class="label" id="monty"><span class="brackets"><a class="fn-backref" href="#id5">3</a></span></dt>
+<dd><p>An advanced use of Bayes theorem can be used to reason about the ‘Price is Right’ game show which was recently mashed up with ‘Let’s Make a Deal’ to form a hybrid show. See <a class="reference external" href="https://nbviewer.jupyter.org/github/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter5_LossFunctions/Ch5_LossFunctions_PyMC2.ipynb#Example:-Optimizing-for-the-Showcase-on-The-Price-is-Right">Optimizing for the showcase on the Price is Right</a>.</p>
+</dd>
+<dt class="label" id="theory"><span class="brackets"><a class="fn-backref" href="#id9">4</a></span></dt>
+<dd><p>See the <a class="reference internal" href="appendix-theory.html#beta"><span class="std std-ref">theory section</span></a> for a limited example of how to describe your beliefs as a range of values in a probability distribution.</p>
+</dd>
+<dt class="label" id="example-problems"><span class="brackets"><a class="fn-backref" href="#id10">5</a></span></dt>
+<dd><p>See for example: <a class="reference internal" href="#alien-bookcase"><span class="std std-ref">Alien bookcases</span></a>, <a class="reference internal" href="#athiest-priest"><span class="std std-ref">An atheist and a priest</span></a>, <a class="reference internal" href="#failing-employee"><span class="std std-ref">A failing new employee</span></a>, <a class="reference internal" href="#fire-bbq"><span class="std std-ref">Smoke from a fire or BBQ?</span></a>, <a class="reference internal" href="#married-rain"><span class="std std-ref">Getting married in the rain</span></a>, <a class="reference internal" href="#plumber"><span class="std std-ref">Getting robbed by a plumber</span></a>, <a class="reference internal" href="#jealous"><span class="std std-ref">The jealous coworker</span></a>, <a class="reference internal" href="#farmer-librarian"><span class="std std-ref">Librarian or farmer?</span></a>.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="solution-process.html" title="previous page">Bayes theorem solution process</a>
+    <a class='right-next' id="next-link" href="conclusion.html" title="next page">Conclusion</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan Lowe<br/>
+        
+          <div class="extra_footer">
+            <p><i>Bayes Theorem - The Missing Manual</i> is licensed under a creative commons licence (<a href="http://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>).</p>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

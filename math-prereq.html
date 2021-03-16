@@ -1,0 +1,381 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mathematical prerequisites &#8212; Bayes Theorem - The Missing Manual</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bayes theorem solution process" href="solution-process.html" />
+    <link rel="prev" title="Motivating example" href="motivating-example.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Bayes Theorem - The Missing Manual</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="motivating-example.html">
+   Motivating example
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Mathematical prerequisites
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="solution-process.html">
+   Bayes theorem solution process
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="worked-examples.html">
+   Worked examples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="conclusion.html">
+   Conclusion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="appendix-theory.html">
+   Appendix: Theory
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/math-prereq.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#relative-odds">
+   Relative odds
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rough-order-of-magnitude-estimates">
+   Rough order of magnitude estimates
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#piano-tuners">
+     Piano tuners
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="mathematical-prerequisites">
+<span id="prereqs"></span><h1>Mathematical prerequisites<a class="headerlink" href="#mathematical-prerequisites" title="Permalink to this headline">¶</a></h1>
+<p>To be successful using this manual you need to have a strong understand of two key prerequisite concepts:</p>
+<ol class="simple">
+<li><p><a class="reference internal" href="#relative-odds"><span class="std std-ref">Relative odds</span></a></p></li>
+<li><p><a class="reference internal" href="#rom"><span class="std std-ref">Rough order of magnitude estimates</span></a></p></li>
+</ol>
+<p>Relative odds are a way of quantifying your beliefs. Relative odds are similar to probability, but more user friendly.</p>
+<p>Rough order of magnitude estimates are a fancy way of making an educated guess. We are almost never given all the information that we need to apply Bayes theorem, so it is necessary to estimate the <em>missing</em> quantities. Luckily Bayes theorem is very useful with <em>close enough</em> numbers. Your rough order of magnitude estimates can be off by more than 300% and you will likely still get a result that is good enough to make decisions with!</p>
+<div class="section" id="relative-odds">
+<span id="id1"></span><h2>Relative odds<a class="headerlink" href="#relative-odds" title="Permalink to this headline">¶</a></h2>
+<p>Gambling predates the development of probability theory. It turns out that gamblers have a very intuitive and effective way of describing their belief that an event will occur. This is known as the relative odds. Often just referred to as the ‘odds’, but it is important to note that odds are always relative.</p>
+<p>Probability and odds are not the same thing. In some simple cases you can convert back and forth between odds and probability, in other more complex situations the conversion does not work. Ultimately it is easier for mathematicians to use probability for derivations and proofs, and not odds, so most textbooks follow this precedence and use probability.</p>
+<p>This manual is for day-to-day users of Bayes theorem, so we will choose to utilize the easier form of the theorem that uses relative odds. The odds form of the theorem uses multiplication. The probability form of the theorem uses integrals that are not solvable. I’ll let you decide which form is best for you. See the <a class="reference internal" href="appendix-theory.html#theory"><span class="std std-ref">theory section</span></a> if you really want to learn how to derive Bayes theorem in its different forms.</p>
+<p>Odds are a relative measure of belief. In layman’s terms you may represent odds by saying I think rain today is twice as likely as sunshine. Quantitatively odds are a ratio. For example, the relative odds of rain today to sunshine is 2 to 1. Other equivalent representations of the same odds are 2/1, or 2.0, or 2:1 (pronounced two to one).</p>
+<p>Each form of representing odds has its own purposes, but for this manual we will exclusively use the shorthand notation with the colon like 2:1 to keep things consistent.</p>
+<p>When things get complex and there are more than two possible outcomes you can say things like the relative odds that Mr. Green, Ms. Peacock, and Col. Mustard are guilty are 1:5:7 (one to five to seven). This means you believe that it is fives times as likely that Ms. Peacock is guilty relative to Mr. Green, and Col. Mustard is 7 times as likely to be guilty than Mr. Green. Col. Mustard is 7/5 = 1.4 times as likely as Ms. Peacock to be guilty.</p>
+<p>This shorthand version of representing relative odds will be shown to be great for doing mental math. However, if you need to communicate your beliefs to another human being make sure you provide some context and define what the odds represent. For example, I believe that the odds of rain to sunshine are 2:1. Or, the odds in favor of candidate A are 3:2.</p>
+<p>Odds can be scaled and remain equivalent. For example these are all the same odds, <span class="math notranslate nohighlight">\(1:2 = 2:4 = 50:100\)</span>. This scaling is ultimately what makes relative odds less formal than probabilities, but easier to use when doing mental math. If odds are a ratio, then probabilities are a fraction of the whole.</p>
+<p>You may have knowledge in the form of probabilities that you might want to convert into relative odds. For example, say you are told by your bookie friend that the horse Lucky Lucy has a 0.12 probability of winning a race and that Hairy Harry has a 0.09 probability of winning. The odds of Lucky Lucy winning relative to Hairy Harry is <span class="math notranslate nohighlight">\(0.12:0.09 = 12:9 = 4:3\)</span>. Note how this encodes no information about the other horses in the race who collectively have a 0.79 probability of winning.</p>
+<p>If however your bookie friend tells you that the odds of Lucky Lucy to Hairy Harry winning the race are 4:3, there is no way to calculate the respective probabilities of each horse winning without more information. You have no way of distinguishing if the underlying probabilities are 0.12:0.09, or 0.24:0.18, or 0.36:0.27, etc because they all reduce to 4:3.</p>
+<p>According to a horse betting <a class="reference external" href="https://betmix.com/how-often-does-the-favorite-win-a-horse-race/#:~:text=On%20average%20favorites%20win%20about,%2C%20surface%2C%20class%2C%20etc.">website</a>: “On average the favored horse wins its race about 35% of the time”. It is important to identify that 35% is a descriptive statistic based on data and not a belief. Depending on a number of things like the source of the information, how the data was collected, and the relevance to your situation, a descriptive statistic may or may not be strong evidence to change your beliefs. It will be shown how Bayes theorem can be used to update your beliefs (represented as odds) based on observed data (represented with statistics).</p>
+<p>If you hear someone say that something has a chance of occurring you have to be very careful interpreting that information because it could mean a few different things. For example if you were at a baseball game and the person sitting next to you offers this information without being prompted: “This batter has a 40% chance of getting on base” it could mean a couple of different things:</p>
+<ul class="simple">
+<li><p>Historically this batter gets on base in 40% of his appearances at the plate</p></li>
+<li><p>I believe the probability of this batter getting on base is 0.4</p></li>
+<li><p>I believe the odds of this batter getting on base are 2:3</p></li>
+<li><p>I would be willing to bet that given multiple appearances at the plate that this batter will get on base on average 40% of the time</p></li>
+<li><p>Based on my encyclopedic knowledge of baseball, and the opposing pitcher, this batter who’s on base percentage over the last two years has been 34.6% actually has a 0.4 probability of successfully getting on base in this particular situation.</p></li>
+</ul>
+<p>To be safe, we never use the words chance in this manual because it is ambiguous if a probability or statistic is being quoted. Furthermore if a probability is being described it is unclear which interpretation of probability is being used. Hearing something described as a ‘chance’ should be a red flag for you that a miscommunication might occur.</p>
+<p>For the special case of binary events, which are used often in this manual, there are some simple relations to convert between odds and probability. For example a binary event might be true/false, win/lose, real/fake, success/failure, etc. If we let <span class="math notranslate nohighlight">\(H_1\)</span> and <span class="math notranslate nohighlight">\(H_2\)</span> be complementary events, meaning there are no other possible outcomes, then we can state that <span class="math notranslate nohighlight">\(p(H_1) = 1 - p(H_2)\)</span>. This allows us to easily switch back and forth between the odds and probability forms:</p>
+<p>If <span class="math notranslate nohighlight">\(p(H_n) = p \Rightarrow O(H_n) = \frac{p}{1-p}\)</span></p>
+<p>If <span class="math notranslate nohighlight">\(O(H_n) = q  \Rightarrow p(H_n) = \frac{q}{1+q}\)</span></p>
+<p>In practice the calculation usually goes from odds to probability like this:</p>
+<ul class="simple">
+<li><p>Your posterior odds are in the form of <span class="math notranslate nohighlight">\(H_1:H_2\)</span>, for example 80:127 for success:failure</p></li>
+<li><p>The equivalent probability for outcome <span class="math notranslate nohighlight">\(H_1\)</span> is <span class="math notranslate nohighlight">\(H_1/(H_1+H_2)\)</span>. For example the probability of success is <span class="math notranslate nohighlight">\(80/(80+127)=0.3864734 \approx 0.39\)</span></p></li>
+<li><p>The equivalent probability for outcome <span class="math notranslate nohighlight">\(H_2\)</span> is <span class="math notranslate nohighlight">\(H_2/(H_1+H_2)\)</span>. For example the probability of failure is <span class="math notranslate nohighlight">\(127/(80+127)=0.6135266 \approx 0.61\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="rough-order-of-magnitude-estimates">
+<span id="rom"></span><h2>Rough order of magnitude estimates<a class="headerlink" href="#rough-order-of-magnitude-estimates" title="Permalink to this headline">¶</a></h2>
+<p>Most of the math that we are taught is very strict and definitive. Two times two is <em>always</em> four, and typically the old adage “junk in, junk out” applies. Probability theory is a different kind of beast however. Because we are working with beliefs and uncertainty we are allowed a lot of wiggle room. Rough order of magnitude estimates allow us to make educated guesses at quantities that we don’t have, but need to know, to use Bayes theorem to reason about the world around us.</p>
+<p>An order of magnitude is multiple of ten. One order of magnitude is a multiple of 10, two orders of magnitude is a multiple of 100, and so on. Orders of magnitudes apply to fractions of ten as well like <span class="math notranslate nohighlight">\(\frac{1}{10},\frac{1}{100},\frac{1}{1000}\)</span>, etc.</p>
+<p>Errors of magnitude are very bad. If you thought you could build an airport in 1 year and it actually took 10 years, or you thought fixing your car would cost $100 and it took $1000. Let’s not mince our words here, if you make an error that is off by a factor of 10 or more you made a stupid mistake.</p>
+<p>‘Don’t make a stupid mistake’ is a relatively low hurdle to jump over. When making rough order of magnitude estimates we strive to estimate the correct order of magnitude for a quantity. A rough order of magnitude estimate is never ‘correct’ but that is ok because knowing the order of magnitude is still very helpful for decision making when you previously knew absoluletly nothing. Being in error by 200, 300, or even 500% is not that bad compared to an error of 10x or more.</p>
+<p>The following estimates are all equivalent  in terms of their order of magnitude: 124, 312, 701. They are all on the order of a 100 <a class="footnote-reference brackets" href="#equivalent" id="id2">1</a>.</p>
+<p>There are some good books dedicated to the art/science of making rough order of magnitude estimates <a class="footnote-reference brackets" href="#books" id="id3">2</a>. For our purposes however you only need to learn how to bound your estimates and decompose the problem.</p>
+<p>To use this method first break the problem down into smaller pieces. Don’t go straight for the answer, break it up into small more manegable estimates. Then ask yourself what order if magnitude for your estimate would be ridiculously high, and what would be ridiculously low. Finally pick a number in between your bounds.</p>
+<p><a class="reference internal" href="#piano-tuners"><span class="std std-ref">The next section</span></a> is an example of a question that your average person would just hold up their hands and shrug, but can be solved with an order of magnitude estimate. Using Google or any form of external reference is considered cheating when making an order of magnitude estimate, mostly because order of magnitude estimates need to be made quickly while on your feet with just mental math.</p>
+<div class="section" id="piano-tuners">
+<span id="id4"></span><h3>Piano tuners<a class="headerlink" href="#piano-tuners" title="Permalink to this headline">¶</a></h3>
+<p>About how many piano tuners worked in the city of Chicago in the 1950’s?</p>
+<p>I know very little about the city of Chicago today, and even less about it in the 1950’s. Unfortunately the only time I go to Chicago is when I catch a connecting flight through O’Hare International Airport. I want to decompose this estimate into smaller pieces to make thinking about the problem easier. My strategy is to estimate:</p>
+<ol class="simple">
+<li><p>The 1950’s population of chicago</p></li>
+<li><p>The percentage of the city’s population that owns a piano</p></li>
+<li><p>How often a piano needs to be tuned</p></li>
+<li><p>How many pianos a tuner can service in a year</p></li>
+</ol>
+<p>I will then combine my four estimates into an answer using this relationship I developed for this problem where <span class="math notranslate nohighlight">\(P_{1950}\)</span> is the 1950’s population, <span class="math notranslate nohighlight">\(O\)</span> is the percentage of piano owners, <span class="math notranslate nohighlight">\(R\)</span> is how many times per year a piano needs to be tuned, and <span class="math notranslate nohighlight">\(S\)</span> is how many pianos a tuner can service in a year.</p>
+<div class="math notranslate nohighlight">
+\[Piano \space tuners \approx \frac{(P_{1950} \times O) \times R}{S}\]</div>
+<p>I think there are millions , not 10’s of millions, of people living in Chicago today. In the 50’s maybe I would estimate more than 100,000 people lived in the city and less than 10 million, so I would estimate <span class="math notranslate nohighlight">\(P_{1950}\)</span> as on the order of a million people. I wish I could do better than this, but I simply don’t have any better information.</p>
+<p>I am not sure how many people are piano owners. I’m confident that the rate is less than 1 in 10 because pianos are rather expensive. On the lower side I just don’t know. 1 in 1000 seems unrealistically low because there were less sources of entertainment in the 50’s (e.g no Netflix!). For lack of better insight I say that <span class="math notranslate nohighlight">\(O\)</span>, the percent of the population that own pianos in the 50’s, is on the order of 1 in 100 or 0.01.</p>
+<p>I am not a piano player so I don’t know how often you tune a piano. Any man made machine requires maintenance, but unlike a car a piano is not used as much or as roughly. My guess is than tuning is required less often than a car, so no more than once a year. On the other hand 10 years seems like too long to go between tunes. So I pick <span class="math notranslate nohighlight">\(R\)</span>, the rate of tuning, as being on the order of once every three years, or <span class="math notranslate nohighlight">\(\frac{1}{3}\)</span> tunes per year.</p>
+<p>I’ve never seen a piano tuned before, but I feel that it is an involved process that probably involves tuning forks. Piano tuners seem like craftsmen to me, so this is not a process that should not be rushed. Plus the tuner has to come to where the piano is, so there would be travel involved between jobs. The average work year is 50 weeks, and I think that you could tune one piano per day. So I set <span class="math notranslate nohighlight">\(S\)</span> as <span class="math notranslate nohighlight">\(50 \times 5 = 250\)</span> pianos per year per tuner.</p>
+<div class="math notranslate nohighlight">
+\[Piano \space tuners \approx \frac{(P_{1950} \times O) \times R}{S} = \frac{(1,000,000 \times 0.01) \times \frac{1}{3}}{250} = 13.3 \]</div>
+<p>So I would estimate that there were on the order of 10’s of piano tuners in the city. In practice this could mean between 10 and 99 tuners. I think this makes sense because I would expect more than 1 tuner in the city. I am less certain about my upper bound, but having 100’s of tuners in the city seems excessive.</p>
+<p>A two minute check of Google reveals some interesting information.</p>
+<ul class="simple">
+<li><p>I did not differentiate between Chicago and the Chicago metro area, that could significantly change the numbers of the total population by an order of magnitude!</p></li>
+<li><p>The city of Chicago’s population actually peaked in the 1950’s census at 3.6 million. Today it is down to around 2.8 million.</p></li>
+<li><p>I don’t see any numbers for the 50’s, but the Chicago metro population as of 2010 was closer to 9.5 million people</p></li>
+<li><p><a class="reference external" href="https://www.yellowpages.com/">Yellowpages.com</a> (accessed December 2020) returns 87 results for piano tuners in Chicago</p></li>
+</ul>
+<p>This question was not random, but rather a famous example problem, so there are others on the internet who have published an answer. For example there is an <a class="reference external" href="http://web.pdx.edu/~pmoeck/pdf/The%20classic%20Fermi%20problem.pdf">estimate of 125 tuners</a>. It seems that others estimated a larger population for the city and that piano tuners work faster - can tune 3-4 pianos per day.
+This is an example of why rough order of magnitude estimates are easy to make. My errors - low on the population, and high on the number of tuners needed - canceled out. This was not luck but a property of decomposing the problem into smaller pieces. Every piece of my estimate is a source of error, but as long as I am not consistently high or low with my errors, but instead have random errors in both directions, my mistakes tend to cancel out. The more steps I decompose the problem into the more likely the errors will cancel out.</p>
+<p>Initially I was oblivious as to the number of tuners in Chicago in 1950’s. My order of magnitude estimate was incorrect, but at least I had a feel for the problem. In this particular case Google could have helped me. In general however if a problem is hard enough, Google will be of less utility and suck up more of your time.</p>
+<p>Not every rough order of magnitude problem is this involved. If you ask yourself what order of magnitude is ridiculously high and low, and then pick a number in between you can converge on a sufficiently realistic number to use in your reasoning. If the initial estimate proves significant you can always invest time and resources to make it better later.</p>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>This chapter introduced two concepts - relative odds and rough order of magnitude estimates - that you need to be successful when using Bayes theorem as described in this manual. These concepts are less mathematical and more process based in nature. This is a theme that will continue in the next chapters. The math needed for Bayes theorem is quite simple and should usually be performed in your head while you are working problems. This manual will next show a single <a class="reference internal" href="solution-process.html#process"><span class="std std-ref">standardized method</span></a> for applying Bayes theorem to practical problems.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="equivalent"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>In this case equivalent means if you take the <span class="math notranslate nohighlight">\(log_{10}\)</span> of each number and then round down. For example <span class="math notranslate nohighlight">\(log_{10}(124)=\)</span> <span class="pasted-text">2.09</span> <span class="math notranslate nohighlight">\(\Rightarrow\)</span> <span class="pasted-text">2</span>, <span class="math notranslate nohighlight">\(log_{10}(312)=\)</span> <span class="pasted-text">2.49</span> <span class="math notranslate nohighlight">\(\Rightarrow\)</span> <span class="pasted-text">2</span>, <span class="math notranslate nohighlight">\(log_{10}(701)=\)</span> <span class="pasted-text">2.85</span> <span class="math notranslate nohighlight">\(\Rightarrow\)</span> <span class="pasted-text">2</span>.</p>
+</dd>
+<dt class="label" id="books"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>Some good books on making ROM esitimates include: <a class="reference external" href="https://www.amazon.com/Guesstimation-Solving-Worlds-Problems-Cocktail/dp/0691129495">Guesstimation: Solving the World’s Problems on the Back of a Cocktail Napkin</a>, <a class="reference external" href="https://www.amazon.com/Guesstimation-2-0-Solving-Todays-Problems/dp/069115080X">Guesstimation 2.0: Solving Today’s Problems on the Back of a Napkin</a>, <a class="reference external" href="https://www.amazon.com/How-Much-that-Cure-Window-ebook/dp/B089LWNY5K">How Much Is that Cure in the Window?: Simple Math Solutions for Complicated Problems in Biology, Medicine, and Healthcare</a>, <a class="reference external" href="https://www.amazon.com/How-Many-Licks-Estimate-Anything/dp/0762435607">How Many Licks?: Or, How to Estimate Damn Near Anything</a></p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="motivating-example.html" title="previous page">Motivating example</a>
+    <a class='right-next' id="next-link" href="solution-process.html" title="next page">Bayes theorem solution process</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan Lowe<br/>
+        
+          <div class="extra_footer">
+            <p><i>Bayes Theorem - The Missing Manual</i> is licensed under a creative commons licence (<a href="http://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>).</p>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,1881 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Bayes Theorem - The Missing Manual</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Bayes Theorem - The Missing Manual</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="motivating-example.html">
+   Motivating example
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="math-prereq.html">
+   Mathematical prerequisites
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="solution-process.html">
+   Bayes theorem solution process
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="worked-examples.html">
+   Worked examples
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="conclusion.html">
+   Conclusion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="appendix-theory.html">
+   Appendix: Theory
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/theory-notebook.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/theory-notebook.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="simple nav section-nav flex-column">
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">beta</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Import seaborn</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># Apply the default theme</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/mnt/c/projects/Code/bayes-missing-manual/bayes-venv/lib/python3.8/site-packages/pandas/compat/__init__.py:97: UserWarning: Could not import the lzma module. Your installed Python is incomplete. Attempting to use lzma compression will result in a RuntimeError.
+  warnings.warn(msg)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="mf">1.4</span> <span class="c1"># mean</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># standard deviation</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.025</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">s</span><span class="p">),</span> <span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.975</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">s</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">s</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">y</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;norm pdf&#39;</span><span class="p">)</span>
+<span class="c1"># ax.plot(x, z, lw=0.1, alpha=0.6, label=&#39;norm pdf&#39;, marker = &#39;.&#39;,markersize=10)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Weight [lb]&#39;</span><span class="p">);</span>
+<span class="c1"># ax.set_ylabel(&#39;Probability Mass&#39;);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">get_yaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">);</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;bread-weight-pdf&#39;</span><span class="p">,</span><span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;mean-bread&quot;</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;std-bread&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_1_3.png" src="_images/theory-notebook_1_3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n1</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.025</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">s</span><span class="p">),</span> <span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.975</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">s</span><span class="p">),</span> <span class="n">n1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">s</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">y</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># ax1.plot(x, z, lw=5, alpha=0.6, label=&#39;norm pdf&#39;)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;n=</span><span class="si">{</span><span class="n">n1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Weight [lb]&#39;</span><span class="p">);</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Probability mass&#39;</span><span class="p">);</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower center&#39;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.025</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">s</span><span class="p">),</span> <span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.975</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">s</span><span class="p">),</span> <span class="n">n2</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">s</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">y</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;n=</span><span class="si">{</span><span class="n">n2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Weight [lb]&#39;</span><span class="p">);</span>
+<span class="c1"># ax.set_ylabel(&#39;Probability Mass&#39;);</span>
+<span class="c1"># ax.get_yaxis().set_visible(False);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower center&#39;</span><span class="p">)</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;pmf-sm-lg&#39;</span><span class="p">,</span><span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;n1&#39;</span><span class="p">,</span><span class="n">n1</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;n2&#39;</span><span class="p">,</span><span class="n">n2</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_2_3.png" src="_images/theory-notebook_2_3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;beta pdf&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Probability&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Probability mass&#39;</span><span class="p">);</span>
+<span class="c1"># ax.get_yaxis().set_visible(False);</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;beta-dist&#39;</span><span class="p">,</span><span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;beta-ex-a&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;beta-ex-b&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_3_3.png" src="_images/theory-notebook_3_3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">b1</span> <span class="o">=</span> <span class="mi">9</span>
+
+<span class="n">a2</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b2</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">a3</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">b3</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">a4</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b4</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">a5</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">b5</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">a6</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">b6</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">b1</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\alpha=2$, $\beta=9$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">b2</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\alpha=1$, $\beta=1$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a3</span><span class="p">,</span> <span class="n">b3</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\alpha=9$, $\beta=2$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a4</span><span class="p">,</span> <span class="n">b4</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\alpha=1$, $\beta=2$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a5</span><span class="p">,</span> <span class="n">b5</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\alpha=3$, $\beta=1$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a6</span><span class="p">,</span> <span class="n">b6</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\alpha=3$, $\beta=3$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Probability&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Probability mass&#39;</span><span class="p">);</span>
+<span class="c1"># ax.get_yaxis().set_visible(False);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;beta-dist-shapes&#39;</span><span class="p">,</span><span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_4_1.png" src="_images/theory-notebook_4_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_prior</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b_prior</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;a_prior&quot;</span><span class="p">,</span> <span class="n">a_prior</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;b_prior&quot;</span><span class="p">,</span> <span class="n">b_prior</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">a_like</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">b_like</span> <span class="o">=</span> <span class="mi">97</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;a_like&quot;</span><span class="p">,</span> <span class="n">a_like</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;b_like&quot;</span><span class="p">,</span> <span class="n">b_like</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">a_post</span> <span class="o">=</span> <span class="n">a_prior</span> <span class="o">+</span> <span class="n">a_like</span>
+<span class="n">b_post</span> <span class="o">=</span> <span class="n">b_prior</span> <span class="o">+</span> <span class="n">b_like</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;a_post&quot;</span><span class="p">,</span> <span class="n">a_post</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;b_post&quot;</span><span class="p">,</span> <span class="n">b_post</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># prior</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a_prior</span><span class="p">,</span> <span class="n">b_prior</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;prior&#39;</span><span class="p">)</span>
+
+<span class="c1"># likelihood</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a_like</span><span class="p">,</span> <span class="n">b_like</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[</span><span class="mi">1</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;likelihood&#39;</span><span class="p">)</span>
+
+<span class="c1"># posterior</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a_post</span><span class="p">,</span> <span class="n">b_post</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[</span><span class="mi">2</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;posterior&#39;</span><span class="p">)</span>
+
+<span class="c1"># all togehter</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a_prior</span><span class="p">,</span> <span class="n">b_prior</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;prior&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a_like</span><span class="p">,</span> <span class="n">b_like</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[</span><span class="mi">1</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;likelihood&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a_post</span><span class="p">,</span> <span class="n">b_post</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[</span><span class="mi">2</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;posterior&#39;</span><span class="p">)</span>
+
+<span class="c1"># all togehter, zoom on details</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a_prior</span><span class="p">,</span> <span class="n">b_prior</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;prior&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a_like</span><span class="p">,</span> <span class="n">b_like</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[</span><span class="mi">1</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;likelihood&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a_post</span><span class="p">,</span> <span class="n">b_post</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[</span><span class="mi">2</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;posterior&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f7a13b93ee0&gt;
+</pre></div>
+</div>
+<img alt="_images/theory-notebook_6_1.png" src="_images/theory-notebook_6_1.png" />
+<img alt="_images/theory-notebook_6_2.png" src="_images/theory-notebook_6_2.png" />
+<img alt="_images/theory-notebook_6_3.png" src="_images/theory-notebook_6_3.png" />
+<img alt="_images/theory-notebook_6_4.png" src="_images/theory-notebook_6_4.png" />
+<img alt="_images/theory-notebook_6_5.png" src="_images/theory-notebook_6_5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">beta_mean</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a_prior</span><span class="p">,</span> <span class="n">b_prior</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;prior&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Prior&quot;</span><span class="p">);</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Probability mass&#39;</span><span class="p">);</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Conversion rate&quot;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a_like</span><span class="p">,</span> <span class="n">b_like</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[</span><span class="mi">1</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;likelihood&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Likelihood&quot;</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Conversion rate&quot;</span><span class="p">)</span>
+
+<span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a_post</span><span class="p">,</span> <span class="n">b_post</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[</span><span class="mi">2</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;posterior&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Posterior&quot;</span><span class="p">);</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Conversion rate&quot;</span><span class="p">)</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;book-prior-like-post&#39;</span><span class="p">,</span><span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">mu_prior</span> <span class="o">=</span> <span class="n">beta_mean</span><span class="p">(</span><span class="n">a_prior</span><span class="p">,</span><span class="n">b_prior</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Prior mean: </span><span class="si">{</span><span class="n">mu_prior</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">mu_like</span> <span class="o">=</span> <span class="n">beta_mean</span><span class="p">(</span><span class="n">a_like</span><span class="p">,</span><span class="n">b_like</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Likelihood mean: </span><span class="si">{</span><span class="n">mu_like</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">mu_post</span> <span class="o">=</span> <span class="n">beta_mean</span><span class="p">(</span><span class="n">a_post</span><span class="p">,</span><span class="n">b_post</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Posterior mean: </span><span class="si">{</span><span class="n">mu_post</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;mu_prior&quot;</span><span class="p">,</span> <span class="n">mu_prior</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;mu_like&quot;</span><span class="p">,</span> <span class="n">mu_like</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;mu_post&quot;</span><span class="p">,</span> <span class="n">mu_post</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prior mean: 0.1
+Likelihood mean: 0.03
+Posterior mean: 0.03636363636363636
+</pre></div>
+</div>
+<img alt="_images/theory-notebook_8_5.png" src="_images/theory-notebook_8_5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># all togehter, zoom on details</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a_prior</span><span class="p">,</span> <span class="n">b_prior</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;prior&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a_like</span><span class="p">,</span> <span class="n">b_like</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[</span><span class="mi">1</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;likelihood&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a_post</span><span class="p">,</span> <span class="n">b_post</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[</span><span class="mi">2</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;posterior&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Conversion rate&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Probability mass&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;book-together&#39;</span><span class="p">,</span><span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_9_1.png" src="_images/theory-notebook_9_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_sexy</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b_sexy</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;a_sexy&quot;</span><span class="p">,</span> <span class="n">a_sexy</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;b_sexy&quot;</span><span class="p">,</span> <span class="n">b_sexy</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a_post</span><span class="p">,</span> <span class="n">b_post</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Variant A&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a_sexy</span><span class="p">,</span> <span class="n">b_sexy</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Variant B&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Conversion rate&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Probability mass&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;A-B-distributions&#39;</span><span class="p">,</span><span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">mu_post</span> <span class="o">=</span> <span class="n">beta_mean</span><span class="p">(</span><span class="n">a_post</span><span class="p">,</span><span class="n">b_post</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Posterior mean: </span><span class="si">{</span><span class="n">mu_post</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">mu_sexy</span> <span class="o">=</span> <span class="n">beta_mean</span><span class="p">(</span><span class="n">a_sexy</span><span class="p">,</span><span class="n">b_sexy</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sexy mean: </span><span class="si">{</span><span class="n">mu_sexy</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;mu_sexy&quot;</span><span class="p">,</span> <span class="n">mu_sexy</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">N_original</span> <span class="o">=</span> <span class="n">a_post</span> <span class="o">+</span> <span class="n">b_post</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;N_original&quot;</span><span class="p">,</span> <span class="n">N_original</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">N_sexy</span> <span class="o">=</span> <span class="n">a_sexy</span> <span class="o">+</span> <span class="n">b_sexy</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;N_sexy&quot;</span><span class="p">,</span> <span class="n">N_sexy</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">N_diff</span> <span class="o">=</span> <span class="n">N_original</span> <span class="o">-</span> <span class="n">N_sexy</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;N_diff&quot;</span><span class="p">,</span> <span class="n">N_diff</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Posterior mean: 0.03636363636363636
+Sexy mean: 0.047619047619047616
+</pre></div>
+</div>
+<img alt="_images/theory-notebook_11_6.png" src="_images/theory-notebook_11_6.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;N_samples&quot;</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">varA</span> <span class="o">=</span> <span class="n">beta</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">a_post</span><span class="p">,</span> <span class="n">b_post</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
+<span class="n">varB</span> <span class="o">=</span> <span class="n">beta</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">a_sexy</span><span class="p">,</span> <span class="n">b_sexy</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">varA</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;varB&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">varB</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a.samples&#39;</span><span class="p">,</span> <span class="s1">&#39;b.samples&#39;</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">element</span><span class="o">=</span><span class="s2">&quot;step&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Conversion rate&#39;</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">));</span>
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;A-B-Monte-Carlo&#39;</span><span class="p">,</span><span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_13_1.png" src="_images/theory-notebook_13_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ratio</span> <span class="o">=</span> <span class="n">varB</span><span class="o">/</span><span class="n">varA</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">ratio</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">element</span><span class="o">=</span><span class="s2">&quot;step&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Ratio (b.sample / a.sample)&#39;</span><span class="p">);</span>
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;A-B-Monte-Carlo-ratio&#39;</span><span class="p">,</span><span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_15_1.png" src="_images/theory-notebook_15_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b_superior</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">varB</span> <span class="o">&gt;</span> <span class="n">varA</span><span class="p">)</span><span class="o">/</span><span class="n">N</span><span class="o">*</span><span class="mi">100</span>
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;b_superior&#39;</span><span class="p">,</span><span class="n">b_superior</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;a_superior&#39;</span><span class="p">,</span><span class="mi">100</span><span class="o">-</span><span class="n">b_superior</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">b_superior</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49.59
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">element</span><span class="o">=</span><span class="s2">&quot;step&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cumulative</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stat</span><span class="o">=</span><span class="s2">&quot;density&quot;</span><span class="p">,</span><span class="n">common_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Conversion rate&#39;</span><span class="p">);</span>
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;A-B-CDF-varA-varB&#39;</span><span class="p">,</span><span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_17_1.png" src="_images/theory-notebook_17_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">ratio</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">element</span><span class="o">=</span><span class="s2">&quot;step&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cumulative</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stat</span><span class="o">=</span><span class="s2">&quot;density&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Ratio&#39;</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">));</span>
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;A-B-CDF-ratio&#39;</span><span class="p">,</span><span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_18_1.png" src="_images/theory-notebook_18_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">ratio</span><span class="p">,</span> <span class="n">element</span><span class="o">=</span><span class="s2">&quot;step&quot;</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax1</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cumulative</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stat</span><span class="o">=</span><span class="s2">&quot;density&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Ratio&#39;</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">));</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">ratio</span><span class="p">,</span> <span class="n">element</span><span class="o">=</span><span class="s2">&quot;step&quot;</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cumulative</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stat</span><span class="o">=</span><span class="s2">&quot;density&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Ratio&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/theory-notebook_19_0.png" src="_images/theory-notebook_19_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gridMethod</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">prior</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">fig_name</span><span class="p">):</span>
+    
+    <span class="n">likelihood</span> <span class="o">=</span> <span class="n">theta</span><span class="o">**</span><span class="n">H</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">theta</span><span class="p">)</span><span class="o">**</span><span class="n">T</span>
+    <span class="n">prior_like</span> <span class="o">=</span> <span class="n">prior</span> <span class="o">*</span> <span class="n">likelihood</span>
+    <span class="n">posterior</span> <span class="o">=</span> <span class="n">prior_like</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">prior_like</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;:::{list-table} Caption goes here &#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;:header-rows: 1&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;:widths: auto&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;:name: &lt;table name&gt;&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* - $</span><span class="se">\\</span><span class="s1">theta$&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">theta</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  - </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  - Sum&#39;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* - Prior&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">prior</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  - </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s1">2.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  - </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">prior</span><span class="p">)</span><span class="si">:</span><span class="s1">2.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* - Likelihood&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">likelihood</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  - </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s1">2.2e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  - </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">likelihood</span><span class="p">)</span><span class="si">:</span><span class="s1">2.2e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* - Prior x Likelihood&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">prior_like</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  - </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s1">2.1e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  - </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">prior_like</span><span class="p">)</span><span class="si">:</span><span class="s1">2.1e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;* - Posterior&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">posterior</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  - </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s1">2.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  - </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">posterior</span><span class="p">)</span><span class="si">:</span><span class="s1">2.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;:::&#39;</span><span class="p">)</span>
+    
+    <span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span><span class="n">ax2</span><span class="p">,</span><span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+    
+    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">prior</span><span class="p">,</span><span class="s1">&#39;-o&#39;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Prior&#39;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Probability mass&quot;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">likelihood</span><span class="p">,</span><span class="s1">&#39;-o&#39;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Likelihood&#39;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Probability mass&quot;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">posterior</span><span class="p">,</span><span class="s1">&#39;-o&#39;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Posterior&#39;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Probability mass&quot;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\theta$&#39;</span><span class="p">)</span>
+    
+    <span class="n">glue</span><span class="p">(</span><span class="n">fig_name</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    
+
+    <span class="k">return</span> <span class="n">posterior</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.9</span><span class="p">])</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># mean</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mf">0.15</span> <span class="c1"># standard deviation</span>
+
+<span class="c1"># x = np.linspace(norm.ppf(0.001, loc=m, scale=s), norm.ppf(0.999, loc=m, scale=s), 100)</span>
+<span class="c1"># y = norm.pdf(x, loc=m, scale=s)</span>
+<span class="c1"># z = y/sum(y)</span>
+<span class="c1"># plt.plot(x,z)</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">s</span><span class="p">)</span>
+<span class="n">prior</span> <span class="o">=</span> <span class="n">y</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">prior</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f7a139d3af0&gt;]
+</pre></div>
+</div>
+<img alt="_images/theory-notebook_21_1.png" src="_images/theory-notebook_21_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">likelihood</span> <span class="o">=</span> <span class="n">theta</span><span class="o">**</span><span class="n">H</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">theta</span><span class="p">)</span><span class="o">**</span><span class="n">T</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">likelihood</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f7a13981fd0&gt;]
+</pre></div>
+</div>
+<img alt="_images/theory-notebook_22_1.png" src="_images/theory-notebook_22_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prior_like</span> <span class="o">=</span> <span class="n">prior</span> <span class="o">*</span> <span class="n">likelihood</span>
+<span class="n">posterior</span> <span class="o">=</span> <span class="n">prior_like</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">prior_like</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">posterior</span><span class="p">,</span><span class="s1">&#39;-o&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f7a138e9340&gt;]
+</pre></div>
+</div>
+<img alt="_images/theory-notebook_23_1.png" src="_images/theory-notebook_23_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span><span class="n">ax2</span><span class="p">,</span><span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+    
+    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">prior</span><span class="p">,</span><span class="s1">&#39;-o&#39;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Prior&#39;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">likelihood</span><span class="p">,</span><span class="s1">&#39;-o&#39;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Likelihood&#39;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">posterior</span><span class="p">,</span><span class="s1">&#39;-o&#39;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Posterior&#39;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\theta$&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;$\\theta$&#39;)
+</pre></div>
+</div>
+<img alt="_images/theory-notebook_24_1.png" src="_images/theory-notebook_24_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HHHHT</span> <span class="o">=</span> <span class="mf">0.25</span><span class="o">**</span><span class="mi">4</span> <span class="o">*</span> <span class="mf">0.75</span><span class="o">**</span><span class="mi">1</span>
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;HHHHT&#39;</span><span class="p">,</span><span class="n">HHHHT</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">HHHHT</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0029296875
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">prior</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.3</span><span class="p">])</span>
+
+<span class="n">post1</span> <span class="o">=</span> <span class="n">gridMethod</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">prior</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="s1">&#39;small-theta-first&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>:::{list-table} Caption goes here 
+:header-rows: 1
+:widths: auto
+:name: &lt;table name&gt;
+
+* - $\theta$
+  - 0.25
+  - 0.5
+  - 0.75
+  - Sum
+* - Prior
+  - 0.10
+  - 0.60
+  - 0.30
+  - 1.00
+* - Likelihood
+  - 2.93e-03
+  - 3.12e-02
+  - 7.91e-02
+  - 1.13e-01
+* - Prior x Likelihood
+  - 2.9e-04
+  - 1.9e-02
+  - 2.4e-02
+  - 4.3e-02
+* - Posterior
+  - 0.01
+  - 0.44
+  - 0.55
+  - 1.00
+:::
+</pre></div>
+</div>
+<img alt="_images/theory-notebook_27_2.png" src="_images/theory-notebook_27_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">prior</span> <span class="o">=</span> <span class="n">post1</span>
+
+<span class="n">gridMethod</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">prior</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="s1">&#39;small-theta-second&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>:::{list-table} Caption goes here 
+:header-rows: 1
+:widths: auto
+:name: &lt;table name&gt;
+
+* - $\theta$
+  - 0.25
+  - 0.5
+  - 0.75
+  - Sum
+* - Prior
+  - 0.01
+  - 0.44
+  - 0.55
+  - 1.00
+* - Likelihood
+  - 2.93e-03
+  - 3.12e-02
+  - 7.91e-02
+  - 1.13e-01
+* - Prior x Likelihood
+  - 2.0e-05
+  - 1.4e-02
+  - 4.4e-02
+  - 5.8e-02
+* - Posterior
+  - 0.00
+  - 0.24
+  - 0.76
+  - 1.00
+:::
+</pre></div>
+</div>
+<img alt="_images/theory-notebook_28_2.png" src="_images/theory-notebook_28_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.9</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># mean</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mf">0.15</span> <span class="c1"># standard deviation</span>
+
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">s</span><span class="p">)</span>
+<span class="n">prior</span> <span class="o">=</span> <span class="n">y</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">post2</span> <span class="o">=</span> <span class="n">gridMethod</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">prior</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="s1">&#39;large-theta-first&#39;</span><span class="p">);</span>
+
+<span class="n">p_gt_50</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">post2</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">9</span><span class="p">])</span>
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;p_gt_50&#39;</span><span class="p">,</span><span class="n">p_gt_50</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Probability theta &gt; 0.5: </span><span class="si">{</span><span class="n">p_gt_50</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>:::{list-table} Caption goes here 
+:header-rows: 1
+:widths: auto
+:name: &lt;table name&gt;
+
+* - $\theta$
+  - 0.1
+  - 0.2
+  - 0.3
+  - 0.4
+  - 0.5
+  - 0.6
+  - 0.7
+  - 0.8
+  - 0.9
+  - Sum
+* - Prior
+  - 0.01
+  - 0.04
+  - 0.11
+  - 0.21
+  - 0.27
+  - 0.21
+  - 0.11
+  - 0.04
+  - 0.01
+  - 1.00
+* - Likelihood
+  - 9.00e-05
+  - 1.28e-03
+  - 5.67e-03
+  - 1.54e-02
+  - 3.12e-02
+  - 5.18e-02
+  - 7.20e-02
+  - 8.19e-02
+  - 6.56e-02
+  - 3.25e-01
+* - Prior x Likelihood
+  - 6.9e-07
+  - 4.6e-05
+  - 6.2e-04
+  - 3.3e-03
+  - 8.3e-03
+  - 1.1e-02
+  - 7.9e-03
+  - 3.0e-03
+  - 5.0e-04
+  - 3.5e-02
+* - Posterior
+  - 0.00
+  - 0.00
+  - 0.02
+  - 0.09
+  - 0.24
+  - 0.32
+  - 0.23
+  - 0.09
+  - 0.01
+  - 1.00
+:::
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Probability theta &gt; 0.5: 0.6461021583638344
+</pre></div>
+</div>
+<img alt="_images/theory-notebook_30_4.png" src="_images/theory-notebook_30_4.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">post2</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">9</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6461021583638344
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">prior</span> <span class="o">=</span> <span class="n">post2</span>
+
+<span class="n">post3</span> <span class="o">=</span> <span class="n">gridMethod</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">prior</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span><span class="s1">&#39;large-theta-extra&#39;</span><span class="p">);</span>
+
+<span class="n">p_gt_50_extra</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">post3</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">9</span><span class="p">])</span>
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;p_gt_50_extra&#39;</span><span class="p">,</span><span class="n">p_gt_50_extra</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Probability theta &gt; 0.5: </span><span class="si">{</span><span class="n">p_gt_50_extra</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>:::{list-table} Caption goes here 
+:header-rows: 1
+:widths: auto
+:name: &lt;table name&gt;
+
+* - $\theta$
+  - 0.1
+  - 0.2
+  - 0.3
+  - 0.4
+  - 0.5
+  - 0.6
+  - 0.7
+  - 0.8
+  - 0.9
+  - Sum
+* - Prior
+  - 0.00
+  - 0.00
+  - 0.02
+  - 0.09
+  - 0.24
+  - 0.32
+  - 0.23
+  - 0.09
+  - 0.01
+  - 1.00
+* - Likelihood
+  - 9.00e-05
+  - 1.28e-03
+  - 5.67e-03
+  - 1.54e-02
+  - 3.12e-02
+  - 5.18e-02
+  - 7.20e-02
+  - 8.19e-02
+  - 6.56e-02
+  - 3.25e-01
+* - Prior x Likelihood
+  - 1.8e-09
+  - 1.7e-06
+  - 1.0e-04
+  - 1.5e-03
+  - 7.5e-03
+  - 1.7e-02
+  - 1.6e-02
+  - 7.0e-03
+  - 9.4e-04
+  - 5.0e-02
+* - Posterior
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.03
+  - 0.15
+  - 0.33
+  - 0.33
+  - 0.14
+  - 0.02
+  - 1.00
+:::
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Probability theta &gt; 0.5: 0.8184875735348761
+</pre></div>
+</div>
+<img alt="_images/theory-notebook_32_4.png" src="_images/theory-notebook_32_4.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">9</span><span class="o">*</span><span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">9</span><span class="p">])</span>
+<span class="n">prior</span> <span class="o">=</span> <span class="n">y</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">post4</span> <span class="o">=</span> <span class="n">gridMethod</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">prior</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="s1">&#39;large-theta-uniform&#39;</span><span class="p">);</span>
+
+<span class="n">p_gt_50_uniform</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">post4</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">9</span><span class="p">])</span>
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;p_gt_50_uniform&#39;</span><span class="p">,</span><span class="n">p_gt_50_extra</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Probability theta &gt; 0.5: </span><span class="si">{</span><span class="n">p_gt_50_uniform</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>:::{list-table} Caption goes here 
+:header-rows: 1
+:widths: auto
+:name: &lt;table name&gt;
+
+* - $\theta$
+  - 0.1
+  - 0.2
+  - 0.3
+  - 0.4
+  - 0.5
+  - 0.6
+  - 0.7
+  - 0.8
+  - 0.9
+  - Sum
+* - Prior
+  - 0.11
+  - 0.11
+  - 0.11
+  - 0.11
+  - 0.11
+  - 0.11
+  - 0.11
+  - 0.11
+  - 0.11
+  - 1.00
+* - Likelihood
+  - 8.10e-09
+  - 1.64e-06
+  - 3.21e-05
+  - 2.36e-04
+  - 9.77e-04
+  - 2.69e-03
+  - 5.19e-03
+  - 6.71e-03
+  - 4.30e-03
+  - 2.01e-02
+* - Prior x Likelihood
+  - 9.0e-10
+  - 1.8e-07
+  - 3.6e-06
+  - 2.6e-05
+  - 1.1e-04
+  - 3.0e-04
+  - 5.8e-04
+  - 7.5e-04
+  - 4.8e-04
+  - 2.2e-03
+* - Posterior
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.01
+  - 0.05
+  - 0.13
+  - 0.26
+  - 0.33
+  - 0.21
+  - 1.00
+:::
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Probability theta &gt; 0.5: 0.938111272459749
+</pre></div>
+</div>
+<img alt="_images/theory-notebook_33_4.png" src="_images/theory-notebook_33_4.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># mean</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mf">0.05</span> <span class="c1"># standard deviation</span>
+
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">s</span><span class="p">)</span>
+<span class="n">prior</span> <span class="o">=</span> <span class="n">y</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">gridMethod</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">prior</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="s1">&#39;large-theta-skeptical&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>:::{list-table} Caption goes here 
+:header-rows: 1
+:widths: auto
+:name: &lt;table name&gt;
+
+* - $\theta$
+  - 0.1
+  - 0.2
+  - 0.3
+  - 0.4
+  - 0.5
+  - 0.6
+  - 0.7
+  - 0.8
+  - 0.9
+  - Sum
+* - Prior
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.11
+  - 0.79
+  - 0.11
+  - 0.00
+  - 0.00
+  - 0.00
+  - 1.00
+* - Likelihood
+  - 8.10e-09
+  - 1.64e-06
+  - 3.21e-05
+  - 2.36e-04
+  - 9.77e-04
+  - 2.69e-03
+  - 5.19e-03
+  - 6.71e-03
+  - 4.30e-03
+  - 2.01e-02
+* - Prior x Likelihood
+  - 8.1e-23
+  - 2.0e-14
+  - 8.5e-09
+  - 2.5e-05
+  - 7.7e-04
+  - 2.9e-04
+  - 1.4e-06
+  - 8.0e-11
+  - 4.3e-17
+  - 1.1e-03
+* - Posterior
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.02
+  - 0.71
+  - 0.26
+  - 0.00
+  - 0.00
+  - 0.00
+  - 1.00
+:::
+</pre></div>
+</div>
+<img alt="_images/theory-notebook_34_2.png" src="_images/theory-notebook_34_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">H</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># mean</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mf">0.15</span> <span class="c1"># standard deviation</span>
+
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">m</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">s</span><span class="p">)</span>
+<span class="n">prior</span> <span class="o">=</span> <span class="n">y</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">gridMethod</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">prior</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="s1">&#39;very-large-theta-extra&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>:::{list-table} Caption goes here 
+:header-rows: 1
+:widths: auto
+:name: &lt;table name&gt;
+
+* - $\theta$
+  - 0.0
+  - 0.010101010101010102
+  - 0.020202020202020204
+  - 0.030303030303030304
+  - 0.04040404040404041
+  - 0.05050505050505051
+  - 0.06060606060606061
+  - 0.07070707070707072
+  - 0.08080808080808081
+  - 0.09090909090909091
+  - 0.10101010101010102
+  - 0.11111111111111112
+  - 0.12121212121212122
+  - 0.13131313131313133
+  - 0.14141414141414144
+  - 0.15151515151515152
+  - 0.16161616161616163
+  - 0.17171717171717174
+  - 0.18181818181818182
+  - 0.19191919191919193
+  - 0.20202020202020204
+  - 0.21212121212121213
+  - 0.22222222222222224
+  - 0.23232323232323235
+  - 0.24242424242424243
+  - 0.25252525252525254
+  - 0.26262626262626265
+  - 0.27272727272727276
+  - 0.2828282828282829
+  - 0.29292929292929293
+  - 0.30303030303030304
+  - 0.31313131313131315
+  - 0.32323232323232326
+  - 0.33333333333333337
+  - 0.3434343434343435
+  - 0.3535353535353536
+  - 0.36363636363636365
+  - 0.37373737373737376
+  - 0.38383838383838387
+  - 0.393939393939394
+  - 0.4040404040404041
+  - 0.4141414141414142
+  - 0.42424242424242425
+  - 0.43434343434343436
+  - 0.4444444444444445
+  - 0.4545454545454546
+  - 0.4646464646464647
+  - 0.4747474747474748
+  - 0.48484848484848486
+  - 0.494949494949495
+  - 0.5050505050505051
+  - 0.5151515151515152
+  - 0.5252525252525253
+  - 0.5353535353535354
+  - 0.5454545454545455
+  - 0.5555555555555556
+  - 0.5656565656565657
+  - 0.5757575757575758
+  - 0.5858585858585859
+  - 0.595959595959596
+  - 0.6060606060606061
+  - 0.6161616161616162
+  - 0.6262626262626263
+  - 0.6363636363636365
+  - 0.6464646464646465
+  - 0.6565656565656566
+  - 0.6666666666666667
+  - 0.6767676767676768
+  - 0.686868686868687
+  - 0.696969696969697
+  - 0.7070707070707072
+  - 0.7171717171717172
+  - 0.7272727272727273
+  - 0.7373737373737375
+  - 0.7474747474747475
+  - 0.7575757575757577
+  - 0.7676767676767677
+  - 0.7777777777777778
+  - 0.787878787878788
+  - 0.797979797979798
+  - 0.8080808080808082
+  - 0.8181818181818182
+  - 0.8282828282828284
+  - 0.8383838383838385
+  - 0.8484848484848485
+  - 0.8585858585858587
+  - 0.8686868686868687
+  - 0.8787878787878789
+  - 0.888888888888889
+  - 0.8989898989898991
+  - 0.9090909090909092
+  - 0.9191919191919192
+  - 0.9292929292929294
+  - 0.9393939393939394
+  - 0.9494949494949496
+  - 0.9595959595959597
+  - 0.9696969696969697
+  - 0.9797979797979799
+  - 0.98989898989899
+  - 1.0
+  - Sum
+* - Prior
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.03
+  - 0.03
+  - 0.03
+  - 0.03
+  - 0.03
+  - 0.03
+  - 0.03
+  - 0.03
+  - 0.03
+  - 0.03
+  - 0.03
+  - 0.03
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 1.00
+* - Likelihood
+  - 0.00e+00
+  - 1.06e-16
+  - 2.66e-14
+  - 6.69e-13
+  - 6.54e-12
+  - 3.82e-11
+  - 1.61e-10
+  - 5.40e-10
+  - 1.54e-09
+  - 3.86e-09
+  - 8.76e-09
+  - 1.84e-08
+  - 3.60e-08
+  - 6.67e-08
+  - 1.18e-07
+  - 2.00e-07
+  - 3.27e-07
+  - 5.19e-07
+  - 7.99e-07
+  - 1.20e-06
+  - 1.77e-06
+  - 2.54e-06
+  - 3.60e-06
+  - 5.00e-06
+  - 6.85e-06
+  - 9.24e-06
+  - 1.23e-05
+  - 1.62e-05
+  - 2.11e-05
+  - 2.71e-05
+  - 3.45e-05
+  - 4.36e-05
+  - 5.46e-05
+  - 6.77e-05
+  - 8.34e-05
+  - 1.02e-04
+  - 1.24e-04
+  - 1.49e-04
+  - 1.79e-04
+  - 2.13e-04
+  - 2.52e-04
+  - 2.97e-04
+  - 3.48e-04
+  - 4.05e-04
+  - 4.70e-04
+  - 5.42e-04
+  - 6.23e-04
+  - 7.12e-04
+  - 8.10e-04
+  - 9.19e-04
+  - 1.04e-03
+  - 1.17e-03
+  - 1.31e-03
+  - 1.46e-03
+  - 1.62e-03
+  - 1.79e-03
+  - 1.98e-03
+  - 2.17e-03
+  - 2.38e-03
+  - 2.60e-03
+  - 2.82e-03
+  - 3.06e-03
+  - 3.31e-03
+  - 3.56e-03
+  - 3.81e-03
+  - 4.07e-03
+  - 4.34e-03
+  - 4.60e-03
+  - 4.86e-03
+  - 5.11e-03
+  - 5.36e-03
+  - 5.60e-03
+  - 5.82e-03
+  - 6.03e-03
+  - 6.21e-03
+  - 6.38e-03
+  - 6.51e-03
+  - 6.61e-03
+  - 6.68e-03
+  - 6.71e-03
+  - 6.70e-03
+  - 6.64e-03
+  - 6.53e-03
+  - 6.38e-03
+  - 6.17e-03
+  - 5.91e-03
+  - 5.59e-03
+  - 5.23e-03
+  - 4.81e-03
+  - 4.35e-03
+  - 3.86e-03
+  - 3.33e-03
+  - 2.78e-03
+  - 2.23e-03
+  - 1.69e-03
+  - 1.17e-03
+  - 7.18e-04
+  - 3.47e-04
+  - 9.41e-05
+  - 0.00e+00
+  - 2.00e-01
+* - Prior x Likelihood
+  - 0.0e+00
+  - 1.4e-20
+  - 4.3e-18
+  - 1.3e-16
+  - 1.6e-15
+  - 1.2e-14
+  - 5.9e-14
+  - 2.4e-13
+  - 8.3e-13
+  - 2.5e-12
+  - 6.8e-12
+  - 1.7e-11
+  - 4.0e-11
+  - 8.7e-11
+  - 1.8e-10
+  - 3.6e-10
+  - 6.9e-10
+  - 1.3e-09
+  - 2.3e-09
+  - 3.9e-09
+  - 6.6e-09
+  - 1.1e-08
+  - 1.7e-08
+  - 2.7e-08
+  - 4.2e-08
+  - 6.4e-08
+  - 9.5e-08
+  - 1.4e-07
+  - 2.0e-07
+  - 2.8e-07
+  - 3.9e-07
+  - 5.4e-07
+  - 7.3e-07
+  - 9.8e-07
+  - 1.3e-06
+  - 1.7e-06
+  - 2.2e-06
+  - 2.8e-06
+  - 3.6e-06
+  - 4.5e-06
+  - 5.5e-06
+  - 6.8e-06
+  - 8.2e-06
+  - 9.9e-06
+  - 1.2e-05
+  - 1.4e-05
+  - 1.6e-05
+  - 1.9e-05
+  - 2.2e-05
+  - 2.5e-05
+  - 2.8e-05
+  - 3.1e-05
+  - 3.5e-05
+  - 3.8e-05
+  - 4.2e-05
+  - 4.5e-05
+  - 4.8e-05
+  - 5.1e-05
+  - 5.4e-05
+  - 5.7e-05
+  - 5.9e-05
+  - 6.1e-05
+  - 6.2e-05
+  - 6.3e-05
+  - 6.4e-05
+  - 6.4e-05
+  - 6.3e-05
+  - 6.2e-05
+  - 6.0e-05
+  - 5.8e-05
+  - 5.6e-05
+  - 5.3e-05
+  - 5.0e-05
+  - 4.6e-05
+  - 4.3e-05
+  - 3.9e-05
+  - 3.6e-05
+  - 3.2e-05
+  - 2.8e-05
+  - 2.5e-05
+  - 2.2e-05
+  - 1.9e-05
+  - 1.6e-05
+  - 1.3e-05
+  - 1.1e-05
+  - 9.1e-06
+  - 7.3e-06
+  - 5.8e-06
+  - 4.5e-06
+  - 3.4e-06
+  - 2.5e-06
+  - 1.8e-06
+  - 1.2e-06
+  - 8.2e-07
+  - 5.1e-07
+  - 2.9e-07
+  - 1.4e-07
+  - 5.6e-08
+  - 1.2e-08
+  - 0.0e+00
+  - 1.7e-03
+* - Posterior
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.03
+  - 0.03
+  - 0.03
+  - 0.03
+  - 0.03
+  - 0.03
+  - 0.04
+  - 0.04
+  - 0.04
+  - 0.04
+  - 0.04
+  - 0.04
+  - 0.04
+  - 0.03
+  - 0.03
+  - 0.03
+  - 0.03
+  - 0.03
+  - 0.03
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 0.00
+  - 1.00
+:::
+</pre></div>
+</div>
+<img alt="_images/theory-notebook_35_2.png" src="_images/theory-notebook_35_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate Favicon</span>
+
+<span class="c1"># fig, ax = plt.subplots(1,1,figsize=(4,4))</span>
+<span class="c1"># sns.histplot(df, ax=ax, element=&quot;step&quot;).set(xlim=(0,0.1));</span>
+<span class="c1"># ax.get_yaxis().set_visible(False);</span>
+<span class="c1"># ax.get_xaxis().set_visible(False);</span>
+<span class="c1"># ax.get_legend().remove()</span>
+<span class="c1"># fig.savefig(&#39;plot.png&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan Lowe<br/>
+        
+          <div class="extra_footer">
+            <p><i>Bayes Theorem - The Missing Manual</i> is licensed under a creative commons licence (<a href="http://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>).</p>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
