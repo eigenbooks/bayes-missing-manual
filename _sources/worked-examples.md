@@ -1,3 +1,4 @@
+<!-- Bayes Theorem - The Missing Manual is licensed under a creative commons licence (CC BY-NC-SA 4.0). -->
 (examples)=
 # Worked examples 
 This section contains a number of examples, with their solutions, and commentary about the problem. The problems are listed in alphabetical order below. There are multiple [themes](themes) worth highlighting to focus your exploration of Bayes theorem for practical real life problems.

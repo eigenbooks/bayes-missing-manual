@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduction &#8212; Bayes Theorem - The Missing Manual</title>
+    <title>Bayes Theorem - The Missing Manual &#8212; Bayes Theorem - The Missing Manual</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -43,6 +43,40 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "eigenbooks/bayes-missing-manual");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -54,6 +88,7 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://bayesmanual.com/introduction.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -62,6 +97,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
 
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://bayesmanual.com/introduction.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Bayes Theorem - The Missing Manual" />
+<meta property="og:description" content="Bayes Theorem - The Missing Manual  Welcome to the missing manual for Bayes theorem users. This manual is designed to provide documentation for people who use -" />
+
+
+<meta name="twitter:card" content="summary" />
 
 
   </head>
@@ -88,7 +132,7 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="reference internal" href="#">
-   Introduction
+   Bayes Theorem - The Missing Manual
   </a>
  </li>
 </ul>
@@ -169,6 +213,22 @@
 </div>
 
         <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/eigenbooks/bayes-missing-manual"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/eigenbooks/bayes-missing-manual/issues/new?title=Issue%20on%20page%20%2Fintroduction.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
 
 
         <!-- Full screen (wrap in <a> to have style consistency -->
@@ -257,9 +317,10 @@
         
               <div>
                 
-  <div class="section" id="introduction">
-<span id="intro"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>Welcome to the missing manual for Bayes theorem users. This manual is designed to provide documentation for people who use - or want to use - Bayes theorem on a day-to-day basis. It covers a small subset of Bayesian statistics that the author feels are disproportionately helpful for solving real world problems quickly with mental math in your head. This manual only covers the absolute simplest formulation of Bayes theorem and then uses a large number of examples to help solidify your understanding and intuition of the topic. <a class="reference internal" href="#additional-refs"><span class="std std-ref">References</span></a> to more sophisticated and rigorous textbooks are available for readers who have other use cases or need more details.</p>
+  <!-- Bayes Theorem - The Missing Manual is licensed under a creative commons licence (CC BY-NC-SA 4.0). -->
+<div class="section" id="bayes-theorem-the-missing-manual">
+<span id="intro"></span><h1>Bayes Theorem - The Missing Manual<a class="headerlink" href="#bayes-theorem-the-missing-manual" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to the missing manual for Bayes theorem users. This manual is designed to provide documentation for people who use - or want to use - Bayes theorem on a day-to-day basis. It covers a small subset of Bayesian statistics that the author feels are disproportionately helpful for solving real world problems quickly with mental math in your head. This manual only covers the absolute <a class="reference internal" href="solution-process.html#process"><span class="std std-ref">simplest formulation</span></a> of Bayes theorem and then uses a large number of <a class="reference internal" href="worked-examples.html#examples"><span class="std std-ref">examples</span></a> to help solidify your understanding and intuition of the topic. <a class="reference internal" href="#additional-refs"><span class="std std-ref">References</span></a> to more sophisticated and rigorous textbooks are available for readers who have other use cases or need more details.</p>
 <div class="section" id="who-this-manual-is-for">
 <h2>Who this manual is for<a class="headerlink" href="#who-this-manual-is-for" title="Permalink to this headline">¶</a></h2>
 <p>This manual is intended for use by:</p>
@@ -304,7 +365,7 @@
 <span id="parameter-estimation"></span><h3>Parameter estimation (not covered in this manual)<a class="headerlink" href="#parameter-estimation-not-covered-in-this-manual" title="Permalink to this headline">¶</a></h3>
 <p>Parameter estimation is the other major use for Bayes theorem and is not covered in this manual in any significant detail <a class="footnote-reference brackets" href="#detail" id="id1">1</a>. Parameter estimation is a very cool technique, but I don’t know a way of easily applying the methods without writing at least a little computer code.</p>
 <p>Examples of parameter estimation might include making measurements with uncertainty and then reasoning about the true state of the measured object. The U.S. Coast Guard uses a variation of parameter estimation to <a class="reference external" href="https://www.nytimes.com/2014/01/05/magazine/a-speck-in-the-sea.html">search for Sailors</a> that fall overboard into the sea. A similar technique is used to <a class="reference external" href="https://www.nps.edu/documents/103424533/106018074/Bayes+Search+for+Missing+Aircraft+NPS+20+Apr+2017.pdf/051a76bc-18cc-47a7-b8b8-52d92d618dfe">search for airplanes</a> that crash into the ocean. A classic example of parameter estimation (and other complex calculations) is intercepting a ballistic missile. Imagine that a rogue state fires a ballistic nuclear missile in your general direction. The weapon is of unknown manufacturer and is going Mach 3 in the upper atmosphere. Radar measurements for objects at high altitudes and fast speeds are far from perfect. Use Bayes theorem(!) to identify the most likely position of the weapon based on the noisy radar measurements and shoot an interceptor missile to down the rogue states weapon.</p>
-<p>Another less dramatic example is estimating the probability of a probability. Say you are playing a game of chance with your friend. You each put a dollar down every time you flip a coin. If the coin comes up heads he wins the money. If the coin comes up tails you win the money. You flip ten times and observe 8 heads and 2 tails. So far you have lost $6. You begin to wonder if you are flipping a fair coin. Bayes theorem and parameter estimation would help you reason about the fairness of your coin. In theory the probability of a fair coin landing heads would be 0.5, and the probability of landing tails would be an equal 0.5. The data you have collected so far showed heads occurring in 80% of the tosses! You want to know the probability that the probability of the coin landing heads is 0.5. With parameter estimation you could develop a probability distribution describing your belief about the fairness of the coin and make statements about confidence intervals - all very useful, but relatively <a class="reference internal" href="appendix-theory.html#grid"><span class="std std-ref">more complex calculations</span></a> that are mostly beyond the scope of this manual. If you have a parameter estimation problem check out the <a class="reference internal" href="#additional-refs"><span class="std std-ref">references</span></a> for some books that are more general than this manual.</p>
+<p>Another less dramatic example is estimating the probability of a probability. Say you are playing a game of chance with your friend. You each put a dollar down every time you flip a coin. If the coin comes up heads he wins the money. If the coin comes up tails you win the money. You flip ten times and observe 8 heads and 2 tails. So far you have lost $6. You begin to wonder if you are flipping a fair coin. Bayes theorem and parameter estimation would help you reason about the fairness of your coin. The data you have collected so far showed heads occurring in 80% of the tosses. You want to know the <em>probability that the probability</em> of the coin landing heads is 0.5 (e.g. a fair coin). With parameter estimation you could develop a probability distribution describing your belief about the fairness of the coin and make statements about confidence intervals - all very useful, but relatively <a class="reference internal" href="appendix-theory.html#grid"><span class="std std-ref">more complex calculations</span></a> that are mostly beyond the scope of this manual. If you have a parameter estimation problem check out the <a class="reference internal" href="#additional-refs"><span class="std std-ref">references</span></a> for some books that are more general than this manual.</p>
 </div>
 <div class="section" id="real-world-problems">
 <span id="id2"></span><h3>Real world problems<a class="headerlink" href="#real-world-problems" title="Permalink to this headline">¶</a></h3>
@@ -319,7 +380,7 @@
 </div>
 <div class="section" id="what-features-are-not-supported-by-this-manual">
 <h2>What features are not supported by this manual<a class="headerlink" href="#what-features-are-not-supported-by-this-manual" title="Permalink to this headline">¶</a></h2>
-<p>This manual makes no attempt to cover the wide array of topics in Bayesian statistics. This manual will build intuition around Bayes theorem, but if your problem involves any aspect of parameter estimation, numerical methods (Markov chain monte carlo, grid methods), probability distributions (and their functions like the bernoulli/beta/normal distributions <a class="footnote-reference brackets" href="#distributions" id="id3">2</a>), cumulative distributions, confidence intervals, regions of practical interest, maximum likelihoods, conjugate priors, combinatorics/permutations, calculus, or any other fancy pants concepts you will not find them in this manual.</p>
+<p>This manual makes no attempt to cover the wide array of topics in Bayesian statistics. This manual will build intuition around Bayes theorem, but if your problem involves any aspect of parameter estimation, numerical methods (Markov chain monte carlo, grid methods), probability distributions (and their functions like the bernoulli/beta/normal distributions <a class="footnote-reference brackets" href="#distributions" id="id3">2</a>), cumulative distributions, confidence intervals, regions of practical interest, maximum likelihoods, conjugate priors, combinatorics/permutations, calculus, or any other fancy pants concepts you will not find much about them in this manual.</p>
 </div>
 <div class="section" id="additional-references">
 <span id="additional-refs"></span><h2>Additional references<a class="headerlink" href="#additional-references" title="Permalink to this headline">¶</a></h2>
@@ -331,7 +392,7 @@
 <ul class="simple">
 <li><p><a class="reference external" href="https://mbmlbook.com">Model Based Machine Learning (Bishop et. al., mbmlbook.com) </a> - is a free online book. Christopher Bishop is very well known in his field for authoring, <a class="reference external" href="https://www.amazon.com/Pattern-Recognition-Learning-Information-Statistics/dp/0387310738">Pattern Recognition and Machine Learning</a>. The first chapter of MBML has a great introduction to probabilistic modeling that requires no machine learning experience. The first chapter of MBML also includes the wonderful Mr. Black murder mystery narrative.</p></li>
 <li><p><a class="reference external" href="https://docs.pymc.io/learn.html">pyMC</a> - is an open source Python library that provides a clean and simple interface to many complex computational tools that are useful for Bayesian statistics.</p></li>
-<li><p><a class="reference external" href="https://arbital.com">Arbital</a> - is an online resource that covers much of the theoretical content described in this manual in one form or another. Specifically the odds form of Bayes theorem. From a user experience perspective (as of late 2020) the site is slow, and hard - in my opinion - to locate information on (its not optimized for Google either). User experience aside, the content it self is best in class.</p></li>
+<li><p><a class="reference external" href="https://arbital.com">Arbital</a> - is an online resource that covers much of the theoretical content described in this manual in one form or another. Specifically the odds form of Bayes theorem. From a user experience perspective (as of late 2020) the site is slow, and hard - in my opinion - to locate information on. It is also not optimized for Google either. User experience aside, the content it self is best in class.</p></li>
 <li><p><a class="reference external" href="https://www.lesswrong.com">Lesswrong</a> - is an online community by some of the same team as <a class="reference external" href="https://arbital.com">Arbital</a>. They are a “community dedicated to improving our reasoning and decision-making. We seek to hold true beliefs and to be effective at accomplishing our goals. More generally, we work to develop and practice the art of human rationality.” In particular see <a class="reference external" href="https://www.lesswrong.com/rationality/preface">Rationality: A-Z</a>, or the same content in a fun narrative: <a class="reference external" href="https://www.lesswrong.com/hpmor">Harry Potter and the Methods of Rationality</a>, to get examples of how Bayes theorem can be applied in real life situations.</p></li>
 </ul>
 <p>Other notable resources include <a class="reference external" href="https://www.amazon.com/Bayes-Rule-Tutorial-Introduction-Bayesian/dp/0956372848">Bayes’ Rule - A tutorial introduction to Bayesian Analysis (Stone)</a>, <a class="reference external" href="https://www.amazon.com/Bayesian-Analysis-Chapman-Statistical-Science/dp/1439840954">Bayesian Data Analysis (Gelman, et. al.)</a>, <a class="reference external" href="https://www.amazon.com/Students-Guide-Bayesian-Statistics/dp/1473916364">A Student’s Guide to Bayesian Statistics (Lambert)</a>, <a class="reference external" href="https://www.amazon.com/Cartoon-Guide-Statistics-Larry-Gonick/dp/0062731025">The Cartoon Guide to Statistics (Gonnick, et. al.)</a>, <a class="reference external" href="https://www.amazon.com/Signal-Noise-Many-Predictions-Fail-but/dp/0143125087">The Signal and the Noise (Silver)</a>.</p>
@@ -345,7 +406,7 @@
 <li><p>Understand how compound interest works</p></li>
 <li><p>Think with probabilities</p></li>
 </ol>
-<p>First on the list is making <a class="reference internal" href="math-prereq.html#rom"><span class="std std-ref">rough order of magnitude estimates</span></a>. An order of magnitude is a multiple of 10. So an order of magnitude error is when you are wrong by a factor of 10. For example if you think something will cost you $100 per month and it turns out to cost $1,000 per month! Order of magnitude errors can ruin your life and they are surprisingly easy to estimate. For example take a crazy question, how much does a duck weigh? Certainly more than 0.1 lb and less than 10 lb. A duck probably weighs on the order of 1 lb…According to Google a Mallard duck weighs 1.6 – 3.5 lbs, close enough for a rough estimate!</p>
+<p>First on the list is making <a class="reference internal" href="math-prereq.html#rom"><span class="std std-ref">rough order of magnitude estimates</span></a>. An order of magnitude is a multiple of 10. So an order of magnitude error is when you are wrong by a factor of 10. For example if you think something will cost you $100 per month and it turns out to cost $1,000 per month! Order of magnitude errors can ruin your life and yet are surprisingly easy to estimate. For example take a crazy question (that wont ruin your life), how much does a duck weigh? Certainly more than 0.1 lb and less than 10 lb. A duck probably weighs on the order of 1 lb…According to Google a Mallard duck weighs 1.6 – 3.5 lbs, close enough for a rough estimate!</p>
 <p>Second on the list is compound interest. It is great when you earn interest, but horrible when you have to pay interest. Failing to understand compound interest can again ruin your life - think crushing student loan debt and not being able to retire when you body starts to give out on you.</p>
 <p>Lastly is thinking with probabilities. Life is uncertain. Sometimes things work out in your favor, sometimes they don’t. If you are ignorant of probabilities you might unwittingly make a big bet on a single event that has a low probability of occurring without realizing your risk - again possibly ruining your life. If instead you can embrace probabilities you can make more frequent but smaller bets without bankrupting yourself until you find a winning strategy. This manual attempts to make thinking with probabilities easy.</p>
 </div>
@@ -415,7 +476,7 @@
           By Ryan Lowe<br/>
         
           <div class="extra_footer">
-            <p><i>Bayes Theorem - The Missing Manual</i> is licensed under a creative commons licence (<a href="http://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>).</p>
+            <p><i>Bayes Theorem - The Missing Manual</i> is licensed under a creative commons licence (<a href="http://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>)</p>
           </div>
       </p>
     </div>

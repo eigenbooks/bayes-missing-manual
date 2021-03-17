@@ -1,3 +1,4 @@
+<!-- Bayes Theorem - The Missing Manual is licensed under a creative commons licence (CC BY-NC-SA 4.0). -->
 (process)=
 # Bayes theorem solution process
 
