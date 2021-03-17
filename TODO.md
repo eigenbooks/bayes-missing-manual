@@ -36,9 +36,10 @@
 - [later] [Kindle Digital Publishing Account](https://kdp.amazon.com)
 - [later] Amazon referal program for links to books
 - [x] Verify blue vine account
-- [ ] Purchase domain name
+- [X] Purchase domain name
 - [x] Setup AWS account
-- [ ] Setup static hosting on s3
+- [ ] Set DNS refresh to be slower to possibly save money
+- [X] Setup static hosting on s3 (trying github first)
 - [ ] Publish a book.
 - [ ] request book to be added to jupyter-book site as an example
 - [-] ...
