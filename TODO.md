@@ -17,7 +17,7 @@
 - [x] Favicon (generate from the A/B test monte carlo simulation, then use https://realfavicongenerator.net/)
 - [x] Check all links
 - [x] Scrub the text to make sure there are as many cross references as possible, and that they all work 
-- [later] Sitemap.xml and robots.txt [sitemap generator](https://timestampgenerator.com/xml-sitemap-from-list), [sitemap validator](https://www.xml-sitemaps.com/validate-xml-sitemap.html), [crawler simulator](https://www.xml-sitemaps.com/se-bot-simulator.html)
+- [] Sitemap.xml and robots.txt [sitemap generator](https://timestampgenerator.com/xml-sitemap-from-list), [sitemap validator](https://www.xml-sitemaps.com/validate-xml-sitemap.html), [crawler simulator](https://www.xml-sitemaps.com/se-bot-simulator.html)
 - [] Update meta data on each page??
 - [later] Jacobs example from the paper he sent me
 - [x] Add more references, including links to PDFs when chapter previews are available
@@ -34,7 +34,6 @@
   - Register for taxes
   - Bank account?
 - [later] [Kindle Digital Publishing Account](https://kdp.amazon.com)
-- [later] Amazon referal program for links to books
 - [x] Verify blue vine account
 - [X] Purchase domain name
 - [x] Setup AWS account
