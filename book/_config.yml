@@ -39,7 +39,8 @@ notebook_interface            : "notebook"
 # Launch button settings
 repository:
   url                         : https://github.com/eigenbooks/bayes-missing-manual
-#   path_to_book                : "book"
+  path_to_book                : "book"
+  branch: main  # An optional branch, defaults to `master`
 
 # # binder:
 # #   binderhub_url               : "https://mybinder.org"

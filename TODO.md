@@ -19,10 +19,18 @@
 - [x] Scrub the text to make sure there are as many cross references as possible, and that they all work 
 - [x] Sitemap.xml and robots.txt [sitemap generator](https://timestampgenerator.com/xml-sitemap-from-list), [sitemap validator](https://www.xml-sitemaps.com/validate-xml-sitemap.html), [crawler simulator](https://www.xml-sitemaps.com/se-bot-simulator.html)
 - [x] Upload sitemap to google search console
-- [x] [Audit SEO](https://www.seoptimer.com/)
-- [] Update meta tags on each page??
+- [] [Audit SEO](https://www.seoptimer.com/)
+- [] Eliminate redirect
+  - https://moz.com/blog/the-ultimate-guide-to-seo-meta-tags
+  - https://developers.google.com/search/docs/advanced/crawling/special-tags?hl=en&visit_id=637516366145342274-413289261&rd=1
+- Google analytics
+- [ ] Schema.org Structured Data
+  - https://developers.google.com/search/docs/guides/prototype
+  - https://search.google.com/test/rich-results
+- [x] Update meta tags on each page??
   - https://github.com/executablebooks/jupyter-book/issues/879
   - https://myst-parser.readthedocs.io/en/latest/using/syntax.html#setting-html-metadata
+- [x] Audit meta tags
 - [later] Jacobs example from the paper he sent me
 - [x] Add more references, including links to PDFs when chapter previews are available
 - [-] Should there be a section on gambling?
