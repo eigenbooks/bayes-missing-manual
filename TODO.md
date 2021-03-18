@@ -17,13 +17,17 @@
 - [x] Favicon (generate from the A/B test monte carlo simulation, then use https://realfavicongenerator.net/)
 - [x] Check all links
 - [x] Scrub the text to make sure there are as many cross references as possible, and that they all work 
-- [] Sitemap.xml and robots.txt [sitemap generator](https://timestampgenerator.com/xml-sitemap-from-list), [sitemap validator](https://www.xml-sitemaps.com/validate-xml-sitemap.html), [crawler simulator](https://www.xml-sitemaps.com/se-bot-simulator.html)
-- [] Update meta data on each page??
+- [x] Sitemap.xml and robots.txt [sitemap generator](https://timestampgenerator.com/xml-sitemap-from-list), [sitemap validator](https://www.xml-sitemaps.com/validate-xml-sitemap.html), [crawler simulator](https://www.xml-sitemaps.com/se-bot-simulator.html)
+- [x] Upload sitemap to google search console
+- [x] [Audit SEO](https://www.seoptimer.com/)
+- [] Update meta tags on each page??
+  - https://github.com/executablebooks/jupyter-book/issues/879
+  - https://myst-parser.readthedocs.io/en/latest/using/syntax.html#setting-html-metadata
 - [later] Jacobs example from the paper he sent me
 - [x] Add more references, including links to PDFs when chapter previews are available
 - [-] Should there be a section on gambling?
 - [-] Should there be a visual introduction like [Dan Roam's salesforce talk describe anything in 5 images](https://www.salesforce.com/video/3620187/)? I was thinking of using the four candles example.
-- [later] Add amazon affiliate links for references to books
+- [later] Add amazon affiliate links for references to books - need at least some visitors to get approved
 - [x] Check that all the links work
 - [later] "This page uses Google Analytics to collect statistics. You can disable it by blocking the JavaScript coming from www.google-analytics.com. "
 - [x] Fix "The real introduction" section title and remove todo list
@@ -38,6 +42,9 @@
 - [X] Purchase domain name
 - [x] Setup AWS account
 - [ ] Set DNS refresh to be slower to possibly save money
+- [ ] Configure hypothesis
+- [ ] Lighthouse run
+- [ ] SEO audit
 - [X] Setup static hosting on s3 (trying github first)
 - [ ] Publish a book.
 - [ ] request book to be added to jupyter-book site as an example

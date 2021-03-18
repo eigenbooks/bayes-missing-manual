@@ -17,7 +17,7 @@ execute:
 # HTML-specific settings
 html:
   home_page_in_navbar       : true
-  # use_edit_page_button      : false # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
+  use_edit_page_button      : true # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
   use_repository_button     : true  # Whether to add a link to your repository button
   use_issues_button         : true  # Whether to add an "open an issue" button
   extra_navbar              : "" #Powered by <a href="https://jupyterbook.org">Jupyter Book</a>  # Will be displayed underneath the left navbar.
@@ -74,12 +74,32 @@ parse:
 #######################################################################################
 # Spinx configuration
 sphinx:
+  extra_extensions:
+  - sphinxext.opengraph
   config:
     language: en # assists screen readers
     html_extra_path: ['assets']
     html_show_copyright: false  
+    myst_html_meta: {
+      "title": "Bayes Theorem - The Missing Manual",
+      "description lang=en": "A manual for using Bayes theorem to think with probabilities in everyday life",
+      "keywords": "Bayes, theorem, bayes theorem, odds, example, practical",
+      "property=og:locale":  "en_US",}
+    ogp_site_url: "https://bayesmanual.com"
+    ogp_image: "https://bayesmanual.com/plot.png"
+    ogp_custom_meta_tags : [
+      '<meta property="twitter:card" content="summary_large_image">',
+      '<meta property="twitter:url" content="https://bayesmanual.com">',
+      '<meta property="twitter:title" content="Bayes Theorem - The Missing Manual">',
+      '<meta property="twitter:description" content="A manual for using Bayes theorem to think with probabilities in everyday life">',
+      '<meta property="twitter:image" content="https://bayesmanual.com/plot.png">',
+      ]
+
+# 
+#######################################################################################
+# MyST configuration
 
 #######################################################################################
 # Bibliography
 # bibtex_bibfiles:
-#    - references.bib
+#    - references.bib 
