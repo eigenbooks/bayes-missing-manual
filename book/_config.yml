@@ -8,6 +8,8 @@ author: Ryan Lowe    # The author of the book
 description: >-
   A manual for using Bayes theorem to think with probabilities in everyday life.
 
+exclude_patterns: [_build, Thumbs.db, .DS_Store, ".ipynb_checkpoints"]
+
 #######################################################################################
 # Execution settings
 execute:
@@ -26,7 +28,7 @@ html:
   baseurl                   : https://bayesmanual.com  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
   favicon                   : img/favicon.ico  # A path to a favicon image
   comments:
-    # hypothesis              : true
+    hypothesis              : true
     utterances:
       repo: "eigenbooks/bayes-missing-manual"
 
@@ -98,10 +100,6 @@ sphinx:
       gtag('js', new Date());gtag('config', 'G-KSWG418LQL');
       </script>",
       ]
-
-# 
-#######################################################################################
-# MyST configuration
 
 #######################################################################################
 # Bibliography
