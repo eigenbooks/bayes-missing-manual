@@ -20,10 +20,10 @@
 - [x] Sitemap.xml and robots.txt [sitemap generator](https://timestampgenerator.com/xml-sitemap-from-list), [sitemap validator](https://www.xml-sitemaps.com/validate-xml-sitemap.html), [crawler simulator](https://www.xml-sitemaps.com/se-bot-simulator.html)
 - [x] Upload sitemap to google search console
 - [] [Audit SEO](https://www.seoptimer.com/)
-- [] Eliminate redirect
+- [x] Eliminate redirect
   - https://moz.com/blog/the-ultimate-guide-to-seo-meta-tags
   - https://developers.google.com/search/docs/advanced/crawling/special-tags?hl=en&visit_id=637516366145342274-413289261&rd=1
-- Google analytics
+- [x] Google analytics
 - [ ] Schema.org Structured Data
   - https://developers.google.com/search/docs/guides/prototype
   - https://search.google.com/test/rich-results
@@ -55,6 +55,7 @@
 - [ ] SEO audit
 - [X] Setup static hosting on s3 (trying github first)
 - [ ] Publish a book.
+- [ ] Graphic design for book
 - [ ] request book to be added to jupyter-book site as an example
 - [-] ...
 - [later] Profit!

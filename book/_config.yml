@@ -94,6 +94,9 @@ sphinx:
       '<meta property="twitter:title" content="Bayes Theorem - The Missing Manual">',
       '<meta property="twitter:description" content="A manual for using Bayes theorem to think with probabilities in everyday life">',
       '<meta property="twitter:image" content="https://bayesmanual.com/plot.png">',
+      "<!-- Global site tag (gtag.js) - Google Analytics --><script async src='https://www.googletagmanager.com/gtag/js?id=G-KSWG418LQL'></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());gtag('config', 'G-KSWG418LQL');
+      </script>",
       ]
 
 # 

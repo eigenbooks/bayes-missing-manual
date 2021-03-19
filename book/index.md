@@ -1,6 +1,6 @@
 <!-- Bayes Theorem - The Missing Manual is licensed under a creative commons licence (CC BY-NC-SA 4.0). -->
 (intro)=
-# Introduction
+# Bayes Theorem - The Missing Manual
 
 Welcome to the missing manual for Bayes theorem users. This manual is designed to provide documentation for people who use - or want to use - Bayes theorem on a day-to-day basis. It covers a small subset of Bayesian statistics that the author feels are disproportionately helpful for solving real world problems quickly with mental math in your head. This manual only covers the absolute [simplest formulation](process) of Bayes theorem and then uses a large number of [examples](examples) to help solidify your understanding and intuition of the topic. [References](additional-refs) to more sophisticated and rigorous textbooks are available for readers who have other use cases or need more details.
 
