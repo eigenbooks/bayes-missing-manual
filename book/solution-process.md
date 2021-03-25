@@ -15,7 +15,7 @@ We will return to the quintessential example described above later in this chapt
 Let's use a similar medical example from [arbitral.com ](https://arbital.com/p/bayes_frequency_diagram/?l=55z&pathId=65721):
 
 ```{margin}
-Diseasitis is a fictional up disease - latin for inflammation of the disease
+Diseasitis is a fictional made up disease - latin for inflammation of the disease
 ```
 
 >"Suppose you are a nurse screening incoming freshmen for diseasitis. Last year 20% of incoming students had diseasitis. During the screening test students place a tongue depressor into their mouth. If the tongue depressor turns black, the student may have diseasitis.
@@ -37,7 +37,7 @@ Multiple studies show that thinking about concrete numbers such as "20 out of 10
 Diagram representing 100 students. Red circles represent incoming students sick with diseasitis. Blue circles represent healthy students.
 ```
 
-Of the 20 students with diseasitis, the tongue depressor would turn black for 90% of them. In our example 18 out of the 20 sick students would be identified as sick. Of the healthy students, 30% of them would turn the tongue depressor black. In our example 24 of the 80 healthy students would test positive for diseasitis even though they were sick. {numref}`18-positive-24-false-positive` shows an updated diagram with the respective positive tests from the sick and healthy groups.
+Of the 20 students with diseasitis, the tongue depressor would turn black for 90% of them. In our example 18 out of the 20 sick students would be identified as sick with a black tongue depressor. Of the healthy students, 30% of them would turn the tongue depressor black despite being healthy. In our example 24 of the 80 healthy students would test positive for diseasitis even though they were sick. {numref}`18-positive-24-false-positive` shows an updated diagram with the respective positive tests from the sick and healthy groups.
 
 ```{figure} img/18-positive-24-false-positive.png
 :name: 18-positive-24-false-positive
@@ -62,7 +62,7 @@ In future examples we will forgo drawing all those little circles and use a simp
 
 *Hypothesis:* Establish two hypothesis to describe the two possible states of the student.
 
-- $H_1$: The student is sick with diseasitis.
+- $H_1$: The student is sick with diseasitis
 - $H_2$: The student is healthy [^healthy] 
 
 [^healthy]: The student is healthy, or at least NOT sick with diseasitis.
@@ -149,7 +149,7 @@ The diseasitis example makes the math easy, but is not representative of most me
   - 0.92
 ```
 
-In the Yudkowsky example the odds of being sick given a positive test are 800:9504, roughly equivilant to 8:95, or approximately a 0.08 probability of being sick. This is shocking because medical professionals reportedly struggle to correctly calculate the probability of sickness. I will however contend that their inability to properly calculate the correct answer does not imply that they lack the proper medical intuition to provide good care. As the name implies, a screening test is the first of potentially many tests that would be administered if a diagnosis of cancer is suspected. To my knowledge there is no crisis in the medical communities treatment of cancer. Mainly this example is useful for teaching Bayes theorem, not influencing the training of doctors. In my opinion thinking with Bayes theorem is much more important than calculating a precise answer. Interestingly the accuracy of reading mammographies has increased due to algorithms based in part on Bayes theorem [^AI-screening] since the studies citing that medical professionals can't calculate the correct answer were published. 
+In the Yudkowsky example the odds of being sick given a positive test are 800:9504, roughly equivalent to 8:95, or approximately a 0.08 probability of being sick. This is shocking because medical professionals reportedly struggle to correctly calculate the probability of sickness. I will however contend that their inability to properly calculate the correct answer does not imply that they lack the proper medical intuition to provide good care. As the name implies, a screening test is the first of potentially many tests that would be administered if a diagnosis of cancer is suspected. To my knowledge there is no crisis in the medical communities treatment of cancer. Mainly this example is useful for teaching Bayes theorem, not influencing the training of doctors. In my opinion thinking with Bayes theorem is much more important than calculating a precise answer. Interestingly the accuracy of reading mammographies has increased due to algorithms based in part on Bayes theorem [^AI-screening] since the studies citing that medical professionals can't calculate the correct answer were published. 
 
 [^AI-screening]: See ["Using AI to improve breast cancer screening"](https://blog.google/technology/health/improving-breast-cancer-screening/) and the peer reviewed [journal article](https://www.nature.com/articles/s41586-019-1799-6.epdf?author_access_token=V_LKV2xpSv9G1dhANYeWM9RgN0jAjWel9jnR3ZoTv0M5zwPVx5jT4z_z-YkUZTBT6_1AtRXi8QouJM7xB-oSN-cVBoH7f_QTgx-yQN3UBEVfkvO1_5urNT-CZHGCEQNGlCuO69tMQYak4SmdoDqyzg%3D%3D). Also see a news article about the research for [additional context](https://time.com/5754183/google-ai-mammograms-breast-cancer/) with respect to other previous studies.
 
