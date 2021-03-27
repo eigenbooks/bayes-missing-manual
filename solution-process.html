@@ -115,6 +115,8 @@ commentsRunWhenDOMLoaded(addUtterances);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
 
+
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
@@ -297,7 +299,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>Let’s use a similar medical example from <a class="reference external" href="https://arbital.com/p/bayes_frequency_diagram/?l=55z&amp;pathId=65721">arbitral.com </a>:</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>Diseasitis is a fictional up disease - latin for inflammation of the disease</p>
+<p>Diseasitis is a fictional made up disease - latin for inflammation of the disease</p>
 </div>
 <blockquote>
 <div><p>“Suppose you are a nurse screening incoming freshmen for diseasitis. Last year 20% of incoming students had diseasitis. During the screening test students place a tongue depressor into their mouth. If the tongue depressor turns black, the student may have diseasitis.</p>
@@ -313,7 +315,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <img alt="_images/20-sick-80-healthy.png" src="_images/20-sick-80-healthy.png" />
 <p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Diagram representing 100 students. Red circles represent incoming students sick with diseasitis. Blue circles represent healthy students.</span><a class="headerlink" href="#sick-80-healthy" title="Permalink to this image">¶</a></p>
 </div>
-<p>Of the 20 students with diseasitis, the tongue depressor would turn black for 90% of them. In our example 18 out of the 20 sick students would be identified as sick. Of the healthy students, 30% of them would turn the tongue depressor black. In our example 24 of the 80 healthy students would test positive for diseasitis even though they were sick. <a class="reference internal" href="#positive-24-false-positive"><span class="std std-numref">Fig. 2</span></a> shows an updated diagram with the respective positive tests from the sick and healthy groups.</p>
+<p>Of the 20 students with diseasitis, the tongue depressor would turn black for 90% of them. In our example 18 out of the 20 sick students would be identified as sick with a black tongue depressor. Of the healthy students, 30% of them would turn the tongue depressor black despite being healthy. In our example 24 of the 80 healthy students would test positive for diseasitis even though they were sick. <a class="reference internal" href="#positive-24-false-positive"><span class="std std-numref">Fig. 2</span></a> shows an updated diagram with the respective positive tests from the sick and healthy groups.</p>
 <div class="figure align-default" id="positive-24-false-positive">
 <img alt="_images/18-positive-24-false-positive.png" src="_images/18-positive-24-false-positive.png" />
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Positive tests in both the sick and healthy portions of the incoming students.</span><a class="headerlink" href="#positive-24-false-positive" title="Permalink to this image">¶</a></p>
@@ -330,7 +332,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p><em>Question:</em> What do you believe the odds are that the student is sick with diseasitis?</p>
 <p><em>Hypothesis:</em> Establish two hypothesis to describe the two possible states of the student.</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(H_1\)</span>: The student is sick with diseasitis.</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span>: The student is sick with diseasitis</p></li>
 <li><p><span class="math notranslate nohighlight">\(H_2\)</span>: The student is healthy <a class="footnote-reference brackets" href="#healthy" id="id2">2</a></p></li>
 </ul>
 <p>For the sake of accounting represent the odds as <span class="math notranslate nohighlight">\(H_1:H_2\)</span> for sick:healthy. The opposite representation (healthy:sick) is equally as valid, just mind that you are always consistent with how you write your odds.</p>
@@ -413,7 +415,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </tr>
 </tbody>
 </table>
-<p>In the Yudkowsky example the odds of being sick given a positive test are 800:9504, roughly equivilant to 8:95, or approximately a 0.08 probability of being sick. This is shocking because medical professionals reportedly struggle to correctly calculate the probability of sickness. I will however contend that their inability to properly calculate the correct answer does not imply that they lack the proper medical intuition to provide good care. As the name implies, a screening test is the first of potentially many tests that would be administered if a diagnosis of cancer is suspected. To my knowledge there is no crisis in the medical communities treatment of cancer. Mainly this example is useful for teaching Bayes theorem, not influencing the training of doctors. In my opinion thinking with Bayes theorem is much more important than calculating a precise answer. Interestingly the accuracy of reading mammographies has increased due to algorithms based in part on Bayes theorem <a class="footnote-reference brackets" href="#ai-screening" id="id3">3</a> since the studies citing that medical professionals can’t calculate the correct answer were published.</p>
+<p>In the Yudkowsky example the odds of being sick given a positive test are 800:9504, roughly equivalent to 8:95, or approximately a 0.08 probability of being sick. This is shocking because medical professionals reportedly struggle to correctly calculate the probability of sickness. I will however contend that their inability to properly calculate the correct answer does not imply that they lack the proper medical intuition to provide good care. As the name implies, a screening test is the first of potentially many tests that would be administered if a diagnosis of cancer is suspected. To my knowledge there is no crisis in the medical communities treatment of cancer. Mainly this example is useful for teaching Bayes theorem, not influencing the training of doctors. In my opinion thinking with Bayes theorem is much more important than calculating a precise answer. Interestingly the accuracy of reading mammographies has increased due to algorithms based in part on Bayes theorem <a class="footnote-reference brackets" href="#ai-screening" id="id3">3</a> since the studies citing that medical professionals can’t calculate the correct answer were published.</p>
 <p>Another interesting intersection of Bayes theorem and breast cancer screening involved a controversy in 2009 when a U.S. Government task force suggested that women should start getting mammograms to screen for breast cancer at age 50, instead of at the customary age of 40 <a class="footnote-reference brackets" href="#task-force" id="id4">4</a>. It also suggested changing the rate of screenings from every two years to every three years. The argument is that the base rate of cancer in 40 year old women is so low that the cost of false positives (healthy women with a test that seemed to indicate cancer) outweighed the benefits of the testing for the population as a whole. The downsides include radiation exposure and unnecessary treatment. As the son of a breast cancer survivor and the father of daughters this recommendation certainly evokes an emotional response that highlights the difference between <em>probability theory</em> (what are the odds) and <em>decision theory</em> (how to use the odds to make decisions).</p>
 </div>
 <div class="section" id="standard-solution-process">

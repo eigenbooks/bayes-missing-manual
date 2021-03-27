@@ -34,7 +34,7 @@ This section contains a number of examples, with their solutions, and commentary
   - [The Mony Hall problem](monty-hall)
   - [Art contest](art-contest)
 
-- *Base rate neglect:* This theme focuses on a key piece of intuition that is common with Bayes theorem. If the odds of something happening are very low to begin with, then most normal evidence is not strong enough to overcome the prior odds. Humans fail to understand this concept so often that it has been given a proper name 'base rate neglect'. Medical screening tests, as introduced in the [solution process](process) chapter, are the quintessential example of base rate neglect. These examples further expand on the base rate neglect concept outside the context of medical testing.  
+- *Base rate neglect:* This theme focuses on a key piece of intuition that is common with Bayes theorem. If the odds of something happening are very low to begin with, then most normal evidence is not strong enough to overcome the prior odds. Humans fail to understand this concept so often that it has been given a proper name *base rate neglect*. Medical screening tests, as introduced in the [solution process](process) chapter, are the quintessential example of base rate neglect. These examples further expand on the base rate neglect concept outside the context of medical testing.  
   - [Librarian or farmer?](farmer-librarian)
   - [Getting robbed by a plumber](plumber)
   - [Smoke from a Fire or BBQ?](fire-bbq)
@@ -46,7 +46,7 @@ This section contains a number of examples, with their solutions, and commentary
   - [Who killed Mr. Boddy](mr-boddy)
   - [The Mony Hall problem](monty-hall)
   
-- *Weak hypothesis/evidence, unexamined alternative hypothesis:* This theme was first introduced with the [pychic friend](model-comparison) example in the first chapter. The strength of evidence is an important concept that Bayes theorem can teach us about. It is a common logical flaw to assign more strength to evidence than we should because we are contorting the evidence to support a conclusion we want to be true. Closely related is the concept that we can only reason about hypotheses that we include in our analysis. If you omit the best hypothesis from consideration your analysis will always be sub optimal.
+- *Weak hypothesis/evidence, unexamined alternative hypothesis:* This theme was first introduced with the [psychic friend](model-comparison) example in the first chapter. The strength of evidence is an important concept that Bayes theorem can teach us about. It is a common logical flaw to assign more strength to evidence than we should because we are contorting the evidence to support a conclusion we want to be true. Closely related is the concept that we can only reason about hypotheses that we include in our analysis. If you omit the best hypothesis from consideration your analysis will always be sub optimal.
   - [The jealous coworker](jealous)
   - [Alien bookcases](alien-bookcase)
 
@@ -56,12 +56,12 @@ This section contains a number of examples, with their solutions, and commentary
   - [A failing new employee](failing-employee)
   - [The mystic seer](mystic-seer)
 
-- *Multiple belief revisions:* It is often claimed that a major benefit of Bayes theorem is the ability to incorporate new evidence incrementally as it arrives. The concept of incremental belief revision was first introduced in the [Worchestershire cola example](example). 
+- *Multiple belief revisions:* It is often claimed that a major benefit of Bayes theorem is the ability to incorporate new evidence incrementally as it arrives. The concept of incremental belief revision was first introduced in the [Worcestershire cola example](example). 
   - [Spam email filter](spam-filter)
   - [The Mony Hall problem](monty-hall)
   - [Heuristic for Evaluating Medical News](medical-heuristic)
 
-- *Heuristic for medical news:* This theme relates to a technique of thinking that can be applied without any understanding of Bayes theorem. Of course it is powered by Bayes theorem, but the user doesn't have to know that to benefit from the method. The example is medical related, but the technique is broadly applicable. Again, first introduced in the [Worchestershire cola example](example), but useful enough that it is explicitly given its own theme.
+- *Heuristic for medical news:* This theme relates to a technique of thinking that can be applied without any understanding of Bayes theorem. Of course it is powered by Bayes theorem, but the user doesn't have to know that to benefit from the method. The example is medical related, but the technique is broadly applicable. Again, first introduced in the [Worcestershire cola example](example), but useful enough that it is explicitly given its own theme.
   - [Heuristic for Evaluating Medical News](medical-heuristic)
 
 - *Relative likelihoods:* Easy introductory problems give you all the information that you need to simply plug numbers into Bayes theorem. Practical problems however will not be so convenient. As described in [step 6 of the standard solution process](standard-solution-process) there is a helpful internal prompt that you can use to estimate relative likelihoods. This theme highlights example problems that explicitly use the internal prompt:
@@ -74,7 +74,7 @@ This section contains a number of examples, with their solutions, and commentary
 (alien-bookcase)=
 ## Alien bookcases 
 
->This is the quantitative argument behind the qualitative statement that "extraordinary claims require extraordinary evidence" (a claim popularized by Carl Sagan, which dates back to at least Pierre-Simon Laplace).
+>This is the quantitative argument behind the qualitative statement that "extraordinary claims require extraordinary evidence" (a claim popularized by [Carl Sagan](https://en.wikipedia.org/wiki/Carl_Sagan), which dates back to at least [Pierre-Simon Laplace](https://en.wikipedia.org/wiki/Pierre-Simon_Laplace)).
 >
 >Consider the following hypothesis: What if there are Bookcase Aliens who teleport into our houses at night and drop off bookcases? 
 >
@@ -95,7 +95,7 @@ For accounting purposes set the odds as $H_1:H_2$ for bookcase aliens to 'other 
 
 Next the relative likelihood needs to be established. Irregardless of the prior, lets say that bookcase aliens do exist. It is mentally challenging after setting such an extreme prior to objectively put on the "true believer" hat, but you need to work hard to ignore your preconceived notions during this step. What would the probability be if bookcase aliens existed, that they would place a bookcase in Bob's friends house? Subjectively I set the probability at 0.5 because I'm trying to be as generous as possible. On the other hand, if there is another reason for the appearance of a bookcase I would prescribe a 0.01 probability of someone getting a new bookcase in any given year. Bookcases are big and heavy, so getting a new one is probably pretty rare. The likelihood is 0.5:0.01 or 50:1. The arguments above are summarized in {numref}`alien-other`
 
-:::{list-table} A possible solution to the bookcase alien problem
+:::{list-table} A possible solution to the bookcase alien problem using Bayes theorem
 :header-rows: 1
 :widths: auto
 :name: alien-other
@@ -178,7 +178,7 @@ The question being asked is: will Pam win the competition? Establish the hypothe
 
 For accounting purposes set the odds as $H_1:H_2:H_3$ for Pam:Pia:Pablo. Based on the number of submissions each painter made, set the prior odds as 15:5:10. The relative skill of the painters is incorporated when establishing the relative likelihood. Based on the painters historical win rates in other past competitions the likelihood is set at 4%:6%:3% or 4:6:3. Table {numref}`art` summarizes the results of the given information.  
 
-:::{list-table} Data from the art contest problem statement converted into the form of the standard solution process
+:::{list-table} Data from the art contest problem statement converted into the form for use with Bayes theorem
 :header-rows: 1
 :widths: auto
 :name: art
@@ -216,7 +216,7 @@ It would have been equally valid to assume just two competing hypotheses for who
 (athiest-priest)=
 ## An atheist and a priest 
 
->An atheist and a priest strike up a conversation. After some debate is agreed upon that the priest applies a perfect 100% probability to the existence of god, and the atheist applies a perfect 0% probability to the existence of god. How much evidence will it take to convince either one to change their belief, even slightly.
+>An atheist and a priest strike up a conversation. After some debate it is agreed upon that the priest applies a perfect 100% probability to the existence of god, and the atheist applies a perfect 0% probability to the existence of god. How much evidence will it take to convince either one to change their belief, even slightly.
 >
 >Bayes' theorem suggests that no amount of evidence can change their mind if the probabilities are truly 0 and 100 (as opposed to say 0.00001% and 99.99999%).
 >
@@ -264,7 +264,7 @@ The second questions, which asks you to find $p(\mbox{line}_1|\mbox{defective})$
 - $H_1$: The part came from line 1
 - $H_2$: The part came from line 2
 
-For accounting purposes take the odds as $H_1:H_2$ or $\mbox{line}_1 : \mbox{line}_2$. The prior is obtained from the problem statement based on the number of defective parts produced by each line. Let the prior be 100:150 or 10:15. The lines have different historical occurrences of defective parts. If a part came from line 1, its probability of being defective is 100/1000 = 0.1. If a part came off line 2, then its probability of being defective is 150/2000 = 0.075. Line 2 produces defective parts at a lower rate than line 1, but contributes twice as many parts in a week to the total inventory. Take the relative likelihood of a line producing a defective part as 0.1:0.075, or 100:75 = 4:3. {numref}`line1-line2` summarizes the information provided in the problem statement and shows the application of Bayes theorem.   
+For accounting purposes take the odds as $H_1:H_2$ or $\mbox{line}_1 : \mbox{line}_2$. The prior is obtained from the problem statement based on the number of parts produced by each line. Let the prior be 1000:2000 or 1:2. The lines have different historical occurrences of defective parts. If a part came from line 1, its probability of being defective is 100/1000 = 0.1. If a part came off line 2, then its probability of being defective is 150/2000 = 0.075. Line 2 produces defective parts at a lower rate than line 1, but contributes twice as many parts in a week to the total inventory. Take the relative likelihood of a line producing a defective part as 0.1:0.075, or 100:75 = 4:3. {numref}`line1-line2` summarizes the information provided in the problem statement and shows the application of Bayes theorem.   
 
 :::{list-table} Bayes theorem applied to the two production line problem
 :header-rows: 1
@@ -275,20 +275,20 @@ For accounting purposes take the odds as $H_1:H_2$ or $\mbox{line}_1 : \mbox{lin
   - Line 1
   - Line 2
 * - Prior odds
-  - $1$
-  - $2$
+  - 1
+  - 2
 * - Likelihood
-  - $4$
-  - $3$
+  - 4
+  - 3
 * - Posterior odds
-  - $4$
-  - $6$
+  - 4
+  - 6
 * - Simplified posterior odds
-  - $2$
-  - $3$
+  - 2
+  - 3
 * - Probability
-  - $0.4$
-  - $0.6$
+  - 0.4
+  - 0.6
 :::
 
 If a part is defective, there is a 0.4 probability that it came from line 1. 
@@ -334,7 +334,7 @@ For accounting purposes write the odds as $H_1:H_2$ for true:false. All of the p
   - 0.29
 :::
 
-There are multiple examples ([alien bookcases](alien-bookcase), [atheist and the preist](athiest-priest)) highlighting examples with extreme claims or evidence. This example contrasts with those examples because extreme odds were intentionally not used. To successfully solve real world problems it is helpful to be able to identify when extraordinary evidence is required as well as when just ordinary evidence is needed to change your beliefs.   
+There are multiple examples ([alien bookcases](alien-bookcase), [atheist and the priest](athiest-priest)) highlighting examples with extreme claims or evidence. This example contrasts with those examples because extreme odds were intentionally not used. To successfully solve real world problems it is helpful to be able to identify when extraordinary evidence is required as well as when just ordinary evidence is needed to change your beliefs.   
 
 (fire-bbq)=
 ## Smoke from a fire or BBQ? 
@@ -355,11 +355,11 @@ For accounting purposes write the odds as $H_1:H_2$ for structure fire : BBQ. I 
 To determine the relative likelihood I ask myself what would the probability be of seeing smoke if each hypothesis was true:
 
 - If there was a structure fire, I would almost certainly see smoke. Set the probability at 0.9.
-- If there was a BBQ the probability of seeing smoke would be much less. Charcol grills only smoke for a few minutes when you first start them up. Gas grills may not smoke at all when started. Set the probability to 0.1.
+- If there was a BBQ the probability of seeing smoke would be much less. Charcoal grills only smoke for a few minutes when you first start them up. Gas grills may not smoke at all when started. Set the probability to 0.1.
 
 The probabilities just happen by coincidence to sum to 1 in this example, in general this is not a requirement. The relative likelihood is therefore the ratio of the probabilities, 0.9:0.1 = 9:1. {numref}`structure-fire` summarizes the reasoning used in this example.
 
-:::{list-table} A summary of the reasoning for the structure fire problem.
+:::{list-table} A summary of the reasoning for the structure fire problem and the use of Bayes theorem.
 :header-rows: 1
 :widths: auto
 :name: structure-fire
@@ -386,7 +386,7 @@ The probabilities just happen by coincidence to sum to 1 in this example, in gen
 
 The result shows that even if you see smoke, it is unlikely that there is a structure fire. 
 
-The odds of a structure fire are so low to begin with that you need better evidence than just smoke to believe that there is a structure fire. I worry that my prior was not skeptical enough. The odds in favor of a structural fire might be even smaller. Either way this example teaches that the base rate of an event occuring is important to consider. If the base rate is very small the probability of the event occuring given normal evidence is still very low.
+The odds of a structure fire are so low to begin with that you need better evidence than just smoke to believe that there is a structure fire. I worry that my prior was not skeptical enough. The odds in favor of a structural fire might be even smaller. Either way this example teaches that the base rate of an event occurring is important to consider. If the base rate is very small the probability of the event occurring given normal evidence is still very low.
 
 (married-rain)=
 ## Getting married in the rain 
@@ -434,7 +434,7 @@ To determine the relative likelihood we can take the ratio of the provided proba
 
 The good news for the wedding party is that the odds of rain are still very low given the forecast for rain. This is because the base rate of rain in the desert is so low to begin with that it would take stronger evidence to give significant credence to the forecast for rain. 
 
-If however we could trust the forecaster to present the true probability and not hold back for the sake of presentation with a mathematically illiterate audience then the probability of a clear day occurring when the forecast is for rain is only 0.01, then the posterior odds are closer to 1:1 for rain on the wedding day.
+If however we could trust the forecaster to present the true probability, and not hold back for the sake of presentation, then the probability of a clear day occurring when the forecast is for rain is only 0.01, then the posterior odds are closer to 1:1 for rain on the wedding day.
 
 (plumber)=
 ## Getting robbed by a plumber 
@@ -533,7 +533,7 @@ The heuristic treats each of the seven questions as equally important. If a ques
 $$likelihood = 2 \times 2 \times 2 \times \frac{1}{2} \times 2 \times 2 \times 2 = 32$$ 
 The relative likelihood is implied from this result. If the heuristic indicates that the headline is 32 times more likely to be true than false then the relative likelihood will be 32:1. {numref}`heuristic-checklist` summarizes the reasoning and the results of the heuristic for the checklist headline. 
 
-:::{list-table} A summary of the reasoning with Bayes theorem for and the heuristic for the checklist headline.
+:::{list-table} A summary of the reasoning with Bayes theorem and the heuristic on the checklist headline.
 :header-rows: 1
 :widths: auto
 :name: heuristic-checklist
@@ -560,10 +560,10 @@ The relative likelihood is implied from this result. If the heuristic indicates 
 
 Based on the additional research into the underlying study the original author revised his beliefs to indicate that the news headline was likely true.
 
-As a counter example with a second headline was considered in the original example. The headline "How using Facebook could increase your risk of cancer" did not hold up under the scrutiny of the heuristic. Based on the underlying research article it was found that only 1 of the heuristic questions could be answered yes, and the remaining six were no's. Therefore the likelihood ratio was calculated as:
+As a counter example a second headline was considered in the original example. The headline "How using Facebook could increase your risk of cancer" did not hold up under the scrutiny of the heuristic. Based on the underlying research article it was found that only 1 of the heuristic questions could be answered yes, and the remaining six were no's. Therefore the likelihood ratio was calculated as:
 
-$$likelihood = 2 \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} = \frac{1}{16}$$ 
-This implies a relative likelihood of 1:16, In conjunction with a skeptical prior, the likelihood further reinforces that the headline should not be trusted.  
+$$likelihood = 2 \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} = \frac{1}{32}$$ 
+This implies a relative likelihood of 1:32, In conjunction with a skeptical prior, the likelihood further reinforces that the headline should not be trusted.  
 
 This heuristic, or any other like it, seems to be a very practical method for systematically evaluating lots of similar events. Specifically I could see investments being evaluated with a similar heuristic. Given enough attempts, the bias of the heuristic could be identified and the heuristic revised to possibly reduce the bias in future versions.
 
@@ -665,7 +665,7 @@ In the paper they put the prior of farmers:librarians as 20:1 and the likelihood
 > 
 > --- [Original source: betterexplained.com](https://betterexplained.com/articles/understanding-the-monty-hall-problem/), [plus some additional discussion on assigning likelihoods from towardsdatascience.com](https://towardsdatascience.com/solving-the-monty-hall-problem-with-bayes-theorem-893289953e16)
 
-I will admit that I am stretching the definition of 'real life problems' with this example. [This problem](https://en.wikipedia.org/wiki/Monty_Hall_problem) is loosely based on the 1963 television show 'Let's Make a Deal' which was co-created and hosted by Monty Hall [^monty]. Contestants are selected from the audience to participate. To increase their likelihood of being picked from the crowd they wear funny and outrageous costumes. The television announcer would then instruct the selected contestant to "come on down!" to the stage. The optimal strategy for the game described here is not intuitive in my opinion, and it is a commonly used example of applying Bayes theorem. 
+I will admit that I am stretching the definition of *real life problems* with this example. [This problem](https://en.wikipedia.org/wiki/Monty_Hall_problem) is loosely based on the 1963 television show 'Let's Make a Deal' which was co-created and hosted by Monty Hall [^monty]. Contestants are selected from the audience to participate. To increase their likelihood of being picked from the crowd they wear funny and outrageous costumes. The television announcer would then instruct the selected contestant to "come on down!" to the stage. The optimal strategy for the game described here is not intuitive in my opinion, and it is a commonly used example of applying Bayes theorem. 
 
 [^monty]: An advanced use of Bayes theorem can be used to reason about the 'Price is Right' game show which was recently mashed up with 'Let's Make a Deal' to form a hybrid show. See [Optimizing for the showcase on the Price is Right](https://nbviewer.jupyter.org/github/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter5_LossFunctions/Ch5_LossFunctions_PyMC2.ipynb#Example:-Optimizing-for-the-Showcase-on-The-Price-is-Right).
 
@@ -693,7 +693,7 @@ To determine the relative likelihood ask yourself what would the probability be 
 
 {numref}`monty-hall-problem` summarizes the reasoning used in the problem.
 
-:::{list-table} A summary of the reasoning for the Monty Hall problem. This assumes that initially door A was chosen and Monty opens door B to show a goat.
+:::{list-table} A summary of the reasoning for the Monty Hall problem using Bayes theorem. This assumes that initially door A was chosen and Monty opens door B to show a goat.
 :header-rows: 1
 :widths: auto
 :name: monty-hall-problem
@@ -754,7 +754,7 @@ For accounting purposes write the odds as $H_1:H_2$ for the machine you chose be
 To determine the relative likelihood ask yourself what would the probability be of the slot machine producing a loss if each hypothesis was true:
 
 - If the slot machine is generous, then the probability of loosing on any single play is $1-0.2=0.8$.
-- If the slot machine is stingey, then the probability of loosing on any single play is $1-0.1=0.9$
+- If the slot machine is stingy, then the probability of loosing on any single play is $1-0.1=0.9$
 
 Take the relative likelihood as 0.8:0.9 = 8:9. The discussion above is summarized in {numref}`slot-machine-problem`. 
 
@@ -782,7 +782,7 @@ Take the relative likelihood as 0.8:0.9 = 8:9. The discussion above is summarize
 
 After collecting one data point you can say that the probability that you choose the generous slot machine is 0.47. This example is a great jumping off point for a number of statistical diversions. In the theory section there is a discussion for how to use a [different forms of Bayes theorem](beta) to describe your beliefs about the payout rate of the chosen slot machine as a distribution instead of a point estimate. I would also suggest [Conned Again, Watson! Cautionary Tales Of Logic, Math, And Probability](https://www.amazon.com/Conned-Again-Watson-Cautionary-Probability/dp/0738205893) which is a fun discussion of many of the logical fallacies that gamblers and laymen may have.  
 
-A likelihood ratio of 8:9 implies that your observation will do little to modify your prior beliefs. In this example your observation are an inefficient method of changing your beliefs. It will take the collection of multiple data points before you can say with any certainty which machine you are playing on. Slot machines are an artificially process that is a poor analogy for real life problems. In real life, you can often devise a better test to increase the likelihood ratio and therefore update your beliefs more efficiently.
+A likelihood ratio of 8:9 implies that your observation will do little to modify your prior beliefs. In this example your observation are an inefficient method of changing your beliefs. It will take the collection of multiple data points before you can say with any certainty which machine you are playing on. Slot machines are an artificially random process that is a poor analogy for real life problems. In real life, you can often devise a better test to increase the likelihood ratio and therefore update your beliefs more efficiently.
 
 (mystic-seer)=
 ## The mystic seer
@@ -795,11 +795,11 @@ A likelihood ratio of 8:9 implies that your observation will do little to modify
 
 This example pays homage to my father-in-law who is a big fan of the twilight zone. This example is derived from a similar example found in [Bayesian Statistics the Fun Way](https://www.amazon.com/Bayesian-Statistics-Fun-Will-Kurt/dp/1593279566).
 
-A young William Shatner plays the highly superstitious Don Carter in this episode. His new bride Pat, played by Patricia Breslin, is more rational. When car trouble forces the honeymooning couple to wait in a rural diner while their car is repaired they find a fortune telling machine. For a penny you can ask the 'mystic seer' a yes or no question. Answers are given on a printed card that comes out of the machine after pulling a lever. Don asks a series of 7 questions that are shown to all be accurate predictions. Don becomes convinced that the mystic seer is an accurate fortune teller, Pat remains skeptical.
+A young William Shatner plays the highly superstitious Don Carter in this episode. His new bride Pat, played by Patricia Breslin, is more rational. When car trouble forces the honeymooning couple to wait in a rural diner while their car is repaired they find a fortune telling machine. For a penny you can ask the *mystic seer* a yes or no question. Answers are given on a printed card that comes out of the machine after pulling a [lever](http://www.mysticseer.com/the-mystic-seer). Don asks a series of 7 questions that are shown to all be accurate predictions. Don becomes convinced that the mystic seer is an accurate fortune teller, Pat remains skeptical.
 
 Estimate Don and Pat's prior odds that a fortune telling machine existed, before seeing 7 correct predictions. This is an example of working backwards from perceived posterior odds to someones prior odds as a way to understand what they might be thinking.
 
-The use of 'convinced' and 'skeptical' to describe someones beliefs are far from quantitative descriptions, so we have to make some brave assumptions to solve this problem. 
+The use of *convinced* and *skeptical* to describe someones beliefs are far from quantitative descriptions, so we have to make some brave assumptions to solve this problem. 
 
 The question being asked in the problem is: Do you believe that the mystic seer is a fortune teller? Cast the hypotheses as:
 
@@ -808,11 +808,11 @@ The question being asked in the problem is: Do you believe that the mystic seer 
 
 For accounting purposes write the odds as $H_1:H_2$ for the machine being a fortune teller as true:false.
 
-For the sake of argument assume that 'convinced' translates into odds of 3:2 in favor of the machine being a fortune teller, and 'skeptical' can be taken to be odds of 1:5. Obviously if you watched the episode you might generate different quantitative interpretations of convinced and skeptical which is fine. The beauty of Bayes theorem is not what odds we pick, but how we must justify those odds to others.
+For the sake of argument assume that *convinced* translates into odds of 3:2 in favor of the machine being a fortune teller, and *skeptical* can be taken to be odds of 1:5. Obviously if you watched the episode you might generate different quantitative interpretations of convinced and skeptical which is fine. The beauty of Bayes theorem is not what odds we pick, but how we must justify those odds to others.
 
 The relative likelihood of the mystic seer being a fortune teller requires us to look at each hypothesis and ask what the probability of observing the data would be given that the hypothesis is true:
 
-- If $H_1$ is true, and the mystic seer is a fortune teller, then the probability of getting all seven predictions correct would be a perfect 1.0. Any number of correct predictions would have a probability of 1.0 because the hypothesis is that the machine is a fortune teller. A single wrong prediction at any point however would eliminate this hypothesis and make the probability exactly 0.0. 
+- If $H_1$ is true, and the mystic seer is a clairvoyant fortune teller, then the probability of getting all seven predictions correct would be a perfect 1.0. Any number of correct predictions would have a probability of 1.0 because the hypothesis is that the machine is a fortune teller. A single wrong prediction at any point however would eliminate this hypothesis and make the probability exactly 0.0. 
 - If $H_2$ is true, then the mystic seer simply got lucky and guessed the correct answer 7 times in a row. Because only yes or no questions are allowed, the probability of answering any one question correctly is 0.5 under this hypothesis. The  probability of randomly guessing the correct answer 7 times in a row would be $0.5 \times 0.5 \times 0.5 \times 0.5 \times 0.5 \times 0.5 \times 0.5 = (0.5)^7 = 0.0078125 \approx 0.008$
 
 The evidence in favor of the mystic seer being a fortune teller is strong in this case. The relative likelihood of the seer being a fortune teller is $1:0.0078125 \Rightarrow 1/0.0078125 = 128$ times more likely than the hypothesis that the machine is randomly guessing.
@@ -905,7 +905,7 @@ The problem asks: what percent of current users are city dwellers before the sal
 
 The second part of this questions asks you which strategy you should choose to increase your profits. {numref}`option-a` outlines the expected outcome for option A, increasing your market share in the suburbs to 15%. 
 
-:::{list-table} A summary of the reasoning for calculating the outcome of option A.
+:::{list-table} A summary of the reasoning for calculating the outcome of option A with Bayes theorem.
 :header-rows: 1
 :widths: auto
 :name: option-a
@@ -932,7 +932,7 @@ The second part of this questions asks you which strategy you should choose to i
 
 {numref}`option-b` outlines the expected outcome for option B, increasing your market share in the city to 25%. 
 
-:::{list-table} A summary of the reasoning for calculating the outcome of option B.
+:::{list-table} A summary of the reasoning for calculating the outcome of option B with Bayes theorem.
 :header-rows: 1
 :widths: auto
 :name: option-b
@@ -962,7 +962,7 @@ Before implementing the sales drive you could expect for every 100 people of pop
 (spam-filter)=
 ## Spam email filter
 
-Back in the day spam emails were a real problem for users. Today I rarely, if ever, check my spam folder because the filtering is so precise. Bayes theorem played a major role in removing the burden of spam from email users, and email was then widely adopted as an official form of communication across most organizations. The following example describes the essence of how an email spam filter operates. More importantly for real world problems this example shows how Bayes theorem can be used when there are multiple pieces of evidence that can be used to update your beliefs.
+Back in the day spam emails were a real problem for email users. Today I rarely, if ever, check my spam folder because the filtering is so precise. Bayes theorem played a major role in removing the burden of spam from email users, and email was then widely adopted as an official form of communication across most organizations. The following example describes the essence of how an email spam filter operates. More importantly for real world problems this example shows how Bayes theorem can be used when there are multiple pieces of evidence that can be used to update your beliefs.
 
 > Assume that you collect a number of emails and manually categorize them as spam or normal emails. This is an easy task, humans tend to be very fast and accurate with this sort of classification. The problem is that humans quickly tire of such a monotonous activity, which is why teaching a computer to filter spam messages is so helpful. Within each of these collections you count how often common words appear in the messages, and compile the results below.
 > 
@@ -987,7 +987,7 @@ For accounting purposes write the odds as $H_1:H_2$ for the odds of spam to norm
 
 We have data to help generate the relative likelihood ratios. A message with the word 'hello' has even odds, 3:3 = 1:1, of being a spam message. Messages with the word 'darling' have odds of 1:5 of being spam. The word 'hello' will not cause us to change our beliefs, but the word 'darling' will move our beliefs towards the hypothesis that the message is normal. The not so hard trick is that Bayes theorem can allow us to use both pieces of evidence together. {numref}`spam-normal-hello-darling` summarizes the discussion from above. 
 
-:::{list-table} The odds of a message that contains the words 'hello darling' is spam.
+:::{list-table} The odds, calculated with Bayes theorem, of a message that contains the words 'hello darling' is spam.
 :header-rows: 1
 :widths: auto
 :name: spam-normal-hello-darling
@@ -1015,7 +1015,7 @@ We have data to help generate the relative likelihood ratios. A message with the
   - 0.36
 :::
 
-The total likelihood of the evidence 'hello darling' was calculated in two steps as $3:3 \times 1:5 = 3:15$ in favor of a normal message. The odds form of Bayes theorem makes it very convenient to use multiple pieces of evidence when revising our beliefs, just keep multiplying the odds until you have considered all your evidence. Ultimately the high base rate of spam messages lead us to conclude that the message is still likely to be spam with a probability of 0.64. In this example the evidence lead us to believe that the message was less spammy than your average message.
+The total likelihood of the evidence 'hello darling' was calculated in two steps as $3:3 \times 1:5 = 3:15 = 1:5$ in favor of a normal message. The odds form of Bayes theorem makes it very convenient to use multiple pieces of evidence when revising our beliefs, just keep multiplying the odds until you have considered all your evidence. Ultimately the high base rate of spam messages lead us to conclude that the message is still likely to be spam with a probability of 0.64. In this example the evidence lead us to believe that the message was less spammy than your average message.
 
 As a second related example, what are the odds of a message being spam that contains the phrase “buy viagra”? This is in my experience the quintessential spam message. Keeping the same accounting process as above for odds of spam to normal messages, start with a prior of 9:1. 
 
@@ -1046,9 +1046,9 @@ Based on the observed word frequencies the odds of a spam message containing the
   - 0.02
 :::
 
-After viewing the evidence 'buy viagra' the odds are highly in favor of spam - even after tweaking the likelihood for the word 'viagra'. 
+After viewing the evidence 'buy viagra' the odds are highly in favor of spam - even after conservatively tweaking the likelihood for the word 'viagra'. 
 
-At this point the question becomes at what odds do we move a message into the spam folder. Accidentally classifying a normal message as spam has fairly serious consequences. Users would much rather see a few spam messages, than have normal messages hidden from them in their spam folder. If you find even a few normal emails in your spam folder you quickly loose confidence in the filter and start manually checking your spam folder thereby eliminate the benefit of the filter in the first place. Moving normal messages into the spam folder is known as a false positive. 
+At this point the question becomes at what odds do we move a message into the spam folder. Accidentally classifying a normal message as spam has fairly serious consequences. Users would much rather see a few spam messages, than have a normal messages hidden from them in their spam folder. If you find even a few normal emails in your spam folder you quickly loose confidence in the filter and start manually checking your spam folder thereby eliminate the benefit of the filter in the first place. Moving normal messages into the spam folder is known as a false positive. 
 
 In the 'buy viagra' example odds of 81:2 implies that for every 83 emails with the words 'buy viagra', 2 will be falsely labeled spam when they are actually a normal email. A 0.98 probability of spam is probably too low for a typical email user. It was suggested by the original author of this example that a threshold closer to 0.999 might be more appropriate.  
 
@@ -1057,7 +1057,7 @@ This example described what is known a Naive Bayesian filter. The filter is naiv
 (sparking-widgets)=
 ## Sparking widgets
 
-> On an assebly line 10% of widgets are defective and 90% are good. 4% of good widgets emit sparks when operating, and 12% of the defective widgets emit sparks. What percentage of sparking widgets are bad?
+> On an assembly line 10% of widgets are defective and 90% are good. 4% of good widgets emit sparks when operating, and 12% of the defective widgets emit sparks. What percentage of sparking widgets are bad?
 >
 > --- [Original source: arbital.com](https://arbital.com/p/bayes_rule/?l=693)
 
@@ -1075,7 +1075,7 @@ To determine the relative likelihood I ask myself what would the probability be 
 
 Therefore set the relative likelihood at 0.12:0.4 = 12:4 = 3:1. {numref}`sparking-widget-problem` summarizes the reasoning described above. 
 
-:::{list-table} A summary of the reasoning for the sparking widget problem.
+:::{list-table} A summary of the reasoning for the sparking widget problem using Bayes theorem.
 :header-rows: 1
 :widths: auto
 :name: sparking-widget-problem
@@ -1125,7 +1125,7 @@ Next ask yourself if each hypothesis was true, what would be the probability of 
 
 Therefore take the relative likelihood as 0.05:0.05 = 50:5 = 10:1 in favor of cheating. {numref}`cheating-faithful` summarizes the reasoning described above. 
 
-:::{list-table} A summary of the reasoning for the strange underwear problem.
+:::{list-table} A summary of the reasoning for the strange underwear problem using Bayes theorem.
 :header-rows: 1
 :widths: auto
 :name: cheating-faithful
@@ -1152,7 +1152,7 @@ Therefore take the relative likelihood as 0.05:0.05 = 50:5 = 10:1 in favor of ch
 
 Based on the observation of the strange underwear there would be a probability of 0.29 that your partner was cheating on you. This is a classic example of how when you need Bayes theorem the most, it will be hard to estimate meaningful probabilities. 
 
-In this case setting the prior odds objectively would be very difficult. Living with someone means that you have many, many data points about their behavior. To set your prior should you naively ignore additional information and set the prior based on the general population, or should you include additional insights like 'your partner has been acting weird recently'? 
+In this case setting the prior odds objectively would be very difficult. Living with someone means that you have many, many data points about their behavior. To set your prior should you naively ignore additional information and set the prior based on the general population, or should you include additional insights like *your partner has been acting weird recently*? 
 
 Setting the relative likelihoods is similarly difficult. The observed evidence (strange underwear) was unusual evidence with very little, if any, historical or logical precedent. Subjective probabilities are the only possible way to quantify beliefs in a situation like this, but that does not mean they are easy to assign. 
 
@@ -1165,7 +1165,7 @@ If you have a friend who understands the [standard solution process](process) th
 
 > Mr. Boddy is found murdered in his study! At the time of his death there were three people visiting the home of Mr. Boddy: Reverend Green, Mrs. White, and Colonel Mustard. 
 >
-> Based on prior knowledge of their relationship with the deceased and the circumstances that evening the respective probability for Green, White, and Mustard to be the murderer are believed to be 0.8, 0.08, and 0.04 respectively. The probabilities sum to 0.92 meaning there is some belief that another unspecified suspect not staying at the house the night of the murder commited the crime. 
+> Based on prior knowledge of their relationship with the deceased and the circumstances that evening the respective probability for Green, White, and Mustard to be the murderer are believed to be 0.8, 0.08, and 0.04 respectively. The probabilities sum to 0.92 meaning there is some belief that another unspecified suspect not staying at the house the night of the murder committed the crime. 
 >
 > In time it comes out that the murder weapon was a wrench. Suppose we think that Reverend Green, Mrs. White, and Colonel Mustard, if they murdered someone, would respectively be 0.6, 0.9, and 0.3 likely to use a wrench.
 > 
@@ -1212,7 +1212,7 @@ There is also a murder mystery introduction to Bayes theorem in the book [Model 
 
 ## Summary
 
-When learning a new topic I value examples, so I made an effort to include many practical and real life examples for the application of Bayes theorem in this manual. While examples are great, you can't expect to find an example in this manual for every type of problem you will ever encounter. At some point 'solution by analogy' breaks down and you have  generalize the concepts so you can apply Bayes theorem to your own unique real life problems. This section is a summary of what I hope you would learn if you worked through all the example problems and the discussion that accompanies them. The main concepts include: 
+When learning a new topic I value examples, so I made an effort to include many practical and real life examples for the application of Bayes theorem in this manual. While examples are great, you can't expect to find an example in this manual for every type of problem you will ever encounter. At some point *solution by analogy* breaks down and you have  generalize the concepts so you can apply Bayes theorem to your own unique real life problems. This section is a summary of what I hope you would learn if you worked through all the example problems and the discussion that accompanies them. The main concepts include: 
 
 - [Be humble with your uncertainty](humble-uncertainty)
 - [Estimates provide very useful information](estimates-good-enough)
@@ -1222,11 +1222,9 @@ When learning a new topic I value examples, so I made an effort to include many 
 ### Be humble with your uncertainty
 I feel that being humble with your assessments and interpretation of uncertainty is very important. By humble I am suggesting that you should use your results to make decisions, but not act as if you have perfect knowledge of previously unknown phenomena. A humble user of Bayes theorem trusts their results, but keeps digging for more evidence with a critical eye to ensure they are not making a logical error. 
 
-There are no safeguards when using Bayes theorem, and you can go wrong at any step - defining the prior, establishing the relative likelihood, or interpreting the posterior. It is easy to trick yourself into over stating your prior beliefs, or casting evidence in a way that supports your favorite hypothesis. Luckily it is also hard to be horribly wrong - off by more than a factor of 10. Posterior estimates can suffer from the same logical fallacies as well, such as seeing your predictions as certainties instead of probabilities.
+There are no safeguards when using Bayes theorem, and you can go wrong at any step - defining the prior, establishing the relative likelihood, or interpreting the posterior. It is easy to trick yourself into over stating your prior beliefs, or casting evidence in a way that supports your favorite hypothesis. Luckily it is also hard to be [horribly wrong](ROM) - off by more than a factor of 10. Posterior estimates can suffer from the same logical fallacies as well, such as seeing your predictions as certainties instead of probabilities.
 
-In most cases the prior and likelihood were personal estimates, so there is lots of wiggle room for different results depending on the numbers input into Bayes theorem. In the techniques described in this manual, uncertainty is cast as a point estimate. When in reality many of these results could be cast as a range of values [^theory]. Your point estimate could actually be at one extreme edge of the range of possible values, so you need to treat your results with some humility. 
-
-[^theory]: See the [theory section](beta) for a limited example of how to describe your beliefs as a range of values in a probability distribution.
+In most cases the prior and likelihood were personal estimates, so there is lots of wiggle room for different results depending on the numbers input into Bayes theorem. In the techniques described in this manual, uncertainty is cast as a point estimate. When in reality many of these results could be [cast as a range of values](beta). Your point estimate could actually be at one extreme edge of the range of possible values, so you need to treat your results with some humility. 
 
 When you are dealing with extreme odds that are very large or very small extra humility is needed. Extreme odds have both [cognitive](extreme-cases) and [mathematical](extreme-evidence) complications that make estimates even more uncertain.  
 
@@ -1242,7 +1240,7 @@ If you are being humble with your uncertainty you might:
 Basically, I hope that simply using Bayes theorem as described in this manual does not make you overly confident. Instead the use of Bayes theorem as described in this manual should develop intuition about a problem. 
 
 (estimates-good-enough)=
-### Estimates provide 'good enough' information
+### Estimates provide *good enough* information
 
 This manual relies heavily on *subjective probability*. Another word for subjective probabilities are opinions. This might seem insufficiently rigorous to some, but hopefully it can be seen from the examples above how rough order of magnitude estimates provide pragmatic information for decision making with uncertainty. Combined with a dose of [humility](humble-uncertainty), otherwise intractable problems can be reliably reasoned about.
 

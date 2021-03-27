@@ -14,11 +14,11 @@ Rough order of magnitude estimates are a fancy way of making an educated guess. 
 (relative-odds)=
 ## Relative odds
 
-Gambling predates the development of probability theory. It turns out that gamblers have a very intuitive and effective way of describing their belief that an event will occur. This is known as the relative odds. Often just referred to as the ‘odds’, but it is important to note that odds are always relative. 
+Gambling predates the development of probability theory. It turns out that gamblers have a very intuitive and effective way of describing their belief that an event will occur. This is known as the relative odds. Often just referred to as *the odds*, but it is important to note that odds are always relative. 
 
 Probability and odds are not the same thing. In some simple cases you can convert back and forth between odds and probability, in other more complex situations the conversion does not work. Ultimately it is easier for mathematicians to use probability for derivations and proofs, and not odds, so most textbooks follow this precedence and use probability.
 
-This manual is for day-to-day users of Bayes theorem, so we will choose to utilize the easier form of the theorem that uses relative odds. The odds form of the theorem uses multiplication. The probability form of the theorem uses integrals that are not solvable. I’ll let you decide which form is best for you. See the [theory section](theory) if you really want to learn how to derive Bayes theorem in its different forms.
+This manual is for day-to-day users of Bayes theorem, so we will choose to utilize the easier form of the theorem that uses relative odds. The odds form of the theorem uses multiplication that you can do in your head. The probability form of the theorem uses integrals that are not solvable. I’ll let you decide which form is best for you. See the [theory section](theory) if you really want to learn how to derive Bayes theorem in its different forms.
 
 Odds are a relative measure of belief. In layman's terms you may represent odds by saying I think rain today is twice as likely as sunshine. Quantitatively odds are a ratio. For example, the relative odds of rain today to sunshine is 2 to 1. Other equivalent representations of the same odds are 2/1, or 2.0, or 2:1 (pronounced two to one). 
 
@@ -44,7 +44,7 @@ If you hear someone say that something has a chance of occurring you have to be 
 *   I would be willing to bet that given multiple appearances at the plate that this batter will get on base on average 40% of the time
 *   Based on my encyclopedic knowledge of baseball, and the opposing pitcher, this batter who's on base percentage over the last two years has been 34.6% actually has a 0.4 probability of successfully getting on base in this particular situation. 
 
-To be safe, we never use the words chance in this manual because it is ambiguous if a probability or statistic is being quoted. Furthermore if a probability is being described it is unclear which interpretation of probability is being used. Hearing something described as a ‘chance’ should be a red flag for you that a miscommunication might occur.
+To be safe, we never use the words chance in this manual because it is ambiguous if a probability or statistic is being quoted. Furthermore if a probability is being described it is unclear which interpretation of probability is being used. Hearing something described as a *chance* should be a red flag for you that a miscommunication might occur.
 
 For the special case of binary events, which are used often in this manual, there are some simple relations to convert between odds and probability. For example a binary event might be true/false, win/lose, real/fake, success/failure, etc. If we let $H_1$ and $H_2$ be complementary events, meaning there are no other possible outcomes, then we can state that $p(H_1) = 1 - p(H_2)$. This allows us to easily switch back and forth between the odds and probability forms:
 
@@ -67,7 +67,7 @@ An order of magnitude is multiple of ten. One order of magnitude is a multiple o
 
 Errors of magnitude are very bad. If you thought you could build an airport in 1 year and it actually took 10 years, or you thought fixing your car would cost \$100 and it took \$1000. Let's not mince our words here, if you make an error that is off by a factor of 10 or more you made a stupid mistake. 
 
-'Don't make a stupid mistake' is a relatively low hurdle to jump over. When making rough order of magnitude estimates we strive to estimate the correct order of magnitude for a quantity. A rough order of magnitude estimate is never 'correct' but that is ok because knowing the order of magnitude is still very helpful for decision making when you previously knew absoluletly nothing. Being in error by 200, 300, or even 500% is not that bad compared to an error of 10x or more. 
+*Don't make a stupid mistake* is a relatively low hurdle to jump over. When making rough order of magnitude estimates we strive to estimate the correct order of magnitude for a quantity. A rough order of magnitude estimate is never *correct* but that is ok because knowing the order of magnitude is still very helpful for decision making when you previously knew absolutely nothing. Being in error by 200, 300, or even 500% is not that bad compared to an error of 10x or more. 
 
 The following estimates are all equivalent  in terms of their order of magnitude: 124, 312, 701. They are all on the order of a 100 [^equivalent].
 
@@ -75,9 +75,9 @@ The following estimates are all equivalent  in terms of their order of magnitude
 
 There are some good books dedicated to the art/science of making rough order of magnitude estimates [^books]. For our purposes however you only need to learn how to bound your estimates and decompose the problem. 
 
-[^books]: Some good books on making ROM esitimates include: [Guesstimation: Solving the World's Problems on the Back of a Cocktail Napkin](https://www.amazon.com/Guesstimation-Solving-Worlds-Problems-Cocktail/dp/0691129495), [Guesstimation 2.0: Solving Today's Problems on the Back of a Napkin](https://www.amazon.com/Guesstimation-2-0-Solving-Todays-Problems/dp/069115080X), [How Much Is that Cure in the Window?: Simple Math Solutions for Complicated Problems in Biology, Medicine, and Healthcare](https://www.amazon.com/How-Much-that-Cure-Window-ebook/dp/B089LWNY5K), [How Many Licks?: Or, How to Estimate Damn Near Anything](https://www.amazon.com/How-Many-Licks-Estimate-Anything/dp/0762435607)
+[^books]: Some good books on making ROM estimates include: [Guesstimation: Solving the World's Problems on the Back of a Cocktail Napkin](https://www.amazon.com/Guesstimation-Solving-Worlds-Problems-Cocktail/dp/0691129495), [Guesstimation 2.0: Solving Today's Problems on the Back of a Napkin](https://www.amazon.com/Guesstimation-2-0-Solving-Todays-Problems/dp/069115080X), [How Much Is that Cure in the Window?: Simple Math Solutions for Complicated Problems in Biology, Medicine, and Healthcare](https://www.amazon.com/How-Much-that-Cure-Window-ebook/dp/B089LWNY5K), [How Many Licks?: Or, How to Estimate Damn Near Anything](https://www.amazon.com/How-Many-Licks-Estimate-Anything/dp/0762435607)
 
-To use this method first break the problem down into smaller pieces. Don't go straight for the answer, break it up into small more manegable estimates. Then ask yourself what order if magnitude for your estimate would be ridiculously high, and what would be ridiculously low. Finally pick a number in between your bounds. 
+To use this method first break the problem down into smaller pieces. Don't go straight for the answer, break it up into small more manageable estimates. Then ask yourself what order of magnitude for your estimate would be ridiculously high, and what would be ridiculously low. Finally pick a number in between your bounds. 
 
 [The next section](piano-tuners) is an example of a question that your average person would just hold up their hands and shrug, but can be solved with an order of magnitude estimate. Using Google or any form of external reference is considered cheating when making an order of magnitude estimate, mostly because order of magnitude estimates need to be made quickly while on your feet with just mental math.
 
@@ -102,7 +102,7 @@ I am not sure how many people are piano owners. I'm confident that the rate is l
 
 I am not a piano player so I don't know how often you tune a piano. Any man made machine requires maintenance, but unlike a car a piano is not used as much or as roughly. My guess is than tuning is required less often than a car, so no more than once a year. On the other hand 10 years seems like too long to go between tunes. So I pick $R$, the rate of tuning, as being on the order of once every three years, or $\frac{1}{3}$ tunes per year.
 
-I've never seen a piano tuned before, but I feel that it is an involved process that probably involves tuning forks. Piano tuners seem like craftsmen to me, so this is not a process that should not be rushed. Plus the tuner has to come to where the piano is, so there would be travel involved between jobs. The average work year is 50 weeks, and I think that you could tune one piano per day. So I set $S$ as $50 \times 5 = 250$ pianos per year per tuner.
+I've never seen a piano tuned before, but I feel that it is an involved process that probably involves tuning forks. Piano tuners seem like craftsmen to me, so this is not a process that should not be rushed. Plus the tuner has to come to where the piano is, so there would be travel involved between jobs. The average work year is 50 weeks, 5 days per week, and I think that you could tune one piano per day. So I set $S$ as $50 \times 5 = 250$ pianos per year per tuner.
 
 $$Piano \space tuners \approx \frac{(P_{1950} \times O) \times R}{S} = \frac{(1,000,000 \times 0.01) \times \frac{1}{3}}{250} = 13.3 $$
 So I would estimate that there were on the order of 10's of piano tuners in the city. In practice this could mean between 10 and 99 tuners. I think this makes sense because I would expect more than 1 tuner in the city. I am less certain about my upper bound, but having 100's of tuners in the city seems excessive.  
