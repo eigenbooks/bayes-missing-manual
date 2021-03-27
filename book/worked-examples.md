@@ -562,8 +562,8 @@ Based on the additional research into the underlying study the original author r
 
 As a counter example a second headline was considered in the original example. The headline "How using Facebook could increase your risk of cancer" did not hold up under the scrutiny of the heuristic. Based on the underlying research article it was found that only 1 of the heuristic questions could be answered yes, and the remaining six were no's. Therefore the likelihood ratio was calculated as:
 
-$$likelihood = 2 \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} = \frac{1}{16}$$ 
-This implies a relative likelihood of 1:16, In conjunction with a skeptical prior, the likelihood further reinforces that the headline should not be trusted.  
+$$likelihood = 2 \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} \times \frac{1}{2} = \frac{1}{32}$$ 
+This implies a relative likelihood of 1:32, In conjunction with a skeptical prior, the likelihood further reinforces that the headline should not be trusted.  
 
 This heuristic, or any other like it, seems to be a very practical method for systematically evaluating lots of similar events. Specifically I could see investments being evaluated with a similar heuristic. Given enough attempts, the bias of the heuristic could be identified and the heuristic revised to possibly reduce the bias in future versions.
 
