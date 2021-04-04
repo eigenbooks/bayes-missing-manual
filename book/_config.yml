@@ -2,13 +2,13 @@
 # Book settings
 title : Bayes Theorem - The Missing Manual # The title of the book. Will be placed in the left navbar.
 author: Ryan Lowe    # The author of the book
-# logo: 'image.png'
+logo: 'assets/plot.png'
 
 # Information about where the book exists on the web
 description: >-
   A manual for using Bayes theorem to think with probabilities in everyday life.
 
-exclude_patterns: [_build, Thumbs.db, .DS_Store, ".ipynb_checkpoints"]
+exclude_patterns: [_build, Thumbs.db, .DS_Store, ".ipynb_checkpoints",".ipynb"]
 
 #######################################################################################
 # Execution settings
@@ -49,7 +49,7 @@ repository:
 # #   text                        : "Launch binder"
 
 latex:
-  latex_engine                : "xelatex"
+  latex_engine: "xelatex"
   latex_documents:
     targetname: book.tex
 
@@ -77,29 +77,31 @@ parse:
 #######################################################################################
 # Spinx configuration
 sphinx:
-  extra_extensions:
-  - sphinxext.opengraph
+  # extra_extensions:
+  # - sphinxext.opengraph
   config:
     language: en # assists screen readers
     html_extra_path: ['assets']
     html_show_copyright: false  
-    myst_html_meta: {
-      "title": "Bayes Theorem - The Missing Manual",
-      "description lang=en": "A manual for using Bayes theorem to think with probabilities in everyday life",
-      "keywords": "Bayes, theorem, bayes theorem, odds, example, practical",
-      "property=og:locale":  "en_US",}
-    ogp_site_url: "https://bayesmanual.com"
-    ogp_image: "https://bayesmanual.com/plot.png"
-    ogp_custom_meta_tags : [
-      '<meta property="twitter:card" content="summary_large_image">',
-      '<meta property="twitter:url" content="https://bayesmanual.com">',
-      '<meta property="twitter:title" content="Bayes Theorem - The Missing Manual">',
-      '<meta property="twitter:description" content="A manual for using Bayes theorem to think with probabilities in everyday life">',
-      '<meta property="twitter:image" content="https://bayesmanual.com/plot.png">',
-      "<!-- Global site tag (gtag.js) - Google Analytics --><script async src='https://www.googletagmanager.com/gtag/js?id=G-KSWG418LQL'></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());gtag('config', 'G-KSWG418LQL');
-      </script>",
-      ]
+    # myst_html_meta: {
+    #   "title": "Bayes Theorem - The Missing Manual",
+    #   "description lang=en": "A manual for using Bayes theorem to think with probabilities in everyday life",
+    #   "keywords": "Bayes, theorem, bayes theorem, odds, example, practical",
+    #   "property=og:locale":  "en_US",}
+    # ogp_site_url: "https://bayesmanual.com"
+    # ogp_image: "https://bayesmanual.com/plot.png"
+    # ogp_custom_meta_tags : [
+    #   '<meta property="twitter:card" content="summary_large_image">',
+    #   '<meta property="twitter:url" content="https://bayesmanual.com">',
+    #   '<meta property="twitter:title" content="Bayes Theorem - The Missing Manual">',
+    #   '<meta property="twitter:description" content="A manual for using Bayes theorem to think with probabilities in everyday life">',
+    #   '<meta property="twitter:image" content="https://bayesmanual.com/plot.png">',
+    #   "<!-- Global site tag (gtag.js) - Google Analytics --><script async src='https://www.googletagmanager.com/gtag/js?id=G-KSWG418LQL'></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+    #   gtag('js', new Date());gtag('config', 'G-KSWG418LQL');
+    #   </script>",
+    #   '<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://bayesmanual.com"},"headline":"Bayes theorem the missing manual","description":"Welcome to the missing manual for Bayes theorem users. This manual is designed to provide documentation for people who use - or want to use - Bayes theorem on a day-to-day basis. It covers a small subset of Bayesian statistics that the author feels are disproportionately helpful for solving real world problems quickly with mental math in your head. ","image":"https://bayesmanual.com/plot.png","author":{"@type":"Person","name":"Ryan Lowe"},"publisher":{"@type":"Organization","name":"Eigenbooks Ltd","logo":{"@type":"ImageObject","url":""}},"datePublished":"2021-03-15","dateModified":"2021-03-28"}</script>'
+    #   ]
+
 
 #######################################################################################
 # Bibliography

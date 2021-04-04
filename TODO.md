@@ -19,7 +19,7 @@
 - [x] Scrub the text to make sure there are as many cross references as possible, and that they all work 
 - [x] Sitemap.xml and robots.txt [sitemap generator](https://timestampgenerator.com/xml-sitemap-from-list), [sitemap validator](https://www.xml-sitemaps.com/validate-xml-sitemap.html), [crawler simulator](https://www.xml-sitemaps.com/se-bot-simulator.html)
 - [x] Upload sitemap to google search console
-- [ ] [Audit SEO](https://www.seoptimer.com/)
+- [x] [Audit SEO](https://www.seoptimer.com/)
 - [x] Eliminate redirect
   - https://moz.com/blog/the-ultimate-guide-to-seo-meta-tags
   - https://developers.google.com/search/docs/advanced/crawling/special-tags?hl=en&visit_id=637516366145342274-413289261&rd=1
@@ -52,9 +52,8 @@
 - [ ] Set DNS refresh to be slower to possibly save money
 - [x] Configure hypothesis
 - [ ] Lighthouse run
-- [ ] SEO audit
 - [X] Setup static hosting on s3 (trying github first)
-- [ ] Ryan proof read
+- [X] Ryan proof read
 - [ ] Lucy proof read
 - [ ] Dad proof read
 - [ ] Publish a book.
