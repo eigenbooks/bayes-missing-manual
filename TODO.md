@@ -57,6 +57,7 @@
 - [ ] Lucy proof read
 - [ ] Dad proof read
 - [ ] Publish a book.
+- [ ] JSON-LD book: https://jsonld.com/book/
 - [ ] Graphic design for book
 - [ ] request book to be added to jupyter-book site as an example
 - [-] ...
