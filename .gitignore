@@ -13,6 +13,9 @@ book/_build
 # deploy script
 deploy.sh
 
+# docx directory
+docx
+
 # lighthouse results
 lighthouse
 
