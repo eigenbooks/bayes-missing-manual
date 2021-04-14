@@ -70,14 +70,14 @@ Bayesian probability - the sole focus of this manual - is simply a belief. Contr
 
 Bayesian inference uses Bayes theorem to revise your beliefs based on observed data. Bayes theorem may also be known as Bayes Rule and Bayes Law. Technically, Bayes theorem should be written as Bayes' theorem. It is common practice to omit the apostrophe for the sake a brevity [^brevity].
 
-[^brevity]: My copy editor believes the omission of the apostrophe is not for brevity, but for the grammatically challenged. 
+[^brevity]: My copy editor insists the omission of the apostrophe is not for brevity, but for the grammatically challenged. 
 
 There are two things that can make Bayes theorem difficult to use in practice:
 
 1. How to convert circumstances in the real world into the language of probability and statistics
 2. When to deploy each tool - probability, descriptive statistics, inference - in the solution process.
 
-This manual hopes to standardize and simplify the choices that make Bayes theorem difficult to [use](process) for everyday [problems](examples).
+This manual hopes to standardize and simplify the choices that make Bayes theorem difficult to [use](process) for everyday [problems.](examples)
 
 ## What types of problems can be solved with Bayes theorem
 
