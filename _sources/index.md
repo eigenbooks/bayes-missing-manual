@@ -34,9 +34,9 @@ A decade ago, I thought Bayes theorem would revolutionize the way I solved probl
 
 Why was figuring out how to use Bayes theorem on day-to-day problems so important? I believe that there are three key mathematical skills everyone needs. In my opinion, these skills far surpass anything you might learn in algebra, geometry, or calculus class. They are mathematical skills that you need to simply navigate through life without making serious blunders:
 
-1. Make rough order of magnitude estimates
-2. Understand how compound interest works
-3. Think with probabilities 
+1. Making rough order magnitude estimates
+2. Understanding compound interest
+3. Thinking with probabilities
 
 First on the list is making [rough order of magnitude (ROM) estimates](ROM). An order of magnitude is a multiple of 10. So an order of magnitude error is when you are wrong by a factor of 10. For example if you think you will earn \$1000 per month, and it turns out you only make \$100 per month. Order of magnitude errors can ruin your life and, yet, are surprisingly easy to identify. 
 
