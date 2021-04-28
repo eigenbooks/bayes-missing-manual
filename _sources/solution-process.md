@@ -2,15 +2,15 @@
 (process)=
 # Bayes theorem solution process
 
-The quintessential example for introducing Bayes theorem is a medical diagnostics test. This example from Eliezer Yudkowsky is a classic and explains why the example is attention grabbing: 
+The quintessential example for introducing Bayes theorem is a medical diagnostics test. This example from Eliezer Yudkowsky is a classic. It explains why the example is attention grabbing: 
 
 > 1% of women at age forty who participate in routine screening have breast cancer. 80% of women with breast cancer will get positive mammographies.  9.6% of women without breast cancer will also get positive mammographies. A woman in this age group had a positive mammography in a routine screening.  What is the probability that she actually has breast cancer?
 >
-> Next, suppose I told you that most doctors get the same wrong answer on this problem - usually, only around 15% of doctors get it right. See Casscells, Schoenberger, and Grayboys 1978; Eddy 1982; Gigerenzer and Hoffrage 1995; and many other studies.  It's a surprising result which is easy to replicate, so it's been extensively replicated.
+> Next, suppose I told you that most doctors get the same wrong answer on this problem - usually, only around 15% of doctors get it right. See Casscells, Schoenberger, and Grayboys 1978; Eddy 1982; Gigerenzer and Hoffrage 1995; and many other studies.  It's a surprising result, which is easy to replicate, so it's been extensively replicated.
 >
 >---[Source](https://yudkowsky.net/rational/bayes/)
 
-We will return to the quintessential example described above later in this chapter. To illustrate the process for solving problems with Bayes theorem we will pick a problem that has convenient round looking numbers to make things easy. There are many ways to solve problems, but for the sake of consistency we will use this standard approach over and over in this manual.
+We will return to the quintessential example described above later in this chapter. To illustrate the process for solving problems with Bayes theorem, we will pick a problem that has convenient round looking numbers to make things easy. There are many ways to solve problems, but for the sake of consistency, we will use this standard approach over and over in this manual.
 
 Let's use a similar medical example from [arbitral.com ](https://arbital.com/p/bayes_frequency_diagram/?l=55z&pathId=65721):
 
@@ -124,7 +124,7 @@ Converted back into a probability, there is a $3/(3+4) \approx 0.43$ probability
 
 The diseasitis example makes the math easy, but is not representative of most medical tests. If we work the breast cancer example shown above from Yudkowsky the probability of being sick given a positive test is considerably smaller than the diseasitis example. Results of applying Bayes theorem are shown in {numref}`odds-mammographie`.
 
-```{list-table} Odds of breast cancer given a positive mammographie
+```{list-table} Odds of breast cancer given a positive mammography
 :header-rows: 1
 :widths: auto
 :name: odds-mammographie
@@ -149,11 +149,11 @@ The diseasitis example makes the math easy, but is not representative of most me
   - 0.92
 ```
 
-In the Yudkowsky example the odds of being sick given a positive test are 800:9504, roughly equivalent to 8:95, or approximately a 0.08 probability of being sick. This is shocking because medical professionals reportedly struggle to correctly calculate the probability of sickness. I will however contend that their inability to properly calculate the correct answer does not imply that they lack the proper medical intuition to provide good care. As the name implies, a screening test is the first of potentially many tests that would be administered if a diagnosis of cancer is suspected. To my knowledge there is no crisis in the medical communities treatment of cancer. Mainly this example is useful for teaching Bayes theorem, not influencing the training of doctors. In my opinion thinking with Bayes theorem is much more important than calculating a precise answer. Interestingly the accuracy of reading mammographies has increased due to algorithms based in part on Bayes theorem [^AI-screening] since the studies citing that medical professionals can't calculate the correct answer were published. 
+In the Yudkowsky example, the odds of being sick given a positive test are 800:9504, roughly equivalent to 8:95, or approximately a 0.08 probability of being sick. This is shocking because medical professionals reportedly struggle to correctly calculate the probability of sickness. I will however contend that their inability to properly calculate the correct answer does not imply that they lack the proper medical intuition to provide good care. As the name implies, a screening test is the first of potentially many tests that would be administered if a diagnosis of cancer is suspected. To my knowledge, there is no crisis in the medical communities treatment of cancer. This example is useful mainly for teaching Bayes theorem, not influencing the training of doctors. In my opinion, thinking with Bayes theorem is much more important than calculating a precise answer. Interestingly, the accuracy of reading mammographies has increased due to algorithms based in part on Bayes theorem [^AI-screening] since the studies citing that medical professionals can't calculate the correct answer were published. 
 
 [^AI-screening]: See ["Using AI to improve breast cancer screening"](https://blog.google/technology/health/improving-breast-cancer-screening/) and the peer reviewed [journal article](https://www.nature.com/articles/s41586-019-1799-6.epdf?author_access_token=V_LKV2xpSv9G1dhANYeWM9RgN0jAjWel9jnR3ZoTv0M5zwPVx5jT4z_z-YkUZTBT6_1AtRXi8QouJM7xB-oSN-cVBoH7f_QTgx-yQN3UBEVfkvO1_5urNT-CZHGCEQNGlCuO69tMQYak4SmdoDqyzg%3D%3D). Also see a news article about the research for [additional context](https://time.com/5754183/google-ai-mammograms-breast-cancer/) with respect to other previous studies.
 
-Another interesting intersection of Bayes theorem and breast cancer screening involved a controversy in 2009 when a U.S. Government task force suggested that women should start getting mammograms to screen for breast cancer at age 50, instead of at the customary age of 40 [^task-force]. It also suggested changing the rate of screenings from every two years to every three years. The argument is that the base rate of cancer in 40 year old women is so low that the cost of false positives (healthy women with a test that seemed to indicate cancer) outweighed the benefits of the testing for the population as a whole. The downsides include radiation exposure and unnecessary treatment. As the son of a breast cancer survivor and the father of daughters this recommendation certainly evokes an emotional response that highlights the difference between *probability theory* (what are the odds) and *decision theory* (how to use the odds to make decisions).     
+Another interesting intersection of Bayes theorem and breast cancer screening involved a controversy in 2009 when a U.S. Government task force suggested that women should start getting mammograms to screen for breast cancer at age 50, instead of at the customary age of 40 [^task-force]. It also suggested changing the rate of screenings from every two years to every three years. The argument is that the base rate of cancer in 40 year old women is so low that the cost of false positives (healthy women with a test that seemed to indicate cancer) outweighed the benefits of the testing for the population as a whole. The downsides include radiation exposure and unnecessary treatment. As the son of a breast cancer survivor and the father of daughters, this recommendation certainly evokes an emotional response that highlights the difference between *probability theory* (what are the odds) and *decision theory* (how to use the odds to make decisions).     
 
 [^task-force]: See [New Clarity on Who Needs Mammograms — When](https://time.com/4175514/mammogram-recommendations-usa/) for a discussion of why the changes were recommended and how they could have been communicated differently.
 
@@ -164,12 +164,12 @@ The standard process for using Bayes theorem throughout this article will be:
 1. Identify the problem as a candidate for Bayes theorem. Usually the data arrives prior to generating a hypothesis, and you are uncertain about the underlying mechanisms generating the data.
 1. Clearly state the question you are trying to answer in terms of a belief.
 1. Establish two or more competing hypothesis that might explain the data you are observing. 
-1. For accounting purposes, decide how you will be writing the odds. For example - sick:healthy or maybe healthy:sick
+1. For accounting purposes, decide how you will be writing the odds. For example - sick:healthy or maybe healthy:sick.
 1. Identify the prior odds. 
 1. Establish the relative likelihood of the data occurring [^likelihood]. It may help to follow this internal prompt to establish the relative likelihoods:
-    - If your first hypothesis is true, what would be the probability of observing this data
-    - If your second hypothesis is true, what would be the probability of observing this data
-    - Continue this questioning for each hypothesis
+    - If your first hypothesis is true, what would be the probability of observing this data?
+    - If your second hypothesis is true, what would be the probability of observing this data?
+    - Continue this questioning for each hypothesis.
     - Then, take the ratio of the probabilities as your relative likelihood. Don't worry if they don't sum to 1.
 1. Calculate the posterior odds using term-by-term multiplication
 
@@ -177,22 +177,22 @@ The standard process for using Bayes theorem throughout this article will be:
 
 If you only have two hypothesis, you can visualize the results by drawing a diagram:
 
-1. Start by drawing a square to represent the entirety of the probability space
+1. Start by drawing a square to represent the entirety of the probability space.
 1. Set your priors, then draw a vertical line to divide the square into two areas proportional to your prior odds. If the prior odds of $H_1:H_2$ are 1:4 then imagine dividing the square into 5 equal vertical parts, then draw a line that divides the space into a segment of one and a segment of four.
-1. Set your relative likelihoods. Shade each respective part to show the likelihood of the data given the hypothesis. If your relative likelihood is 0.9:0.3 = 9:3 = 3:1 then shade 90% of the area that represents $H_1$ and 30% of the area that represents $H_2$
+1. Set your relative likelihoods. Shade each respective part to show the likelihood of the data given the hypothesis. If your relative likelihood is 0.9:0.3 = 9:3 = 3:1 then shade 90% of the area that represents $H_1$ and 30% of the area that represents $H_2$.
 1. The posterior odds are represented by the ratio of the shaded areas. 
 
-With a mathematical form of $a \times b = c$ there are only a couple different ways you can get Bayes theorem wrong. The most likely routes to failure are:
+With a mathematical form of $a \times b = c$, there are only a couple different ways you can get Bayes theorem wrong. The most likely routes to failure are:
 
 1. Math error - simply failing to define the odds properly or making an arithmetic error
 2. Choosing inaccurate prior odds
 3. Choosing inaccurate likelihood odds
 
-Luckily Bayes theorem inherently handles uncertainty well. As long as your estimates of the prior odds and relative likelihood are accurate to an [order of magnitude](ROM) then the posterior odds are useful for decision making.
+Luckily, Bayes theorem inherently handles uncertainty well. As long as your estimates of the prior odds and relative likelihood are accurate to an [order of magnitude](ROM) then the posterior odds are useful for decision making.
 
 
 ## Summary
 
 The next [chapter](examples) is dedicated to solving a large number of worked problems. This includes easy word problems to give you practice with the mechanics of using the formula and then progresses in difficulty up to seemingly intractable problems. At first everything you need to work the problem will be contained in the example. After that the problems will delve into real life scenarios. Everything hinges on your ability to pick somewhat reasonable prior odds and likelihood ratios. There is often no "right" answer to these types of problems, but probably a wrong answer. Getting a *close enough* answer is usually [well within your abilities](ROM) with a little practice, so don't fret about that aspect. 
 
-I contend that the real power of Bayes theorem is the intuition it gives you when making decisions. Hopefully the [examples](examples) allow you to identify in your personal life problems that are candidates for using Bayes theorem.
+I contend that the real power of Bayes theorem is the intuition it gives you when making decisions. Hopefully, the [examples](examples) allow you to identify in your personal life problems that are candidates for using Bayes theorem.
