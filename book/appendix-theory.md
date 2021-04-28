@@ -17,9 +17,9 @@ For me the more interesting set of problems is the case where the uncertainty is
 
 It’s not always easy to identify what someone is talking about without context because percentages can be used for both statistics and probability. In practical cases you need to use both statistics and probability to solve problems so being as explicit as possible with your language is important. In this manual probabilities are represented as a decimal and never a percentage.
 
-To further complicate the nomenclature that is being discussed is my goal of *thinking in probabilities*. This is my way of saying that I think we should use statistical inference when thinking about everyday problems. The goals of statistical inference can include statistical significance, parameter estimation, prediction of data values, and model comparison. This book focuses solely on model comparison because there are many practical applications. I often cast competing models as a hypothesis, but there is no relation to the null hypothesis testing which is commonly used in controlled experiments.
+To further complicate the nomenclature that is being discussed is my goal of *thinking in probabilities*. This is my way of saying that I think we should use statistical inference when thinking about everyday problems. The goals of statistical inference can include statistical significance, parameter estimation, prediction of data values, and model comparison. This manual focuses solely on model comparison because there are many practical applications. I often cast competing models as a hypothesis, but there is no relation to the null hypothesis testing which is commonly used in controlled experiments.
 
-What we call things matters because it influences how we teach and describe concepts. In this book statistics are descriptive, probabilities are beliefs, and hypotheses are models of how something works. We use Bayes theorem for inference with the goal of identifying the most likely hypothesis given the data that we have observed.
+What we call things matters because it influences how we teach and describe concepts. In this manual statistics are descriptive, probabilities are beliefs, and hypotheses are models of how something works. We use Bayes theorem for inference with the goal of identifying the most likely hypothesis given the data that we have observed.
 
 (bayes-derivation)=
 ## Derivation of Bayes Theorem
@@ -189,7 +189,7 @@ It is important to point out that the derivation assumes no temporal sequencing 
 - Late October polling results show a political candidate leading in key battle ground states, what are the odds that candidate wins an early November election?
 - You hear a customer ask if you have *fork handles*, what are the odds they are really asking for *four candles*?
 
-For those familiar with the scientific method this may sound sacrilege. Many of us are taught that good science necessitates the creation of a hypothesis first, then you test that hypothesis. If your goal is to prove something scientifically, then I couldn't agree more with the hypothesis-then-test approach. You most often see this approach in a controlled laboratory setting. Bayes theorem can be useful in a controlled laboratory setting. However, traditional null hypothesis significance testing is also useful in a controlled laboratory setting. Applying Bayes theorem for controlled laboratory settings requires some nuance that is beyond the scope of this book.  
+For those familiar with the scientific method this may sound sacrilege. Many of us are taught that good science necessitates the creation of a hypothesis first, then you test that hypothesis. If your goal is to prove something scientifically, then I couldn't agree more with the hypothesis-then-test approach. You most often see this approach in a controlled laboratory setting. Bayes theorem can be useful in a controlled laboratory setting. However, traditional null hypothesis significance testing is also useful in a controlled laboratory setting. Applying Bayes theorem for controlled laboratory settings requires some nuance that is beyond the scope of this manual.  
 
 If your goal is to simply draw a reasonable explanation for the evidence you are observing when you are more or less naive to the underlying mechanisms, the evidence-then-hypothesis approach is perfectly acceptable.
 
@@ -805,7 +805,7 @@ In this definition:
 
 Keeping all the big 'B' betas, little 'b' betas, and the greek '$\beta$' parameter straight in the Beta distribution is a mess [^mess]. In practice you just need to know what your $\alpha$ and $\beta$ parameters are, then you plug them into a computer to get your distribution. The beta distribution is a very versatile distribution. {numref}`fig-beta-dist-shapes` shows some of the common shapes of the distribution. 
 
-[^mess]: To further complicate things not all authors use consistent nomenclature. Look up the beta distribution on [wikipedia](https://en.wikipedia.org/wiki/Beta_distribution) and you will see a similar, but not identical, definition compared to what is shown in this book.
+[^mess]: To further complicate things not all authors use consistent nomenclature. Look up the beta distribution on [wikipedia](https://en.wikipedia.org/wiki/Beta_distribution) and you will see a similar, but not identical, definition compared to what is shown in this manual.
 
 ```{glue:figure} beta-dist-shapes
 ---
