@@ -118,7 +118,7 @@ commentsRunWhenDOMLoaded(addUtterances);
    window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);} gtag('js', new Date());gtag('config', 'G-KSWG418LQL');
   </script>
   <script type="application/ld+json">
-   {"@context": "https://schema.org","@type": "Article","mainEntityOfPage": {"@type": "WebPage","@id": "https://bayesmanual.com/appendix-theory.html"},"headline": "Conclusion: Bayes Theorem - The Missing Manual","description": "Derivation of Bayes theorem in the probability and odds form, disambiguation of the language we use for probability and statistics, examples of using Bayes theorem for parameter estimation.","image": "https://bayesmanual.com/plot.png","author": {"@type": "Person","name": "Ryan Lowe"},"publisher": {"@type": "Organization","name": "Eigenbooks Ltd","logo": {"@type": "ImageObject","url": ""}},"datePublished": "2021-03-15","dateModified": "2021-04-28"}
+   {"@context": "https://schema.org","@type": "Article","mainEntityOfPage": {"@type": "WebPage","@id": "https://bayesmanual.com/appendix-theory.html"},"headline": "Conclusion: Bayes Theorem - The Missing Manual","description": "Derivation of Bayes theorem in the probability and odds form, disambiguation of the language we use for probability and statistics, examples of using Bayes theorem for parameter estimation.","image": "https://bayesmanual.com/plot.png","author": {"@type": "Person","name": "Ryan Lowe"},"publisher": {"@type": "Organization","name": "Eigenbooks Ltd","logo": {"@type": "ImageObject","url": ""}},"datePublished": "2021-03-15","dateModified": "2021-05-11"}
   </script>
  </head>
  <body data-offset="80" data-spy="scroll" data-target="#bd-toc-nav">
@@ -468,7 +468,7 @@ commentsRunWhenDOMLoaded(addUtterances);
           This section was not written for general readers. This is not intended as part of the curriculum for learning (or teaching) Bayes Theorem for day-to-day problems. The manual can be used in its entirety without reading this section. If there is any doubt in your mind, you should stop reading at this point.
          </p>
          <p>
-          This section was written for the author’s sake, to make sure I had all the details correct. It might also be helpful for technical reviewers. A few very detail oriented readers may want to peruse this section to provide some rigor for the methods shown in the rest of the manual.
+          This section was written for the author’s sake, to make sure he had all the details correct. It might also be helpful for technical reviewers. A few very detail oriented readers may want to peruse this section to provide some rigor for the methods shown in the rest of the manual.
          </p>
          <div class="section" id="disambiguation-of-the-language-we-use-for-probability-and-statistics">
           <h2>
@@ -490,16 +490,16 @@ commentsRunWhenDOMLoaded(addUtterances);
            There are many classic examples - rolling dice, drawing cards, flipping coins - where you can count all the possible outcomes and interpret probability as a frequency of occurrence as the most useful way to think about the problem. These are known as frequentest probabilities. The uncertainty in these situations is a result of the process that generates the data. Given enough observations of these types of processes - say 100 coin flips - the probabilities start to converge. There might be a run of 7 heads at some point, which is curious, but eventually the ratio of heads to tails will converge.
           </p>
           <p>
-           This manual mainly uses subjective probabilities instead of frequentest probabilities. Subjective probabilities are simply opinions. Hopefully you back your opinions up with some sort of evidence/data/logic/experience, but there is no mathematical constraint on how you derive your opinions. This lack of rigor makes subjective probabilities very helpful or very dangerous based on your level of skill. The onus is on you to generate probabilities that are useful to you. Bayes theorem does not care where your probabilities come from, so using either frequentest or subjective probabilities is valid. If you choose to use subjective probabilities - which we do repeatedly in this manual - you have to acknowledge that the results are personal. Someone else looking at the same data may start with a very different opinion/belief/probability and arrive at a much different result than you. This of course is perfectly acceptable as long as you realize there is no guarantee that your world view is correct in an absolute sense. Even with the dangers of subjective probabilities, using Bayes theorem to think about your problem means you are attempting to think critically.
+           This manual mainly uses subjective probabilities instead of frequentest probabilities. Subjective probabilities are simply opinions. Hopefully, you back your opinions up with some sort of evidence/data/logic/experience, but there is no mathematical constraint on how you derive your opinions. This lack of rigor makes subjective probabilities very helpful or very dangerous based on your level of skill. The responsibility is on you to generate probabilities that are useful to you. Bayes theorem does not care where your probabilities come from, so using either frequentest or subjective probabilities is valid. If you choose to use subjective probabilities - which we do repeatedly in this manual - you have to acknowledge that the results are personal. Someone else looking at the same data may start with a very different opinion/belief/probability and arrive at a much different result than you. This, of course, is perfectly acceptable as long as you realize there is no guarantee that your world view is correct in an absolute sense. Even with the dangers of subjective probabilities, using Bayes theorem to think about your problem means you are attempting to think critically.
           </p>
           <p>
-           For me the more interesting set of problems is the case where the uncertainty is not in the process, but rather due to our lack of understanding. We are uncertain which candidate will win a future election, but there is no randomness in how votes are counted. Just because we lack an understanding of who will vote in any given election and how they will cast their vote doesn’t mean that elections have an element of randomness. This second type of problem can benefit from the use of Bayesian probability and is the focus of this manual.
+           For me, the more interesting set of problems is the case where the uncertainty is not in the process, but rather due to our lack of understanding. We are uncertain which candidate will win a future election, but there is no randomness in how votes are counted. Just because we lack an understanding of who will vote in any given election and how they will cast their vote doesn’t mean that elections have an element of randomness. This second type of problem can benefit from the use of Bayesian probability and is the focus of this manual.
           </p>
           <p>
-           It’s not always easy to identify what someone is talking about without context because percentages can be used for both statistics and probability. In practical cases you need to use both statistics and probability to solve problems so being as explicit as possible with your language is important. In this manual probabilities are represented as a decimal and never a percentage.
+           It’s not always easy to identify what someone is talking about without context because percentages can be used for both statistics and probability. In practical cases, you need to use both statistics and probability to solve problems so being as explicit as possible with your language is important. In this manual, probabilities are represented as a decimal and never a percentage.
           </p>
           <p>
-           To further complicate the nomenclature that is being discussed is my goal of
+           To further complicate the nomenclature that is being discussed, is my goal of
            <em>
             thinking in probabilities
            </em>
@@ -519,7 +519,7 @@ commentsRunWhenDOMLoaded(addUtterances);
            </a>
           </h2>
           <p>
-           Recall that we are investigating a very small piece of the wide world of Bayesian statistics. The derivation shown here will be limited to just the application in this manual. The end goal is to derive the odds form of Bayes theorem. To achieve the end goal we have to settle on the notation and basic concepts for probability and odds. The basic laws of probability are taken as givens without proof in this manual. I would suggest
+           Recall that we are investigating a very small piece of the wide world of Bayesian statistics. The derivation shown here will be limited to just the application in this manual. The end goal, is to derive the odds form of Bayes theorem. To achieve the end goal we have to settle on the notation and basic concepts for probability and odds. The basic laws of probability are taken as givens without proof in this manual. I would suggest
            <a class="reference internal" href="index.html#additional-refs">
             <span class="std std-ref">
              [Kurt]
@@ -563,7 +563,7 @@ commentsRunWhenDOMLoaded(addUtterances);
              <a class="reference external" href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw">
               three blue and one brown marble
              </a>
-             in a bag. Say that you are interested in the probability that you will draw a blue marble at random from the bag. Using mathematical notation we can write the probability of drawing a blue marble as
+             in a bag. Say  you are interested in the probability that you will draw a blue marble at random from the bag. Using mathematical notation we can write the probability of drawing a blue marble as
              <span class="math notranslate nohighlight">
               \(p(marble \space = \space blue)\)
              </span>
@@ -578,7 +578,7 @@ commentsRunWhenDOMLoaded(addUtterances);
              notation is shorthand for saying the probability of ‘a’ occurring. In this context ‘a’ is an event or a proposition that can occur.
             </p>
             <p>
-             Next assume that we wanted to know the probability of drawing both a blue and brown marble with two successive draws from the bag. Replace the marbles after drawing them. The mathematical notation for this is
+             Next, assume that we wanted to know the probability of drawing both a blue and brown marble with two successive draws from the bag. Replace the marbles after drawing them. The mathematical notation for this is
              <span class="math notranslate nohighlight">
               \(p(blue,brown)\)
              </span>
@@ -589,7 +589,7 @@ commentsRunWhenDOMLoaded(addUtterances);
              notation is shorthand for saying the probability of ‘a’ and ‘b’ both occurring. This is also called a joint probability.
             </p>
             <p>
-             Finally imagine that you draw a blue marble from the bag. Assume that you now want to know what the probability of drawing a brown marble without placing the blue marble back into the bag. This can be denoted as
+             Finally, imagine that you draw a blue marble from the bag. Assume that you now want to know what the probability of drawing a brown marble without placing the blue marble back into the bag. This can be denoted as
              <span class="math notranslate nohighlight">
               \(p(brown|blue)\)
              </span>
@@ -597,14 +597,14 @@ commentsRunWhenDOMLoaded(addUtterances);
              <span class="math notranslate nohighlight">
               \(p(b|a)\)
              </span>
-             notation is shorthand for saying the probability of ‘b’ occurring given that ‘a’ occurs. In English this allows you to say “what is the probability of an event occurring now that I have some information”.
+             notation is shorthand for saying the probability of ‘b’ occurring given that ‘a’ occurs. In English this allows you to say, “what is the probability of an event occurring now that I have some information”.
             </p>
             <p>
              Essentially in probability notation the comma (,) represents the word ‘and’, while the pipe (|) represents the word ‘given’. A complex example of this notation might be something like this:
              <span class="math notranslate nohighlight">
               \(p(brown|blue,rain,monday)\)
              </span>
-             - meaning the probability of drawing a brown marble given that an earlier draw showed a blue marble, it is raining outside, and it is a Monday. In our example the weather and the day of the week have no influence on the color of the marble that is drawn. So
+             - meaning the probability of drawing a brown marble given that an earlier draw showed a blue marble, it is raining outside, and it is a Monday. In our example, the weather and the day of the week have no influence on the color of the marble that is drawn. So
              <span class="math notranslate nohighlight">
               \(p(brown|blue,rain,monday)\)
              </span>
@@ -619,11 +619,11 @@ commentsRunWhenDOMLoaded(addUtterances);
              <span class="math notranslate nohighlight">
               \(\neg\)
              </span>
-             ) can be placed in front of a variable to indicate that the event did not occur. For example
+             ) can be placed in front of a variable to indicate that the event did not occur. For example,
              <span class="math notranslate nohighlight">
               \(p(\neg a)\)
              </span>
-             is read as the probability of event ‘a’ not occurring. Sometimes negation refers to a single event, like the opposite of a basketball team winning a  game is loosing the game. At other times it can refer to any other event, such as any of the other 29 basketball teams winning the championship.
+             is read as the probability of event ‘a’ not occurring. Sometimes negation refers to a single event, like the opposite of a basketball team winning a  game is loosing the game. Other times it can refer to any other event, such as any of the other 29 basketball teams winning the championship.
             </p>
            </div>
            <div class="section" id="product-rule-of-probability">
@@ -648,7 +648,7 @@ commentsRunWhenDOMLoaded(addUtterances);
                basic notation
               </span>
              </a>
-             section into a single relationship. The trivial case of the product rule occurs when the two events (a and b) are totally independent - like when rolling two fair six sided dice. The number showing on one die has no bearing on the other die. In this special case of rolling two dice the product rule reduces to
+             section into a single relationship. The trivial case of the product rule occurs when the two events (a and b) are totally independent - like when rolling two fair six sided dice. The number showing on one die has no bearing on the other die. In this special case of rolling two dice, the product rule reduces to
              <span class="math notranslate nohighlight">
               \(p(a,b) = p(a)p(b)\)
              </span>
@@ -656,7 +656,7 @@ commentsRunWhenDOMLoaded(addUtterances);
              <span class="math notranslate nohighlight">
               \(1/6 \times 1/6 = 1/36\)
              </span>
-             . In the case where marbles are drawn from the bag, and not replaced, the conditional form of the product rule is required:
+             . In the case where marbles are drawn from the bag and not replaced, the conditional form of the product rule is required:
             </p>
             <div class="math notranslate nohighlight">
              \[p(blue,brown) = p(blue)p(brown|blue)\]
@@ -777,20 +777,20 @@ p(b) = \sum_a p(a,b) = \sum_a p(a)p(b|a)
                next section
               </span>
              </a>
-             however these concepts will be critical in understanding what the denominator in Bayes theorem means.
+             these concepts will be critical in understanding what the denominator in Bayes theorem means.
             </p>
             <p>
-             In probability notation a set of propositions (or outcomes) are mutually exclusive if only one proposition can be true. For example in a game maybe you can either win or loose, but never have a draw. A more complex example is the NFL draft where there are 224 total selections from a pool of
+             In probability notation, a set of propositions (or outcomes) are mutually exclusive if only one proposition can be true. For example, in a game maybe you can either win or loose, but never have a draw. A more complex example is the NFL draft where there are 224 total selections from a pool of
              <a class="reference external" href="https://operations.nfl.com/the-players/the-nfl-draft/the-rules-of-the-draft/">
               approximately 3000 players
              </a>
              . A player is either drafted to a single team or they are not. There are no other possible outcomes during the draft.
             </p>
             <p>
-             A set of propositions is exhaustive if they cover every possible outcome. Again a win/loose game where there can be no draws is an exhaustive set. Similarly only people who posses a lottery ticket are eligible to win the lottery.
+             A set of propositions is exhaustive if they cover every possible outcome. Again, a win/lose game where there can be no draws is an exhaustive set. Similarly, only people who posses a lottery ticket are eligible to win the lottery.
             </p>
             <p>
-             Taken together a set of propositions are mutually exclusive and exhaustive if you can explicitly write down all the possible outcomes and be sure that only one of those outcomes will occur. In practice this can be difficult to achieve. For example consider your typical murder mystery. The suspects might be Mr. Green, Col. Mustard, and Ms. Scarlet. In real life it is hard to fully eliminate the tiny possibility that some other seemingly random person, like a secret agent, didn’t commit the murder.
+             Taken together a set of propositions are mutually exclusive and exhaustive if you can explicitly write down all the possible outcomes and be sure that only one of those outcomes will occur. In practice this can be difficult to achieve. For example, consider your typical murder mystery. The suspects might be Mr. Green, Col. Mustard, and Ms. Scarlet. In real life, it is hard to fully eliminate the tiny possibility that some other seemingly random person, like a secret agent, didn’t commit the murder.
             </p>
             <p>
              In summary for a set
@@ -921,11 +921,11 @@ p(a|b) = \frac{p(a)p(b|a)}{p(b)}
 \]
            </div>
            <p>
-            As far as I can tell
+            As far as I can tell,
             <span class="math notranslate nohighlight">
              \(p(a|b) = p(a)p(b|a)/p(b)\)
             </span>
-            is the most general form of Bayes theorem, but also not directly applicable to many real world problems. To actually use the formula you have to make an assumption and expand (or neglect!) the denominator. Also you usually have to assume how many possible states of the world you are willing to consider. Some of the common situations that I have seen are:
+            is the most general form of Bayes theorem, but also not directly applicable to many real world problems. To actually use the formula you have to make an assumption and expand (or neglect!) the denominator. Also, you usually have to assume how many possible states of the world you are willing to consider. Some of the common situations  are:
            </p>
            <ul class="simple">
             <li>
@@ -950,7 +950,7 @@ p(a|b) = \frac{p(a)p(b|a)}{p(b)}
             </li>
            </ul>
            <p>
-            In this manual we primarily concern ourselves with the first two situations. The math is much simpler when you constrain the problem to a binary outcome (true/false, success/fail, etc.). In practice many problems can be cast as a binary outcome so this is not a significant constraint. If your problem can’t be cast as a binary event then you can always use a more complex form of Bayes theorem, see
+            In this manual, we primarily concern ourselves with the first two situations. The math is much simpler when you constrain the problem to a binary outcome (true/false, success/fail, etc.). In practice, many problems can be cast as a binary outcome so this is not a significant constraint. If your problem can’t be cast as a binary event then you can always use a more complex form of Bayes theorem, see
             <a class="reference internal" href="#other-applications">
              <span class="std std-ref">
               parameter estimation
@@ -966,7 +966,7 @@ p(a|b) = \frac{p(a)p(b|a)}{p(b)}
              </a>
             </h4>
             <p>
-             The form used through much of this manual is the odds form of Bayes theorem. It is derived from the above general form using a couple of simplifying assumptions. The first assumption is that we are choosing to use Bayes theorem for hypothesis testing or model comparison. What is shown here won’t work for parameter estimation problems. To break away from the general case to a more specific case let’s substitute in more meaningful variable names. Recast the theorem derived above in terms of the variable names hypothesis (H) and evidence (e):
+             The form used through much of this manual is the odds form of Bayes theorem. It is derived from the above general form using a couple of simplifying assumptions. The first assumption is that we are choosing to use Bayes theorem for hypothesis testing or model comparison. What is shown here won’t work for parameter estimation problems. To break away from the general case to a more specific case, substitute in more meaningful variable names. Recast the theorem derived above in terms of the variable names hypothesis (H) and evidence (e):
             </p>
             <div class="math notranslate nohighlight" id="equation-eq-bayes-simple">
              <span class="eqno">
@@ -988,7 +988,7 @@ p(H|e) =  \frac{ p(H)p(e|H)}{p(e)}
              <em>
               model
              </em>
-             because a model tends to be a formal thing - like a weather model. By comparison a hypothesis can be very informal, like ‘I believe Mr Green is the murderer’, or ‘I believe that an acquaintance is jealous’. If you have a complex and rigorous hypothesis that is great, but less rigorous hypotheses will work as well.
+             because a model tends to be a formal thing - like a weather model. By comparison, a hypothesis can be very informal, like ‘I believe Mr Green is the murderer’, or ‘I believe that an acquaintance is jealous’. If you have a complex and rigorous hypothesis that is great, but less rigorous hypotheses will work as well.
             </p>
             <p>
              In the new notation, evidence is a general term for anything that is known because of observation. Similar to a hypothesis, evidence can come in many forms ranging from cold hard data to gossip at the water cooler. Evidence can be generated in many ways, for example:
@@ -1023,7 +1023,7 @@ p(H|e) =  \frac{ p(H)p(e|H)}{p(e)}
              so we can modify our beliefs. Evidence with little to no strength will have have little to no impact on our beliefs.
             </p>
             <p>
-             By convention the terms in Bayes theorem are given names. I don’t like these names, but they are ubiquitous in the literature on Bayes theorem. The descriptions presented here are tailored to using the theorem for a binary event. There can be other interpretations.
+             By convention, the terms in Bayes theorem are given names. I don’t like these names, but they are ubiquitous in the literature on Bayes theorem. The descriptions presented here are tailored to using the theorem for a binary event. There can be other interpretations.
             </p>
             <ul class="simple">
              <li>
@@ -1091,7 +1091,7 @@ p(H|e) =  \frac{ p(H)p(e|H)}{p(e)}
              </a>
             </h4>
             <p>
-             The derivation of the probability form of Bayes theorem is trivial if you understand the notation used. Understanding the meaning of the denominator in the theorem is where most of the complexity arises and makes the application of Bayes theorem rather tricky in my opinion. The odds form of Bayes theorem sidesteps this complication which is why it is used through out this manual. To motivate why the odds form is easier to work with we will describe some of the aspects of the denominator in the probability form of Bayes theorem.
+             The derivation of the probability form of Bayes theorem is trivial if you understand the notation used. Understanding the meaning of the denominator in the theorem is where most of the complexity arises and makes the application of Bayes theorem tricky in practical situations. The odds form of Bayes theorem sidesteps this complication, which is why it is used through out this manual. To motivate why the odds form is easier to work with, we will describe some of the aspects of the denominator in the probability form of Bayes theorem.
             </p>
             <p>
              The probability of the evidence in the denominator of Bayes theorem can be recast in terms of probabilities that we know using the
@@ -1128,16 +1128,16 @@ p(e) = \sum_H p(H,e) = \sum_H p(H)p(e|H)
 \]
             </div>
             <p>
-             Therefore Bayes theorem can be written as:
+             Therefore, Bayes theorem can be written as:
             </p>
             <div class="math notranslate nohighlight">
              \[ p(H|e) = \frac{p(H)p(e|H)}{p(e)} = \frac{p(H)p(e|H)}{\sum_H{p(H)p(e|H)}} \]
             </div>
             <p>
-             By recasting the denominator in this way we get to work with familiar terms, but it still can be very difficult to figure out the probability for each element in the sum found in the denominator.
+             By recasting the denominator in this way, we get to work with familiar terms, but it still can be very difficult to figure out the probability for each element in the sum found in the denominator.
             </p>
             <p>
-             We avoid continuous random variables like the plague in this manual. But if you were to consider such situations the sum becomes an integral and the probabilities become distributions.
+             We avoid continuous random variables like the plague in this manual. But, if you were to consider such situations, the sum becomes an integral and the probabilities become distributions.
             </p>
             <div class="math notranslate nohighlight" id="equation-eq-calculus-probability-evidence">
              <span class="eqno">
@@ -1168,12 +1168,12 @@ p(H|e) = \frac{p(H)p(e|H)}{\int{p(H)p(e|H)}dH}
              </a>
             </h4>
             <p>
-             It is important to point out that the derivation assumes no temporal sequencing of any kind. It is totally valid to observe data first and then generate a hypothesis. I believe that this is quite common in practice and makes Bayes theorem very useful. For example evidence occurs before the hypothesis in these types of situations:
+             It is important to point out that the derivation assumes no temporal sequencing of any kind. It is totally valid to observe data first and then generate a hypothesis. I believe that this is quite common in practice and makes Bayes theorem very useful. For example, evidence occurs before the hypothesis in these types of situations:
             </p>
             <ul class="simple">
              <li>
               <p>
-               Your playing a game of chance at a casino and you loose 5 times in row, what are the odds that the casino is cheating you given your loosing streak?
+               You are playing a game of chance at a casino and you lose 5 times in row, what are the odds that the casino is cheating you given your losing streak?
               </p>
              </li>
              <li>
@@ -1206,13 +1206,13 @@ p(H|e) = \frac{p(H)p(e|H)}{\int{p(H)p(e|H)}dH}
              </li>
             </ul>
             <p>
-             For those familiar with the scientific method this may sound sacrilege. Many of us are taught that good science necessitates the creation of a hypothesis first, then you test that hypothesis. If your goal is to prove something scientifically, then I couldn’t agree more with the hypothesis-then-test approach. You most often see this approach in a controlled laboratory setting. Bayes theorem can be useful in a controlled laboratory setting. However, traditional null hypothesis significance testing is also useful in a controlled laboratory setting. Applying Bayes theorem for controlled laboratory settings requires some nuance that is beyond the scope of this manual.
+             For those familiar with the scientific method, this may sound sacrilege. Many of us are taught that good science necessitates the creation of a hypothesis first, then you test that hypothesis. If your goal is to prove something scientifically, then I couldn’t agree more with the hypothesis-then-test approach. You most often see this approach in a controlled laboratory setting. Bayes theorem can be useful in a controlled laboratory setting. However, traditional null hypothesis significance testing is also useful in a controlled laboratory setting. Applying Bayes theorem for controlled laboratory settings requires some nuance that is beyond the scope of this manual.
             </p>
             <p>
              If your goal is to simply draw a reasonable explanation for the evidence you are observing when you are more or less naive to the underlying mechanisms, the evidence-then-hypothesis approach is perfectly acceptable.
             </p>
             <p>
-             The point is that we apply temporal constraints to Bayes theorem to fit our needs, there is nothing in the derivation that restricts the use of Bayes theorem in other ways. The use of prior and posterior makes it seem like there is a temporal order, but that is just a convention separate from the actual derivation. It is unusual, but it is even possible to
+             The point is that we apply temporal constraints to Bayes theorem to fit our needs. There is nothing in the derivation that restricts the use of Bayes theorem in other ways. The use of prior and posterior makes it seem like there is a temporal order, but that is just a convention separate from the actual derivation. It is unusual, but it is even possible to
              <a class="reference internal" href="worked-examples.html#mystic-seer">
               <span class="std std-ref">
                work backwards
@@ -1258,17 +1258,17 @@ p(H|e) = \frac{p(H)p(e|H)}{\int{p(H)p(e|H)}dH}
              Odds in the betting world come in many forms - British, European, American moneyline - that vary across the type of game played and where in the world the betting house is located. The various betting notations are not used in this manual. Odds are a convenient way to quantify belief because it is easy to calculate the payout on a bet.
             </p>
             <p>
-             If you know the odds, you can calculate the implied probability. If you add up the implied probabilities from a bookmaker for an event you will discover that they don’t quite sum to 1. This is of course how bookies make their money. I fear that many people commonly bet without knowledge of the implied probability, but that is a topic for a different book…
+             If you know the odds, you can calculate the implied probability. If you add up the implied probabilities from a bookmaker for an event, you will discover that they don’t quite sum to 1. This is of course how bookies make their money. Many people commonly bet without knowledge of the implied probability, but that is a topic for a different book…
             </p>
             <p>
-             Probability theory is intricately linked to gambling. Initially probability theory was considered a dirty science due to its initial association with gambling. Only later when applications in the financial and insurance industries demonstrated its utility did it become a serious topic that professional mathematicians would study.
+             Probability theory is intricately linked to gambling. Initially, probability theory was considered a dirty science due to its initial association with gambling. Only later when applications in the financial and insurance industries demonstrated its utility did it become a serious topic that professional mathematicians would study.
             </p>
             <p>
              To avoid confusion with the historical meaning of odds, this manual uses the term
              <em>
               relative odds
              </em>
-             to denote a belief. For brevity relative odds will often be shortened to just odds in this manual.
+             to denote a belief. For brevity, relative odds will often be shortened to just odds in this manual.
             </p>
            </div>
            <div class="section" id="relative-odds">
@@ -1294,7 +1294,7 @@ p(H|e) = \frac{p(H)p(e|H)}{\int{p(H)p(e|H)}dH}
                Fig. 6
               </span>
              </a>
-             shows a binary example which is a special case that makes the math easier. Colon notation (:) is used to represent the relative odds, and is pronounced as ‘to’. For example the odds in favor of an event occurring are 3:2 or ‘three to two’. For consistency colon notation will be used in this manual. Equivalent notations represent odds as ratios or decimals. For example,
+             shows a binary example which is a special case that makes the math easier. Colon notation (:) is used to represent the relative odds, and is pronounced as ‘to’. For example, the odds in favor of an event occurring are 3:2 or ‘three to two’. For consistency, colon notation will be used in this manual. Equivalent notations represent odds as ratios or decimals. For example,
              <span class="math notranslate nohighlight">
               \(3:2 \Rightarrow 3/2 = 1.5\)
              </span>
@@ -1332,7 +1332,7 @@ p(H|e) = \frac{p(H)p(e|H)}{\int{p(H)p(e|H)}dH}
              </p>
             </div>
             <p>
-             In the more general case relative odds can be used to define the relative belief that a set of propositions will occur. For example a list of murder suspects can be assigned relative odds. The odds of suspects Mr. Green, Col. Mustard, and Ms. Scarlet being the murderer might be 1:3:5 respectively
+             In the more general case, relative odds can be used to define the relative belief that a set of propositions will occur. For example, a list of murder suspects can be assigned relative odds. The odds of suspects Mr. Green, Col. Mustard, and Ms. Scarlet being the murderer might be 1:3:5 respectively
              <a class="footnote-reference brackets" href="#clue" id="id4">
               2
              </a>
@@ -1367,7 +1367,7 @@ p(H|e) = \frac{p(H)p(e|H)}{\int{p(H)p(e|H)}dH}
              </div>
             </div>
             <p>
-             Formally a set of propositions (or possible outcomes to an event) can be explicitly listed as
+             Formally, a set of propositions (or possible outcomes to an event) can be explicitly listed as
              <span class="math notranslate nohighlight">
               \(X = \{X_1,X_2,...,X_n\}\)
              </span>
@@ -1409,7 +1409,7 @@ p(H|e) = \frac{p(H)p(e|H)}{\int{p(H)p(e|H)}dH}
              \[O(X) \propto p(X)\]
             </div>
             <p>
-             For example if the probability of Mr. Green, Col. Mustard, and Ms. Scarlet being the murder is
+             For example, if the probability of Mr. Green, Col. Mustard, and Ms. Scarlet being the murder is
              <span class="math notranslate nohighlight">
               \(X = \{0.1,0.3,0.5\}\)
              </span>
@@ -1485,7 +1485,7 @@ p(H|e) = \frac{p(H)p(e|H)}{\int{p(H)p(e|H)}dH}
              </span>
             </p>
             <p>
-             Unlike probability which is defined on the range
+             Unlike probability, which is defined on the range
              <span class="math notranslate nohighlight">
               \([0,1]\)
              </span>
@@ -1597,7 +1597,7 @@ p(H|e) = \frac{p(H)p(e|H)}{\int{p(H)p(e|H)}dH}
              </tbody>
             </table>
             <p>
-             Multiplication of sets of odds is very straight forward. Multiplication is element wise. For example if you have two separate sets of odds denoted as
+             Multiplication of sets of odds is very straight forward. Multiplication is element wise. For example, if you have two separate sets of odds denoted as
              <span class="math notranslate nohighlight">
               \(x\)
              </span>
@@ -1635,7 +1635,7 @@ p(H|e) = \frac{p(H)p(e|H)}{\int{p(H)p(e|H)}dH}
             <span class="math notranslate nohighlight">
              \(e\)
             </span>
-            . In this manual the competing hypothesis are most likely a binary outcome such as
+            . In this manual, the competing hypothesis are most likely a binary outcome such as
             <span class="math notranslate nohighlight">
              \(H_1\)
             </span>
@@ -1666,7 +1666,7 @@ p(H|e) = \frac{p(H)p(e|H)}{\int{p(H)p(e|H)}dH}
             \[\frac{p(H_1|e)}{p(H_2|e)} = \frac{p(H_1)p(e|H_1)/p(e)}{p(H_2)p(e|H_2)/p(e)} = \frac{p(H_1)p(e|H_1)}{p(H_2)p(e|H_2)}\]
            </div>
            <p>
-            Separate the terms to make the result more readable
+            Separate the terms to make the result more readable:
            </p>
            <div class="math notranslate nohighlight" id="equation-eq-bayes-proportional">
             <span class="eqno">
@@ -1680,7 +1680,7 @@ p(H|e) = \frac{p(H)p(e|H)}{\int{p(H)p(e|H)}dH}
 \]
            </div>
            <p>
-            This intermediate step is known as the proportional form of Bayes theorem. In English this means that the ratio of the posterior probabilities are equal to the ratio of the prior probabilities times the ratio of the likelihoods. Ratios of probabilities are relative odds. If we use the notation
+            This intermediate step is known as the proportional form of Bayes theorem. In English, this means that the ratio of the posterior probabilities are equal to the ratio of the prior probabilities times the ratio of the likelihoods. Ratios of probabilities are relative odds. If we use the notation
             <span class="math notranslate nohighlight">
              \(H=\{H_1,H_2\}\)
             </span>
@@ -1710,7 +1710,7 @@ O(H|e) = O(H) \times L(e)
             <span class="math notranslate nohighlight">
              \(p(e|H_1)/p(e|H_2)\)
             </span>
-            , known as the relative likelihood. Without mathematical notation this result can be stated verbally as:
+            , known as the relative likelihood. Without mathematical notation, this result can be stated verbally as:
            </p>
            <div class="math notranslate nohighlight">
             \[posterior \space odds = prior \space odds \times relative \space likelihood\]
@@ -1739,13 +1739,13 @@ O(H|e) &amp;= \{h_1l_1,h_2l_2\}
             <span class="math notranslate nohighlight">
              \(O(H)\)
             </span>
-            - This term represents what you would have thought prior to making any observations. For example, if you have a loving and healthy relationship with your partner your prior odds that they would cheat on you would be very low. In our
+            - This term represents what you would have thought prior to making any observations. For example, if you have a loving and healthy relationship with your partner, your prior odds that they would cheat on you would be very low. In our
             <a class="reference internal" href="motivating-example.html#example">
              <span class="std std-ref">
               Worcestershire cola
              </span>
             </a>
-            example, before we read the article, we were very skeptical of the headline and assigned our prior odds as very strongly in favor of fake news. In most cases your prior odds are not an exhaustive set.
+            example, before we read the article, we were very skeptical of the headline and assigned our prior odds as very strongly in favor of fake news. In most cases, your prior odds are not an exhaustive set.
            </p>
            <p>
             <strong>
@@ -1778,7 +1778,7 @@ O(H|e) &amp;= \{h_1l_1,h_2l_2\}
             .
            </p>
            <p>
-            Because the odds form of Bayes theorem uses element wise multiplication it can easily be extended to accommodate a finite number of competing hypothesis simply by expanding the set of hypothesis like
+            Because the odds form of Bayes theorem uses element wise multiplication, it can easily be extended to accommodate a finite number of competing hypothesis simply by expanding the set of hypothesis like
             <span class="math notranslate nohighlight">
              \(H=\{H_1,H_2,...,H_n\}\)
             </span>
@@ -1799,7 +1799,7 @@ O(H|e) &amp;= \{h_1l_1,h_2l_2\}
               mystic seer
              </span>
             </a>
-            example to be unsatisfying because it relies on probabilities and not relative odds. Recall the that evidence in this case is seven consecutive observations of a correct answer where the probability of a correct answer is 0.5. Therefore the likelihood using probabilities is calculated as
+            example to be unsatisfying because it relies on probabilities and not relative odds. Recall the that evidence in this case is seven consecutive observations of a correct answer where the probability of a correct answer is 0.5. Therefore, the likelihood using probabilities is calculated as
             <span class="math notranslate nohighlight">
              \((0.5)^7 = 1/128 = 0.0078125\)
             </span>
@@ -1832,7 +1832,7 @@ O(H|e) &amp;= \{h_1l_1,h_2l_2\}
             .
            </p>
            <p>
-            After the first correct answer from the seer you could ask yourself, given each hypothesis what is the probability of observing this data.
+            After the first correct answer from the seer, you could ask yourself, given each hypothesis what is the probability of observing this data.
             <span class="math notranslate nohighlight">
              \(H_1\)
             </span>
@@ -1840,13 +1840,13 @@ O(H|e) &amp;= \{h_1l_1,h_2l_2\}
             <span class="math notranslate nohighlight">
              \(H_2\)
             </span>
-            represents the hypothesis that the mystic seer is randomly guessing at the answerers. In this case the probability of a correct answer would be 0.5. Your relative likelihood would be:
+            represents the hypothesis that the mystic seer is randomly guessing at the answerers. In this case, the probability of a correct answer would be 0.5. Your relative likelihood would be:
            </p>
            <div class="math notranslate nohighlight">
             \[\frac{p(H_1|e_1)}{p(H_2|e_1)} = \frac{1}{\frac{1}{2}}=2\]
            </div>
            <p>
-            Similarly after observing the second correct answer the relative likelihood of just that observation would be:
+            Similarly, after observing the second correct answer the relative likelihood of just that observation would be:
            </p>
            <div class="math notranslate nohighlight">
             \[\frac{p(H_1|e_2)}{p(H_2|e_2)} = \frac{1}{\frac{1}{2}}=2\]
@@ -1907,7 +1907,7 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
 \]
            </div>
            <p>
-            In the remainder of this section relative odds and odds ratios will be used interchangeably so that the logarithms can be calculated. Recall that relative odds of
+            In the remainder of this section, relative odds and odds ratios will be used interchangeably so that the logarithms can be calculated. Recall that relative odds of
             <span class="math notranslate nohighlight">
              \(a:b\)
             </span>
@@ -1918,7 +1918,7 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
             .
            </p>
            <p>
-            For example if you set your prior odds that a medical news story is real:fake at 1:128, then you then observe the following evidence (see the
+            For example, if you set your prior odds that a medical news story is real:fake at 1:128, then you then observe the following evidence (see the
             <a class="reference internal" href="worked-examples.html#medical-heuristic">
              <span class="std std-ref">
               medical heuristic
@@ -1983,7 +1983,7 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
             <span class="math notranslate nohighlight">
              \(log_2(64) = 6\)
             </span>
-            . By virtue of how we set up the problem positive bits imply a belief that the news story is real and negative bits imply a belief that the story is fake. Putting it all together, a summary of the problem is shown in
+            . By virtue of how we set up the problem, positive bits imply a belief that the news story is real and negative bits imply a belief that the story is fake. Putting it all together, a summary of the problem is shown in
             <a class="reference internal" href="#tab-log-odds-medical">
              <span class="std std-numref">
               Table 30
@@ -2122,14 +2122,14 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
             <span class="math notranslate nohighlight">
              \(-7+6=-1\)
             </span>
-            . Because of the way we set up the problem, with odds as real:fake, this implies that you should believe that the story is fake with log-odds of -1 bit, or equivalently odds of 1:2. Initially you believed very strongly that the story was fake. After updating you still believe the story is fake, just with much less certainty than you initially had.
+            . Because of the way we set up the problem, with odds as real:fake, this implies that you should believe that the story is fake with log-odds of -1 bit, or equivalently odds of 1:2. Initially, you believed very strongly that the story was fake. After updating, you still believe the story is fake, just with much less certainty than you initially had.
            </p>
            <p>
             Log-odds is defined on the interval
             <span class="math notranslate nohighlight">
              \([-\infty, +\infty]\)
             </span>
-            . By comparison the intervals for the other forms are, probability
+            . By comparison, the intervals for the other forms are, probability
             <span class="math notranslate nohighlight">
              \([0,1]\)
             </span>
@@ -2306,11 +2306,11 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
             </tbody>
            </table>
            <p>
-            As a belief becomes increasingly convincing the change in the probability interval becomes very small. For example, as a belief goes from 32:1 to 128:1 the probability index only changes by
+            As a belief becomes increasingly convincing, the change in the probability interval becomes very small. For example, as a belief goes from 32:1 to 128:1 the probability index only changes by
             <span class="math notranslate nohighlight">
              \(128/129 - 32/33 = 0.02\)
             </span>
-            . By comparison as a belief goes from 2:1 to 8:1 the probability index changed by
+            . By comparison, as a belief goes from 2:1 to 8:1, the probability index changed by
             <span class="math notranslate nohighlight">
              \(8/9-2/3 = 0.22\)
             </span>
@@ -2323,7 +2323,7 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
               Table 29
              </span>
             </a>
-            , describing the strength of evidence, is a result of the shortcoming of an infinite index. Reasoning with very small odds is still not great because the numbers become very small. The index is linear with small odds, but humans don’t naturally deal with multiple decimal places well. When odds are small the ratio can be turned around to get a feel for the magnitude of the belief, but then you have to remember to revert the odds back which is problematic.
+            , describing the strength of evidence, is a result of the shortcoming of an infinite index. Reasoning with very small odds is still not great because the numbers become very small. The index is linear with small odds, but humans don’t naturally deal with multiple decimal places well. When odds are small, the ratio can be turned around to get a feel for the magnitude of the belief, but then you have to remember to revert the odds back which is problematic.
            </p>
            <p>
             The log-odds index, not surprisingly, is linear. Each change in belief listed in
@@ -2332,12 +2332,12 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
               Table 32
              </span>
             </a>
-            changes the belief by 2 bits. This can be a very intuitive way to think about the strength of evidence. Manipulating bits with mental math is similarly easy, its just requires addition. There are however two issues with using bits:
+            changes the belief by 2 bits. This can be a very intuitive way to think about the strength of evidence. Manipulating bits with mental math is similarly easy, it just requires addition. There are two issues with using bits:
            </p>
            <ul class="simple">
             <li>
              <p>
-              The practical issue with bits and the log scale is the need to take the inverse of the logarithm to get back to a traditional index. In theory you could calibrate yourself to reason with bits. I however still find value with sometimes using, or communicating, with the probability or odds index.
+              The practical issue with bits and the log scale is the need to take the inverse of the logarithm to get back to a traditional index. In theory, you could calibrate yourself to reason with bits. I however, still find value with sometimes using, or communicating, with the probability or odds index.
              </p>
             </li>
             <li>
@@ -2355,11 +2355,11 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
             </li>
            </ul>
            <p>
-            In summary all of the indexes used to describe a belief have pros and cons. The odds index defined on
+            In summary, all of the indexes used to describe a belief have pros and cons. The odds index defined on
             <span class="math notranslate nohighlight">
              \([0,+\infty]\)
             </span>
-            was chosen for this manual because it seems to represent a middle ground and involves manipulating whole numbers. Obviously your mileage will vary with each index, and its accompanying form of Bayes theorem. The good news is that all three forms are valid if your use case warrants it.
+            was chosen for this manual because it seems to represent a middle ground and involves manipulating whole numbers. Your mileage will vary with each index, and its accompanying form of Bayes theorem. The good news is that all three forms are valid if your use case warrants it.
            </p>
            <p>
             For reference,
@@ -2494,7 +2494,7 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
            <a class="footnote-reference brackets" href="#extreme" id="id6">
             4
            </a>
-           , then we can intuitively guess what the posterior odds will be, or more importantly what the inputs need to be to modify our beliefs in a meaningful way. For this section normal means the prior odds ratio, or the relative likelihood ratio, is less than or equal to 150. Extreme odds/likelihoods have ratios greater than 150. The inverse, anything smaller than
+           , then we can intuitively guess what the posterior odds will be, or more importantly what the inputs need to be to modify our beliefs in a meaningful way. For this section, normal means the prior odds ratio, or the relative likelihood ratio, is less than or equal to 150. Extreme odds/likelihoods have ratios greater than 150. The inverse, anything smaller than
            <span class="math notranslate nohighlight">
             \(\frac{1}{150} \approx 0.0067\)
            </span>
@@ -2511,10 +2511,10 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
             If you have extreme odds, this implies that you strongly support one hypothesis over the other. You can then ask how strong the evidence would have to be to support the other hypothesis. Is it even possible to see evidence strong enough to switch your support to the other hypothesis?
            </p>
            <p>
-            For example, if you believe a claim is false with odds of 1:199, then how strong will the evidence be to switch your belief to the true hypothesis? If the odds are denoted as true:false, then the question is asking what relative likelihood would be needed to make the odds greater than 1:1 in favor of the ‘true’ hypothesis. In this case the relative likelihood would have to be greater than 199:1.
+            For example, if you believe a claim is false with odds of 1:199, then how strong will the evidence be to switch your belief to the true hypothesis? If the odds are denoted as true:false, then the question is asking what relative likelihood would be needed to make the odds greater than 1:1 in favor of the ‘true’ hypothesis. Here the relative likelihood would have to be greater than 199:1.
            </p>
            <p>
-            Typically we are evaluating what the odds of seeing evidence is given that each hypothesis is true. To achieve the relative likelihood greater than 199:1 very strong evidence for the ‘true’ hypothesis, as well as strong evidence against the ‘false’ hypothesis would be needed. The relative likelihood would need to have:
+            Typically, we are evaluating what the odds of seeing evidence is given that each hypothesis is true. To achieve the relative likelihood greater than 199:1 very strong evidence for the ‘true’ hypothesis, as well as strong evidence against the ‘false’ hypothesis would be needed. The relative likelihood would need to have:
            </p>
            <ul class="simple">
             <li>
@@ -2529,10 +2529,10 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
             </li>
            </ul>
            <p>
-            In cases of extreme evidence, like this example, the value of the denominator has more influence on the likelihood ratio than the denominator.  Put another way, extreme likelihood ratios are most sensitive to changes in the denominator. For example the likelihood ratio for 0.996/0.005 is 199.2, but the ratio for 0.995/0.004 is 248.8. Reducing the probability in the denominator by 0.001 is more influential on the strength of evidence than increasing the probability in the numerator by 0.001.
+            In cases of extreme evidence, like this example, the value of the denominator has more influence on the likelihood ratio than the denominator.  Put another way, extreme likelihood ratios are most sensitive to changes in the denominator. For example, the likelihood ratio for 0.996/0.005 is 199.2, but the ratio for 0.995/0.004 is 248.8. Reducing the probability in the denominator by 0.001 is more influential on the strength of evidence than increasing the probability in the numerator by 0.001.
            </p>
            <p>
-            When you choose to write your odds in the opposite order the same effect occurs, it is just harder to visualize because the values are so small.
+            When you choose to write your odds in the opposite order the same effect occurs, it is harder to visualize because the values are so small.
             <a class="reference internal" href="#tab-extreme-evidence-small">
              <span class="std std-numref">
               Table 33
@@ -2542,7 +2542,7 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
             <a class="footnote-reference brackets" href="#equivilant" id="id7">
              5
             </a>
-            the effect is hard to see when the likelihood ratio is such a small number.
+            , the effect is hard to see when the likelihood ratio is such a small number.
            </p>
            <table class="colwidths-auto table" id="tab-extreme-evidence-small">
             <caption>
@@ -2630,7 +2630,7 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
             </tbody>
            </table>
            <p>
-            Further compounding the difficulty of obtaining an extreme relative likelihood to counter an extreme prior is the accuracy of subjective probabilities. In our running example it is shown that the results are highly sensitive to changes in the probability as small as 0.001. I am skeptical that a human who is estimating probabilities can meaningfully distinguish between subjective probabilities of with such small resolutions. In my experience a well calibrated estimator can only meaningfully distinguish probabilities that are two orders of magnitude larger, something on the order of 0.1. If you are naive about a particular subject, the resolution of the probabilities you can meaningfully distinguish between will be even larger, say 0.2 or more.
+            An additional complication is caused by the accuracy of subjective probabilities. In our running example, it is shown that the results are highly sensitive to changes in the probability as small as 0.001. I am skeptical that a human who is estimating probabilities can meaningfully distinguish between subjective probabilities of with such small resolutions. In my experience, a well calibrated estimator can only meaningfully distinguish probabilities that are two orders of magnitude larger, something on the order of 0.1. If you are naive about a particular subject, the resolution of the probabilities you can meaningfully distinguish between will be even larger, say 0.2 or more.
            </p>
            <p>
             The methods described in this manual are meant for quick calculations in your head and developing intuition about problems. When extreme odds are involved the intuition of Bayes theorem still holds, but extra care is needed to reason with any certainty about the situation because of the mathematical sensitivities in the odds form of Bayes theorem.
@@ -2663,14 +2663,14 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
             \[ prior \space odds = \frac{posterior \space odds}{relative \space likelihood} \]
            </div>
            <p>
-            This allows you to critic if the prior odds were reasonable. If the posterior odds are disproportional strong compared to the strength of the evidence then it can be argued that the prior odds may have been too extreme initially.
+            This allows you to criticize if the prior odds were reasonable. If the posterior odds are disproportional strong compared to the strength of the evidence then it can be argued that the prior odds may have been too extreme initially.
            </p>
            <p>
             While there is no
             <em>
              correct
             </em>
-            answer to this kind of situation one benefit of using Bayes theorem is that is allows you to clearly articulate why you have the beliefs that you do in a way that others can examine to understand your logic.
+            answer to this kind of situation, one of the benefits of using Bayes theorem is that it allows you to clearly articulate why you have the beliefs that you do in a way that others can examine to understand your logic.
            </p>
           </div>
          </div>
@@ -2694,7 +2694,7 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
              practical examples
             </span>
            </a>
-           I tried to incorporate real world problems, this section is more theoretical and the examples are less applicable to real life problems in my opinion.
+           , I tried to incorporate real world problems, this section is more theoretical and the examples are less applicable to real life problems.
           </p>
           <div class="section" id="pink-shirts">
            <h3>
@@ -2859,7 +2859,7 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
             \[p(pink|man) = \frac{5}{40} = 0.125\]
            </div>
            <p>
-            Therefore the quantity that we desire is
+            Therefore, the quantity that we desire is:
            </p>
            <div class="math notranslate nohighlight">
             \[p(H|e) = \frac{p(H)p(e|H)}{p(e)} = \frac{p(man)p(pink|man)}{p(pink)}= \frac{0.4 \times 0.125}{0.25} = 0.20\]
@@ -2892,7 +2892,7 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
             <span class="math notranslate nohighlight">
              \(\neg man\)
             </span>
-            wearing a pink shirt is 20/60. Therefore the relative likelihood is
+            wearing a pink shirt is 20/60. The the relative likelihood is
             <span class="math notranslate nohighlight">
              \((5/40):(20/60) = \frac{1}{8}:\frac{1}{3}\)
             </span>
@@ -3122,7 +3122,7 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
              \[p(H_3) = \frac{1}{4}\]
             </div>
             <p>
-             Given the observation that one child is a boy we can use Bayes theorem to calculate the probability of two boys
+             Given the observation that one child is a boy, we can use Bayes theorem to calculate the probability of two boys:
             </p>
             <div class="math notranslate nohighlight">
              \[ p(H|e) = \frac{p(H)p(e|H)}{p(e)} = \frac{p(H)p(e|H)}{\sum_H{p(H)p(e|H)}} \]
@@ -3203,11 +3203,11 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
              <span class="math notranslate nohighlight">
               \(p(e)\)
              </span>
-             , just normalize the results so the posterior probability sums to one. This implicitly assumes that our set of hypothesis is mutually exclusive and exhaustive, which is true in this example. There are other cases where this is practically true, but not literally true. For example if a plane crashes in the ocean it technically can be
+             , just normalize the results so the posterior probability sums to one. This implicitly assumes that our set of hypothesis is mutually exclusive and exhaustive, which is true in this example. There are other cases where this is practically true, but not literally true. For example, if a plane crashes in the ocean, it technically can be
              <em>
               anywhere
              </em>
-             in the ocean, but in practice you can limit the search area to a circle defined by how much fuel the airplane was carrying.
+             in the ocean. In practice however, you can limit the search area to a circle defined by how much fuel the airplane was carrying.
             </p>
             <p>
              Here are the priors again:
@@ -3367,15 +3367,15 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
              </a>
             </h4>
             <p>
-             The same result was arrived at in three different ways for the case of the three models. In the last section the simplest possible formulation was given to show that it too was valid and possible (even if the probability mass was distributed differently). The only difference in the methods was if and how
+             The same result was arrived at in three different ways for the case of the three models. In the last section, the simplest possible formulation was given to show that it too was valid and possible (even if the probability mass was distributed differently). The only difference in the methods was if and how
              <span class="math notranslate nohighlight">
               \(p(e)\)
              </span>
-             was calculated. Ultimately how you handle the denominator in Bayes theorem depends on the form of the theorem you are using and if you are considering a set of mutually exclusive and exhaustive propositions. In practice you may lack the knowledge to define
+             was calculated. How you handle the denominator in Bayes theorem depends on the form of the theorem you are using and if you are considering a set of mutually exclusive and exhaustive propositions. You may lack the knowledge to define
              <span class="math notranslate nohighlight">
               \(p(e)\)
              </span>
-             and therefore prefer one of the formulations that does not require calculating the denominator in Bayes theorem.
+             in practice and therefore prefer one of the formulations that does not require calculating the denominator in Bayes theorem.
             </p>
            </div>
           </div>
@@ -3390,13 +3390,13 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
            </a>
           </h2>
           <p>
-           Bayesian statistics is a large field of study. What has bee presented in this manual focuses on a special case of Bayes theorem - model comparison using the odds form of the theorem. In an effort to help broaden the readers mind to the other possible uses of Bayes theorem a couple of different applications will be quickly reviewed. Interested readers should seek out the
+           Bayesian statistics is a large field of study. What has been presented in this manual focuses on a special case of Bayes theorem - model comparison using the odds form of the theorem. In an effort to help broaden the readers mind to the other possible uses of Bayes theorem, a couple of different applications will be quickly reviewed. Interested readers should seek out the
            <a class="reference internal" href="index.html#additional-refs">
             <span class="std std-ref">
              additional references
             </span>
            </a>
-           for more rigorous treatment of these topics. Admittedly these examples are still very biased towards model comparison and don’t offer a well rounded view of the larger field of Bayesian statistics.
+           for more rigorous treatment of these topics. These examples are still very biased towards model comparison and don’t offer a well rounded view of the larger field of Bayesian statistics.
           </p>
           <p>
            This section introduces a couple of concepts that are very commonly used in Bayesian statistics:
@@ -3462,18 +3462,18 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
             this manual uses. If you want, or need, a better way of quantifying the uncertainly of your beliefs using, a probability distribution is very convenient, just be aware of the additional computational overhead that may be involved.
            </p>
            <p>
-            A probability distribution is a way to quantify your belief in something. Probability distributions are very convenient because they allow you to quantify your beliefs as a range of values each with an associated probability. If you are highly uncertain your distribution can be very
+            A probability distribution is a way to quantify your belief in something. Probability distributions are very convenient because they allow you to quantify your beliefs as a range of values each with an associated probability. If you are highly uncertain, your distribution can be very
             <em>
              wide
             </em>
-            . If you are very certain you can make your probability distribution very
+            . If you are very certain, you can make your probability distribution very
             <em>
              narrow
             </em>
             . You are not limited to mathematically continuous functions for your distributions. Shapes that resemble triangles, rectangles, urban sky lines, and lumpy piles can all be used as distributions. Again, you are only limited by your imagination, so establishing your distributions based on some sort of evidence/data/logic/experience is preferred. There is no mathematical constraint on how you derive your prior distributions because ultimately they are just opinions.
            </p>
            <p>
-            For example I could say that I am 95% sure that the weight of a new loaf of bread at the store is between 0.8 and 2 lbs. This is shown visually in
+            For example, I could say that I am 95% sure that the weight of a new loaf of bread at the store is between 0.8 and 2 lbs. This is shown visually in
             <a class="reference internal" href="#fig-bread-weight-pdf">
              <span class="std std-numref">
               Fig. 7
@@ -3528,7 +3528,7 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
              <em>
               probability density function (PDF)
              </em>
-             like the one shown above is a continuous function. Reasoning about a PDF requires calculus. Luckily for those of us allergic to calculus there is a discrete alternative, the
+             like the one shown above is a continuous function. Reasoning about a PDF requires calculus. For those of us allergic to calculus, there is a discrete alternative, the
              <em>
               probability mass function (PMF)
              </em>
@@ -3579,7 +3579,7 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
              to have a total probability mass of 1.0, so this is more than just a nuance of using distributions and Bayes theorem.
             </p>
             <p>
-             When comparing two PMF’s it helps if you use the same number of points. In general you are just interested in the shape of the distribution and what range of possible values the distribution is over. If you use a
+             When comparing two PMF’s, it helps to use the same number of points. In general, you are just interested in the shape of the distribution and what range of possible values the distribution is over. If you use a
              <a class="reference internal" href="#grid">
               <span class="std std-ref">
                grid
@@ -3633,7 +3633,7 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
             </div>
            </div>
            <p>
-            A special case of a probability distribution is the probability of a probability. For example instead of saying you believe the probability of making a sale to a customer that visits your website is 0.1, you could instead give a range of values to the probability of making a sale, in this case using the beta distribution as shown in
+            A special case of a probability distribution is the probability of a probability. For example, instead of saying you believe the probability of making a sale to a customer that visits your website is 0.1, you could instead give a range of values to the probability of making a sale, in this case using the beta distribution as shown in
             <a class="reference internal" href="#fig-beta-dist">
              <span class="std std-numref">
               Fig. 9
@@ -3746,7 +3746,7 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
             <a class="footnote-reference brackets" href="#mess" id="id9">
              6
             </a>
-            . In practice you just need to know what your
+            . In practice, you just need to know what your
             <span class="math notranslate nohighlight">
              \(\alpha\)
             </span>
@@ -3791,7 +3791,7 @@ log_2 \big( O(H|e) \big)  = log_2 \big(O(H) \big) + log_2 \big( L(e) \big)
             <a class="footnote-reference brackets" href="#proof" id="id10">
              7
             </a>
-            I will state that Bayes theorem can be applied to the Beta distribution in the following manner:
+            , I will state that Bayes theorem can be applied to the Beta distribution in the following manner:
            </p>
            <div class="math notranslate nohighlight" id="equation-eq-bayes-beta">
             <span class="eqno">
@@ -3805,7 +3805,7 @@ Beta(p; \alpha_{post},\beta_{post}) = Beta(p;\alpha_{prior} + \alpha_{like},\bet
 \]
            </div>
            <p>
-            Again the simplicity is astounding. By simply using addition you can use Bayes theorem when your uncertainty is described with a beta distribution. The drawback is that the beta distribution only applies in the range of
+            The simplicity is astounding. By simply using addition, you can use Bayes theorem when your uncertainty is described with a beta distribution. The drawback is that the beta distribution only applies in the range of
             <span class="math notranslate nohighlight">
              \([0,1]\)
             </span>
@@ -3816,7 +3816,7 @@ Beta(p; \alpha_{post},\beta_{post}) = Beta(p;\alpha_{prior} + \alpha_{like},\bet
             .
            </p>
            <p>
-            Pretend for example that you write a book about Bayes theorem and open an online store to sell your book. After the first ten visitors to your online store you sell one book! This is an outstanding visitor to customer conversion rate for an online product, and you begin to think that you might be headed for an early retirement. Set your priors to be
+            Pretend for example that you write a book about Bayes theorem and open an online store to sell your book. After the first ten visitors to your online store, you sell one book! This is an outstanding visitor to customer conversion rate for an online product, and you begin to think that you might be headed for an early retirement. Set your priors to be
             <span class="math notranslate nohighlight">
              \(\alpha_{prior} =\)
             </span>
@@ -4057,10 +4057,10 @@ Beta(p; \alpha_{post},\beta_{post}) = Beta(p;\alpha_{prior} + \alpha_{like},\bet
             </tbody>
            </table>
            <p>
-            This new data seriously downgrades your expectations for profit. Maybe there are not as many readers interested in Bayes theorem as you initially thought, better not quit your day job yet…However, you can see Bayes theorem in action. The prior was overly generous. The likelihood showed that in truth the conversion rate was much lower. Finally the posterior is a compromise between the prior and the likelihood. The likelihood had many more data points than the prior, so the strength of evidence made the posterior distribution much closer to the likelihood than the prior.
+            This new data seriously downgrades your expectations for profit. Maybe there are not as many readers interested in Bayes theorem as you initially thought, better not quit your day job yet…However, you can see Bayes theorem in action. The prior was overly generous. The likelihood showed that in truth the conversion rate was much lower. Finally, the posterior is a compromise between the prior and the likelihood. The likelihood had many more data points than the prior, so the strength of evidence made the posterior distribution much closer to the likelihood than the prior.
            </p>
            <p>
-            The beta distribution is an example of parameter estimation with Bayes theorem. Like most things in this manual this is a special case where the math is much easier than the general case. In this case
+            The beta distribution is an example of parameter estimation with Bayes theorem. Like most things in this manual this is a special case where the math is much easier than the general case. In this manual,
             <em>
              easy
             </em>
@@ -4099,16 +4099,16 @@ Beta(p; \alpha_{post},\beta_{post}) = Beta(p;\alpha_{prior} + \alpha_{like},\bet
             <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5635437/#:~:text=The%20Null%20Hypothesis%20Significance%20Testing,based%20on%20a%20given%20observation.">
              null hypothesis significance testing
             </a>
-            where you can state things like “drug A increases survival compared to the control group, p &lt; 0.05, n = 30”. The goal of significance testing is to not trick yourself because you happened to observe a few lucky observations.
+            where you can state things like, “drug A increases survival compared to the control group, p &lt; 0.05, n = 30”. The goal of significance testing is to not trick yourself because you happened to observe a few lucky observations.
            </p>
            <p>
-            Getting null hypothesis testing correct can be onerous. Thankfully there is not a direct analogy in Bayesian statistics for null hypothesis significance test. However, running an A/B test can answer similar questions when using Bayesian statistics.
+            Getting null hypothesis testing correct can be onerous. Thankfully, there is not a direct analogy in Bayesian statistics for null hypothesis significance test. However, running an A/B test can answer similar questions when using Bayesian statistics.
            </p>
            <p>
-            Back to the example of the online store. Your conversion rate is rather low. To make more money you would like to increase your conversion of site visitors to paying customers. Writing a better book is difficult and time consuming. Instead you surmise that readers interested in Bayes theorem are likely nerdy and lonely individuals, so you update the cover of your book to include an attractive couple in swim suits (sex sells!).
+            Back to the example of the online store. Your conversion rate is rather low. To make more money, you would like to increase your conversion of site visitors to paying customers. Writing a better book is difficult and time consuming. Instead, you surmise that readers interested in Bayes theorem are likely nerdy and lonely individuals, so you update the cover of your book to include an attractive couple in swim suits (sex sells!).
            </p>
            <p>
-            After updating your book cover art you observe how many sales you make and how many site visitors you had. Collecting this data takes time, and you are impatient, so you wait until you have just one more sale. If the original book cover design is taken as variant A, and the new sexy design is taken as variant B, then
+            After updating your book cover art, you observe how many sales you make and how many site visitors you had. Collecting this data takes time, and you are impatient, so you wait until you have just one more sale. If the original book cover design is taken as variant A, and the new sexy design is taken as variant B, then
             <a class="reference internal" href="#tab-online-sales">
              <span class="std std-numref">
               Table 37
@@ -4346,7 +4346,7 @@ Beta(p; \alpha_{post},\beta_{post}) = Beta(p;\alpha_{prior} + \alpha_{like},\bet
             </tbody>
            </table>
            <p>
-            To get more insight into the relative merits of our book cover variants we have to run a Monte Carlo simulation. The simulation goes like this:
+            To get more insight into the relative merits of our book cover variants, we have to run a Monte Carlo simulation. The simulation goes like this:
            </p>
            <ol class="simple">
             <li>
@@ -4471,7 +4471,7 @@ Beta(p; \alpha_{post},\beta_{post}) = Beta(p;\alpha_{prior} + \alpha_{like},\bet
             </code>
             in
             <span class="pasted-text">
-             50.20
+             49.68
             </span>
             % of the simulations.
            </p>
@@ -4593,13 +4593,13 @@ Beta(p; \alpha_{post},\beta_{post}) = Beta(p;\alpha_{prior} + \alpha_{like},\bet
               Fig. 16
              </span>
             </a>
-            shows the empirical CDF from the Monte Carlo simulation. This plot can make reasoning about the relative merits of each variant easier. Reading off the plot for a ratio of 1.0, the ECDF is roughly 0.5. This implies that about half of the cumulative probability mass is less than a ratio of 1.0 and the other half is above 1.0. Technically it is a
+            shows the empirical CDF from the Monte Carlo simulation. This plot can make reasoning about the relative merits of each variant easier. Reading off the plot for a ratio of 1.0, the ECDF is roughly 0.5. This implies that about half of the cumulative probability mass is less than a ratio of 1.0 and the other half is above 1.0. Technically, it is a
             <span class="pasted-text">
-             50.20
+             49.68
             </span>
             % to
             <span class="pasted-text">
-             49.80
+             50.32
             </span>
             % split, but that might change if we let the experiment run longer and used more data points. I would have been hard pressed to identify that from
             <a class="reference internal" href="#fig-a-b-cdf-ratio">
@@ -4607,7 +4607,7 @@ Beta(p; \alpha_{post},\beta_{post}) = Beta(p;\alpha_{prior} + \alpha_{like},\bet
               Fig. 16
              </span>
             </a>
-            because the distribution is not symmetrical like a normal distribution. In practice this means that given the data that we have at this current time, there is no
+            because the distribution is not symmetrical like a normal distribution. In practice, this means that given the data that we have at this current time, there is no
             <em>
              practical
             </em>
@@ -4665,10 +4665,10 @@ Beta(p; \alpha_{post},\beta_{post}) = Beta(p;\alpha_{prior} + \alpha_{like},\bet
               Beta distribution
              </span>
             </a>
-            so an advanced reader would at least know there were other ways to use the theorem. Model comparison and parameter estimation are basically two sides of the same coin. This section shows a numerical approximation that uses the familiar model comparison methods to perform a type of parameter estimation calculation. Per the usual for this manual, this is not a mainstream solution method for Bayes theorem. Instead it is intended to be instructive in how the two methods are related to each other. If you want a computationally light weight way to express your beliefs as probability distributions without having to learn more advanced numerical methods this section might also be helpful.
+            so an advanced reader would at least know there were other ways to use the theorem. Model comparison and parameter estimation are basically two sides of the same coin. This section shows a numerical approximation that uses the familiar model comparison methods to perform a type of parameter estimation calculation. Per the usual for this manual, this is not a mainstream solution method for Bayes theorem. Instead, it is intended to be instructive in how the two methods are related to each other. If you want a computationally light weight way to express your beliefs as probability distributions without having to learn more advanced numerical methods, this section might also be helpful.
            </p>
            <p>
-            In this manual model comparison has used point estimates to quantify uncertainty, and parameter estimation has used probability distributions. This section describes what is know as a ‘grid method’ and is a hybrid of the two paradigms.
+            In this manual, model comparison has used point estimates to quantify uncertainty, and parameter estimation has used probability distributions. This section describes what is known as a ‘grid method’ and is a hybrid of the two paradigms.
            </p>
            <p>
             Assume that you are trying to decide if you are being cheated during a game of flip the coin
@@ -4705,13 +4705,13 @@ Beta(p; \alpha_{post},\beta_{post}) = Beta(p;\alpha_{prior} + \alpha_{like},\bet
             </li>
            </ol>
            <p>
-            You are using the coin your friend brought for this game. After observing the sequence HHHHT - where ‘H’ represents the coin landing heads up and ‘T’ represents the coin landing tails up - you begin to wander if you are being cheated, or if you are just suffering an unlucky streak. So far you have lost three dollars.
+            You are using the coin your friend brought for this game. After observing the sequence HHHHT - where ‘H’ represents the coin landing heads up and ‘T’ represents the coin landing tails up - you begin to wonder if you are being cheated, or if you are just suffering an unlucky streak. So far you have lost three dollars.
            </p>
            <p>
-            In mathematical terms you are wondering if the coin is biased. In this context fair implies that the coin lands on heads with a probability of 0.5. If the coin is biased the long run probability of observing heads on any toss would be some other probability - most likely a cheater would use a coin with a probability of heads significantly higher than 0.5.
+            In mathematical terms, you are wondering if the coin is biased. In this context, fair implies that the coin lands on heads with a probability of 0.5. If the coin is biased the long run probability of observing heads on any toss would be some other probability - most likely a cheater would use a coin with a probability of heads significantly higher than 0.5.
            </p>
            <p>
-            The simplest unfair coin would have heads on both sides of the coin. This is obviously not the case in your current game because you have observed heads to tails in a ratio of 4:1. If the goal is to separate you from your money your friend would want to choose a coin that is slightly unfair so you would not suspect the cheat and instead would think you are unlucky. Denote the long run bias of the coin with the parameter
+            The simplest unfair coin would have heads on both sides of the coin. This is obviously not the case in your current game because you have observed heads to tails in a ratio of 4:1. If the goal is to separate you from your money, your friend would want to choose a coin that is slightly unfair so you would not suspect the cheat and instead would think you are unlucky. Denote the long run bias of the coin with the parameter
             <span class="math notranslate nohighlight">
              \(\theta\)
             </span>
@@ -4756,7 +4756,7 @@ Beta(p; \alpha_{post},\beta_{post}) = Beta(p;\alpha_{prior} + \alpha_{like},\bet
             <span class="math notranslate nohighlight">
              \(\theta\)
             </span>
-            to keep things simple (see below for an expanded example with more levels). You figure that a bias of more than 0.75 or less than 0.25 would be overly suspicious so they are not considered. With a probability distribution your belief is quantified by both the values you assign probability to, as well as the values you
+            to keep things simple (see below for an expanded example with more levels). You figure that a bias of more than 0.75 or less than 0.25 would be overly suspicious so they are not considered. With a probability distribution, your belief is quantified by both the values you assign probability to, as well as the values you
             <em>
              do not
             </em>
@@ -4822,7 +4822,7 @@ p(H,H,H,H,T:\theta) = \theta \times \theta \times \theta \times \theta \times (1
             <a class="reference internal" href="#equation-eq-likelihood-bias-coin">
              (11)
             </a>
-            . For example
+            . For example,
             <span class="math notranslate nohighlight">
              \(p(H,H,H,H,T|\theta=0.25) = 0.25 \times 0.25 \times 0.25 \times 0.25 \times 0.75 =\)
             </span>
@@ -4845,7 +4845,7 @@ p(H,H,H,H,T:\theta) = \theta \times \theta \times \theta \times \theta \times (1
               Fig. 17
              </span>
             </a>
-            . In practice I would suggest using a spreadsheet to help keep the calculation organized.
+            . It is recommended to use a spreadsheet to help keep the calculation organized.
            </p>
            <table class="colwidths-auto table" id="tab-bias-coin-calc">
             <caption>
@@ -5018,7 +5018,7 @@ p(H,H,H,H,T:\theta) = \theta \times \theta \times \theta \times \theta \times (1
             </p>
            </div>
            <p>
-            As a result of this calculation your prior beliefs have been revised by the likelihood of the observed data. Your observations so far indicate that
+            As a result of this calculation, your prior beliefs have been revised by the likelihood of the observed data. Your observations so far indicate that
             <span class="math notranslate nohighlight">
              \(\theta=0.75\)
             </span>
@@ -5029,7 +5029,7 @@ p(H,H,H,H,T:\theta) = \theta \times \theta \times \theta \times \theta \times (1
             still has significant probability as well. The only thing you can say definitely at this point is you do not believe the bias of the coin is in your favor.
            </p>
            <p>
-            The sum of each row is included to highlight how and when normalization is required. The prior distribution sums to one, and therefore is a
+            The sum of each row is included to highlight how and when normalization is required. The prior distribution sums to one, and, therefore, is a
             <em>
              proper
             </em>
@@ -5084,7 +5084,7 @@ p(H,H,H,H,T:\theta) = \theta \times \theta \times \theta \times \theta \times (1
             we sidestep the calculation of the normalizing constant by using relative odds.
            </p>
            <p>
-            The grid method is an approximate numerical method. Using a finer grid may be beneficial in some use cases. For example the same problem above can be refined by using a finer grid.
+            The grid method is an approximate numerical method. Using a finer grid may be beneficial in some use cases. For example, the same problem above can be refined by using a finer grid.
             <a class="reference internal" href="#tab-bias-coin-calc-fine">
              <span class="std std-numref">
               Table 40
@@ -5096,13 +5096,13 @@ p(H,H,H,H,T:\theta) = \theta \times \theta \times \theta \times \theta \times (1
               Fig. 18
              </span>
             </a>
-            . As the grid starts to contain more points it would be customary, but not strictly required, to set your prior distribution with a commonly used distribution, such as the normal or beta distributions. Note how in the previous example shown in
+            . As the grid starts to contain more points, it would be customary, but not strictly required, to set your prior distribution with a commonly used distribution, such as the normal or beta distributions. Note how in the previous example shown in
             <a class="reference internal" href="#tab-bias-coin-calc">
              <span class="std std-numref">
               Table 39
              </span>
             </a>
-            the prior was neither symmetric or taken from a distribution of any kind. Mathematically any distribution is valid, but when you start using a finer grid it might become more convenient to use a known distribution so each prior does not have to be set manually.
+            , the prior was neither symmetric or taken from a distribution of any kind. Mathematically, any distribution is valid, but when you start using a finer grid it might become more convenient to use a known distribution so each prior does not have to be set manually.
            </p>
            <table class="colwidths-auto table" id="tab-bias-coin-calc-fine">
             <caption>
@@ -5464,7 +5464,7 @@ p(H,H,H,H,T:\theta) = \theta \times \theta \times \theta \times \theta \times (1
               Table 40
              </span>
             </a>
-            the risk of accusing your friend of cheating is too great, so you continue with five additional rounds which results in the sequence HHTHH. Your total loss at this point is six dollars. The results of updating your beliefs with this new sequence is shown in Table
+            , the risk of accusing your friend of cheating is too great, so you continue with five additional rounds which results in the sequence HHTHH. Your total loss at this point is six dollars. The results of updating your beliefs with this new sequence is shown in Table
             <a class="reference internal" href="#tab-bias-coin-calc-fine-extra">
              <span class="std std-numref">
               Table 41
@@ -5811,7 +5811,7 @@ p(H,H,H,H,T:\theta) = \theta \times \theta \times \theta \times \theta \times (1
             </p>
            </div>
            <p>
-            After this update the peak of the probability distribution is clearly not centered over
+            After this update, the peak of the probability distribution is clearly not centered over
             <span class="math notranslate nohighlight">
              \(\theta=0.5\)
             </span>
@@ -5830,7 +5830,7 @@ p(H,H,H,H,T:\theta) = \theta \times \theta \times \theta \times \theta \times (1
             .
            </p>
            <p>
-            The math is indicating that you are being cheated, but decision making is more complex than just looking at the output of Bayes theorem. You will potentially loose a friend and start a fight if you declare based on 10 flips of a coin that he is cheating. The field of
+            The math is indicating that you are being cheated, but decision making is more complex than just looking at the output of Bayes theorem. You will potentially lose a friend and start a fight if you declare, based on 10 flips of a coin, that he is cheating. The field of
             <a class="reference external" href="https://en.wikipedia.org/wiki/Decision_theory">
              decision theory
             </a>
@@ -5840,7 +5840,7 @@ p(H,H,H,H,T:\theta) = \theta \times \theta \times \theta \times \theta \times (1
               being humble with your uncertainty
              </span>
             </a>
-            applies here. The output of Bayes theorem depends heavily on the prior. What if you had chosen a different prior? Table
+            applies here. The output of Bayes theorem depends heavily on the prior. What if you had chosen a different prior?
             <a class="reference internal" href="#tab-bias-coin-calc-fine-uniform">
              <span class="std std-numref">
               Table 42
@@ -5854,13 +5854,13 @@ p(H,H,H,H,T:\theta) = \theta \times \theta \times \theta \times \theta \times (1
             <span class="math notranslate nohighlight">
              \(\theta\)
             </span>
-            is given an equal probability. In plain English this states that every value is equally likely - or you have absolutely no opinion about the possible outcomes in advance. Having absolutely no opinion seems doubtful, but this is considered the most naive prior you can set. Unfortunately for your friend the results when using a uniform prior are more damming than your initial calculation (see
+            is given an equal probability. This means that every value is equally likely - or you have absolutely no opinion about the possible outcomes in advance. Having absolutely no opinion seems doubtful, but this is considered the most naive prior you can set. Unfortunately, for your friend, the results when using a uniform prior are more damming than your initial calculation (see
             <a class="reference internal" href="#tab-bias-coin-calc-fine-extra">
              <span class="std std-numref">
               Table 41
              </span>
             </a>
-            for comparison). Your chose of a prior has potentially impacted your decision making.
+            for comparison). Your choice of a prior has potentially impacted your decision making.
            </p>
            <table class="colwidths-auto table" id="tab-bias-coin-calc-fine-uniform">
             <caption>
