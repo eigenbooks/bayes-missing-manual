@@ -26,7 +26,7 @@ There are a seemingly endless number of possibilities for using Bayes theorem th
 1. Should you worry about finding [strange underwear](strange-underwear) in your dresser drawer?
 1. Who is the [leading murder suspect](mr-boddy) in your crime novel?
 
-The list of possible examples goes [on and on](examples). If your willing to go beyond calculations that rely on mental math, then there are [even more applications](other-applications).
+The list of possible examples goes [on and on.](examples) If your willing to go beyond calculations that rely on mental math, then there are [even more applications.](other-applications)
 
 ## Why this manual exists
 
@@ -64,7 +64,7 @@ The first is descriptive statistics. Descriptive statistics summarize data and a
 
 Bayes theorem is a type of statistical inference. I like [Kruschke’s](https://www.amazon.com/Doing-Bayesian-Data-Analysis-Tutorial-dp-0124058884/dp/0124058884) description that *the goal of statistical inference is to help you decide what to believe in*. All three domains - probability, descriptive statistics, and statistical inference - are useful when applying Bayes theorem so it is good not to casually refer to them as the same thing.
 
-In common language usage, probability and statistics are used interchangeably. Furthermore, there are multiple interpretations of probability and the version being used is often assumed to be implicitly understood. The same notation is used across different fields and interpreted to mean different things, so concise communication can be difficult to achieve. Therefore, it is good not to casually refer to them as the same thing.
+In common language usage, probability and statistics are used interchangeably. Furthermore, there are multiple interpretations of probability and the version being used is often assumed to be implicitly understood. The same notation is used across different fields and interpreted to mean different things, so concise communication can be difficult to achieve unless a [standard ubiquitous language is defined](disambiguation).
 
 Bayesian probability - the sole focus of this manual - is simply a belief. Contrast this to the more popular definition of probability as a frequency of occurrence. The *frequentist* definition is more popular and represents a more concrete situation where it is possible to count all the possible outcomes. Typically frequentist probability examples include dice, coins, and cards. The Bayesian definition is more abstract, but potentially very useful.
 
@@ -77,13 +77,13 @@ There are two things that can make Bayes theorem difficult to use in practice:
 1. How to convert circumstances in the real world into the language of probability and statistics
 2. When to deploy each tool - probability, descriptive statistics, inference - in the solution process.
 
-This manual hopes to standardize and simplify the choices that make Bayes theorem difficult to [use](process) for everyday [problems.](examples)
+This manual hopes to [standardize and simplify](process) the choices that make Bayes theorem difficult to use for [everyday problems.](examples)
 
 ## What types of problems can be solved with Bayes theorem
 
 You wouldn’t pick up your TV manual to learn how to operate your lawn mower, so it is helpful to understand what *product* this manual was actually written for.
 
-The use of Bayes theorem can be applied to multiple situations, in various forms, using a variety of analytical and numerical techniques. In short, there are a lot of ways to use Bayes theorem. As a rough guideline, I divide the possible methods into model comparison and parameter estimation. This manual covers a simple method for model comparison that only requires simple mental math. Each formulation is briefly described below so you can identify if your use case fits with what is described in this manual.
+The use of Bayes theorem can be applied to multiple situations, in various forms, using a variety of analytical and numerical techniques. In short, there are a lot of ways to use Bayes theorem. As a rough guideline, I divide the possible methods into model comparison and parameter estimation. This manual covers a simple method for model comparison that only relies on easy mental math. Each formulation is briefly described below so you can identify if your use case fits with what is described in this manual.
 
 (model-comparison)=
 ### Model comparison (the main focus of this manual)

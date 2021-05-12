@@ -56,7 +56,7 @@ This section contains a number of examples, with their solutions, and commentary
   - [A failing new employee](failing-employee)
   - [The mystic seer](mystic-seer)
 
-- *Multiple belief revisions:* It is often claimed that a major benefit of Bayes theorem is the ability to incorporate new evidence incrementally as it arrives. The concept of incremental belief revision was first introduced in the [Worcestershire cola example](example). 
+- *Multiple belief revisions:* It is often claimed that a major benefit of Bayes theorem is the ability to incorporate new evidence incrementally as it arrives. The concept of incremental belief revision was first introduced in the [Worcestershire cola example.](example) 
   - [Spam email filter](spam-filter)
   - [The Mony Hall problem](monty-hall)
   - [Heuristic for Evaluating Medical News](medical-heuristic)

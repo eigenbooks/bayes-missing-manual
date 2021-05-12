@@ -10,7 +10,7 @@ The quintessential example for introducing Bayes theorem is a medical diagnostic
 >
 >---[Source](https://yudkowsky.net/rational/bayes/)
 
-We will return to the quintessential example described above later in this chapter. To illustrate the process for solving problems with Bayes theorem, we will pick a problem that has convenient round looking numbers to make things easy. There are many ways to solve problems, but for the sake of consistency, we will use this standard approach over and over in this manual.
+We will return to the quintessential example described above later in this chapter. To illustrate the process for solving problems with Bayes theorem, we will solve the same type of problem using convenient round looking numbers to make things easy. There are many ways to solve problems, but for the sake of consistency, we will use this standard approach over and over in this manual.
 
 Let's use a similar medical example from [arbitral.com ](https://arbital.com/p/bayes_frequency_diagram/?l=55z&pathId=65721):
 

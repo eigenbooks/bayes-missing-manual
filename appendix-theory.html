@@ -32,8 +32,6 @@
   </script>
   <script src="_static/copybutton.js">
   </script>
-  <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js">
-  </script>
   <script kind="utterances">
    var commentsRunWhenDOMLoaded = cb => {
     if (document.readyState != 'loading') {
@@ -471,6 +469,8 @@ commentsRunWhenDOMLoaded(addUtterances);
           This section was written for the author’s sake, to make sure he had all the details correct. It might also be helpful for technical reviewers. A few very detail oriented readers may want to peruse this section to provide some rigor for the methods shown in the rest of the manual.
          </p>
          <div class="section" id="disambiguation-of-the-language-we-use-for-probability-and-statistics">
+          <span id="disambiguation">
+          </span>
           <h2>
            Disambiguation of the language we use for probability and statistics
            <a class="headerlink" href="#disambiguation-of-the-language-we-use-for-probability-and-statistics" title="Permalink to this headline">
@@ -4471,7 +4471,7 @@ Beta(p; \alpha_{post},\beta_{post}) = Beta(p;\alpha_{prior} + \alpha_{like},\bet
             </code>
             in
             <span class="pasted-text">
-             49.68
+             50.54
             </span>
             % of the simulations.
            </p>
@@ -4595,11 +4595,11 @@ Beta(p; \alpha_{post},\beta_{post}) = Beta(p;\alpha_{prior} + \alpha_{like},\bet
             </a>
             shows the empirical CDF from the Monte Carlo simulation. This plot can make reasoning about the relative merits of each variant easier. Reading off the plot for a ratio of 1.0, the ECDF is roughly 0.5. This implies that about half of the cumulative probability mass is less than a ratio of 1.0 and the other half is above 1.0. Technically, it is a
             <span class="pasted-text">
-             49.68
+             50.54
             </span>
             % to
             <span class="pasted-text">
-             50.32
+             49.46
             </span>
             % split, but that might change if we let the experiment run longer and used more data points. I would have been hard pressed to identify that from
             <a class="reference internal" href="#fig-a-b-cdf-ratio">
@@ -6195,7 +6195,7 @@ p(H,H,H,H,T:\theta) = \theta \times \theta \times \theta \times \theta \times (1
             </p>
            </div>
            <p>
-            Of course a prior can be chosen that would make your friend look less guilty of cheating. Manufacturing a biased coin that looks indistinguishable from a standard coin would be very difficult to achieve. Maybe your prior should place a higher probability on
+            You can choose a prior that would make your friend look less guilty of cheating. Manufacturing a biased coin that looks indistinguishable from a standard coin would be very difficult to achieve. Maybe your prior should place a higher probability on
             <span class="math notranslate nohighlight">
              \(\theta=0.5\)
             </span>
@@ -6552,7 +6552,7 @@ p(H,H,H,H,T:\theta) = \theta \times \theta \times \theta \times \theta \times (1
             </p>
            </div>
            <p>
-            Given the same data, three different results can be achieved by choosing a different prior. This begs the question, which prior is more appropriate? Well, unfortunately it depends on your specific circumstance and how/if you plan to take an action based on your beliefs. Again, when using subjective probabilities your results are personal. The data suggests that the coin is biased. Your selection of a prior determines how much influence the data should have when revising your beliefs. A tight narrow distribution around
+            Given the same data, three different results can be achieved by choosing a different prior. This begs the question, which prior is more appropriate? Well, unfortunately, it depends on your specific circumstance and how/if you plan to take an action based on your beliefs. Again, when using subjective probabilities your results are personal. The data suggests that the coin is biased. Your selection of a prior determines how much influence the data should have when revising your beliefs. A tight narrow distribution around
             <span class="math notranslate nohighlight">
              \(\theta=0.5\)
             </span>
@@ -6562,7 +6562,7 @@ p(H,H,H,H,T:\theta) = \theta \times \theta \times \theta \times \theta \times (1
               Fig. 21
              </span>
             </a>
-            implies that your beliefs will not be influenced by the data very much. On the other extreme a uniform prior, like
+            implies that your beliefs will not be influenced by the data very much. On the other extreme, a uniform prior, like
             <a class="reference internal" href="#fig-large-theta-uniform">
              <span class="std std-numref">
               Fig. 20
@@ -6571,7 +6571,7 @@ p(H,H,H,H,T:\theta) = \theta \times \theta \times \theta \times \theta \times (1
             , implies that your beliefs will be only informed by the data. Setting a prior will certainly be difficult when you have a vested interest (your friendship) in the posterior belief.
            </p>
            <p>
-            As a final note, if you take the resolution of the grid to be very fine your results will start looking like continuous distributions. For example
+            As a final note, if you take the resolution of the grid to be very fine your results will start looking like continuous distributions. For example,
             <a class="reference internal" href="#fig-very-large-theta-extra">
              <span class="std std-numref">
               Fig. 22
@@ -6583,7 +6583,7 @@ p(H,H,H,H,T:\theta) = \theta \times \theta \times \theta \times \theta \times (1
               Fig. 19
              </span>
             </a>
-            with 10 times more points on the grid. In general more points are better, which should eventually lead to using a more powerful numerical method. The method shown here is basically a brute force method. See the
+            with 10 times more points on the grid. In general, more points are better, which should eventually lead to using a more powerful numerical method. The method shown here is basically a brute force approach. See the
             <a class="reference internal" href="index.html#additional-refs">
              <span class="std std-ref">
               references
@@ -6620,7 +6620,7 @@ p(H,H,H,H,T:\theta) = \theta \times \theta \times \theta \times \theta \times (1
            </a>
           </h2>
           <p>
-           This appendix sampled a number of unique or complex techniques associated with Bayes theorem that were not included in the main text of the manual. The manual aims to be self contained for a very narrow, but generally useful, application of Bayes theorem. This appendix aims to be the opposite, general and vague, to provide a jumping off point for further investigation
+           This appendix sampled a number of unique or complex techniques associated with Bayes theorem that were not included in the main text of the manual. The manual aims to be self contained for a very narrow, but useful, application of Bayes theorem. This appendix aims to be the opposite, general and vague, to provide a jumping off point for further investigation
            <a class="reference internal" href="index.html#additional-refs">
             <span class="std std-ref">
              elsewhere
@@ -6743,7 +6743,7 @@ p(H,H,H,H,T:\theta) = \theta \times \theta \times \theta \times \theta \times (1
            </dt>
            <dd>
             <p>
-             To further complicate things not all authors use consistent nomenclature. Look up the beta distribution on
+             To further complicate things, not all authors use consistent nomenclature. Look up the beta distribution on
              <a class="reference external" href="https://en.wikipedia.org/wiki/Beta_distribution">
               wikipedia
              </a>
@@ -6831,7 +6831,7 @@ p(H,H,H,H,T:\theta) = \theta \times \theta \times \theta \times \theta \times (1
            </dt>
            <dd>
             <p>
-             When I started writing this manual I decided to omit all card, dice, and coin examples because I believe they are not very representative of
+             When I started writing this manual, I decided to omit all card, dice, and coin examples because I believe they are not very representative of
              <a class="reference internal" href="index.html#real-world-problems">
               <span class="std std-ref">
                practical real life problems
@@ -6849,7 +6849,7 @@ p(H,H,H,H,T:\theta) = \theta \times \theta \times \theta \times \theta \times (1
            </dt>
            <dd>
             <p>
-             Some authors use the idea, or analogy, of probability mass to describe this process of describing your beliefs as a distribution. Imagine that you have a ball of modeling clay and are asked to quantify your beliefs about some proposition by laying clumps of mass onto a row of plates that represent a probability index. For example, will it rain today? You are given a row of plates which represent 0.1 increments of belief. The first plate is labeled 0.0, the next 0.1, and so on until the last plate which represents 1.0. To assign probability mass in accordance to your beliefs you break off chunks of modeling clay and lay them on the plates. The mass you place on any one plate indicates your belief in that value. A key point here is that you are limited to only using clay from the initial ball you were given to describe your beliefs, and can only distribute clay to the existing plates. If you use more plates, to provide finer resolution of your beliefs, you are still restricted to the one ball of clay. If all plates are given equal mass then the probability distribution is ‘uniform’. If some plates have more mass then others then you have indicated that you think some outcomes are more likely than others. Plates assigned no mass are essentially not being considered as a possible outcome. When using Bayes theorem the difference between very little probability mass and absolutely no mass is important. If your prior assigns no mass to a particular outcome then your prior will never include that outcome. Strictly speaking a probability distribution is a continuous function, while a probability mass function is a discrete function with a finite number of ‘plates’ that can have mass assigned to them.
+             Some authors use the idea, or analogy, of probability mass to describe this process of describing your beliefs as a distribution. Imagine that you have a ball of modeling clay and are asked to quantify your beliefs about some proposition by laying clumps of mass onto a row of plates that represent a probability index. For example, will it rain today? You are given a row of plates which represent 0.1 increments of belief. The first plate is labeled 0.0, the next 0.1, and so on until the last plate which represents 1.0. To assign probability mass in accordance to your beliefs, you break off chunks of modeling clay and lay them on the plates. The mass you place on any one plate indicates your belief in that value. A key point here is that you are limited to only using clay from the initial ball you were given to describe your beliefs, and can only distribute clay to the existing plates. If you use more plates, to provide finer resolution of your beliefs, you are still restricted to the one ball of clay. If all plates are given equal mass then the probability distribution is ‘uniform’. If some plates have more mass then others then you have indicated that you think some outcomes are more likely than others. Plates assigned no mass are essentially not being considered as a possible outcome. When using Bayes theorem, the difference between very little probability mass and absolutely no mass is important. If your prior assigns no mass to a particular outcome then your prior will never include that outcome. Strictly speaking, a probability distribution is a continuous function, while a probability mass function is a discrete function with a finite number of ‘plates’ that can have mass assigned to them.
             </p>
            </dd>
           </dl>
