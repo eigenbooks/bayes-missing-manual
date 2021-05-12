@@ -77,13 +77,13 @@ There are some good books dedicated to the art/science of making rough order of 
 
 [^books]: Some good books on making ROM estimates include: [Guesstimation: Solving the World's Problems on the Back of a Cocktail Napkin](https://www.amazon.com/Guesstimation-Solving-Worlds-Problems-Cocktail/dp/0691129495), [Guesstimation 2.0: Solving Today's Problems on the Back of a Napkin](https://www.amazon.com/Guesstimation-2-0-Solving-Todays-Problems/dp/069115080X), [How Much Is that Cure in the Window?: Simple Math Solutions for Complicated Problems in Biology, Medicine, and Healthcare](https://www.amazon.com/How-Much-that-Cure-Window-ebook/dp/B089LWNY5K), [How Many Licks?: Or, How to Estimate Damn Near Anything](https://www.amazon.com/How-Many-Licks-Estimate-Anything/dp/0762435607)
 
-To use this method, first break the problem down into smaller pieces. Don't go straight for the answer, break it up into small more manageable estimates. Then, ask yourself what order of magnitude for your estimate would be ridiculously high, and what would be ridiculously low. Finally, pick a number in between your bounds. 
+To use this method, first break the problem down into smaller pieces. Don't go straight for the answer, break it up into smaller more manageable estimates. Then, ask yourself what order of magnitude for your estimate would be ridiculously high, and what would be ridiculously low. Finally, pick a number in between your bounds. 
 
 [The next section](piano-tuners) is an example of a question that your average person would just hold up their hands and shrug, but can be solved with an order of magnitude estimate. Using Google or any form of external reference is considered cheating when making an order of magnitude estimate, mostly because order of magnitude estimates need to be made quickly while on your feet with just mental math.
 
 (piano-tuners)=
 ### Piano tuners 
-About how many piano tuners worked in the city of Chicago in the 1950's?
+> About how many piano tuners worked in the city of Chicago in the 1950's?
 
 I know very little about the city of Chicago today, and even less about it in the 1950's. Regrettably the only time I go to Chicago is when I catch a connecting flight through O'Hare International Airport. I want to decompose this estimate into smaller pieces to make thinking about the problem easier. My strategy is to estimate:
 

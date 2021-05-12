@@ -17,7 +17,7 @@ Say that you open up your Facebook app one morning and see a headline that says 
 Bayes theorem is a math formula that quantifies a thought process that you likely use multiple times per day without noticing:
 
 1. You have opinions or beliefs about how the world around you works
-1. You observe something happen (latter we will call this data or evidence to be formal)
+1. You observe something happen (later we will call this data or evidence to be formal)
 1. You may, or may not, revise your beliefs about how the world around you works based on this new observation. Any change in how you think depends on both the strength of your prior beliefs - are you certain, or just ambivalent - and how convincing your observation was - are you shocked, or was it a mundane observation.
 
 Mathematically the [odds form](odds-form) of Bayes theorem can be stated as:
@@ -101,11 +101,11 @@ You have a couple options with how you process multiple pieces of evidence. In t
 
 Bayes theorem revises your belief to 800:16 in favor of fake news. This simplifies to 50:1 for the odds of fake to real. Fifty times more likely to be fake than real, or a 0.98 probability that the news is fake. Again, the numbers don't matter all that much as long as you are not grossly incorrect - they were all subjective estimates anyways. The key takeaway here is the intuition about your initial belief, the surprise at the strength of the initial evidence, and the impetus to not take things at face value when the prior odds and the likelihood are in stark disagreement. 
 
-The above was a narrative for introducing Bayes theorem, but there was a lot of hand waving and "just trust me" going on. In the [next chapter](prereqs), we will lay out the two mathematical prerequisites needed to ensure everyone has consistent success, then the one and only method used in this document for [solving](process) all the [example problems](examples) will be presented.
+The above was a narrative for introducing Bayes theorem, but there was a lot of hand waving and 'just trust me' going on. In the [next chapter](prereqs), we will lay out the two mathematical prerequisites needed to ensure everyone has consistent success, then the one and only method used in this document for [solving](process) all the [example problems](examples) will be presented.
 
 ## Why Bayesian inference is so useful
 
-Despite the long list of caveats and constraints that I have placed on Bayes theorem to keep the calculations simple, it is still a very useful formula. Uncertainty is inherently handled by the use of probabilities/odds. Even in its simplest form, probabilities are a wildly powerful and practical tool.
+Despite the long list of caveats and constraints that I have placed on Bayes theorem to keep the calculations as simple mental math, it is still a very useful formula. Uncertainty is inherently handled by the use of probabilities/odds. Even in its simplest form, probabilities are a wildly powerful and practical tool.
 
 As you learn more about your problem, you can incrementally update your beliefs. There is no difference in the end result if all your data arrives in one batch at once, or if you slowly over the course of a decade collect data. If the data points are the same then the final result will ultimately be the same. As an added bonus, you don’t have to wait until all observations arrive to reason about your world. In fact, if the first few data points that you observe surprise you, it would be smart to generate new hypotheses that better describe the data instead of waiting for your original hypothesis to be fully rejected as highly improbable.
 
